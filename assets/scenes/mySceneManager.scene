@@ -1,0 +1,18 @@
+{
+  "-app": "Scene Editor - Phaser Editor v2.1.6",
+  "-version": 1,
+  "compilerLang": "JAVA_SCRIPT_6",
+  "displayList": {
+    "-id": "5c93817c-5b38-4545-a514-a7dd6448cd2d",
+    "-type": "DisplayList",
+    "children": []
+  },
+  "groups": {
+    "-id": "cf5d757b-80ea-4769-981c-a14048a41350",
+    "-type": "Groups",
+    "children": []
+  },
+  "borderHeight": 450,
+  "methodContextType": "SCENE",
+  "sceneKey": "mySceneManager"
+}

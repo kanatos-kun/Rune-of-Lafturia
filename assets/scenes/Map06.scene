@@ -1,0 +1,58 @@
+{
+  "-app": "Scene Editor - Phaser Editor v2.1.6",
+  "-version": 1,
+  "compilerLang": "JAVA_SCRIPT_6",
+  "displayList": {
+    "-id": "a5b7d58c-1bff-442a-8bfd-42fe6674dce3",
+    "-type": "DisplayList",
+    "children": [
+      {
+        "-id": "13afaff4-c183-4695-a753-3d1a81bd263c",
+        "-type": "Image",
+        "children": [],
+        "variableName": "map06",
+        "variableField": false,
+        "x": 1658.0286865234375,
+        "y": 1538.0386962890625,
+        "textureKey": "map06",
+        "textureFrame": "map06"
+      },
+      {
+        "-id": "c337c749-895a-49ca-8791-2816357c2349",
+        "-type": "Image",
+        "children": [],
+        "variableName": "hero",
+        "variableField": true,
+        "objectFactory": "hero",
+        "x": 1994.5167236328125,
+        "y": 894.9725952148438,
+        "textureKey": "hero",
+        "textureFrame": "hero"
+      },
+      {
+        "-id": "471952ee-9cec-43db-a425-48a826c78140",
+        "-type": "Image",
+        "children": [],
+        "variableName": "warp",
+        "variableField": true,
+        "objectFactory": "warp",
+        "x": 1477.7998046875,
+        "y": 483.69842529296875,
+        "scaleX": 1.618977665901184,
+        "scaleY": 1.570839524269104,
+        "textureKey": "warp",
+        "textureFrame": "warp"
+      }
+    ]
+  },
+  "groups": {
+    "-id": "dd165602-6abe-4454-9589-daed1c321147",
+    "-type": "Groups",
+    "children": []
+  },
+  "borderWidth": 3300,
+  "borderHeight": 3060,
+  "createMethodName": "_create",
+  "methodContextType": "SCENE",
+  "sceneKey": "Map06"
+}

@@ -1,0 +1,302 @@
+{
+  "section1": {"files": [
+    {
+      "type": "animation",
+      "key": "animations",
+      "url": "assets/animations.json"
+    },
+    {
+      "type": "sceneFile",
+      "key": "mySceneManager",
+      "url": "assets/scenes/mySceneManager.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "Scene1",
+      "url": "assets/scenes/Scene1.js"
+    },
+    {
+      "type": "multiatlas",
+      "key": "textures",
+      "url": "assets/atlas/textures.json",
+      "path": "assets/atlas"
+    },
+    {
+      "type": "image",
+      "key": "map01",
+      "url": "assets/images/map/map01.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "hero",
+      "url": "assets/images/hero/Idle_000.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "bee",
+      "url": "assets/images/bee/Idle_000.png",
+      "normalMap": ""
+    },
+    {
+      "type": "multiatlas",
+      "key": "slash_anim_atlas",
+      "url": "assets/atlas/effect/slash/slash_anim_atlas.json",
+      "path": "assets/atlas/effect/slash"
+    },
+    {
+      "type": "image",
+      "key": "full_Heart",
+      "url": "assets/images/game_icon/Casual Game GUI_Icon - Heart.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "empty_heart",
+      "url": "assets/images/game_icon/Copie de Copie de Casual Game GUI_Icon - Heart.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "bag",
+      "url": "assets/images/game_icon/bag_t.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "coin",
+      "url": "assets/images/game_icon/coin (1).png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "fuel mana",
+      "url": "assets/images/game_icon/fuel mana.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "heart_3-4",
+      "url": "assets/images/game_icon/heart.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "skill_slot",
+      "url": "assets/images/game_icon/hud bottom 02.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "mana Bar",
+      "url": "assets/images/game_icon/mana Bar.png",
+      "normalMap": ""
+    },
+    {
+      "type": "script",
+      "key": "slash",
+      "url": "assets/prefab/slash.js"
+    },
+    {
+      "type": "script",
+      "key": "Bee",
+      "url": "assets/prefab/Bee.js"
+    },
+    {
+      "type": "script",
+      "key": "Hero",
+      "url": "assets/prefab/Hero.js"
+    },
+    {
+      "type": "script",
+      "key": "window_debug_popup",
+      "url": "assets/prefab/window_debug_popup.js"
+    },
+    {
+      "type": "image",
+      "key": "map02",
+      "url": "assets/images/map/map02.png",
+      "normalMap": ""
+    },
+    {
+      "type": "sceneFile",
+      "key": "Map02",
+      "url": "assets/scenes/Map02.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "Map03",
+      "url": "assets/scenes/Map03.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "Map04",
+      "url": "assets/scenes/Map04.js"
+    },
+    {
+      "type": "image",
+      "key": "map03",
+      "url": "assets/images/map/map03.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "map04",
+      "url": "assets/images/map/map04.png",
+      "normalMap": ""
+    },
+    {
+      "type": "sceneFile",
+      "key": "menu_hud",
+      "url": "assets/scenes/menu_hud.js"
+    },
+    {
+      "type": "image",
+      "key": "villager_01",
+      "url": "assets/images/npc/01/Idle_000.png",
+      "normalMap": ""
+    },
+    {
+      "type": "script",
+      "key": "villager_011",
+      "url": "assets/prefab/villager_01.js"
+    },
+    {
+      "type": "image",
+      "key": "background_ui_bottom",
+      "url": "assets/images/game_icon/background_ui_bottom.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "arrow",
+      "url": "assets/images/menu/arrow.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "equipment",
+      "url": "assets/images/menu/equipment.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "equipment_01",
+      "url": "assets/images/menu/equipment_01.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "obj_important",
+      "url": "assets/images/menu/obj_important.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "status",
+      "url": "assets/images/menu/status.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "window",
+      "url": "assets/images/menu/window.png",
+      "normalMap": ""
+    },
+    {
+      "type": "sceneFile",
+      "key": "menu_bag",
+      "url": "assets/scenes/menu_bag.js"
+    },
+    {
+      "type": "script",
+      "key": "DetectionZone",
+      "url": "assets/prefab/DetectionZone.js"
+    },
+    {
+      "type": "script",
+      "key": "dialogueWindow",
+      "url": "assets/scenes/dialogueWindow.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "dialogueWindow",
+      "url": "assets/scenes/dialogueWindow.js"
+    },
+    {
+      "type": "image",
+      "key": "bubble choice",
+      "url": "assets/images/discussion/bubble choice.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "discussion_bubble",
+      "url": "assets/images/discussion/discussion_bubble.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "orange tag",
+      "url": "assets/images/discussion/orange tag.png",
+      "normalMap": ""
+    },
+    {
+      "type": "script",
+      "key": "Coin",
+      "url": "assets/prefab/Coin.js"
+    },
+    {
+      "type": "image",
+      "key": "map05",
+      "url": "assets/images/map/map05.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "map06",
+      "url": "assets/images/map/map06.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "map07",
+      "url": "assets/images/map/map07.png",
+      "normalMap": ""
+    },
+    {
+      "type": "sceneFile",
+      "key": "Map05",
+      "url": "assets/scenes/Map05.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "Map06",
+      "url": "assets/scenes/Map06.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "Map07",
+      "url": "assets/scenes/Map07.js"
+    },
+    {
+      "type": "image",
+      "key": "warp",
+      "url": "assets/images/warp/warp.png",
+      "normalMap": ""
+    },
+    {
+      "type": "script",
+      "key": "warp1",
+      "url": "assets/prefab/warp.js"
+    }
+  ]},
+  "meta": {
+    "generated": "1587368177092",
+    "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
+    "contentType": "Phaser v3 Asset Pack",
+    "url": "https://phasereditor2d.com",
+    "version": "2"
+  }
+}

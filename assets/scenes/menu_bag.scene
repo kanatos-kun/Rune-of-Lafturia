@@ -1,0 +1,126 @@
+{
+  "-app": "Scene Editor - Phaser Editor v2.1.6",
+  "-version": 1,
+  "compilerLang": "JAVA_SCRIPT_6",
+  "displayList": {
+    "-id": "24c259d3-88f8-4a8e-8875-638efcd213e2",
+    "-type": "DisplayList",
+    "children": [
+      {
+        "-id": "e7eaed72-53b9-4e9b-969b-e272f4d0f712",
+        "-type": "Image",
+        "children": [],
+        "variableName": "window",
+        "variableField": false,
+        "x": 1719.904052734375,
+        "y": 1604.6773681640625,
+        "scaleX": 2.9860482215881348,
+        "scaleY": 2.825758218765259,
+        "textureKey": "window",
+        "textureFrame": "window"
+      },
+      {
+        "-id": "dc4e937c-7dd5-4eaf-bd4d-1e23f123789b",
+        "-type": "Image",
+        "children": [],
+        "variableName": "right_arrow",
+        "variableField": true,
+        "x": 2917.1630859375,
+        "y": 1585.795166015625,
+        "scaleX": 3.641885280609131,
+        "scaleY": 23.94145965576172,
+        "textureKey": "arrow",
+        "textureFrame": "arrow"
+      },
+      {
+        "-id": "e063d1f8-804d-481e-bcca-e31b4dfa9446",
+        "-type": "Image",
+        "children": [],
+        "variableName": "left_arrow",
+        "variableField": true,
+        "x": 318.1895751953125,
+        "y": 1549.2274169921875,
+        "scaleX": 3.641885280609131,
+        "scaleY": 23.94145965576172,
+        "flipX": true,
+        "textureKey": "arrow",
+        "textureFrame": "arrow"
+      },
+      {
+        "-id": "9bc42a63-8968-4cad-8438-3751ae2a56ad",
+        "-type": "Image",
+        "children": [],
+        "variableName": "status",
+        "variableField": true,
+        "x": 1670.7398681640625,
+        "y": 1696.83056640625,
+        "scaleX": 2.9162590503692627,
+        "scaleY": 2.8214218616485596,
+        "textureKey": "status",
+        "textureFrame": "status"
+      },
+      {
+        "-id": "c0065728-94cc-44bf-be74-3ce359efb034",
+        "-type": "Image",
+        "children": [],
+        "variableName": "equipment",
+        "variableField": true,
+        "x": -2878.672119140625,
+        "y": 512.51904296875,
+        "scaleX": 2.771240472793579,
+        "scaleY": 2.658067464828491,
+        "originX": 0,
+        "originY": 0,
+        "textureKey": "equipment",
+        "textureFrame": "equipment"
+      },
+      {
+        "-id": "3f50f8ef-b016-489f-8461-c2c0a3666ff3",
+        "-type": "Image",
+        "children": [],
+        "variableName": "equipment_01",
+        "variableField": true,
+        "x": -1573.1981201171875,
+        "y": 1800.2789306640625,
+        "scaleX": 2.5154592990875244,
+        "scaleY": 2.439554452896118,
+        "textureKey": "equipment_01",
+        "textureFrame": "equipment_01"
+      },
+      {
+        "-id": "81929f4c-be38-40c2-9081-5cc7aa8d3974",
+        "-type": "Image",
+        "children": [],
+        "variableName": "image",
+        "variableField": false,
+        "x": 268.43017578125,
+        "y": 1568.593017578125
+      },
+      {
+        "-id": "60d322ad-3d7b-45b9-9fe9-88909b4ed7e5",
+        "-type": "Image",
+        "children": [],
+        "variableName": "obj_important",
+        "variableField": true,
+        "x": -5358.5283203125,
+        "y": 402.4956359863281,
+        "scaleX": 2.820084571838379,
+        "scaleY": 2.5642383098602295,
+        "originX": 0,
+        "originY": 0,
+        "textureKey": "obj_important",
+        "textureFrame": "obj_important"
+      }
+    ]
+  },
+  "groups": {
+    "-id": "bd08177a-815b-4902-a089-4bf3e00431ac",
+    "-type": "Groups",
+    "children": []
+  },
+  "borderWidth": 3300,
+  "borderHeight": 3060,
+  "createMethodName": "_create",
+  "methodContextType": "SCENE",
+  "sceneKey": "menu_bag"
+}

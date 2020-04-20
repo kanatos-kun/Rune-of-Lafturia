@@ -1,0 +1,44 @@
+{
+  "-app": "Scene Editor - Phaser Editor v2.1.6",
+  "-version": 1,
+  "compilerLang": "JAVA_SCRIPT_6",
+  "displayList": {
+    "-id": "28f8a998-f2ae-4623-8289-2dec409a5ba3",
+    "-type": "DisplayList",
+    "children": [
+      {
+        "-id": "8c4f6394-fe66-4b66-928f-becec8e14068",
+        "-type": "Image",
+        "children": [],
+        "variableName": "map07",
+        "variableField": false,
+        "x": 1648.289794921875,
+        "y": 1537.193603515625,
+        "textureKey": "map07",
+        "textureFrame": "map07"
+      },
+      {
+        "-id": "e4dd0974-432c-4eb2-830c-c3b8d691c1bf",
+        "-type": "Image",
+        "children": [],
+        "variableName": "hero",
+        "variableField": true,
+        "objectFactory": "hero",
+        "x": 624.298828125,
+        "y": 1705.97900390625,
+        "textureKey": "hero",
+        "textureFrame": "hero"
+      }
+    ]
+  },
+  "groups": {
+    "-id": "ab8f0059-4541-4c08-8e4c-44f9b55519b2",
+    "-type": "Groups",
+    "children": []
+  },
+  "borderWidth": 3300,
+  "borderHeight": 3060,
+  "createMethodName": "_create",
+  "methodContextType": "SCENE",
+  "sceneKey": "Map07"
+}

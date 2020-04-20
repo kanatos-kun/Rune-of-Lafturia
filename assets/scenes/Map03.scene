@@ -1,0 +1,50 @@
+{
+  "-app": "Scene Editor - Phaser Editor v2.1.6",
+  "-version": 1,
+  "compilerLang": "JAVA_SCRIPT_6",
+  "displayList": {
+    "-id": "77078650-3370-44b1-8d2f-3d17309db324",
+    "-type": "DisplayList",
+    "children": [
+      {
+        "-id": "cec91e21-674a-44eb-b806-0ec249f4c2f9",
+        "-type": "Image",
+        "children": [],
+        "variableName": "map03",
+        "variableField": false,
+        "x": 1660.5169677734375,
+        "y": 1537.2662353515625,
+        "textureKey": "map03",
+        "textureFrame": "map03"
+      },
+      {
+        "-id": "315907c6-9d41-4206-9770-3eaf12cfe915",
+        "-type": "Image",
+        "children": [],
+        "variableName": "bee",
+        "variableField": false,
+        "objectFactory": "bee",
+        "x": 2621.41650390625,
+        "y": 1237.5484619140625,
+        "flipX": true,
+        "textureKey": "bee",
+        "textureFrame": "bee"
+      }
+    ]
+  },
+  "groups": {
+    "-id": "3bbc67f9-776d-4a44-bc65-bc005321123e",
+    "-type": "Groups",
+    "children": [{
+      "-id": "5c1e47e9-bfb8-4106-b3f2-eefbb1bef990",
+      "children": [{"-id": "315907c6-9d41-4206-9770-3eaf12cfe915"}],
+      "variableName": "enemies",
+      "variableField": true
+    }]
+  },
+  "borderWidth": 3300,
+  "borderHeight": 3060,
+  "createMethodName": "_create",
+  "methodContextType": "SCENE",
+  "sceneKey": "Map03"
+}

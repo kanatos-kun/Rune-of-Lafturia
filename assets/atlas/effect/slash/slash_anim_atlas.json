@@ -1,0 +1,83 @@
+{
+	"textures": [
+		{
+			"image": "slash_anim_atlas.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 616,
+				"h": 910
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "slash_anim1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 37,
+						"h": 171
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 33,
+						"w": 34,
+						"h": 136
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 34,
+						"h": 136
+					}
+				},
+				{
+					"filename": "slash_anim2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 467,
+						"h": 807
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 29,
+						"w": 387,
+						"h": 774
+					},
+					"frame": {
+						"x": 34,
+						"y": 0,
+						"w": 387,
+						"h": 774
+					}
+				},
+				{
+					"filename": "slash_anim3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 628,
+						"h": 150
+					},
+					"spriteSourceSize": {
+						"x": 12,
+						"y": 14,
+						"w": 616,
+						"h": 136
+					},
+					"frame": {
+						"x": 0,
+						"y": 774,
+						"w": 616,
+						"h": 136
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:016056b6cc0fdcdc9e0cd2e7ddab2d10:e2fe0ad8f6bd161773893885ea70a0f6:5d7c309730fb063a3299e081731d12e9$"
+	}
+}

@@ -1,0 +1,58 @@
+{
+  "-app": "Scene Editor - Phaser Editor v2.1.6",
+  "-version": 1,
+  "compilerLang": "JAVA_SCRIPT_6",
+  "displayList": {
+    "-id": "bed81592-9f1f-4d92-b8b0-f19d49934b7e",
+    "-type": "DisplayList",
+    "children": [
+      {
+        "-id": "25977b87-e301-487a-a3a6-c022a4b67743",
+        "-type": "Image",
+        "children": [],
+        "variableName": "map04",
+        "variableField": false,
+        "x": 1654.7801513671875,
+        "y": 1531.015869140625,
+        "textureKey": "map04",
+        "textureFrame": "map04"
+      },
+      {
+        "-id": "ef0005bd-baca-4b96-a1f3-3ac8f4e8933b",
+        "-type": "Sprite",
+        "children": [],
+        "variableName": "hero",
+        "variableField": true,
+        "objectFactory": "hero",
+        "x": 1470.3035888671875,
+        "y": 676.301025390625,
+        "textureKey": "hero",
+        "textureFrame": "hero"
+      },
+      {
+        "-id": "0021e297-480e-45a5-a11c-9e181899c0f9",
+        "-type": "Image",
+        "children": [],
+        "variableName": "villager_01",
+        "variableField": true,
+        "objectFactory": "villager_01",
+        "x": 1504.6807861328125,
+        "y": 1635.3568115234375,
+        "textureKey": "villager_01",
+        "textureFrame": "villager_01"
+      }
+    ]
+  },
+  "groups": {
+    "-id": "61591665-7237-49ef-9b87-6df1794c8b21",
+    "-type": "Groups",
+    "children": []
+  },
+  "snapWidth": 256,
+  "snapHeight": 256,
+  "borderWidth": 3300,
+  "borderHeight": 3060,
+  "createMethodName": "_create",
+  "methodContextType": "SCENE",
+  "sceneKey": "Map04"
+}
