@@ -12,7 +12,6 @@ class menu_bag extends Phaser.Scene {
 	}
 	
 	_create() {
-	
 		var window = this.add.image(1719.904, 1604.6774, "window");
 		window.setScale(2.9860482, 2.8257582);
 		

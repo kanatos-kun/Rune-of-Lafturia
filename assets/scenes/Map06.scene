@@ -10,31 +10,24 @@
         "-id": "13afaff4-c183-4695-a753-3d1a81bd263c",
         "-type": "Image",
         "children": [],
-        "variableName": "map06",
-        "variableField": false,
-        "x": 1658.0286865234375,
-        "y": 1538.0386962890625,
+        "variableName": "mapScene",
+        "variableField": true,
+        "x": 1668.8218994140625,
+        "y": 1527.2454833984375,
         "textureKey": "map06",
         "textureFrame": "map06"
-      },
-      {
-        "-id": "c337c749-895a-49ca-8791-2816357c2349",
-        "-type": "Image",
-        "children": [],
-        "variableName": "hero",
-        "variableField": true,
-        "objectFactory": "hero",
-        "x": 1994.5167236328125,
-        "y": 894.9725952148438,
-        "textureKey": "hero",
-        "textureFrame": "hero"
       },
       {
         "-id": "471952ee-9cec-43db-a425-48a826c78140",
         "-type": "Image",
         "children": [],
         "variableName": "warp",
-        "variableField": true,
+        "variableField": false,
+        "data": {
+          "zone": "\"Map03\"",
+          "x": "288",
+          "y": "2016"
+        },
         "objectFactory": "warp",
         "x": 1477.7998046875,
         "y": 483.69842529296875,
@@ -42,13 +35,48 @@
         "scaleY": 1.570839524269104,
         "textureKey": "warp",
         "textureFrame": "warp"
+      },
+      {
+        "-id": "736e9e2b-4da0-42b8-a977-625fe0b18bb9",
+        "-type": "Image",
+        "children": [],
+        "variableName": "obstacle",
+        "variableField": false,
+        "objectFactory": "obstacle",
+        "x": 3165.53564453125,
+        "y": 10.78856372833252,
+        "scaleX": 4.130184650421143,
+        "scaleY": 36.511192321777344,
+        "originX": 0,
+        "originY": 0,
+        "textureKey": "obstacle",
+        "textureFrame": "obstacle"
       }
     ]
   },
   "groups": {
     "-id": "dd165602-6abe-4454-9589-daed1c321147",
     "-type": "Groups",
-    "children": []
+    "children": [
+      {
+        "-id": "30e4482b-67aa-4dd8-9f45-2384a12f920d",
+        "children": [{"-id": "471952ee-9cec-43db-a425-48a826c78140"}],
+        "variableName": "warp",
+        "variableField": true
+      },
+      {
+        "-id": "dc393715-435e-4529-b43f-a33633a07438",
+        "children": [{"-id": "471952ee-9cec-43db-a425-48a826c78140"}],
+        "variableName": "Warp",
+        "variableField": true
+      },
+      {
+        "-id": "7ee885ee-9907-478b-938d-75c3f4dba5b0",
+        "children": [{"-id": "736e9e2b-4da0-42b8-a977-625fe0b18bb9"}],
+        "variableName": "obstacle",
+        "variableField": true
+      }
+    ]
   },
   "borderWidth": 3300,
   "borderHeight": 3060,

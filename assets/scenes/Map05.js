@@ -13,13 +13,38 @@ class Map05 extends Phaser.Scene {
 	
 	_create() {
 	
-		this.add.image(1646.7208, 1530.2878, "map05");
+		var mapScene = this.add.image(1658.09, 1542.8605, "map05");
 		
-		var hero = this.add.hero(1611.2284, 791.3535, "hero");
+		var obstacle = this.add.obstacle(-51.90646, -35.328644, "obstacle");
+		obstacle.setOrigin(0.0, 0.0);
+		obstacle.setScale(3.6955419, 62.49945);
 		
-		this.fHero = hero;
+		var obstacle_1 = this.add.obstacle(3177.9302, -32.35328, "obstacle");
+		obstacle_1.setOrigin(0.0, 0.0);
+		obstacle_1.setScale(3.6955419, 21.914549);
+		
+		var obstacle_2 = this.add.obstacle(3161.4116, 1553.4231, "obstacle");
+		obstacle_2.setOrigin(0.0, 0.0);
+		obstacle_2.setScale(3.6955419, 30.283924);
+		
+		var obstacle_3 = this.add.obstacle(149.53775, -48.87189, "obstacle");
+		obstacle_3.setOrigin(0.0, 0.0);
+		obstacle_3.setScale(55.25833, 6.3871565);
+		
+		var obstacle_4 = this.add.obstacle(2313.2341, 1111.2206, "obstacle");
+		obstacle_4.setOrigin(0.0, 0.0);
+		obstacle_4.setScale(3.792129, 4.044937);
+		
+		var obstacle_5 = this.add.obstacle(503.1258, 2526.948, "obstacle");
+		obstacle_5.setOrigin(0.0, 0.0);
+		obstacle_5.setScale(3.792129, 4.044937);
+		
+		this.fObstacle = this.add.group([ obstacle_5, obstacle_4, obstacle_3, obstacle_2, obstacle_1, obstacle ]);
+		
+		this.fMapScene = mapScene;
 		
 	}
+	
 	
 	
 	/* START-USER-CODE */
@@ -29,61 +54,23 @@ class Map05 extends Phaser.Scene {
 	}
 	create() {
 		this._create();
-		this.dialogueIteration = 0
-		this.dialogueState = false;
-		this.game.gold = 0;
-		this.game.currentMap = "Map01"
-		this.fHero.setPosition(this.dataScene.x,this.dataScene.y)
-		this.heroAttack = this.add.group();
-		this.physics.add.overlap(this.heroAttack,this.fEnemies,this.attackEnemyCollision)
-		this.keys=this.input.keyboard.addKeys('Z,S,Q,D,SPACE')
-		
-		
-		//add hud 
-		this.scene.run("menu_hud")
+		this.scene.get("mySceneManager").createMap(this);
 	}
 	
 
 	update() {
-		if(!this.dialogueState){
-			
-			if(this.keys.Z.isDown) {
-	               this.fHero.y -=10
-			}
-			
-			if(this.keys.S.isDown){
-	                this.fHero.y +=10
-			}
-			if(this.keys.D.isDown){
-	                this.fHero.x +=10
-			}
-			if(this.keys.Q.isDown){
-	                this.fHero.x -=10
-			}
-			
-		}
-		if(this.input.activePointer.leftButtonDown( ) ){
-			//console.log("click left!")
-			if(  (this.fHero.timeAttack.state) && this.input.activePointer.y <=3060 ){
-				
-				// Change angle 
-				let angle = this.utils.findAngle(this.fHero.x,this.fHero.y,this.input.activePointer.x,this.input.activePointer.y)
-				angle -=0.5
-				let a =this.add.slash(this.fHero,angle)
-				this.heroAttack.add(a)
-				this.fHero.timeAttack.state = false
-			}
 
-		}
+	
+			if(!this.sys.isTransitioning()){//
+					this.scene.get("mySceneManager").updateMap(this);
+					if(this.fHero.y <=1256 && this.fHero.x >=3268){
+						//go in map01
+						this.changeTransitionMap("Map01",138,1221,"right")
+						
+					}
+				
+		    }
 		
-		if(this.input.activePointer.rightButtonDown( ) ){
-			//console.log("click right!")
-		}
-		
-		if(this.fHero.y <=1256 && this.fHero.x >=3268){
-			//go in map01
-			this.scene.start("Map01",{x:138,y:1221})
-		}
 		
 	}
 

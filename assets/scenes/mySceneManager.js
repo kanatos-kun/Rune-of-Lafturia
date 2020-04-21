@@ -14,8 +14,131 @@ class mySceneManager extends Phaser.Scene {
 	/* START-USER-CODE */
 	
 	createMap(scene) {
+		//transition managing!
+		scene.events.on("transitionstart",function(from,duration){
+			if(this.dataScene.dir ==="left"){
+				this.fMapScene.x = -1650 
+			}else if(this.dataScene.dir ==="right"){
+				this.fMapScene.x =4950
+			}else if(this.dataScene.dir ==="top"){
+				this.fMapScene.y =-1530
+			}else if(this.dataScene.dir ==="bottom"){
+				this.fMapScene.y =4590
+			}
+			//scene that have implied transition //
+			//-----------------------------------//
+			from.fHero.setActive(false)
+			
+			
+			// Probleme with fEnemie From *_*
+			/*
+			if(from.fEnemies !== undefined){
+				Phaser.Actions.Call(from.fEnemies.getChildren(),function(item){
+					item.setVisible(false)
+					item.setActive(false)
+				})
+				
+			}  */
+			//from.fHero = null
+
+			if(from.fWarp !== undefined){
+				Phaser.Actions.Call(from.fWarp.getChildren(),function(item){
+					item.setVisible(false)
+					item.setActive(false)
+				})
+			}
+			
+			if(from.fNpc !== undefined){
+				Phaser.Actions.Call(from.fNpc.getChildren(),function(item){
+					item.setVisible(false)
+					item.setActive(false)
+				})
+			}
+
+
+			/*from.fWarp.setVisible(false)
+			from.fNpc.setVisible(false) */
+			
+			
+			//scene that transition //
+			//-----------------------------------//
+			this.fHero.setVisible(false)
+			
+			if(scene.fEnemies !== undefined){
+				Phaser.Actions.Call(scene.fEnemies.getChildren(),function(item){
+					item.setVisible(false)
+					item.setActive(false)
+				})
+			}
+			
+			
+			if(scene.fWarp !== undefined){
+				Phaser.Actions.Call(scene.fWarp.getChildren(),function(item){
+					item.setVisible(false)
+					item.setActive(false)
+				})
+			}
+			
+			if(scene.fNpc !== undefined){
+				Phaser.Actions.Call(scene.fNpc.getChildren(),function(item){
+					item.setVisible(false)
+					item.setActive(false)
+				})
+			}
+
+
+			
+			
+			
+			this.tweens.add({
+				targets:this.fMapScene,
+				x:1650,
+				y:1530,
+		      ease: 'Power1',
+				duration:duration
+			})
+			
+
+		},scene)
+		
+		
+		scene.events.on("transitioncomplete",function(myScene){
+			
+			if(scene.fEnemies !== undefined){
+			Phaser.Actions.Call(scene.fEnemies.getChildren(),function(item){
+				item.setVisible(true)
+				item.setActive(true)
+			})
+			}
+
+			if(scene.fWarp !== undefined){
+			Phaser.Actions.Call(scene.fWarp.getChildren(),function(item){
+				item.setVisible(true)
+				item.setActive(true)
+			})
+			}
+
+			if(scene.fNpc !== undefined){
+			Phaser.Actions.Call(scene.fNpc.getChildren(),function(item){
+				item.setVisible(true)
+				item.setActive(true)
+			})
+			}
+
+			
+			
+			
+			scene.fHero.setVisible(true)
+		},this)
+		
+		
+		
+		
+		scene.physics.world.setBounds(-200,-200,3720,3380)
 		if(scene.fHero === undefined){
 			scene.fHero = scene.add.hero(1075.0101, 1528.0022, "hero");
+		}else{
+			scene.fHero = scene.add.hero(scene.dataScene.x,scene.dataScene.y,"hero")
 		}
 
 		scene.dialogueIteration = 0
@@ -24,53 +147,109 @@ class mySceneManager extends Phaser.Scene {
 			scene.fEnemies = this.add.group();
 		}
 		
-		if(scene.fWarp !== undefined){
+		if(scene.fWarp === undefined){
 			scene.fWarp = this.add.group();
 		}
 		
-		if(scene.fNpc !== undefined){
-			scene.fPnc = this.add.group();
+		if(scene.fNpc === undefined){
+			scene.fNpc = this.add.group();
+		}
+		
+		if(scene.fObstacle === undefined){
+			scene.fObstacle = this.add.group();
 		}
 
 		scene.fHero.setPosition(scene.dataScene.x,scene.dataScene.y)
 		scene.heroAttack = scene.add.group();
 		scene.game.currentMap = scene.scene.key
+		scene.physics.add.collider(scene.fHero,scene.fObstacle)
+		scene.physics.add.collider(scene.fNpc,scene.fObstacle)
+		scene.physics.add.collider(scene.fEnemies,scene.fObstacle)
 		scene.attackEnemyCollision = function(hero,enemy){
 			if(!enemy.invincible.state){
 				enemy.currentHp = enemy.currentHp - hero.attack
 				enemy.invincible.state = true
 			}
-
-		
 		}
 		
+		scene.changeTransitionMap = function(map,posX,posY,dir = "right"){
+			
+			
+			if(dir==="right"){
+				scene.tweens.add({
+					targets:scene.fMapScene,
+					x:-3300,
+			       ease: 'Power1',
+					duration:1500
+				})
+			}else if(dir==="left"){
+				scene.tweens.add({
+					targets:scene.fMapScene,
+					x:4950,
+			        ease: 'Power1',
+					duration:1500
+				}) 
+			}else if(dir==="top"){
+
+			
+				scene.tweens.add({
+					targets:scene.fMapScene,
+					y:4590,
+			        ease: 'Power1',
+					duration:1500
+				}) 
+			}else if(dir ==="bottom"){
+				scene.tweens.add({
+					targets:scene.fMapScene,
+					y:-1530,
+			        ease: 'Power1',
+					duration:1500
+				}) 
+			}
+ 
+		
+			scene.scene.transition({
+				target:map,
+				duration:1500,
+				moveAbove:true,
+				data:{x:posX,y:posY,dir:dir}
+			},scene)  
+		}
+			
 		scene.physics.add.overlap(scene.heroAttack,scene.fEnemies,scene.attackEnemyCollision)
+		//scene.physics.add.overlap(scene.fHero,scene.fObstacle,function(){console.log("overlaps with obtstaclte")})
 		scene.keys=scene.input.keyboard.addKeys('Z,S,Q,D,SPACE')
 		
 		//add hud 
 		scene.scene.run("menu_hud")
-		
-
+		scene.scene.bringToTop("menu_hud")
+		scene.scene.bringToTop("dialogueWindow")
+		scene.scene.bringToTop("menu_bag")
 	
 	}
 	
 	
 	updateMap(scene) {
 		
+
+			
+
 		if(!scene.dialogueState){
-					
+					if(scene.fHero.body !== undefined){
+						scene.fHero.body.setVelocity(0,0)
+					}
 					if(scene.keys.Z.isDown) {
-			               scene.fHero.y -=10
+			               scene.fHero.body.setVelocityY(-700)
 					}
 					
 					if(scene.keys.S.isDown){
-			                scene.fHero.y +=10
+			                scene.fHero.body.setVelocityY(700)
 					}
 					if(scene.keys.D.isDown){
-			                scene.fHero.x +=10
+			                scene.fHero.body.setVelocityX(700)
 					}
 					if(scene.keys.Q.isDown){
-			                scene.fHero.x -=10
+			                scene.fHero.body.setVelocityX(-700)
 					}
 					
 				}
@@ -92,7 +271,8 @@ class mySceneManager extends Phaser.Scene {
 				
 				if(this.input.activePointer.rightButtonDown( ) ){
 					//console.log("click right!")
-				} 
+				}
+
 		
 		
 		

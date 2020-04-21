@@ -13,16 +13,35 @@ class Map04 extends Phaser.Scene {
 	
 	_create() {
 	
-		this.add.image(1654.7802, 1531.0159, "map04");
-		
-		var hero = this.add.hero(1470.3036, 676.301, "hero");
+		var mapScene = this.add.image(1654.7802, 1531.0159, "map04");
 		
 		var villager_01 = this.add.villager_01(1504.6808, 1635.3568, "villager_01");
 		
-		this.fHero = hero;
+		var obstacle = this.add.obstacle(-49.576813, 1632.7251, "obstacle");
+		obstacle.setOrigin(0.0, 0.0);
+		obstacle.setScale(3.3374913, 24.125095);
+		
+		var obstacle_1 = this.add.obstacle(3117.4426, 1639.7363, "obstacle");
+		obstacle_1.setOrigin(0.0, 0.0);
+		obstacle_1.setScale(3.3374913, 24.125095);
+		
+		var obstacle_2 = this.add.obstacle(5.405919, 2826.9873, "obstacle");
+		obstacle_2.setOrigin(0.0, 0.0);
+		obstacle_2.setScale(58.46311, 4.1973524);
+		
+		var obstacle_3 = this.add.obstacle(2829.624, 878.21674, "obstacle");
+		obstacle_3.setOrigin(0.0, 0.0);
+		obstacle_3.setScale(2.1415079, 2.7582624);
+		
+		this.fNpc = this.add.group([ villager_01 ]);
+		this.fObstacle = this.add.group([ obstacle_3, obstacle_2, obstacle_1, obstacle ]);
+		
+		this.fMapScene = mapScene;
 		this.fVillager_01 = villager_01;
-
+		
 	}
+	
+	
 	
 	
 	
@@ -34,90 +53,51 @@ class Map04 extends Phaser.Scene {
 	
 	create() {
 		this._create();
-		this.dialogueIteration = 0
-		this.dialogueState = false;
-		this.game.currentMap = "Map04"
-		this.fHero.setPosition(this.dataScene.x,this.dataScene.y)
-		this.heroAttack = this.add.group();
-		this.keys=this.input.keyboard.addKeys('Z,S,Q,D,SPACE')
-		
-		
-		//add hud 
-		this.scene.run("menu_hud")
-	}
-	
-	attackEnemyCollision(hero,enemy){
-		if(!enemy.invincible.state){
-			enemy.currentHp = enemy.currentHp - hero.attack
-			enemy.invincible.state = true
-		}
-
-		
+		this.scene.get("mySceneManager").createMap(this);
 	}
 	
 
 	update() {
-		if(!this.dialogueState){
-			
-			if(this.keys.Z.isDown) {
-	               this.fHero.y -=10
-			}
-			
-			if(this.keys.S.isDown){
-	                this.fHero.y +=10
-			}
-			if(this.keys.D.isDown){
-	                this.fHero.x +=10
-			}
-			if(this.keys.Q.isDown){
-	                this.fHero.x -=10
-			}
-			
-		}
-		
-		if(Phaser.Input.Keyboard.JustDown(this.keys.SPACE)){
-				//check if it's in the detection zone
-				if(Phaser.Math.Distance.Between(this.fHero.x,this.fHero.y,this.fVillager_01.x,this.fVillager_01.y) < 350 ){
-					this.dialogueState = true;
-					
-					
-					let textConfig = {
-				    state:this.dialogueState,
-					tagName:{isVisible:true,text:"Clara"},
-					text: ["Bonjour jeune hero, pouvez vous\nm'aidez ?"],
-					textIteration : this.dialogueIteration
-					}
-					if(this.dialogueIteration >= textConfig.text.length){
-						this.dialogueState = false;
-						textConfig.state = this.dialogueState;
-						this.dialogueIteration = 0
-					}else{
-						this.dialogueIteration += 1
-					}
 
-					this.scene.run("dialogueWindow", textConfig)
-
-				} 
-		}
-		if(this.input.activePointer.leftButtonDown( ) ){
-			//console.log("click left!")
-			if(this.fHero.timeAttack.state && this.input.activePointer.y <=3060 ){
-				let angle = this.utils.findAngle(this.fHero.x,this.fHero.y,this.input.activePointer.x,this.input.activePointer.y)
-				angle -=0.5
-				let a =this.add.slash(this.fHero,angle)
-				this.heroAttack.add(a)
-				this.fHero.timeAttack.state = false
+		
+		//check if there's no transition'
+		if(!this.sys.isTransitioning()){
+		this.scene.get("mySceneManager").updateMap(this);
+			
+			if(Phaser.Input.Keyboard.JustDown(this.keys.SPACE)){
+					//check if it's in the detection zone
+				
+					if(Phaser.Math.Distance.Between(this.fHero.x,this.fHero.y,this.fVillager_01.x,this.fVillager_01.y) < 350 ){
+						this.dialogueState = true;
+						this.fHero.body.setVelocity(0,0)
+						
+						let textConfig = {
+					    state:this.dialogueState,
+						tagName:{isVisible:true,text:"Clara"},
+						text: ["Bonjour jeune hero, pouvez vous\nm'aidez ?"],
+						textIteration : this.dialogueIteration
+						}
+						if(this.dialogueIteration >= textConfig.text.length){
+							this.dialogueState = false;
+							textConfig.state = this.dialogueState;
+							this.dialogueIteration = 0
+						}else{
+							this.dialogueIteration += 1
+						}
+	
+						this.scene.run("dialogueWindow", textConfig)
+	
+					} 
 			}
+	
+			
+			if(this.fHero.y <=50){
+				this.changeTransitionMap("Map03",1668,2807,"top")
+			}
+			
+			
+		}
 
-		}
-		
-		if(this.input.activePointer.rightButtonDown( ) ){
-			//console.log("click right!")
-		}
-		
-		if(this.fHero.y <=50){
-			this.scene.start("Map03",{x:1668,y:2807})
-		}
 		
 	}
 

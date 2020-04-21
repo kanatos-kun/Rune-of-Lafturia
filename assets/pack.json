@@ -290,10 +290,21 @@
       "type": "script",
       "key": "warp1",
       "url": "assets/prefab/warp.js"
+    },
+    {
+      "type": "image",
+      "key": "obstacle",
+      "url": "assets/images/obstacle/rect815.png",
+      "normalMap": ""
+    },
+    {
+      "type": "script",
+      "key": "obstacle",
+      "url": "assets/prefab/obstacle.js"
     }
   ]},
   "meta": {
-    "generated": "1587368177092",
+    "generated": "1587462771080",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",

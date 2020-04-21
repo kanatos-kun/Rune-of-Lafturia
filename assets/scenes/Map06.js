@@ -13,17 +13,27 @@ class Map06 extends Phaser.Scene {
 	
 	_create() {
 	
-		this.add.image(1658.0287, 1538.0387, "map06");
-		
-		var hero = this.add.hero(1994.5167, 894.9726, "hero");
+		var mapScene = this.add.image(1668.8219, 1527.2455, "map06");
 		
 		var warp = this.add.warp(1477.7998, 483.69843, "warp");
+		warp.setData("zone", "Map03");
+		warp.setData("x", 288);
+		warp.setData("y", 2016);
 		warp.setScale(1.6189777, 1.5708395);
 		
-		this.fHero = hero;
-		this.fWarp = warp;
+		var obstacle = this.add.obstacle(3165.5356, 10.788564, "obstacle");
+		obstacle.setOrigin(0.0, 0.0);
+		obstacle.setScale(4.1301847, 36.511192);
+		
+		this.fWarp = this.add.group([ warp ]);
+		this.fWarp = this.add.group([ warp ]);
+		this.fObstacle = this.add.group([ obstacle ]);
+		
+		this.fMapScene = mapScene;
 		
 	}
+	
+	
 	
 	
 	
@@ -34,60 +44,24 @@ class Map06 extends Phaser.Scene {
 	}
 	create() {
 		this._create();
-		this.dialogueIteration = 0
-		this.dialogueState = false;
-		this.game.gold = 0;
-		this.game.currentMap = "Map01"
-		this.fHero.setPosition(this.dataScene.x,this.dataScene.y)
-		this.heroAttack = this.add.group();
-		this.physics.add.overlap(this.heroAttack,this.fEnemies,this.attackEnemyCollision)
-		this.keys=this.input.keyboard.addKeys('Z,S,Q,D,SPACE')
-		
-		
-		//add hud 
-		this.scene.run("menu_hud")
+		this.scene.get("mySceneManager").createMap(this);
 	}
 	
 
 	update() {
-		if(!this.dialogueState){
+		this.scene.get("mySceneManager").updateMap(this);
+		
+		if(!this.sys.isTransitioning()){
+			this.scene.get("mySceneManager").updateMap(this);	
+			if(this.fHero.y >=2000 && this.fHero.x >=3248){
+				this.changeTransitionMap("Map03",128,2084,"right")
 			
-			if(this.keys.Z.isDown) {
-	               this.fHero.y -=10
 			}
-			
-			if(this.keys.S.isDown){
-	                this.fHero.y +=10
-			}
-			if(this.keys.D.isDown){
-	                this.fHero.x +=10
-			}
-			if(this.keys.Q.isDown){
-	                this.fHero.x -=10
-			}
-			
-		}
-		if(this.input.activePointer.leftButtonDown( ) ){
-			//console.log("click left!")
-			if(  (this.fHero.timeAttack.state) && this.input.activePointer.y <=3060 ){
 				
-				// Change angle 
-				let angle = this.utils.findAngle(this.fHero.x,this.fHero.y,this.input.activePointer.x,this.input.activePointer.y)
-				angle -=0.5
-				let a =this.add.slash(this.fHero,angle)
-				this.heroAttack.add(a)
-				this.fHero.timeAttack.state = false
-			}
+		}
+		
+		
 
-		}
-		
-		if(this.input.activePointer.rightButtonDown( ) ){
-			//console.log("click right!")
-		}
-		
-		if(this.fHero.y >=2000 && this.fHero.x >=3248){
-			this.scene.start("Map03",{x:128,y:2084})
-		}
 		
 	}
 

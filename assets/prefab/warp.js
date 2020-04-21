@@ -1,4 +1,4 @@
-class Warp extends Phaser.Physics.Arcade.Sprite {
+class Warp extends Phaser.GameObjects.Image  {
 
 	/**
 	 * Warp
@@ -11,11 +11,21 @@ class Warp extends Phaser.Physics.Arcade.Sprite {
 	 */
 	constructor(scene, x, y) {
 		super(scene, x, y, "warp");
-		scene.physics.add.existing(this)
+		
+		if(this.scene.game.config.physics.arcade.debug){
+		this.detectionZone_debug = new DetectionZone(this.scene,this,400)
+		this.scene.add.existing(this.detectionZone_debug)
+		}
+		
+		
 	}
 	
 	preUpdate(time,delta){
-		super.preUpdate(time,delta)
+		//super.preUpdate(time,delta)
+		if(Phaser.Math.Distance.Between(this.scene.fHero.x,this.scene.fHero.y,this.x,this.y) < 200 ){
+			console.log(this.data.get("zone"))
+			this.scene.scene.start(this.data.get("zone"),{x:this.data.get("x"),y:this.data.get("y")})
+		}
 	}
 
 }

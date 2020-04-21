@@ -13,10 +13,27 @@ class Map02 extends Phaser.Scene {
 	
 	_create() {
 	
-		this.add.image(1647.516, 1536.0804, "map02");
+		var mapScene = this.add.image(1661.4543, 1536.0804, "map02");
 		
+		var obstacle = this.add.obstacle(-150.59998, 3.4462843, "obstacle");
+		obstacle.setOrigin(0.0, 0.0);
+		obstacle.setScale(5.2347856, 61.56116);
+		
+		var obstacle_1 = this.add.obstacle(3147.3188, -3.216182, "obstacle");
+		obstacle_1.setOrigin(0.0, 0.0);
+		obstacle_1.setScale(5.2347856, 61.56116);
+		
+		var obstacle_2 = this.add.obstacle(2401.123, 1302.6267, "obstacle");
+		obstacle_2.setOrigin(0.0, 0.0);
+		obstacle_2.setScale(4.2830124, 5.0634723);
+		
+		this.fObstacle = this.add.group([ obstacle_2, obstacle_1, obstacle ]);
+		
+		this.fMapScene = mapScene;
 		
 	}
+	
+	
 	
 	/* START-USER-CODE */
 
@@ -28,74 +45,27 @@ class Map02 extends Phaser.Scene {
 	create() {
 		this._create();
 		this.scene.get("mySceneManager").createMap(this);
-		this.dialogueIteration = 0
-		this.dialogueState = false;
-		//this.fHero.setPosition(this.dataScene.x,this.dataScene.y)
-		this.heroAttack = this.add.group();
-		this.keys=this.input.keyboard.addKeys('Z,S,Q,D,SPACE')
-		
-		//add hud 
-		this.scene.run("menu_hud")
-	}
-	
-	attackEnemyCollision(hero,enemy){
-		if(!enemy.invincible.state){
-			enemy.currentHp = enemy.currentHp - hero.attack
-			enemy.invincible.state = true
-		}
-
-		
 	}
 	
 
-	update() {
+	update(){
 		
 		
-		this.scene.get("mySceneManager").updateMap(this);
-		/*
-		if(!this.dialogueState){
-			
-			if(this.keys.Z.isDown) {
-	               this.fHero.y -=10
-			}
-			
-			if(this.keys.S.isDown){
-	                this.fHero.y +=10
-			}
-			if(this.keys.D.isDown){
-	                this.fHero.x +=10
-			}
-			if(this.keys.Q.isDown){
-	                this.fHero.x -=10
-			}
-			
-		} */
-		if(this.input.activePointer.leftButtonDown( ) ){
-			//console.log("click left!")
-			if(this.fHero.timeAttack.state && this.input.activePointer.y <=3060 ){
+
+		if(!this.sys.isTransitioning()){//
+			this.scene.get("mySceneManager").updateMap(this);
+				if(this.fHero.y >=2900){
+					this.changeTransitionMap("Map03",1428,137,"bottom")
+				}
+				if(this.fHero.y <=30){
+					this.changeTransitionMap("Map01",1668,2807,"top")
+				}
 				
-				// Change angle 
-				let angle = this.utils.findAngle(this.fHero.x,this.fHero.y,this.input.activePointer.x,this.input.activePointer.y)
-				angle -=0.5
-				let a =this.add.slash(this.fHero,angle)
-				this.heroAttack.add(a)
-				this.fHero.timeAttack.state = false
 			}
 
 		}
-		
-		if(this.input.activePointer.rightButtonDown( ) ){
-			//console.log("click right!")
-		}
-		
-		if(this.fHero.y >=2900){
-			this.scene.start("Map03",{x:1428,y:137})
-		}
-		if(this.fHero.y <=30){
-			this.scene.start("Map01",{x:1668,y:2807})
-		}
-		
-	}
+
+
 
 	/* END-USER-CODE */
 }

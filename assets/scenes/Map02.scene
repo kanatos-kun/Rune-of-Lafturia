@@ -5,22 +5,81 @@
   "displayList": {
     "-id": "ed9ed11a-e1c9-482a-ba13-4f8f56e94c6b",
     "-type": "DisplayList",
-    "children": [{
-      "-id": "1ef590d5-30b9-4158-86e8-d9eec480edb3",
-      "-type": "Image",
-      "children": [],
-      "variableName": "map02",
-      "variableField": false,
-      "x": 1647.5159912109375,
-      "y": 1536.0804443359375,
-      "textureKey": "map02",
-      "textureFrame": "map02"
-    }]
+    "children": [
+      {
+        "-id": "1ef590d5-30b9-4158-86e8-d9eec480edb3",
+        "-type": "Image",
+        "children": [],
+        "variableName": "mapScene",
+        "variableField": true,
+        "x": 1661.454345703125,
+        "y": 1536.0804443359375,
+        "textureKey": "map02",
+        "textureFrame": "map02"
+      },
+      {
+        "-id": "e931e2ff-895c-4ed1-a303-2f633b42545d",
+        "-type": "Image",
+        "children": [],
+        "variableName": "obstacle",
+        "variableField": false,
+        "objectFactory": "obstacle",
+        "x": -150.5999755859375,
+        "y": 3.446284294128418,
+        "scaleX": 5.234785556793213,
+        "scaleY": 61.561161041259766,
+        "originX": 0,
+        "originY": 0,
+        "textureKey": "obstacle",
+        "textureFrame": "obstacle"
+      },
+      {
+        "-id": "6f35b253-bbd2-4db9-8c2a-af2a9a1cd6c2",
+        "-type": "Image",
+        "children": [],
+        "variableName": "obstacle_1",
+        "variableField": false,
+        "objectFactory": "obstacle",
+        "x": 3147.31884765625,
+        "y": -3.216181993484497,
+        "scaleX": 5.234785556793213,
+        "scaleY": 61.561161041259766,
+        "originX": 0,
+        "originY": 0,
+        "textureKey": "obstacle",
+        "textureFrame": "obstacle"
+      },
+      {
+        "-id": "31579553-7a60-42fa-9c2a-4523782ca97b",
+        "-type": "Image",
+        "children": [],
+        "variableName": "obstacle_2",
+        "variableField": false,
+        "objectFactory": "obstacle",
+        "x": 2401.123046875,
+        "y": 1302.626708984375,
+        "scaleX": 4.283012390136719,
+        "scaleY": 5.063472270965576,
+        "originX": 0,
+        "originY": 0,
+        "textureKey": "obstacle",
+        "textureFrame": "obstacle"
+      }
+    ]
   },
   "groups": {
     "-id": "dde7314a-d2f9-4394-bce8-379fb921992a",
     "-type": "Groups",
-    "children": []
+    "children": [{
+      "-id": "7e30819d-9891-4dfe-843b-a8e22bc9cba8",
+      "children": [
+        {"-id": "31579553-7a60-42fa-9c2a-4523782ca97b"},
+        {"-id": "6f35b253-bbd2-4db9-8c2a-af2a9a1cd6c2"},
+        {"-id": "e931e2ff-895c-4ed1-a303-2f633b42545d"}
+      ],
+      "variableName": "obstacle",
+      "variableField": true
+    }]
   },
   "borderWidth": 3300,
   "borderHeight": 3060,

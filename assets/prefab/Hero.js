@@ -12,12 +12,14 @@ class Hero extends Phaser.Physics.Arcade.Sprite {
 	constructor(scene, x, y) {
 		super(scene, x, y, "hero");
 		scene.physics.add.existing(this)
+		this.setCollideWorldBounds(true)
 		this.timeAttack={
 			c:0,t:5,state:true
 		}
 		this.hp = 12;
 		this.currentHp=11;
-		
+		this.body.setBounce(1)
+		this.body.setSize(200,200)
 		if(this.scene.game.config.physics.arcade.debug){
 		this.popup_debug = new Window_debug_popup(this.scene,this,"hp:" + this.currentHp + "/" + this.hp)
 		this.scene.add.existing(this.popup_debug)

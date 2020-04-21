@@ -21,6 +21,7 @@ class Bee extends Phaser.Physics.Arcade.Sprite {
 			c:0,
 			t:4
 		}
+		this.setCollideWorldBounds(true)
 		if(this.scene.game.config.physics.arcade.debug){
 		this.popup_debug = new Window_debug_popup(this.scene,this,"hp:" + this.currentHp + "/" + this.hp)
 		this.scene.add.existing(this.popup_debug)
