@@ -51,7 +51,6 @@ class Map03 extends Phaser.Scene {
 	}
 
 	update() {
-
 				if(!this.sys.isTransitioning()){//
 				
 					this.scene.get("mySceneManager").updateMap(this);

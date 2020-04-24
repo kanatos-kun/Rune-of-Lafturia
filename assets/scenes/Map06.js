@@ -49,8 +49,6 @@ class Map06 extends Phaser.Scene {
 	
 
 	update() {
-		this.scene.get("mySceneManager").updateMap(this);
-		
 		if(!this.sys.isTransitioning()){
 			this.scene.get("mySceneManager").updateMap(this);	
 			if(this.fHero.y >=2000 && this.fHero.x >=3248){

@@ -1,0 +1,120 @@
+{
+  "-app": "Scene Editor - Phaser Editor v2.1.6",
+  "-version": 1,
+  "compilerLang": "JAVA_SCRIPT_6",
+  "displayList": {
+    "-id": "c4a154c9-166c-4647-8c9e-af9e58d33c4d",
+    "-type": "DisplayList",
+    "children": [
+      {
+        "-id": "438d5cac-19f6-4c7e-b246-6a1d87b6a87c",
+        "-type": "Image",
+        "children": [],
+        "variableName": "titleScreen_loadGame_blackScreen",
+        "variableField": false,
+        "x": -77.05164337158203,
+        "y": -67.17345428466797,
+        "scaleX": 1.0538101196289062,
+        "scaleY": 1.052551507949829,
+        "originX": 0,
+        "originY": 0,
+        "textureKey": "titleScreen_loadGame_blackScreen",
+        "textureFrame": "titleScreen_loadGame_blackScreen"
+      },
+      {
+        "-id": "9b22b887-3836-41dc-bccc-fc77eecc1b80",
+        "-type": "Image",
+        "children": [],
+        "variableName": "titleScreen_loadGame_window",
+        "variableField": false,
+        "x": 1609.8624267578125,
+        "y": 1470.288818359375,
+        "textureKey": "titleScreen_loadGame_window",
+        "textureFrame": "titleScreen_loadGame_window"
+      },
+      {
+        "-id": "9379a035-969a-4668-b262-9dc443e4bd34",
+        "-type": "Image",
+        "children": [],
+        "variableName": "buttonPrecedent",
+        "variableField": true,
+        "data": {"text": "\"<=\""},
+        "objectFactory": "uiButton",
+        "x": 658.7888793945312,
+        "y": 2650.6181640625,
+        "textureKey": "button_empty",
+        "textureFrame": "button_empty"
+      },
+      {
+        "-id": "8af9c510-49be-4e92-b20c-77d913f8b511",
+        "-type": "Image",
+        "children": [],
+        "variableName": "titleScreen_loadGame_buttonLoad",
+        "variableField": true,
+        "data": {"text": "\"save\""},
+        "objectFactory": "uiButton",
+        "x": 2686.905029296875,
+        "y": 2656.24658203125,
+        "textureKey": "button_empty",
+        "textureFrame": "button_empty"
+      },
+      {
+        "-id": "343ec353-31fc-49f4-a7bc-afddf38f5da0",
+        "-type": "Image",
+        "children": [],
+        "variableName": "titleScreen_loadGame_soloSlot",
+        "variableField": false,
+        "x": 1631.6383056640625,
+        "y": 903.5009765625,
+        "textureKey": "titleScreen_loadGame_soloSlot",
+        "textureFrame": "titleScreen_loadGame_soloSlot"
+      },
+      {
+        "-id": "92edff56-f576-4692-b7ea-a8901f66dffb",
+        "-type": "Image",
+        "children": [],
+        "variableName": "titleScreen_loadGame_soloSlot_1",
+        "variableField": false,
+        "x": 1638.9425048828125,
+        "y": 1463.29638671875,
+        "textureKey": "titleScreen_loadGame_soloSlot",
+        "textureFrame": "titleScreen_loadGame_soloSlot"
+      },
+      {
+        "-id": "b6cddbc6-3498-46f7-ac73-28ba116ce4ff",
+        "-type": "Image",
+        "children": [],
+        "variableName": "titleScreen_loadGame_soloSlot_2",
+        "variableField": false,
+        "x": 1636.7091064453125,
+        "y": 2030.513671875,
+        "textureKey": "titleScreen_loadGame_soloSlot",
+        "textureFrame": "titleScreen_loadGame_soloSlot"
+      },
+      {
+        "-id": "2502a4a7-0d0d-4ad5-a7ba-b4fc8372e07a",
+        "-type": "Text",
+        "children": [],
+        "variableName": "loadHeaderText",
+        "variableField": false,
+        "x": 642.0271606445312,
+        "y": 160.66757202148438,
+        "scaleX": 1.1996853351593018,
+        "scaleY": 1.2567106485366821,
+        "text": "Save Game\r\n",
+        "fontSize": "300px",
+        "color": "#000000"
+      }
+    ]
+  },
+  "groups": {
+    "-id": "2226f0e2-2042-41cc-8920-d437f757533b",
+    "-type": "Groups",
+    "children": []
+  },
+  "borderWidth": 3300,
+  "borderHeight": 3060,
+  "createMethodName": "_create",
+  "methodContextType": "SCENE",
+  "sceneKey": "saveGameScreen"
+}

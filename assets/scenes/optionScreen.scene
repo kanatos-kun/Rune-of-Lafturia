@@ -1,0 +1,47 @@
+{
+  "-app": "Scene Editor - Phaser Editor v2.1.6",
+  "-version": 1,
+  "compilerLang": "JAVA_SCRIPT_6",
+  "displayList": {
+    "-id": "78d1a49b-3c8a-4a54-8d5c-ea6cf2acb3e1",
+    "-type": "DisplayList",
+    "children": [
+      {
+        "-id": "cd993f93-8cf4-47ce-9c1f-8a6336753529",
+        "-type": "Image",
+        "children": [],
+        "variableName": "black",
+        "variableField": false,
+        "x": 1647.8184814453125,
+        "y": 1528.0615234375,
+        "scaleX": 1.0648891925811768,
+        "scaleY": 1.0664417743682861,
+        "textureKey": "titleScreen_loadGame_blackScreen",
+        "textureFrame": "titleScreen_loadGame_blackScreen"
+      },
+      {
+        "-id": "118204cf-e315-4702-b41f-b3c64bce1bbe",
+        "-type": "Image",
+        "children": [],
+        "variableName": "buttonPrecedent",
+        "variableField": true,
+        "data": {"text": "\"<=\""},
+        "objectFactory": "uiButton",
+        "x": 559.3351440429688,
+        "y": 2799.259521484375,
+        "textureKey": "button_empty",
+        "textureFrame": "button_empty"
+      }
+    ]
+  },
+  "groups": {
+    "-id": "7b450fe5-e11d-4bc5-b8fe-9fe2e9102160",
+    "-type": "Groups",
+    "children": []
+  },
+  "borderWidth": 3300,
+  "borderHeight": 3060,
+  "createMethodName": "_create",
+  "methodContextType": "SCENE",
+  "sceneKey": "optionScreen"
+}

@@ -14,6 +14,7 @@ class Coin extends Phaser.Physics.Arcade.Sprite {
 		scene.physics.add.existing(this)
 		this.type = "coin";
 		this.setCollideWorldBounds(true)
+		scene.fGold.add(this)
 	}
 
 }

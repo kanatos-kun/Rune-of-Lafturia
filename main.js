@@ -38,8 +38,13 @@ class Boot extends Phaser.Scene {
 
 	create() {
 		this.game.gold = 0;
-		this.game.currentMap = "Map03"
-		this.scene.start("Map03",{x:1492,y:1628});
+		this.game.hero = {
+			currentHp : 12,
+			hp : 12
+		}
+		this.game.currentMap = "Map01"
+		this.scene.start("titleScreen")
+		//this.scene.start("Map03",{x:1492,y:1628});
 	}
 
 }

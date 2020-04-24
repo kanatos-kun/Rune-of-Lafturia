@@ -10,61 +10,18 @@
         "-id": "e818ccc6-2ed6-488d-9280-86e1aec2a783",
         "-type": "Text",
         "children": [],
-        "variableName": "gold_value_text",
-        "variableField": false,
-        "x": 2790.930908203125,
-        "y": 67.953857421875,
+        "variableName": "goldText",
+        "variableField": true,
+        "x": 78.62752532958984,
+        "y": 257.8127136230469,
         "scaleX": 2.5662448406219482,
         "scaleY": 2.9901435375213623,
         "scrollFactorX": 0,
         "scrollFactorY": 0,
-        "text": "X 10",
+        "text": "X 0",
         "fontSize": "54px",
+        "color": "#000000",
         "fixedWidth": 210
-      },
-      {
-        "-id": "9006235e-ac3c-4378-995c-bb6db0031df4",
-        "-type": "Image",
-        "children": [],
-        "variableName": "full_Heart",
-        "variableField": false,
-        "x": 190.1500244140625,
-        "y": 153.28431701660156,
-        "textureKey": "full_Heart",
-        "textureFrame": "full_Heart"
-      },
-      {
-        "-id": "f6640590-9a98-4f44-a027-8700bb7348ed",
-        "-type": "Image",
-        "children": [],
-        "variableName": "full_Heart_1",
-        "variableField": false,
-        "x": 493.38568115234375,
-        "y": 158.0975799560547,
-        "textureKey": "full_Heart",
-        "textureFrame": "full_Heart"
-      },
-      {
-        "-id": "e69d8164-5aab-457e-a80d-cd07a2fb4da0",
-        "-type": "Image",
-        "children": [],
-        "variableName": "empty_heart",
-        "variableField": false,
-        "x": 815.8743896484375,
-        "y": 167.72412109375,
-        "textureKey": "empty_heart",
-        "textureFrame": "empty_heart"
-      },
-      {
-        "-id": "f1bbfd70-4bd2-4e1b-8618-40e4caca87e4",
-        "-type": "Image",
-        "children": [],
-        "variableName": "heart_3-4",
-        "variableField": false,
-        "x": 809.2932739257812,
-        "y": 167.9127960205078,
-        "textureKey": "heart_3-4",
-        "textureFrame": "heart_3-4"
       },
       {
         "-id": "71be0188-426b-4874-8693-fd5ef359dcd0",
@@ -72,7 +29,7 @@
         "children": [],
         "variableName": "background_ui_bottom",
         "variableField": false,
-        "x": 1631.2762451171875,
+        "x": 1638.3524169921875,
         "y": 3250.888427734375,
         "textureKey": "background_ui_bottom",
         "textureFrame": "background_ui_bottom"
@@ -100,37 +57,17 @@
         "textureFrame": "bag"
       },
       {
-        "-id": "f5dedf20-11ae-4de2-acff-0d5e73519a6b",
+        "-id": "50b7fe46-2044-4ca1-9718-d6db96d63e09",
         "-type": "Image",
         "children": [],
-        "variableName": "mana Bar",
-        "variableField": false,
-        "x": 3129.5302734375,
-        "y": 1427.437255859375,
-        "textureKey": "mana Bar",
-        "textureFrame": "mana Bar"
-      },
-      {
-        "-id": "c0d45837-4ceb-4b6f-b8cb-ed2a6b4ff459",
-        "-type": "Image",
-        "children": [],
-        "variableName": "fuel mana",
-        "variableField": false,
-        "x": 3132.450927734375,
-        "y": 1439.22314453125,
-        "textureKey": "fuel mana",
-        "textureFrame": "fuel mana"
-      },
-      {
-        "-id": "eec67eca-4c50-402d-a9fb-c744a7468443",
-        "-type": "Image",
-        "children": [],
-        "variableName": "coin",
-        "variableField": false,
-        "x": 2624.20947265625,
-        "y": 143.61740112304688,
-        "textureKey": "coin",
-        "textureFrame": "coin"
+        "variableName": "gear",
+        "variableField": true,
+        "x": 3137.333251953125,
+        "y": 122.15567779541016,
+        "scaleX": 3.5323193073272705,
+        "scaleY": 3.179084062576294,
+        "textureKey": "gear",
+        "textureFrame": "gear"
       }
     ]
   },

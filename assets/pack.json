@@ -301,10 +301,151 @@
       "type": "script",
       "key": "obstacle",
       "url": "assets/prefab/obstacle.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "titleScreen",
+      "url": "assets/scenes/titleScreen.js"
+    },
+    {
+      "type": "image",
+      "key": "titleScreen1",
+      "url": "assets/images/titleScreen/titleScreen.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "gameOver_button_titleScreen",
+      "url": "assets/images/gameOver/gameOver_button_titleScreen.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "gameOver_button_checkpoint",
+      "url": "assets/images/gameOver/gameOver_button_checkpoint.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "gameOver",
+      "url": "assets/images/gameOver/gameOver.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "titleScreen_button_credits",
+      "url": "assets/images/titleScreen/titleScreen_button_credits.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "titleScreen_button_loadGame",
+      "url": "assets/images/titleScreen/titleScreen_button_loadGame.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "titleScreen_button_options",
+      "url": "assets/images/titleScreen/titleScreen_button_options.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "titleScreen_button_newGame",
+      "url": "assets/images/titleScreen/titleScreen_button_newGame.png",
+      "normalMap": ""
+    },
+    {
+      "type": "sceneFile",
+      "key": "gameOver",
+      "url": "assets/scenes/gameOver.js"
+    },
+    {
+      "type": "image",
+      "key": "titleScreen_loadGame_blackScreen",
+      "url": "assets/images/titleScreen/titleScreen_loadGame_blackScreen.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "titleScreen_loadGame_buttonDelete",
+      "url": "assets/images/titleScreen/titleScreen_loadGame_buttonDelete.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "titleScreen_loadGame_buttonLoad",
+      "url": "assets/images/titleScreen/titleScreen_loadGame_buttonLoad.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "titleScreen_loadGame_buttonPrecedent",
+      "url": "assets/images/titleScreen/titleScreen_loadGame_buttonPrecedent.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "titleScreen_loadGame_soloSlot",
+      "url": "assets/images/titleScreen/titleScreen_loadGame_soloSlot.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "titleScreen_loadGame_soloSlotSave",
+      "url": "assets/images/titleScreen/titleScreen_loadGame_soloSlotSave.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "titleScreen_loadGame_window",
+      "url": "assets/images/titleScreen/titleScreen_loadGame_window.png",
+      "normalMap": ""
+    },
+    {
+      "type": "script",
+      "key": "uiButton",
+      "url": "assets/prefab/uiButton.js"
+    },
+    {
+      "type": "image",
+      "key": "button_empty",
+      "url": "assets/images/ui/button_empty.png",
+      "normalMap": ""
+    },
+    {
+      "type": "sceneFile",
+      "key": "loadGameScreen",
+      "url": "assets/scenes/loadGameScreen.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "saveGameScreen",
+      "url": "assets/scenes/saveGameScreen.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "optionScreen",
+      "url": "assets/scenes/optionScreen.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "creditScreen",
+      "url": "assets/scenes/creditScreen.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "gameMenuScreen",
+      "url": "assets/scenes/gameMenuScreen.js"
+    },
+    {
+      "type": "image",
+      "key": "gear",
+      "url": "assets/images/ui/gear.png"
     }
   ]},
   "meta": {
-    "generated": "1587462771080",
+    "generated": "1587715468200",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",

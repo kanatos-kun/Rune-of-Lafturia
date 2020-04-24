@@ -158,6 +158,10 @@ class mySceneManager extends Phaser.Scene {
 		if(scene.fObstacle === undefined){
 			scene.fObstacle = this.add.group();
 		}
+		
+		if(scene.fGold === undefined){
+			scene.fGold = this.add.group();
+		}
 
 		scene.fHero.setPosition(scene.dataScene.x,scene.dataScene.y)
 		scene.heroAttack = scene.add.group();
@@ -167,9 +171,18 @@ class mySceneManager extends Phaser.Scene {
 		scene.physics.add.collider(scene.fEnemies,scene.fObstacle)
 		scene.attackEnemyCollision = function(hero,enemy){
 			if(!enemy.invincible.state){
+
 				enemy.currentHp = enemy.currentHp - hero.attack
 				enemy.invincible.state = true
+				if(enemy.type =="hero"){
+					enemy.scene.game.hero.currentHp = enemy.currentHp
+					enemy.scene.game.hero.Hp = enemy.Hp
+				}
 			}
+		}
+		scene.recolteGold = function(hero,gold){
+			this.game.gold += 1;
+			gold.destroy()
 		}
 		
 		scene.changeTransitionMap = function(map,posX,posY,dir = "right"){
@@ -217,6 +230,8 @@ class mySceneManager extends Phaser.Scene {
 		}
 			
 		scene.physics.add.overlap(scene.heroAttack,scene.fEnemies,scene.attackEnemyCollision)
+		scene.physics.add.overlap(scene.fEnemies,scene.fHero,scene.attackEnemyCollision)
+		scene.physics.add.overlap(scene.fHero,scene.fGold,scene.recolteGold,function(){return true},scene)
 		//scene.physics.add.overlap(scene.fHero,scene.fObstacle,function(){console.log("overlaps with obtstaclte")})
 		scene.keys=scene.input.keyboard.addKeys('Z,S,Q,D,SPACE')
 		
@@ -225,14 +240,24 @@ class mySceneManager extends Phaser.Scene {
 		scene.scene.bringToTop("menu_hud")
 		scene.scene.bringToTop("dialogueWindow")
 		scene.scene.bringToTop("menu_bag")
-	
+		scene.events.on("wake",function(sys,data){
+			sys.scene.scene.run("menu_hud")
+			sys.scene.scene.bringToTop("menu_hud")
+			sys.scene.scene.bringToTop("dialogueWindow")
+			sys.scene.scene.bringToTop("menu_bag")
+		})
 	}
 	
 	
 	updateMap(scene) {
 		
-
-			
+		if(scene.fHero.currentHp <=0){
+			scene.scene.sleep("menu_hud")
+			scene.scene.sleep("dialogueWindow")
+			scene.scene.sleep("menu_bag")
+			scene.scene.sleep(scene.currentMap)
+			scene.scene.run("gameOver")
+		}
 
 		if(!scene.dialogueState){
 					if(scene.fHero.body !== undefined){
