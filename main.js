@@ -37,11 +37,50 @@ class Boot extends Phaser.Scene {
 	}
 
 	create() {
+		/** @global 
+		 *  @property {string} gold 
+		*/
 		this.game.gold = 0;
+		/** @global 
+		 *  @property {Object} hero
+		 *  @property {number} hero.currentHp 
+		 *  @property {number} hero.hp 
+		*/
 		this.game.hero = {
-			currentHp : 12,
-			hp : 12
+			//currentHp : 12,
+			//hp : 12,
+			statuts:{
+				level:1,
+				currentHp : 17,
+				hp: 17,
+				currentMana:12,
+				mana: 12
+			},
+			equipment:{
+				hat:{},
+				body:{},
+				L_Hand:{},
+				R_Hand:{},
+				Accessory_A:{},
+				Accessory_B:{}
+			},
+			inventory: {
+				misc:{},
+				consomable:{},
+				equipment:{},
+				accessory:{}
+			},
+			skills: {
+				active:{},
+				passif:{},
+				CP:0
+			},
+			mapVisited:{},
+			dungeonVisited:{}
 		}
+		/** @global 
+		 *  @property {string} currentMap -the current map displayed
+		*/
 		this.game.currentMap = "Map01"
 		this.scene.start("titleScreen")
 		//this.scene.start("Map03",{x:1492,y:1628});

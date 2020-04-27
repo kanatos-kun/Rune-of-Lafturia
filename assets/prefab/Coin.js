@@ -4,10 +4,8 @@ class Coin extends Phaser.Physics.Arcade.Sprite {
 	 * Coin
 	 *
 	 * @param {Phaser.Scene} scene
-	 * @param x 
-	 * @param y 
-	 * @param texture
-	 * @param frame
+	 * @param {number} x 
+	 * @param {number} y 
 	 */
 	constructor(scene, x, y) {
 		super(scene, x, y, "coin");

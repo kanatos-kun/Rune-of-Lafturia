@@ -4,10 +4,8 @@ class Slash extends Phaser.Physics.Arcade.Sprite {
 	 * Slash
 	 *
 	 * @param {Phaser.Scene} scene
-	 * @param x 
-	 * @param y 
-	 * @param texture
-	 * @param frame
+	 * @param {Phaser.GameObjects.GameObjectFactory} target
+	 * @param {number} angle
 	 */
 	constructor(scene,target,angle) {
 		let angleX = (150 *Math.cos(angle) ) - (150 * Math.sin(angle))

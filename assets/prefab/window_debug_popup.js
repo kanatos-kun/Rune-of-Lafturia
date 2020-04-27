@@ -4,9 +4,8 @@ class Window_debug_popup extends Phaser.GameObjects.Text {
 	 * Window_debug_popup
 	 *
 	 * @param {Phaser.Scene} scene
-	 * @param x 
-	 * @param y 
-	 * @param text
+	 * @param {Phaser.GameObjects.GameObjectFactory} target 
+	 * @param {string} text
 	 */
 	constructor(scene, target, text) {
 		super(scene, target.x, target.y-40, text, {color:"#ffffff",backgroundColor:"#000000",fontSize:"46px"});

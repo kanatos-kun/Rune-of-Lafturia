@@ -4,10 +4,8 @@ class Warp extends Phaser.GameObjects.Image  {
 	 * Warp
 	 *
 	 * @param {Phaser.Scene} scene
-	 * @param x 
-	 * @param y 
-	 * @param texture
-	 * @param frame
+	 * @param {number} x 
+	 * @param {number} y 
 	 */
 	constructor(scene, x, y) {
 		super(scene, x, y, "warp");

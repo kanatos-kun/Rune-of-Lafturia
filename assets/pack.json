@@ -441,11 +441,79 @@
     {
       "type": "image",
       "key": "gear",
-      "url": "assets/images/ui/gear.png"
+      "url": "assets/images/ui/gear.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "cross",
+      "url": "assets/images/ui/cross.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "window_equipment",
+      "url": "assets/images/window/window_equipment.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "window_info",
+      "url": "assets/images/window/window_info.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "window_inventory",
+      "url": "assets/images/window/window_inventory.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "window_skills",
+      "url": "assets/images/window/window_skills.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "window_statut",
+      "url": "assets/images/window/window_statut.png",
+      "normalMap": ""
+    },
+    {
+      "type": "sceneFile",
+      "key": "windowSkills",
+      "url": "assets/scenes/windowSkills.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "windowInventory",
+      "url": "assets/scenes/windowInventory.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "windowStatut",
+      "url": "assets/scenes/windowStatut.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "windowEquip",
+      "url": "assets/scenes/windowEquip.js"
+    },
+    {
+      "type": "image",
+      "key": "worldmap",
+      "url": "assets/images/worldMap/worldmap.png",
+      "normalMap": ""
+    },
+    {
+      "type": "sceneFile",
+      "key": "worldScreen",
+      "url": "assets/scenes/worldScreen.js"
     }
   ]},
   "meta": {
-    "generated": "1587715468200",
+    "generated": "1587975959532",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",

@@ -4,10 +4,8 @@ class Hero extends Phaser.Physics.Arcade.Sprite {
 	 * Hero
 	 *
 	 * @param {Phaser.Scene} scene
-	 * @param x 
-	 * @param y 
-	 * @param texture
-	 * @param frame
+	 * @param {number} x 
+	 * @param {number} y 
 	 */
 	constructor(scene, x, y) {
 		super(scene, x, y, "hero");
@@ -17,8 +15,8 @@ class Hero extends Phaser.Physics.Arcade.Sprite {
 		this.timeAttack={
 			c:0,t:5,state:true
 		}
-		this.hp = scene.game.hero.hp;
-		this.currentHp=scene.game.hero.currentHp;
+		this.hp = scene.game.hero.statuts.hp;
+		this.currentHp=scene.game.hero.statuts.currentHp;
 		this.invincible = {
 			state: false,
 			c:0,

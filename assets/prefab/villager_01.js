@@ -4,10 +4,8 @@ class Villager_01 extends Phaser.GameObjects.Sprite {
 	 * Villager_01
 	 *
 	 * @param {Phaser.Scene} scene
-	 * @param x 
-	 * @param y 
-	 * @param texture
-	 * @param frame
+	 * @param {number} x 
+	 * @param {number} y 
 	 */
 	constructor(scene, x, y) {
 		super(scene, x, y,"villager_01");

@@ -16,6 +16,37 @@
 		a = Phaser.Math.Angle.Between(x1,y1,x2,y2)
 		return a;
 	}
+	
+	saveSlot(saveNumber){
+		var strSaveFile = {
+			gold: this.game.gold,
+			hero: this.game.hero,
+			currentMap : this.game.currentMap
+		}
+		var positionX = this.scene.scene.get(this.game.currentMap).fHero.x
+		var positionY = this.scene.scene.get(this.game.currentMap).fHero.y
+		strSaveFile.hero.position = {
+			x:positionX,
+			y:positionY
+		}
+		
+		
+		//console.log(this.game.gold)
+		var strSaveFileJSON = JSON.stringify(strSaveFile)
+		localStorage.setItem("saveSlot-"+saveNumber,strSaveFileJSON)
+	}
+	
+	loadSlot(saveNumber){
+		var strLoadFile = localStorage.getItem("saveSlot-"+saveNumber)
+		var strLoadFileJSON = JSON.parse(strLoadFile)
+		this.game.gold = strLoadFileJSON.gold
+		this.game.hero = strLoadFileJSON.hero
+		this.game.currentMap = strLoadFileJSON.currentMap
+	}
+	
+	deleteSlot(saveNumber){
+		localStorage.setItem("saveSlot-"+saveNumber,undefined)
+	}
 
   }
 

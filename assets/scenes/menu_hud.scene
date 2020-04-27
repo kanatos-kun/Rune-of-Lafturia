@@ -7,23 +7,6 @@
     "-type": "DisplayList",
     "children": [
       {
-        "-id": "e818ccc6-2ed6-488d-9280-86e1aec2a783",
-        "-type": "Text",
-        "children": [],
-        "variableName": "goldText",
-        "variableField": true,
-        "x": 78.62752532958984,
-        "y": 257.8127136230469,
-        "scaleX": 2.5662448406219482,
-        "scaleY": 2.9901435375213623,
-        "scrollFactorX": 0,
-        "scrollFactorY": 0,
-        "text": "X 0",
-        "fontSize": "54px",
-        "color": "#000000",
-        "fixedWidth": 210
-      },
-      {
         "-id": "71be0188-426b-4874-8693-fd5ef359dcd0",
         "-type": "Image",
         "children": [],
@@ -31,6 +14,7 @@
         "variableField": false,
         "x": 1638.3524169921875,
         "y": 3250.888427734375,
+        "scaleX": 1.0450327396392822,
         "textureKey": "background_ui_bottom",
         "textureFrame": "background_ui_bottom"
       },
@@ -40,8 +24,8 @@
         "children": [],
         "variableName": "skill_slot",
         "variableField": false,
-        "x": 1647.7489013671875,
-        "y": 3270.800537109375,
+        "x": 1843.037841796875,
+        "y": 3254.5263671875,
         "textureKey": "skill_slot",
         "textureFrame": "skill_slot"
       },
@@ -51,8 +35,8 @@
         "children": [],
         "variableName": "bag",
         "variableField": true,
-        "x": 250.4355010986328,
-        "y": 3240.64990234375,
+        "x": -868.642578125,
+        "y": 3413.42138671875,
         "textureKey": "bag",
         "textureFrame": "bag"
       },
@@ -68,6 +52,162 @@
         "scaleY": 3.179084062576294,
         "textureKey": "gear",
         "textureFrame": "gear"
+      },
+      {
+        "-id": "c4b4307e-0234-4cb5-844b-073b29171e69",
+        "-type": "Image",
+        "children": [],
+        "variableName": "window_info",
+        "variableField": false,
+        "x": 297.8712463378906,
+        "y": 201.20960998535156,
+        "scaleY": 1.1451724767684937,
+        "textureKey": "window_info",
+        "textureFrame": "window_info"
+      },
+      {
+        "-id": "ad923db9-2ed8-4abf-8b59-496dd972336e",
+        "-type": "Image",
+        "children": [],
+        "variableName": "buttonInventory",
+        "variableField": true,
+        "data": {
+          "textSize": "50",
+          "text": "\"INV\""
+        },
+        "objectFactory": "uiButton",
+        "x": 208.4143829345703,
+        "y": 3179.959228515625,
+        "scaleX": 0.3311738073825836,
+        "scaleY": 0.4363689720630646,
+        "textureKey": "button_empty",
+        "textureFrame": "button_empty"
+      },
+      {
+        "-id": "6f4b9b22-18d2-447b-87a7-7923949c33e5",
+        "-type": "Image",
+        "children": [],
+        "variableName": "buttonSkills",
+        "variableField": true,
+        "data": {
+          "textSize": "50",
+          "text": "\"SKILL\""
+        },
+        "objectFactory": "uiButton",
+        "x": 493.14581298828125,
+        "y": 3179.958984375,
+        "scaleX": 0.3311738073825836,
+        "scaleY": 0.4363689720630646,
+        "textureKey": "button_empty",
+        "textureFrame": "button_empty"
+      },
+      {
+        "-id": "ac47de48-0809-4ead-9199-570737d5ed28",
+        "-type": "Image",
+        "children": [],
+        "variableName": "buttonEquip",
+        "variableField": true,
+        "data": {
+          "textSize": "50",
+          "text": "\"EQUIP\""
+        },
+        "objectFactory": "uiButton",
+        "x": 204.4598846435547,
+        "y": 3330.23388671875,
+        "scaleX": 0.3311738073825836,
+        "scaleY": 0.4363689720630646,
+        "textureKey": "button_empty",
+        "textureFrame": "button_empty"
+      },
+      {
+        "-id": "8ac02546-fb3c-46cd-a8aa-33f24044c5d1",
+        "-type": "Image",
+        "children": [],
+        "variableName": "buttonStatut",
+        "variableField": true,
+        "data": {
+          "textSize": "50",
+          "text": "\"STATS\""
+        },
+        "objectFactory": "uiButton",
+        "x": 493.14581298828125,
+        "y": 3334.1884765625,
+        "scaleX": 0.3311738073825836,
+        "scaleY": 0.4363689720630646,
+        "textureKey": "button_empty",
+        "textureFrame": "button_empty"
+      },
+      {
+        "-id": "e818ccc6-2ed6-488d-9280-86e1aec2a783",
+        "-type": "Text",
+        "children": [],
+        "variableName": "goldText",
+        "variableField": true,
+        "x": 41.39085388183594,
+        "y": 313.9778747558594,
+        "scrollFactorX": 0,
+        "scrollFactorY": 0,
+        "text": "0 G",
+        "fontSize": "70px",
+        "color": "#000000",
+        "fixedWidth": 2000,
+        "wordWrap.width": 512
+      },
+      {
+        "-id": "8c685d6c-a6ff-410d-ad5e-d8f12a7218b5",
+        "-type": "Text",
+        "children": [],
+        "variableName": "playerText",
+        "variableField": true,
+        "x": 33.42380142211914,
+        "y": 32.48054504394531,
+        "text": "Player",
+        "fontSize": "70px",
+        "color": "#000000",
+        "fixedWidth": 512,
+        "wordWrap.width": 200
+      },
+      {
+        "-id": "22db3b1e-53af-4c13-b385-a07682fdbdfa",
+        "-type": "Text",
+        "children": [],
+        "variableName": "hpText",
+        "variableField": true,
+        "x": 32.95501708984375,
+        "y": 157.1687469482422,
+        "text": "hp 12/12",
+        "fontSize": "70px",
+        "color": "#000000",
+        "fixedWidth": 2000,
+        "wordWrap.width": 700
+      },
+      {
+        "-id": "7be9a621-0b64-48fc-b47f-9b0461cfaf33",
+        "-type": "Text",
+        "children": [],
+        "variableName": "mpText",
+        "variableField": true,
+        "x": 35.53507614135742,
+        "y": 234.11026000976562,
+        "text": "mp 12/12",
+        "fontSize": "70px",
+        "color": "#000000",
+        "fixedWidth": 2000,
+        "wordWrap.width": 1000
+      },
+      {
+        "-id": "b671d6e1-702e-4d32-a2cc-1a7dfd19849b",
+        "-type": "Text",
+        "children": [],
+        "variableName": "levelText",
+        "variableField": true,
+        "x": 26.675161361694336,
+        "y": 92.39231872558594,
+        "text": "level 1",
+        "fontSize": "70px",
+        "color": "#000000",
+        "fixedWidth": 1000,
+        "wordWrap.width": 2000
       }
     ]
   },
