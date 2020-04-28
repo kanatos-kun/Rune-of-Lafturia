@@ -1,0 +1,174 @@
+{
+  "-app": "Scene Editor - Phaser Editor v2.1.6",
+  "-version": 1,
+  "compilerLang": "JAVA_SCRIPT_6",
+  "displayList": {
+    "-id": "28f8a998-f2ae-4623-8289-2dec409a5ba3",
+    "-type": "DisplayList",
+    "children": [
+      {
+        "-id": "8c4f6394-fe66-4b66-928f-becec8e14068",
+        "-type": "Image",
+        "children": [],
+        "variableName": "mapScene",
+        "variableField": true,
+        "x": 1665.224853515625,
+        "y": 1533.4302978515625,
+        "textureKey": "map07",
+        "textureFrame": "map07"
+      },
+      {
+        "-id": "76025f34-170a-4308-9dfb-a480b45cc90c",
+        "-type": "Image",
+        "children": [],
+        "variableName": "obstacle",
+        "variableField": false,
+        "objectFactory": "obstacle",
+        "x": -34.06509017944336,
+        "y": -20.217130661010742,
+        "scaleX": 3.533797025680542,
+        "scaleY": 27.604032516479492,
+        "originX": 0,
+        "originY": 0,
+        "textureKey": "obstacle",
+        "textureFrame": "obstacle"
+      },
+      {
+        "-id": "3a543d8b-a6c5-4eb2-875c-108985b0b1f6",
+        "-type": "Image",
+        "children": [],
+        "variableName": "obstacle_1",
+        "variableField": false,
+        "objectFactory": "obstacle",
+        "x": 177.15245056152344,
+        "y": -8.542091369628906,
+        "scaleX": 55.67915725708008,
+        "scaleY": 5.8629679679870605,
+        "originX": 0,
+        "originY": 0,
+        "textureKey": "obstacle",
+        "textureFrame": "obstacle"
+      },
+      {
+        "-id": "ce9b6ae7-59b7-4d44-83ee-42ff34655d3a",
+        "-type": "Image",
+        "children": [],
+        "variableName": "obstacle_2",
+        "variableField": false,
+        "objectFactory": "obstacle",
+        "x": 1169.8594970703125,
+        "y": 1170.7139892578125,
+        "scaleX": 2.855341911315918,
+        "scaleY": 3.197981834411621,
+        "originX": 0,
+        "originY": 0,
+        "textureKey": "obstacle",
+        "textureFrame": "obstacle"
+      },
+      {
+        "-id": "0f6d328f-76e2-4538-b6c9-fc7868d5ab1a",
+        "-type": "Image",
+        "children": [],
+        "variableName": "obstacle_3",
+        "variableField": false,
+        "objectFactory": "obstacle",
+        "x": 2455.715087890625,
+        "y": 1397.2376708984375,
+        "scaleX": 4.283009052276611,
+        "scaleY": 4.663724422454834,
+        "originX": 0,
+        "originY": 0,
+        "textureKey": "obstacle",
+        "textureFrame": "obstacle"
+      },
+      {
+        "-id": "cd95e69d-63ea-4fc8-8bdc-55c936dd19e4",
+        "-type": "Image",
+        "children": [],
+        "variableName": "obstacle_4",
+        "variableField": false,
+        "objectFactory": "obstacle",
+        "x": 343.7140808105469,
+        "y": 2749.7177734375,
+        "scaleX": 3.331231117248535,
+        "scaleY": 3.730978488922119,
+        "originX": 0,
+        "originY": 0,
+        "textureKey": "obstacle",
+        "textureFrame": "obstacle"
+      },
+      {
+        "-id": "88a2a8ff-23f2-445a-bb5a-4998486ebc17",
+        "-type": "Image",
+        "children": [],
+        "variableName": "warp",
+        "variableField": false,
+        "data": {
+          "zone": "\"Map03\"",
+          "x": "3096",
+          "y": "2080",
+          "dir": "\"left\""
+        },
+        "objectFactory": "warp",
+        "x": -6.524789810180664,
+        "y": 2163.543701171875,
+        "scaleX": 1.618977665901184,
+        "scaleY": 1.570839524269104,
+        "textureKey": "warp",
+        "textureFrame": "warp"
+      },
+      {
+        "-id": "387d2db7-44f9-4b0e-97d5-abd3ac0bf157",
+        "-type": "Image",
+        "children": [],
+        "variableName": "warp_1",
+        "variableField": false,
+        "data": {
+          "zone": "\"Map08\"",
+          "x": "288",
+          "y": "2080",
+          "dir": "\"right\""
+        },
+        "objectFactory": "warp",
+        "x": 3302.068359375,
+        "y": 2175.345947265625,
+        "scaleX": 1.618977665901184,
+        "scaleY": 1.570839524269104,
+        "textureKey": "warp",
+        "textureFrame": "warp"
+      }
+    ]
+  },
+  "groups": {
+    "-id": "ab8f0059-4541-4c08-8e4c-44f9b55519b2",
+    "-type": "Groups",
+    "children": [
+      {
+        "-id": "bb2e95df-7c41-4828-8816-477d26b47823",
+        "children": [
+          {"-id": "cd95e69d-63ea-4fc8-8bdc-55c936dd19e4"},
+          {"-id": "0f6d328f-76e2-4538-b6c9-fc7868d5ab1a"},
+          {"-id": "ce9b6ae7-59b7-4d44-83ee-42ff34655d3a"},
+          {"-id": "3a543d8b-a6c5-4eb2-875c-108985b0b1f6"},
+          {"-id": "76025f34-170a-4308-9dfb-a480b45cc90c"}
+        ],
+        "variableName": "obstacle",
+        "variableField": true
+      },
+      {
+        "-id": "6e3f750d-f049-4e7c-a91b-f5e6267e2442",
+        "children": [
+          {"-id": "88a2a8ff-23f2-445a-bb5a-4998486ebc17"},
+          {"-id": "387d2db7-44f9-4b0e-97d5-abd3ac0bf157"}
+        ],
+        "variableName": "warp",
+        "variableField": true
+      }
+    ]
+  },
+  "borderWidth": 3300,
+  "borderHeight": 3060,
+  "createMethodName": "_create",
+  "methodContextType": "SCENE",
+  "sceneKey": "Map07"
+}

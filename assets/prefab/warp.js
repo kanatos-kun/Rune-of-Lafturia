@@ -21,8 +21,8 @@ class Warp extends Phaser.GameObjects.Image  {
 	preUpdate(time,delta){
 		//super.preUpdate(time,delta)
 		if(Phaser.Math.Distance.Between(this.scene.fHero.x,this.scene.fHero.y,this.x,this.y) < 200 ){
-			console.log(this.data.get("zone"))
-			this.scene.scene.start(this.data.get("zone"),{x:this.data.get("x"),y:this.data.get("y")})
+			//this.scene.scene.start(this.data.get("zone"),{x:this.data.get("x"),y:this.data.get("y")})
+			this.scene.changeTransitionMap(this.data.get("zone"),this.data.get("x"),this.data.get("y"),this.data.get("dir"))
 		}
 	}
 

@@ -2,7 +2,7 @@
 window.addEventListener('load', function() {
 
 	var game = new Phaser.Game({
-    "title": "zelda_like_project",
+    "title": "rune-of-lafturia",
     "width": 3316,
     "height": 3460,
     "type": Phaser.AUTO,
@@ -13,7 +13,7 @@ window.addEventListener('load', function() {
         default: 'arcade',
         arcade: {
             gravity: { y: 0 },
-            debug: true
+            debug: false
         }
     },
     "scale": {
@@ -65,18 +65,19 @@ class Boot extends Phaser.Scene {
 				Accessory_B:{}
 			},
 			inventory: {
-				misc:{},
-				consomable:{},
-				equipment:{},
-				accessory:{}
+				misc:[],
+				consomable:[],
+				equipment:[],
+				accessory:[],
+				important:[]
 			},
 			skills: {
-				active:{},
-				passif:{},
+				active:[],
+				passif:[],
 				CP:0
 			},
-			mapVisited:{},
-			dungeonVisited:{}
+			mapVisited:[],
+			dungeonVisited:[]
 		}
 		/** @global 
 		 *  @property {string} currentMap -the current map displayed

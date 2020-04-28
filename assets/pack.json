@@ -13,7 +13,7 @@
     {
       "type": "sceneFile",
       "key": "Scene1",
-      "url": "assets/scenes/Scene1.js"
+      "url": "assets/scenes/map/Scene1.js"
     },
     {
       "type": "multiatlas",
@@ -101,7 +101,7 @@
     {
       "type": "script",
       "key": "Bee",
-      "url": "assets/prefab/Bee.js"
+      "url": "assets/prefab/enemy/Bee.js"
     },
     {
       "type": "script",
@@ -122,17 +122,17 @@
     {
       "type": "sceneFile",
       "key": "Map02",
-      "url": "assets/scenes/Map02.js"
+      "url": "assets/scenes/map/Map02.js"
     },
     {
       "type": "sceneFile",
       "key": "Map03",
-      "url": "assets/scenes/Map03.js"
+      "url": "assets/scenes/map/Map03.js"
     },
     {
       "type": "sceneFile",
       "key": "Map04",
-      "url": "assets/scenes/Map04.js"
+      "url": "assets/scenes/map/Map04.js"
     },
     {
       "type": "image",
@@ -216,13 +216,13 @@
     },
     {
       "type": "script",
-      "key": "dialogueWindow",
-      "url": "assets/scenes/dialogueWindow.js"
+      "key": "windowDialogue",
+      "url": "assets/scenes/window/windowDialogue.js"
     },
     {
       "type": "sceneFile",
-      "key": "dialogueWindow",
-      "url": "assets/scenes/dialogueWindow.js"
+      "key": "windowDialogue",
+      "url": "assets/scenes/window/windowDialogue.js"
     },
     {
       "type": "image",
@@ -268,17 +268,17 @@
     {
       "type": "sceneFile",
       "key": "Map05",
-      "url": "assets/scenes/Map05.js"
+      "url": "assets/scenes/map/Map05.js"
     },
     {
       "type": "sceneFile",
       "key": "Map06",
-      "url": "assets/scenes/Map06.js"
+      "url": "assets/scenes/map/Map06.js"
     },
     {
       "type": "sceneFile",
       "key": "Map07",
-      "url": "assets/scenes/Map07.js"
+      "url": "assets/scenes/map/Map07.js"
     },
     {
       "type": "image",
@@ -305,7 +305,7 @@
     {
       "type": "sceneFile",
       "key": "titleScreen",
-      "url": "assets/scenes/titleScreen.js"
+      "url": "assets/scenes/screen/titleScreen.js"
     },
     {
       "type": "image",
@@ -358,7 +358,7 @@
     {
       "type": "sceneFile",
       "key": "gameOver",
-      "url": "assets/scenes/gameOver.js"
+      "url": "assets/scenes/screen/gameOver.js"
     },
     {
       "type": "image",
@@ -416,27 +416,27 @@
     {
       "type": "sceneFile",
       "key": "loadGameScreen",
-      "url": "assets/scenes/loadGameScreen.js"
+      "url": "assets/scenes/screen/loadGameScreen.js"
     },
     {
       "type": "sceneFile",
       "key": "saveGameScreen",
-      "url": "assets/scenes/saveGameScreen.js"
+      "url": "assets/scenes/screen/saveGameScreen.js"
     },
     {
       "type": "sceneFile",
       "key": "optionScreen",
-      "url": "assets/scenes/optionScreen.js"
+      "url": "assets/scenes/screen/optionScreen.js"
     },
     {
       "type": "sceneFile",
       "key": "creditScreen",
-      "url": "assets/scenes/creditScreen.js"
+      "url": "assets/scenes/screen/creditScreen.js"
     },
     {
       "type": "sceneFile",
       "key": "gameMenuScreen",
-      "url": "assets/scenes/gameMenuScreen.js"
+      "url": "assets/scenes/screen/gameMenuScreen.js"
     },
     {
       "type": "image",
@@ -483,22 +483,22 @@
     {
       "type": "sceneFile",
       "key": "windowSkills",
-      "url": "assets/scenes/windowSkills.js"
+      "url": "assets/scenes/window/windowSkills.js"
     },
     {
       "type": "sceneFile",
       "key": "windowInventory",
-      "url": "assets/scenes/windowInventory.js"
+      "url": "assets/scenes/window/windowInventory.js"
     },
     {
       "type": "sceneFile",
       "key": "windowStatut",
-      "url": "assets/scenes/windowStatut.js"
+      "url": "assets/scenes/window/windowStatut.js"
     },
     {
       "type": "sceneFile",
       "key": "windowEquip",
-      "url": "assets/scenes/windowEquip.js"
+      "url": "assets/scenes/window/windowEquip.js"
     },
     {
       "type": "image",
@@ -508,12 +508,34 @@
     },
     {
       "type": "sceneFile",
-      "key": "worldScreen",
-      "url": "assets/scenes/worldScreen.js"
+      "key": "worldMapScreen",
+      "url": "assets/scenes/screen/worldMapScreen.js"
+    },
+    {
+      "type": "script",
+      "key": "sting",
+      "url": "assets/prefab/inventory/misc/sting.js"
+    },
+    {
+      "type": "image",
+      "key": "sting",
+      "url": "assets/images/itemInventory/sting.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "map08",
+      "url": "assets/images/map/map08.png",
+      "normalMap": ""
+    },
+    {
+      "type": "sceneFile",
+      "key": "Map08",
+      "url": "assets/scenes/map/Map08.js"
     }
   ]},
   "meta": {
-    "generated": "1587975959532",
+    "generated": "1588062254257",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",

@@ -1,0 +1,91 @@
+{
+  "-app": "Scene Editor - Phaser Editor v2.1.6",
+  "-version": 1,
+  "compilerLang": "JAVA_SCRIPT_6",
+  "displayList": {
+    "-id": "9173a15e-dbb5-4b6a-bbff-3abac6481eaa",
+    "-type": "DisplayList",
+    "children": [
+      {
+        "-id": "b6494864-9a2a-4b0a-8e4e-9645d74e5adf",
+        "-type": "Image",
+        "children": [],
+        "variableName": "discussion_bubble",
+        "variableField": false,
+        "x": 1639.07373046875,
+        "y": 2630.395263671875,
+        "scaleX": 4.189914226531982,
+        "scaleY": 3.898077964782715,
+        "textureKey": "discussion_bubble",
+        "textureFrame": "discussion_bubble"
+      },
+      {
+        "-id": "d2e2175d-fb38-4691-948a-200701e109a1",
+        "-type": "Image",
+        "children": [],
+        "variableName": "tag",
+        "variableField": true,
+        "x": 488.19384765625,
+        "y": 2322.38818359375,
+        "scaleX": 3.828718423843384,
+        "scaleY": 5.652532577514648,
+        "textureKey": "orange tag",
+        "textureFrame": "orange tag"
+      },
+      {
+        "-id": "733b7c40-0c9d-45c4-8530-c1e2649ee79c",
+        "-type": "Text",
+        "children": [],
+        "variableName": "tagNameText",
+        "variableField": true,
+        "x": 284.3978576660156,
+        "y": 2263.40478515625,
+        "angle": -6.416660785675049,
+        "tintTopLeft": 4194304,
+        "tintTopRight": 4194304,
+        "tintBottomLeft": 4194304,
+        "tintBottomRight": 4194304,
+        "text": "Clara",
+        "fontSize": "150px",
+        "color": "#400000",
+        "stroke": "#400000"
+      },
+      {
+        "-id": "24cd44af-e535-4996-a061-62c285bc206a",
+        "-type": "Text",
+        "children": [],
+        "variableName": "textBubble",
+        "variableField": true,
+        "x": 478.8094177246094,
+        "y": 2466.712158203125,
+        "text": "Bonjour jeune hero, pouvez vous \r\nm'aidez ?",
+        "fontSize": "120px",
+        "color": "#400000"
+      },
+      {
+        "-id": "1b5b5a2c-2d0c-4e3c-8d66-60d073ced3f5",
+        "-type": "Image",
+        "children": [],
+        "variableName": "arrow",
+        "variableField": false,
+        "x": 2854.894775390625,
+        "y": 2853.36962890625,
+        "scaleX": 2.8402955532073975,
+        "scaleY": 2.36491322517395,
+        "angle": 91.63676452636719,
+        "textureKey": "arrow",
+        "textureFrame": "arrow"
+      }
+    ]
+  },
+  "groups": {
+    "-id": "7cc77828-c89c-4f48-bb65-c8976a61c150",
+    "-type": "Groups",
+    "children": []
+  },
+  "borderWidth": 3300,
+  "borderHeight": 3060,
+  "createMethodName": "_create",
+  "methodContextType": "SCENE",
+  "sceneKey": "dialogueWindow"
+}

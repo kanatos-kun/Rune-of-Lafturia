@@ -1,0 +1,47 @@
+{
+  "-app": "Scene Editor - Phaser Editor v2.1.6",
+  "-version": 1,
+  "compilerLang": "JAVA_SCRIPT_6",
+  "displayList": {
+    "-id": "3e59fc31-42ce-468f-93ec-8359f2a150c3",
+    "-type": "DisplayList",
+    "children": [
+      {
+        "-id": "998721d1-290a-4c0d-942a-d1e5cf6922de",
+        "-type": "Image",
+        "children": [],
+        "variableName": "titleScreen_loadGame_blackScreen",
+        "variableField": false,
+        "x": 1648.0472412109375,
+        "y": 1529.76953125,
+        "scaleX": 1.0395781993865967,
+        "scaleY": 1.0500928163528442,
+        "textureKey": "titleScreen_loadGame_blackScreen",
+        "textureFrame": "titleScreen_loadGame_blackScreen"
+      },
+      {
+        "-id": "879b1927-f059-4b53-8021-d4088c70197c",
+        "-type": "Image",
+        "children": [],
+        "variableName": "buttonPrecedent",
+        "variableField": true,
+        "data": {"text": "\"<=\""},
+        "objectFactory": "uiButton",
+        "x": 547.373291015625,
+        "y": 2802.887451171875,
+        "textureKey": "button_empty",
+        "textureFrame": "button_empty"
+      }
+    ]
+  },
+  "groups": {
+    "-id": "91306379-62b6-4665-8b83-5ce3f4b5136a",
+    "-type": "Groups",
+    "children": []
+  },
+  "borderWidth": 3300,
+  "borderHeight": 3060,
+  "createMethodName": "_create",
+  "methodContextType": "SCENE",
+  "sceneKey": "creditScreen"
+}

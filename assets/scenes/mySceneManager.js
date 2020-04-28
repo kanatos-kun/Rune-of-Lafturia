@@ -38,117 +38,23 @@ class mySceneManager extends Phaser.Scene {
 		// put your code here !  
 		}
 		}
-
 	 * @param {Phaser.Scene} Scene
 	*/
 	createMap(scene) {
+		
 		scene.events.on("transitionstart",this.transitionstart,scene)
-		/*
-		scene.events.on("transitionstart",function(from,duration){
-			if(this.dataScene.dir ==="left"){
-				this.fMapScene.x = -1650 
-			}else if(this.dataScene.dir ==="right"){
-				this.fMapScene.x =4950
-			}else if(this.dataScene.dir ==="top"){
-				this.fMapScene.y =-1530
-			}else if(this.dataScene.dir ==="bottom"){
-				this.fMapScene.y =4590
-			}
-
-			from.fHero.setActive(false)
-
-			if(from.fWarp !== undefined){
-				Phaser.Actions.Call(from.fWarp.getChildren(),function(item){
-					item.setVisible(false)
-					item.setActive(false)
-				})
-			}
-			
-			if(from.fNpc !== undefined){
-				Phaser.Actions.Call(from.fNpc.getChildren(),function(item){
-					item.setVisible(false)
-					item.setActive(false)
-				})
-			}
-
-			this.fHero.setVisible(false)
-			
-			if(scene.fEnemies !== undefined){
-				Phaser.Actions.Call(scene.fEnemies.getChildren(),function(item){
-					item.setVisible(false)
-					item.setActive(false)
-				})
-			}
-			
-			
-			if(scene.fWarp !== undefined){
-				Phaser.Actions.Call(scene.fWarp.getChildren(),function(item){
-					item.setVisible(false)
-					item.setActive(false)
-				})
-			}
-			
-			if(scene.fNpc !== undefined){
-				Phaser.Actions.Call(scene.fNpc.getChildren(),function(item){
-					item.setVisible(false)
-					item.setActive(false)
-				})
-			}
-
-			this.tweens.add({
-				targets:this.fMapScene,
-				x:1650,
-				y:1530,
-		      ease: 'Power1',
-				duration:duration
-			})
-			
-
-		},scene) */
-		
 		scene.events.on("transitioncomplete",this.transitioncomplete,scene)
-		/*
-		scene.events.on("transitioncomplete",function(myScene){
-			
-			if(scene.fEnemies !== undefined){
-			Phaser.Actions.Call(scene.fEnemies.getChildren(),function(item){
-				item.setVisible(true)
-				item.setActive(true)
-			})
-			}
 
-			if(scene.fWarp !== undefined){
-			Phaser.Actions.Call(scene.fWarp.getChildren(),function(item){
-				item.setVisible(true)
-				item.setActive(true)
-			})
-			}
-
-			if(scene.fNpc !== undefined){
-			Phaser.Actions.Call(scene.fNpc.getChildren(),function(item){
-				item.setVisible(true)
-				item.setActive(true)
-			})
-			}
-
-			
-			
-			
-			scene.fHero.setVisible(true)
-		},this) */
-		
-		
-		
-		
-		scene.physics.world.setBounds(-200,-200,3720,3380)
 		if(scene.fHero === undefined){
 			scene.fHero = scene.add.hero(1075.0101, 1528.0022, "hero");
 		}else{
 			scene.fHero = scene.add.hero(scene.dataScene.x,scene.dataScene.y,"hero")
 		}
 
-		scene.dialogueIteration = 0
+		scene.dialogueIteration = 0;
 		scene.dialogueState = false;
+		scene.widthMap = 1;
+		scene.heightMap = 1;
 		if(scene.fEnemies === undefined){
 			scene.fEnemies = this.add.group();
 		}
@@ -168,6 +74,19 @@ class mySceneManager extends Phaser.Scene {
 		if(scene.fGold === undefined){
 			scene.fGold = this.add.group();
 		}
+		
+		if(scene.fItems === undefined){
+			scene.fItems = this.add.group();
+		}
+		
+		if(scene.fMapScene !== undefined){
+			let w = Math.floor(scene.fMapScene.width/3328) 
+			let h = Math.floor(scene.fMapScene.height/3072)
+			scene.widthMap = w
+			scene.heightMap = h
+		}
+		
+		scene.physics.world.setBounds(-200,-200,3720*scene.widthMap,3380*scene.heightMap)
 
 		scene.fHero.setPosition(scene.dataScene.x,scene.dataScene.y)
 		scene.heroAttack = scene.add.group();
@@ -190,68 +109,42 @@ class mySceneManager extends Phaser.Scene {
 			this.game.gold += 1;
 			gold.destroy()
 		}
+		
+		scene.recolteItem = function(hero,item){
+			var section = item.section
+			var check = false
+			if(section ==="misc"){
+				for(let i =0; i < this.game.hero.inventory.misc.length;i++){
+					let n=this.game.hero.inventory.misc[i].name
+					if(n == item.name){
+						this.game.hero.inventory.misc[i].quantity ++;
+						check = true
+						break;
+					}
+				}
+				
+			}
+			if(!check){
+				this.game.hero.inventory.misc.push({
+					name:item.name,
+					sellGold:item.sellGold,
+					quantity:1
+				})
+			}
+			
+			item.destroy()
+		}
 		scene.isInWindowInteraction = false
 		
 		scene.changeTransitionMap = this.changeTransitionMap;
-		/*scene.changeTransitionMap = function(map,posX,posY,dir = "right"){
 
-			
-			if(dir==="right"){
-				scene.tweens.add({
-					targets:scene.fMapScene,
-					x:-3300,
-			       ease: 'Power1',
-					duration:1500
-				})
-			}else if(dir==="left"){
-				scene.tweens.add({
-					targets:scene.fMapScene,
-					x:4950,
-			        ease: 'Power1',
-					duration:1500
-				}) 
-			}else if(dir==="top"){
-
-			
-				scene.tweens.add({
-					targets:scene.fMapScene,
-					y:4590,
-			        ease: 'Power1',
-					duration:1500
-				}) 
-			}else if(dir ==="bottom"){
-				scene.tweens.add({
-					targets:scene.fMapScene,
-					y:-1530,
-			        ease: 'Power1',
-					duration:1500
-				}) 
-			}
- 
-		
-			scene.scene.transition({
-				target:map,
-				duration:1500,
-				moveAbove:true,
-				data:{x:posX,y:posY,dir:dir}
-			},scene)  
-		} */
-			
 		scene.physics.add.overlap(scene.heroAttack,scene.fEnemies,scene.attackEnemyCollision)
 		scene.physics.add.overlap(scene.fEnemies,scene.fHero,scene.attackEnemyCollision)
+		scene.physics.add.overlap(scene.fHero,scene.fItems,scene.recolteItem,function(){return true},scene)
 		scene.physics.add.overlap(scene.fHero,scene.fGold,scene.recolteGold,function(){return true},scene)
 		//scene.physics.add.overlap(scene.fHero,scene.fObstacle,function(){console.log("overlaps with obtstaclte")})
-		scene.keys=scene.input.keyboard.addKeys('Z,S,Q,D,SPACE')
-		
-		//add hud 
-
-		/*
-		scene.events.on("wake",function(sys,data){
-			sys.scene.scene.run("menu_hud")
-			sys.scene.scene.bringToTop("menu_hud")
-			sys.scene.scene.bringToTop("dialogueWindow")
-			sys.scene.scene.bringToTop("menu_bag")
-		}) */
+		scene.keys=scene.input.keyboard.addKeys('Z,S,Q,D,M,SPACE')
+		 
 	}
 	
 	
@@ -268,7 +161,7 @@ class mySceneManager extends Phaser.Scene {
 			if(dir==="right"){
 				this.tweens.add({
 					targets:this.fMapScene,
-					x:-3300,
+					x:-1650,
 			       ease: 'Power1',
 					duration:1500
 				})
@@ -280,8 +173,6 @@ class mySceneManager extends Phaser.Scene {
 					duration:1500
 				}) 
 			}else if(dir==="top"){
-
-			
 				this.tweens.add({
 					targets:this.fMapScene,
 					y:4590,
@@ -314,45 +205,54 @@ class mySceneManager extends Phaser.Scene {
 	 * @param {number} duration 
 	*/
 	transitionstart(from,duration){
+		//console.log("fromthatDisable : " + from.scene.key)
+		//console.log("isWillSceneStay : " + this.scene.key)
 			if(this.dataScene.dir ==="left"){
-				this.fMapScene.x = -1650 
+				this.fMapScene.x = -1650 * this.widthMap
 			}else if(this.dataScene.dir ==="right"){
-				this.fMapScene.x =4950
+				this.fMapScene.x =4950 * this.widthMap
 			}else if(this.dataScene.dir ==="top"){
-				this.fMapScene.y =-1530
+				this.fMapScene.y =-1530 * this.heightMap
 			}else if(this.dataScene.dir ==="bottom"){
-				this.fMapScene.y =4590
+				this.fMapScene.y =4590 * this.heightMap
 			}
 			//scene that have implied transition //
 			//-----------------------------------//
 			from.fHero.setActive(false)
-			
+			//console.log("widthMap : " +  this.widthMap)
+			//console.log("heightMap : " + this.heightMap)
 			
 			// Probleme with fEnemie From *_*
-			/*
+			
 			if(from.fEnemies !== undefined){
 				Phaser.Actions.Call(from.fEnemies.getChildren(),function(item){
 					item.setVisible(false)
-					item.setActive(false)
+					//item.setActive(false)
 				})
 				
-			}  */
+			}  
 			//from.fHero = null
 
 			if(from.fWarp !== undefined){
 				Phaser.Actions.Call(from.fWarp.getChildren(),function(item){
 					item.setVisible(false)
-					item.setActive(false)
+					//item.setActive(false)
 				})
 			}
 			
 			if(from.fNpc !== undefined){
 				Phaser.Actions.Call(from.fNpc.getChildren(),function(item){
 					item.setVisible(false)
-					item.setActive(false)
+					//item.setActive(false)
 				})
 			}
 
+			if(from.fItems !== undefined){
+				Phaser.Actions.Call(from.fItems.getChildren(),function(item){
+					item.setVisible(false)
+					//item.setActive(false)
+				})
+			}
 
 			/*from.fWarp.setVisible(false)
 			from.fNpc.setVisible(false) */
@@ -365,7 +265,7 @@ class mySceneManager extends Phaser.Scene {
 			if(this.fEnemies !== undefined){
 				Phaser.Actions.Call(this.fEnemies.getChildren(),function(item){
 					item.setVisible(false)
-					item.setActive(false)
+					//item.setActive(false)
 				})
 			}
 			
@@ -373,25 +273,45 @@ class mySceneManager extends Phaser.Scene {
 			if(this.fWarp !== undefined){
 				Phaser.Actions.Call(this.fWarp.getChildren(),function(item){
 					item.setVisible(false)
-					item.setActive(false)
+					//item.setActive(false)
 				})
 			}
 			
 			if(this.fNpc !== undefined){
 				Phaser.Actions.Call(this.fNpc.getChildren(),function(item){
 					item.setVisible(false)
-					item.setActive(false)
+					//item.setActive(false)
+				})
+			}
+			
+			if(this.fItems !== undefined){
+				Phaser.Actions.Call(this.fItems.getChildren(),function(item){
+					item.setVisible(false)
+					//item.setActive(false)
 				})
 			}
 
 
+
 			
 			
+			this.scene.bringToTop("menu_hud")
+			this.scene.bringToTop("dialogueWindow")
+			this.scene.bringToTop("windowEquip")
+			this.scene.bringToTop("windowInventory")
+			this.scene.bringToTop("windowSkills")
+			this.scene.bringToTop("windowStatut")
+			this.scene.bringToTop("menu_bag")
+			this.scene.bringToTop("gameMenuScreen")
+			this.scene.bringToTop("optionScreen")
+			this.scene.bringToTop("loadGameScreen")
+			this.scene.bringToTop("gameOver")
+			this.scene.bringToTop("titleScreen")
 			
 			this.tweens.add({
 				targets:this.fMapScene,
-				x:1650,
-				y:1530,
+				x:1650 * this.widthMap,
+				y:1530 * this.heightMap,
 		      ease: 'Power1',
 				duration:duration
 			})
@@ -409,27 +329,24 @@ class mySceneManager extends Phaser.Scene {
 			if(this.fEnemies !== undefined){
 			Phaser.Actions.Call(this.fEnemies.getChildren(),function(item){
 				item.setVisible(true)
-				item.setActive(true)
+				//item.setActive(true)
 			})
 			}
 
 			if(this.fWarp !== undefined){
 			Phaser.Actions.Call(this.fWarp.getChildren(),function(item){
 				item.setVisible(true)
-				item.setActive(true)
+				//item.setActive(true)
 			})
 			}
 
 			if(this.fNpc !== undefined){
 			Phaser.Actions.Call(this.fNpc.getChildren(),function(item){
 				item.setVisible(true)
-				item.setActive(true)
+				//item.setActive(true)
 			})
 			}
 
-			
-			
-			
 			this.fHero.setVisible(true)
 	}
 	
@@ -467,6 +384,13 @@ class mySceneManager extends Phaser.Scene {
 			                scene.fHero.body.setVelocityX(-700)
 					}
 					
+					if (Phaser.Input.Keyboard.JustDown(scene.keys.M) ){
+								scene.scene.run("worldMapScreen")
+								scene.scene.sleep(scene.game.currentMap)
+								scene.scene.bringToTop("worldMapScreen")
+								scene.scene.sleep("menu_hud")
+					}
+					
 				}
 				
 				
@@ -475,7 +399,7 @@ class mySceneManager extends Phaser.Scene {
 					if(  (scene.fHero.timeAttack.state) && scene.input.activePointer.y <=3060 ){
 						
 						// Change angle 
-						let angle = scene.utils.findAngle(scene.fHero.x,scene.fHero.y,scene.input.activePointer.x,scene.input.activePointer.y)
+						let angle = scene.utils.findAngle(scene.fHero.x,scene.fHero.y,scene.input.activePointer.worldX,scene.input.activePointer.worldY)
 						angle -=0.5
 						let a =scene.add.slash(scene.fHero,angle)
 						scene.heroAttack.add(a)
@@ -487,6 +411,42 @@ class mySceneManager extends Phaser.Scene {
 				if(this.input.activePointer.rightButtonDown( ) ){
 					//console.log("click right!")
 				}
+				//console.log("posX hero: "+scene.fHero.x)
+				
+				if(scene.cameras.main !==undefined){
+				
+					if((scene.fHero.x >= 1650  && scene.fHero.x <= (3328*scene.widthMap) - 1650))
+					{
+					scene.cameras.main.centerOnX(scene.fHero.x)
+					}
+					
+					if((scene.fHero.y >= 1730 && scene.fHero.y <= (3072*scene.heightMap) - 1530))
+					{
+					scene.cameras.main.centerOnY(scene.fHero.y)
+					}
+					
+					
+				}
+				
+				/*
+				if(scene.fHero.x >= 1650 && scene.fHero.y >= 1530){
+					if(scene.cameras.main !==undefined){
+						scene.cameras.main.startFollow(scene.fHero)
+					}
+					
+					//console.log(scene.cameras.main)
+				}
+				
+				if( scene.fHero.x >((3328*scene.widthMap ) -1650) || scene.fHero.y >((3072*scene.heightMap) - 1530) ||
+					scene.fHero.x <(1650) || scene.fHero.y <(1550)
+					){
+						if(scene.cameras.main !==undefined){
+							scene.cameras.main.stopFollow()
+						}
+						//console.log(scene.cameras.main)
+					//
+				} */
+
 
 		
 	}

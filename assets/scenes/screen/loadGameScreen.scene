@@ -1,0 +1,166 @@
+{
+  "-app": "Scene Editor - Phaser Editor v2.1.6",
+  "-version": 1,
+  "compilerLang": "JAVA_SCRIPT_6",
+  "displayList": {
+    "-id": "455878cd-bce6-4e8b-8170-d81f0203f4e4",
+    "-type": "DisplayList",
+    "children": [
+      {
+        "-id": "6ca5fa60-6175-4b35-b239-ad91ae0c9a2f",
+        "-type": "Image",
+        "children": [],
+        "variableName": "titleScreen_loadGame_blackScreen",
+        "variableField": false,
+        "x": -24.822256088256836,
+        "y": -37.21902847290039,
+        "scaleX": 1.023852825164795,
+        "scaleY": 1.0316033363342285,
+        "originX": 0,
+        "originY": 0,
+        "textureKey": "titleScreen_loadGame_blackScreen",
+        "textureFrame": "titleScreen_loadGame_blackScreen"
+      },
+      {
+        "-id": "1883b5ad-8963-4f3e-969b-311629b9a989",
+        "-type": "Image",
+        "children": [],
+        "variableName": "titleScreen_loadGame_window",
+        "variableField": false,
+        "x": 1616.85302734375,
+        "y": 1478.857421875,
+        "textureKey": "titleScreen_loadGame_window",
+        "textureFrame": "titleScreen_loadGame_window"
+      },
+      {
+        "-id": "380b6a5f-a4f2-431b-8777-edfcdc789422",
+        "-type": "Image",
+        "children": [],
+        "variableName": "buttonPrecedent",
+        "variableField": true,
+        "data": {"text": "\"<=\""},
+        "objectFactory": "uiButton",
+        "x": 665.779296875,
+        "y": 2659.186767578125,
+        "textureKey": "button_empty",
+        "textureFrame": "button_empty"
+      },
+      {
+        "-id": "b4c852d7-c339-403e-8314-2accf7eec6dc",
+        "-type": "Image",
+        "children": [],
+        "variableName": "loadButton",
+        "variableField": true,
+        "data": {"text": "\"load\""},
+        "objectFactory": "uiButton",
+        "x": 2693.8955078125,
+        "y": 2664.815185546875,
+        "textureKey": "button_empty",
+        "textureFrame": "button_empty"
+      },
+      {
+        "-id": "46d0c83d-b4d3-4f0c-98a0-5cccf73f114e",
+        "-type": "Image",
+        "children": [],
+        "variableName": "buttonDelete",
+        "variableField": true,
+        "data": {"text": "\"delete\""},
+        "objectFactory": "uiButton",
+        "x": 1663.409423828125,
+        "y": 2667.531494140625,
+        "textureKey": "button_empty",
+        "textureFrame": "button_empty"
+      },
+      {
+        "-id": "91d9a3b6-8ddd-444b-ae48-884edddbe1ac",
+        "-type": "Image",
+        "children": [],
+        "variableName": "titleScreen_loadGame_soloSlot",
+        "variableField": true,
+        "data": {
+          "backgroundColor": "0x858585",
+          "backgroundColorHover": "0x555555",
+          "isActive": "false"
+        },
+        "objectFactory": "uiButton",
+        "x": 1638.628662109375,
+        "y": 912.069580078125,
+        "isTinted": true,
+        "tintTopLeft": 8750469,
+        "tintTopRight": 8750469,
+        "tintBottomLeft": 8750469,
+        "tintBottomRight": 8750469,
+        "textureKey": "titleScreen_loadGame_soloSlot",
+        "textureFrame": "titleScreen_loadGame_soloSlot"
+      },
+      {
+        "-id": "c4f2af49-1c06-47d1-adb4-e313553d6fc4",
+        "-type": "Image",
+        "children": [],
+        "variableName": "titleScreen_loadGame_soloSlot_1",
+        "variableField": true,
+        "data": {
+          "backgroundColorHover": "0x555555",
+          "backgroundColor": "0x858585",
+          "isActive": "false"
+        },
+        "objectFactory": "uiButton",
+        "x": 1645.932861328125,
+        "y": 1471.864990234375,
+        "isTinted": true,
+        "tintTopLeft": 8750469,
+        "tintTopRight": 8750469,
+        "tintBottomLeft": 8750469,
+        "tintBottomRight": 8750469,
+        "textureKey": "titleScreen_loadGame_soloSlot",
+        "textureFrame": "titleScreen_loadGame_soloSlot"
+      },
+      {
+        "-id": "9c07a90c-80b6-4b1b-a37f-2b7030783846",
+        "-type": "Image",
+        "children": [],
+        "variableName": "titleScreen_loadGame_soloSlot_2",
+        "variableField": true,
+        "data": {
+          "backgroundColor": "0x858585",
+          "backgroundColorHover": "0x555555",
+          "isActive": "false"
+        },
+        "objectFactory": "uiButton",
+        "x": 1643.69970703125,
+        "y": 2039.0823974609375,
+        "isTinted": true,
+        "tintTopLeft": 8750469,
+        "tintTopRight": 8750469,
+        "tintBottomLeft": 8750469,
+        "tintBottomRight": 8750469,
+        "textureKey": "titleScreen_loadGame_soloSlot",
+        "textureFrame": "titleScreen_loadGame_soloSlot"
+      },
+      {
+        "-id": "9f95647a-7d45-48ab-a0ab-cca31ffdbaaf",
+        "-type": "Text",
+        "children": [],
+        "variableName": "loadHeaderText",
+        "variableField": false,
+        "x": 649.017578125,
+        "y": 169.23631286621094,
+        "scaleX": 1.1996853351593018,
+        "scaleY": 1.2567106485366821,
+        "text": "Load Game\r\n",
+        "fontSize": "300px",
+        "color": "#000000"
+      }
+    ]
+  },
+  "groups": {
+    "-id": "183b4962-ecd7-490b-b832-8226de80276d",
+    "-type": "Groups",
+    "children": []
+  },
+  "borderWidth": 3300,
+  "borderHeight": 3060,
+  "createMethodName": "_create",
+  "methodContextType": "SCENE",
+  "sceneKey": "loadGameScreen"
+}
