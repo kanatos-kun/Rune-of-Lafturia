@@ -8,6 +8,11 @@ Si vous aimez le jeu, suivez moi dans les reseaux sociaux :
 [patreon](https://www.patreon.com/jojoffrey)
 [website](http://blogdejojoffrey.fr/)
 
+
+## patch note v0.2.1-alpha-release :
+
+- Rajout et modification du systeme de dialogue
+
 ## patch note v0.1.0-alpha-release :
 
 - Modification de la gestion des dialogues

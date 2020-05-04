@@ -499,31 +499,69 @@ class mySceneManager extends Phaser.Scene {
 							if(Phaser.Math.Distance.Between(scene.fHero.x,scene.fHero.y,a.x,a.y) < 350 ){
 								scene.dialogueState = true;
 								scene.fHero.body.setVelocity(0,0)
-								var task = a.retrieveTask();
-								
-								let textConfig =  {
+								var textConfig =  {
 								    state:scene.dialogueState,
-									tagName:{isVisible:false,text:"undefined"},
+									tagName:"undefined",
 									text: "undefined",
-									}
-									
-									
-									
+								}	
 								if(a.getTaskId() >= a.getLengthTask() ){
-									scene.dialogueState = false;
-									textConfig.state = this.dialogueState;
-									a.resetTaskId();
-								}else{
-									
-									textConfig = {
-								    state:scene.dialogueState,
-									tagName:task.tagName,
-									text: task.text,
-									}
-									a.incTaskId();
+										scene.dialogueState = false;
+										textConfig.state = this.dialogueState;
+										a.resetTaskId();
 								}
-			
-								scene.scene.run("dialogueWindow", textConfig)
+								
+								
+								var [task,page] = a.retrieveTask();
+								var task_choice = {};
+
+									
+								
+														
+								if(page.mode =="action"){
+
+									
+									
+									
+									if(task.type=="choice"){
+										task_choice = task[task["choice_id"] ]
+										//task choice 
+										
+										
+										
+										
+										
+									}else if(task.type=="dialogue"){
+										//task dialogue 
+										
+										
+										if(scene.dialogueState != false){
+											textConfig = {
+											    state:scene.dialogueState,
+												tagName:task.tagName,
+												text: task.text,
+												}
+												a.incTaskId();
+										}
+
+										
+										
+										scene.scene.run("dialogueWindow", textConfig)
+										
+										
+										
+										
+									}else if(task.type=="shop"){
+										//task shop
+										
+										
+										
+										
+										 
+									}
+									
+									
+								}
+
 							}
 						}
 

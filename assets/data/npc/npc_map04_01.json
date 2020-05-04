@@ -6,11 +6,13 @@
       "mode": "action",
       "task": [
         {
+          "type": "dialogue",
           "text": "oof",
           "tagName": "Clara",
           "state": "idle"
         },
         {
+          "type": "dialogue",
           "text": "Bonjour jeune hero, pouvez vous\nm'aidez ?",
           "tagName": "Clara",
           "state": "idle"

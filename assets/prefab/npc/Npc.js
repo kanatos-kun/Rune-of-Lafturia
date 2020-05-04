@@ -36,10 +36,12 @@ class Npc extends Phaser.GameObjects.Sprite {
 	                        this.eventPage.currentPageEvent_id = i
 	            }
 			}
-			let pageId = this.eventPage.currentEventPage_id
+			let pageId = this.eventPage.currentEventPage_id;
+			let page = this.eventPage.page[pageId]
 			let taskId= this.eventPage.page[pageId].currentTask_id;
 			let task =	this.eventPage.page[pageId].task[taskId];
-			return task
+
+			return [task,page]
 		}
 	}
 	
