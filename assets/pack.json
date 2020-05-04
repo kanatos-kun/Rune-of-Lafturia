@@ -554,10 +554,21 @@
       "type": "json",
       "key": "npc_map04_01",
       "url": "assets/data/npc/npc_map04_01.json"
+    },
+    {
+      "type": "image",
+      "key": "map09",
+      "url": "assets/images/map/map09.png",
+      "normalMap": ""
+    },
+    {
+      "type": "sceneFile",
+      "key": "Map09",
+      "url": "assets/scenes/map/Map09.js"
     }
   ]},
   "meta": {
-    "generated": "1588489324720",
+    "generated": "1588519814374",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",

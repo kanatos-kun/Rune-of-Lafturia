@@ -318,7 +318,6 @@ class mySceneManager extends Phaser.Scene {
 	 * @param {mySceneManager} myScene
 	*/
 	transitioncomplete(myScene){
-			
 			if(this.fEnemies !== undefined){
 			Phaser.Actions.Call(this.fEnemies.getChildren(),function(item){
 				item.setVisible(true)

@@ -118,9 +118,16 @@ class Map08 extends Phaser.Scene {
 		warp_1.setData("dir", "left");
 		warp_1.setScale(1.6189777, 1.5708395);
 		
+		var warp = this.add.warp(6635.165, 2158.7896, "warp");
+		warp.setData("zone", "Map09");
+		warp.setData("x", 230);
+		warp.setData("y", 3206);
+		warp.setData("dir", "right");
+		warp.setScale(1.6189777, 1.5708395);
+		
 		this.fObstacle = this.add.group([ obstacle, obstacle_16, obstacle_15, obstacle_14, obstacle_13, obstacle_12, obstacle_11, obstacle_10, obstacle_9, obstacle_8, obstacle_7, obstacle_6, obstacle_5, obstacle_4, obstacle_3, obstacle_2, obstacle_1 ]);
 		this.fEnemies = this.add.group([ bee, bee_4, bee_2, bee_3, bee_5, bee_1, bee_6 ]);
-		this.fWarp = this.add.group([ warp_1 ]);
+		this.fWarp = this.add.group([ warp_1, warp ]);
 		
 		this.fMapScene = mapScene;
 		

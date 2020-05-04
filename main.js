@@ -9,7 +9,7 @@ window.addEventListener('load', function() {
     "backgroundColor": "#000000",
     "disableContextMenu":true,
     "parent": "game-container",
-	"version":"v0.1.0-alpha-release",
+	"version":"v0.2.0-alpha-release",
     physics: {
         default: 'arcade',
         arcade: {
@@ -134,16 +134,17 @@ class Boot extends Phaser.Scene {
 		/** @global 
 		 *  @property {string} currentMap -the current map displayed
 		*/
-		this.game.currentMap = "Map01"
+		this.game.currentMap = "Map08"
+		this.game.startMap = "Map08"
 		this.game.globalSwitchId=[]
 		for(let i =0;i < 50;i++){
 			this.game.globalSwitchId.push(false)
 		}
 
-
+		/*
 		var myPersonalString = "[hello world 1][hello monde !][xD]"
 		let regexp =/\[.{0,}?]/g;
-		let array = [...myPersonalString.matchAll(regexp)]
+		let array = [...myPersonalString.matchAll(regexp)] */
 		this.scene.start("titleScreen")
 		//this.scene.start("Map03",{x:1492,y:1628});
 	}
