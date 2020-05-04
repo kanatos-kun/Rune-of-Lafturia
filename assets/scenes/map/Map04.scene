@@ -23,7 +23,11 @@
         "children": [],
         "variableName": "villager_01",
         "variableField": true,
-        "objectFactory": "villager_01",
+        "data": {
+          "tagName": "\"Clara\"",
+          "eventPage": "\"npc_map04_01\""
+        },
+        "objectFactory": "npc",
         "x": 1504.6807861328125,
         "y": 1635.3568115234375,
         "textureKey": "villager_01",

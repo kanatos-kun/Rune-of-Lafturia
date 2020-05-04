@@ -8,13 +8,13 @@ class Window_debug_popup extends Phaser.GameObjects.Text {
 	 * @param {string} text
 	 */
 	constructor(scene, target, text) {
-		super(scene, target.x, target.y-40, text, {color:"#ffffff",backgroundColor:"#000000",fontSize:"46px"});
+		super(scene, target.x-70, target.y-100, text, {color:"#ffffff",backgroundColor:"#000000",fontSize:"46px"});
 		this.target = target;
 		this.setDepth(999)
 	}
 	
 	preUpdate(time,delta){
-		this.setPosition(this.target.x,this.target.y-40)
+		this.setPosition(this.target.x-70,this.target.y-100)
 		if(this.target.scene === undefined){
 			this.destroy()
 		}

@@ -159,8 +159,8 @@
     },
     {
       "type": "script",
-      "key": "villager_011",
-      "url": "assets/prefab/villager_01.js"
+      "key": "Npc",
+      "url": "assets/prefab/npc/Npc.js"
     },
     {
       "type": "image",
@@ -532,10 +532,32 @@
       "type": "sceneFile",
       "key": "Map08",
       "url": "assets/scenes/map/Map08.js"
+    },
+    {
+      "type": "script",
+      "key": "Coffre",
+      "url": "assets/prefab/Coffre.js"
+    },
+    {
+      "type": "image",
+      "key": "coffre_closed",
+      "url": "assets/images/coffre/dark-wood-closed.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "coffre_open",
+      "url": "assets/images/coffre/dark-wood-open.png",
+      "normalMap": ""
+    },
+    {
+      "type": "json",
+      "key": "npc_map04_01",
+      "url": "assets/data/npc/npc_map04_01.json"
     }
   ]},
   "meta": {
-    "generated": "1588062254257",
+    "generated": "1588489324720",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",

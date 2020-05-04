@@ -1,0 +1,22 @@
+{
+  "page": [
+    {
+      "globalSwitchId": null,
+      "currentTask_id": 0,
+      "mode": "action",
+      "task": [
+        {
+          "text": "oof",
+          "tagName": "Clara",
+          "state": "idle"
+        },
+        {
+          "text": "Bonjour jeune hero, pouvez vous\nm'aidez ?",
+          "tagName": "Clara",
+          "state": "idle"
+        }
+      ]
+    }
+  ],
+  "currentEventPage_id": 0
+}

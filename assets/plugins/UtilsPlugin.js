@@ -47,6 +47,19 @@
 	deleteSlot(saveNumber){
 		localStorage.setItem("saveSlot-"+saveNumber,undefined)
 	}
+	
+	splitTextDialogue(text){
+		let regexp =/\[.{0,}?]/g;
+		let array = [...text.matchAll(regexp)]
+		let regexpRemove =/[^\[].{0,}[^\]]/g;
+		let array2 = []
+		for(let i=0; i < array.length;i++){
+			let a = array[i][0]
+			let tx = a.match(regexpRemove)[0].replace("\\n","\n")
+			array2.push(tx);
+		}
+		return array2;
+	}
 
   }
 

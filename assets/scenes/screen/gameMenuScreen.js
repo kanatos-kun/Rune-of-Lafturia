@@ -71,17 +71,20 @@ class gameMenuScreen extends Phaser.Scene {
 			this.scene.setVisible(false)
 		},this)
 		this.fButtonSave.on("pointerdown",function(pointer){
+			this.scene.bringToTop("saveGameScreen")
 			this.scene.run("saveGameScreen",{state:true,windowTarget:"gameMenuScreen"})
 			this.scene.sleep("gameMenuScreen")
 		},this)
 		
 		this.fButtonLoad.on("pointerdown",function(pointer){
+			this.scene.bringToTop("loadGameScreen")
 			this.scene.run("loadGameScreen",{state:true,windowTarget:"gameMenuScreen"})
 			this.scene.sleep("gameMenuScreen")
 		},this)
 		
 		
 		this.fButtonOption.on("pointerdown",function(pointer){
+			this.scene.bringToTop("optionScreen")
 			this.scene.run("optionScreen",{state:true,windowTarget:"gameMenuScreen"})
 			//console.log(this.scene.isSleeping("optionScreen"))
 			this.scene.sleep("gameMenuScreen")
@@ -89,10 +92,12 @@ class gameMenuScreen extends Phaser.Scene {
 		
 		this.fButtonTitle.on("pointerdown",function(pointer){
 			this.scene.wake("titleScreen")
+			this.scene.bringToTop("titleScreen")
+			this.scene.bringToTop("creditScreen")
+			this.scene.bringToTop("optionScreen")
+			this.scene.bringToTop("loadGameScreen")
 			this.scene.sleep(this.game.currentMap)
 			this.scene.sleep("gameMenuScreen")
-
-
 		},this)
 		
 	}

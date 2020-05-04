@@ -52,6 +52,18 @@ class titleScreen extends Phaser.Scene {
 		buttonCredits.setData("groupUI", "fTitleMenu");
 		buttonCredits.setScale(1.8232574, 1.121901);
 		
+		var version_text = this.add.text(39.85629, 3026.3835, "v0.0.1-alpha-release(test)\r\n", {
+    "fontSize": "90px",
+    "color": "#000000",
+    "fixedWidth": 1500
+});
+		
+		this.add.text(41.705486, 2900.8574, "Game made by Jojoffrey\r\n", {
+    "fontSize": "90px",
+    "color": "#000000",
+    "fixedWidth": 1500
+});
+		
 		this.fTitleMenu = this.add.group([ buttonOptions, buttonCredits, buttonLoadGame, buttonNewGame ]);
 		this.fTitleMenu_load = this.add.group([  ]);
 		
@@ -59,8 +71,10 @@ class titleScreen extends Phaser.Scene {
 		this.fButtonLoadGame = buttonLoadGame;
 		this.fButtonOptions = buttonOptions;
 		this.fButtonCredits = buttonCredits;
+		this.fVersion_text = version_text;
 		
 	}
+	
 	
 	
 	
@@ -71,6 +85,7 @@ class titleScreen extends Phaser.Scene {
 	/* START-USER-CODE */
 	create(){
 		this._create()
+		this.fVersion_text.setText(this.game.config.gameVersion)
 		this.state = "titleMenu"
 		//titleMenu/newGame
 		//titleMenu/loadGame
@@ -90,7 +105,7 @@ class titleScreen extends Phaser.Scene {
 			this.game.hero.currentHp = 12;
 			this.game.hero.hp = 12;			
 			this.game.gold = 0;
-			this.scene.run("Map01",{x:1492,y:1628});
+			this.scene.run("Map04",{x:1492,y:1628});
 			this.scene.run("menu_hud")
 			this.scene.run("windowInventory")
 			this.scene.bringToTop("menu_hud")
@@ -122,7 +137,6 @@ class titleScreen extends Phaser.Scene {
 		this.fButtonCredits.on("pointerdown",function(pointer){
 			this.scene.run("creditScreen",{state:true,windowTarget:"titleScreen"})
 			this.scene.pause("titleScreen")
-
 		},this)
 		
 	}

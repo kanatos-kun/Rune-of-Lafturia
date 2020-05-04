@@ -76,6 +76,7 @@ class Map03 extends Phaser.Scene {
 	}
 
 	create() {
+		this.scene.get("mySceneManager").preCreateMap(this);
 		this._create();
 		this.scene.get("mySceneManager").createMap(this);	
 	}
@@ -108,29 +109,10 @@ class Map03 extends Phaser.Scene {
 					} 
 				}
 				
-				/*
-				if(this.fHero.y >=2900 && this.fHero.x >= 1612){
-					//tp map 04
-					this.changeTransitionMap("Map04",1428,137,"bottom")
-				}else if(this.fHero.y <=30 && this.fHero.x <=1636){
-					//tp map02
-					this.changeTransitionMap("Map02",1668,2807,"top")
-				}else if(this.fHero.y >=1452 && this.fHero.x <= 50){
-					this.changeTransitionMap("Map06",3044,2080,"left")
-					//tp map06
-				}else if(this.fHero.y >=1452 && this.fHero.x >= 3252){
-					this.changeTransitionMap("Map07",138,2080,"right")
-					//tp map07
-				} */
-				
-				
-				
-				
 				
 				
 				}
 
-		
 	}
 
 	/* END-USER-CODE */

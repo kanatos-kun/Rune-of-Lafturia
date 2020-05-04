@@ -41,7 +41,6 @@ class mySceneManager extends Phaser.Scene {
 	 * @param {Phaser.Scene} Scene
 	*/
 	createMap(scene) {
-		
 		scene.events.on("transitionstart",this.transitionstart,scene)
 		scene.events.on("transitioncomplete",this.transitioncomplete,scene)
 
@@ -49,34 +48,6 @@ class mySceneManager extends Phaser.Scene {
 			scene.fHero = scene.add.hero(1075.0101, 1528.0022, "hero");
 		}else{
 			scene.fHero = scene.add.hero(scene.dataScene.x,scene.dataScene.y,"hero")
-		}
-
-		scene.dialogueIteration = 0;
-		scene.dialogueState = false;
-		scene.widthMap = 1;
-		scene.heightMap = 1;
-		if(scene.fEnemies === undefined){
-			scene.fEnemies = this.add.group();
-		}
-		
-		if(scene.fWarp === undefined){
-			scene.fWarp = this.add.group();
-		}
-		
-		if(scene.fNpc === undefined){
-			scene.fNpc = this.add.group();
-		}
-		
-		if(scene.fObstacle === undefined){
-			scene.fObstacle = this.add.group();
-		}
-		
-		if(scene.fGold === undefined){
-			scene.fGold = this.add.group();
-		}
-		
-		if(scene.fItems === undefined){
-			scene.fItems = this.add.group();
 		}
 		
 		if(scene.fMapScene !== undefined){
@@ -96,10 +67,18 @@ class mySceneManager extends Phaser.Scene {
 		scene.physics.add.collider(scene.fEnemies,scene.fObstacle)
 		scene.attackEnemyCollision = function(hero,enemy){
 			if(!enemy.invincible.state){
-
+				
+				var dirX = hero.x - enemy.x
+				var dirY = hero.y - enemy.y
+				
+				enemy.stateVar.get_hit.x = -Math.sign(dirX)
+				enemy.stateVar.get_hit.y = -Math.sign(dirY)
+				enemy.state ="get_hit"
+				enemy.setTint(0xff0000)
 				enemy.currentHp = enemy.currentHp - hero.attack
 				enemy.invincible.state = true
 				if(enemy.type =="hero"){
+					enemy.setTint(0xff0000)
 					enemy.scene.game.hero.statuts.currentHp = enemy.currentHp
 					enemy.scene.game.hero.statuts.Hp = enemy.Hp
 				}
@@ -144,7 +123,7 @@ class mySceneManager extends Phaser.Scene {
 		scene.physics.add.overlap(scene.fHero,scene.fGold,scene.recolteGold,function(){return true},scene)
 		//scene.physics.add.overlap(scene.fHero,scene.fObstacle,function(){console.log("overlaps with obtstaclte")})
 		scene.keys=scene.input.keyboard.addKeys('Z,S,Q,D,M,SPACE')
-		 
+ 		scene.events.emit("endSceneManager");
 	}
 	
 	
@@ -253,6 +232,13 @@ class mySceneManager extends Phaser.Scene {
 					//item.setActive(false)
 				})
 			}
+			
+			if(from.fCoffres !== undefined){
+				Phaser.Actions.Call(from.fCoffres.getChildren(),function(item){
+					item.setVisible(false)
+					//item.setActive(false)
+				})
+			}
 
 			/*from.fWarp.setVisible(false)
 			from.fNpc.setVisible(false) */
@@ -291,7 +277,12 @@ class mySceneManager extends Phaser.Scene {
 				})
 			}
 
-
+			if(this.fCoffres !== undefined){
+				Phaser.Actions.Call(this.fCoffres.getChildren(),function(item){
+					item.setVisible(false)
+					//item.setActive(false)
+				})
+			}
 
 			
 			
@@ -315,6 +306,8 @@ class mySceneManager extends Phaser.Scene {
 		      ease: 'Power1',
 				duration:duration
 			})
+			
+		
 	}
 
 	
@@ -346,10 +339,51 @@ class mySceneManager extends Phaser.Scene {
 				//item.setActive(true)
 			})
 			}
+			
+			if(this.fCoffres !== undefined){
+			Phaser.Actions.Call(this.fCoffres.getChildren(),function(item){
+				item.setVisible(true)
+				//item.setActive(true)
+			})
+			}
 
 			this.fHero.setVisible(true)
 	}
 	
+	
+	preCreateMap(scene){
+		scene.dialogueIteration = 0;
+		scene.dialogueState = false;
+		scene.widthMap = 1;
+		scene.heightMap = 1;
+		if(scene.fCoffres === undefined){
+			scene.fCoffres = this.add.group();
+		}
+		
+		if(scene.fEnemies === undefined){
+			scene.fEnemies = this.add.group();
+		}
+		
+		if(scene.fWarp === undefined){
+			scene.fWarp = this.add.group();
+		}
+		
+		if(scene.fNpc === undefined){
+			scene.fNpc = this.add.group();
+		}
+		
+		if(scene.fObstacle === undefined){
+			scene.fObstacle = this.add.group();
+		}
+		
+		if(scene.fGold === undefined){
+			scene.fGold = this.add.group();
+		}
+		
+		if(scene.fItems === undefined){
+			scene.fItems = this.add.group();
+		}
+	}
 	
 		/** 
 	 * @description  update the map scene
@@ -367,22 +401,25 @@ class mySceneManager extends Phaser.Scene {
 		}
 
 		if(!scene.dialogueState){
-					if(scene.fHero.body !== undefined){
-						scene.fHero.body.setVelocity(0,0)
+			
+					if(scene.fHero.state!=="get_hit" || scene.dialogueState){
+						if(scene.fHero.body !== undefined){
+							scene.fHero.body.setVelocity(0,0)
+						}
+						if(scene.keys.Z.isDown) {
+				              scene.fHero.body.setVelocityY(-700)
+						}
+						if(scene.keys.S.isDown){
+				                scene.fHero.body.setVelocityY(700)
+						}
+						if(scene.keys.D.isDown){
+				                scene.fHero.body.setVelocityX(700)
+						}
+						if(scene.keys.Q.isDown){
+				                scene.fHero.body.setVelocityX(-700)
+						}
 					}
-					if(scene.keys.Z.isDown) {
-			               scene.fHero.body.setVelocityY(-700)
-					}
-					
-					if(scene.keys.S.isDown){
-			                scene.fHero.body.setVelocityY(700)
-					}
-					if(scene.keys.D.isDown){
-			                scene.fHero.body.setVelocityX(700)
-					}
-					if(scene.keys.Q.isDown){
-			                scene.fHero.body.setVelocityX(-700)
-					}
+
 					
 					if (Phaser.Input.Keyboard.JustDown(scene.keys.M) ){
 								scene.scene.run("worldMapScreen")
@@ -415,7 +452,7 @@ class mySceneManager extends Phaser.Scene {
 				
 				if(scene.cameras.main !==undefined){
 				
-					if((scene.fHero.x >= 1650  && scene.fHero.x <= (3328*scene.widthMap) - 1650))
+					if((scene.fHero.x >= 1680  && scene.fHero.x <= (3328*scene.widthMap) - 1650))
 					{
 					scene.cameras.main.centerOnX(scene.fHero.x)
 					}
@@ -446,7 +483,55 @@ class mySceneManager extends Phaser.Scene {
 						//console.log(scene.cameras.main)
 					//
 				} */
+				if(Phaser.Input.Keyboard.JustDown(scene.keys.SPACE)){
+				
+				
+				/*
+				for(let i = 0; i< scene.fEnemies.getLength();i++){
+					let a = scene.fEnemies.getChildren()[i]
+					if(a.active){
+						//console.log("isActive")
+					}
+				} */
+					
+				for(let i = 0; i< scene.fNpc.getLength();i++){
+						let a = scene.fNpc.getChildren()[i]
+						if(a.active){
+							if(Phaser.Math.Distance.Between(scene.fHero.x,scene.fHero.y,a.x,a.y) < 350 ){
+								scene.dialogueState = true;
+								scene.fHero.body.setVelocity(0,0)
+								var task = a.retrieveTask();
+								
+								let textConfig =  {
+								    state:scene.dialogueState,
+									tagName:{isVisible:false,text:"undefined"},
+									text: "undefined",
+									}
+									
+									
+									
+								if(a.getTaskId() >= a.getLengthTask() ){
+									scene.dialogueState = false;
+									textConfig.state = this.dialogueState;
+									a.resetTaskId();
+								}else{
+									
+									textConfig = {
+								    state:scene.dialogueState,
+									tagName:task.tagName,
+									text: task.text,
+									}
+									a.incTaskId();
+								}
+			
+								scene.scene.run("dialogueWindow", textConfig)
+							}
+						}
 
+					}
+					
+					
+				}
 
 		
 	}

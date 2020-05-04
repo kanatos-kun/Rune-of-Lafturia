@@ -15,7 +15,9 @@ class Map04 extends Phaser.Scene {
 	
 		var mapScene = this.add.image(1654.7802, 1531.0159, "map04");
 		
-		var villager_01 = this.add.villager_01(1504.6808, 1635.3568, "villager_01");
+		var villager_01 = this.add.npc(1504.6808, 1635.3568, "villager_01");
+		villager_01.setData("tagName", "Clara");
+		villager_01.setData("eventPage", "npc_map04_01");
 		
 		var obstacle = this.add.obstacle(-49.576813, 1632.7251, "obstacle");
 		obstacle.setOrigin(0.0, 0.0);
@@ -61,8 +63,12 @@ class Map04 extends Phaser.Scene {
 	}
 	
 	create() {
+		this.scene.get("mySceneManager").preCreateMap(this);
 		this._create();
 		this.scene.get("mySceneManager").createMap(this);
+		
+
+		
 	}
 	
 
@@ -75,7 +81,46 @@ class Map04 extends Phaser.Scene {
 			
 			if(Phaser.Input.Keyboard.JustDown(this.keys.SPACE)){
 					//check if it's in the detection zone
-				
+					//var ellipse = this.add.circle(this.fHero.x,this.fHero.y,150,0xff0000,0.2)
+					/*var grp =this.fNpc.setHitArea(ellipse,function(hitArea,x,y,gameobject){
+						console.log("x: "+x)
+						console.log("y: "+y)
+					})
+					for(let i = 0; i<= this.fNpc.getLength();i++){
+						let a = this.fNpc.getChildren()[i]
+						
+					} */
+					
+					/*
+					for(let i = 0; i< this.fNpc.getLength();i++){
+						let a = this.fNpc.getChildren()[i]
+						if(a.active){
+							if(Phaser.Math.Distance.Between(this.fHero.x,this.fHero.y,a.x,a.y) < 350 ){
+								this.dialogueState = true;
+								this.fHero.body.setVelocity(0,0)
+								
+								let textConfig = {
+							    state:this.dialogueState,
+								tagName:{isVisible:true,text:"Clara"},
+								text: ["Bonjour jeune hero, pouvez vous\nm'aidez ?"],
+								textIteration : this.dialogueIteration
+								}
+								if(this.dialogueIteration >= textConfig.text.length){
+									this.dialogueState = false;
+									textConfig.state = this.dialogueState;
+									this.dialogueIteration = 0
+								}else{
+									this.dialogueIteration += 1
+								}
+			
+								this.scene.run("dialogueWindow", textConfig)
+							}
+						}
+
+					} */
+					
+					
+					/*
 					if(Phaser.Math.Distance.Between(this.fHero.x,this.fHero.y,this.fVillager_01.x,this.fVillager_01.y) < 350 ){
 						this.dialogueState = true;
 						this.fHero.body.setVelocity(0,0)
@@ -96,7 +141,7 @@ class Map04 extends Phaser.Scene {
 	
 						this.scene.run("dialogueWindow", textConfig)
 	
-					} 
+					} */
 			}
 	
 			/*

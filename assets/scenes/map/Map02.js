@@ -23,7 +23,7 @@ class Map02 extends Phaser.Scene {
 		obstacle_1.setOrigin(0.0, 0.0);
 		obstacle_1.setScale(5.2347856, 61.56116);
 		
-		var obstacle_2 = this.add.obstacle(2401.123, 1302.6267, "obstacle");
+		var obstacle_2 = this.add.obstacle(2425.108, 1332.6078, "obstacle");
 		obstacle_2.setOrigin(0.0, 0.0);
 		obstacle_2.setScale(4.2830124, 5.0634723);
 		
@@ -57,8 +57,13 @@ class Map02 extends Phaser.Scene {
 	init(data){
 		this.dataScene = data
 	}
+	
+	preload(){
+		
+	}
 
 	create() {
+		this.scene.get("mySceneManager").preCreateMap(this);
 		this._create();
 		this.scene.get("mySceneManager").createMap(this);
 	}
@@ -66,20 +71,10 @@ class Map02 extends Phaser.Scene {
 
 	update(){
 		
-		
-
 		if(!this.sys.isTransitioning()){//
 			this.scene.get("mySceneManager").updateMap(this);
-			/*
-				if(this.fHero.y >=2900){
-					this.changeTransitionMap("Map03",1428,137,"bottom")
-				}
-				if(this.fHero.y <=30){
-					this.changeTransitionMap("Map01",1668,2807,"top")
-				} */
-				
 			}
-
+			
 		}
 
 

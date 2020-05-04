@@ -14,7 +14,7 @@ class menu_hud extends Phaser.Scene {
 	_create() {
 	
 		var background_ui_bottom = this.add.image(1638.3524, 3250.8884, "background_ui_bottom");
-		background_ui_bottom.setScale(1.0450327, 1.0);
+		background_ui_bottom.setScale(1.0450327, 1.2559277);
 		
 		this.add.image(1843.0378, 3254.5264, "skill_slot");
 		

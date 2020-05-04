@@ -52,6 +52,26 @@
         "scaleY": 1.570839524269104,
         "textureKey": "warp",
         "textureFrame": "warp"
+      },
+      {
+        "-id": "203f5b9b-b501-4262-b777-6e37e04914ed",
+        "-type": "Image",
+        "children": [],
+        "variableName": "coffre_closed",
+        "variableField": false,
+        "data": {
+          "itemName": "\"gold\"",
+          "value": "40",
+          "globalSwitchId": "0",
+          "globalSwitchValue": "\"true\""
+        },
+        "objectFactory": "coffre",
+        "x": 1944.3375244140625,
+        "y": 1204.977783203125,
+        "scaleX": 0.5621457099914551,
+        "scaleY": 0.5646666884422302,
+        "textureKey": "coffre_closed",
+        "textureFrame": "coffre_closed"
       }
     ]
   },
@@ -75,6 +95,12 @@
         "-id": "7ee885ee-9907-478b-938d-75c3f4dba5b0",
         "children": [{"-id": "736e9e2b-4da0-42b8-a977-625fe0b18bb9"}],
         "variableName": "obstacle",
+        "variableField": true
+      },
+      {
+        "-id": "8404aa15-776a-405b-9711-1f7d78b8160f",
+        "children": [{"-id": "203f5b9b-b501-4262-b777-6e37e04914ed"}],
+        "variableName": "coffres",
         "variableField": true
       }
     ]

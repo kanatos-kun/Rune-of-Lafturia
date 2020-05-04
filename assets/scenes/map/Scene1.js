@@ -13,9 +13,9 @@ class Scene1 extends Phaser.Scene {
 	
 	_create() {
 	
-		var mapScene = this.add.image(1658.8756, 1532.0128, "map01");
+		var mapScene = this.add.image(1650.0, 1530.0, "map01");
 		
-		var bee = this.add.enemy_bee(2275.6448, 2035.4805, "bee");
+		var bee = this.add.enemy_bee(2169.971, 2285.7607, "bee");
 		bee.flipX = true;
 		
 		var rect815 = this.add.obstacle(-30.005621, -47.35043, "obstacle");
@@ -56,7 +56,7 @@ class Scene1 extends Phaser.Scene {
 		
 		this.fEnemies = this.add.group([ bee, bee_1 ]);
 		this.fObstacle = this.add.group([ rect815, rect_4, rect_3, rect_2, rect_1 ]);
-		this.fWarp = this.add.group([ warp, warp_1 ]);
+		this.fWarp = this.add.group([ warp_1, warp ]);
 		
 		this.fMapScene = mapScene;
 		
@@ -71,48 +71,20 @@ class Scene1 extends Phaser.Scene {
 		this.dataScene = data
 	}
 	create() {
+		this.scene.get("mySceneManager").preCreateMap(this);
 		this._create();
 		this.scene.get("mySceneManager").createMap(this);
-		//this.fHero.setDepth(10)
-		//this.dialogueIteration = 0
-		//this.dialogueState = false;
-		//this.fHero.setPosition(this.dataScene.x,this.dataScene.y)
-		//this.heroAttack = this.add.group();
-		//this.physics.add.overlap(this.heroAttack,this.fEnemies,this.attackEnemyCollision)
-		//this.keys=this.input.keyboard.addKeys('Z,S,Q,D,SPACE')
-		
-		
-		//add hud 
-		//this.scene.run("menu_hud")
 	}
-	/*
-	attackEnemyCollision(hero,enemy){
-		if(!enemy.invincible.state){
-			enemy.currentHp = enemy.currentHp - hero.attack
-			enemy.invincible.state = true
-		}
-
-		
-	} */
 	
 
 	update() {
 		
-
 		if(!this.sys.isTransitioning()){//
 				this.scene.get("mySceneManager").updateMap(this);
-				/*
-				if(this.fHero.y >=2900 && this.fHero.x >= 1590){
-					//go in map02
-					this.changeTransitionMap("Map02",1650,100,"bottom")
-				}else if(this.fHero.y <=1391 && this.fHero.x <= 50){
-					//go in map05
-					this.changeTransitionMap("Map05",2984,1252,"left")
-				} */
 		}
 
 	}
-
+	// Write your code here.
 
 	/* END-USER-CODE */
 }

@@ -106,6 +106,32 @@
         "scaleY": 1.121901035308838,
         "textureKey": "button_empty",
         "textureFrame": "button_empty"
+      },
+      {
+        "-id": "c56514b1-e558-4445-b1b9-823d60a85b6c",
+        "-type": "Text",
+        "children": [],
+        "variableName": "version_text",
+        "variableField": true,
+        "x": 39.85628890991211,
+        "y": 3026.383544921875,
+        "text": "v0.0.1-alpha-release(test)\r\n",
+        "fontSize": "90px",
+        "color": "#000000",
+        "fixedWidth": 1500
+      },
+      {
+        "-id": "a5793155-849b-4fc8-a5df-a47ba68c13d4",
+        "-type": "Text",
+        "children": [],
+        "variableName": "text_1",
+        "variableField": false,
+        "x": 41.70548629760742,
+        "y": 2900.857421875,
+        "text": "Game made by Jojoffrey\r\n",
+        "fontSize": "90px",
+        "color": "#000000",
+        "fixedWidth": 1500
       }
     ]
   },

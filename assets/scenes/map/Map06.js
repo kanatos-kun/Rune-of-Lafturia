@@ -26,13 +26,22 @@ class Map06 extends Phaser.Scene {
 		warp_1.setData("dir", "right");
 		warp_1.setScale(1.6189777, 1.5708395);
 		
+		var coffre_closed = this.add.coffre(1944.3375, 1204.9778, "coffre_closed");
+		coffre_closed.setData("itemName", "gold");
+		coffre_closed.setData("value", 40);
+		coffre_closed.setData("globalSwitchId", 0);
+		coffre_closed.setData("globalSwitchValue", "true");
+		coffre_closed.setScale(0.5621457, 0.5646667);
+		
 		var warp = this.add.group([  ]);
 		this.fWarp = this.add.group([ warp_1 ]);
 		this.fObstacle = this.add.group([ obstacle ]);
+		this.fCoffres = this.add.group([ coffre_closed ]);
 		
 		this.fMapScene = mapScene;
 		
 	}
+	
 	
 	
 	
@@ -43,6 +52,7 @@ class Map06 extends Phaser.Scene {
 		this.dataScene = data
 	}
 	create() {
+		this.scene.get("mySceneManager").preCreateMap(this);
 		this._create();
 		this.scene.get("mySceneManager").createMap(this);
 	}

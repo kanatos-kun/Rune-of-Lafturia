@@ -1,0 +1,27 @@
+{
+  "page": [
+    {
+      "globalSwitchId": null,
+      "currentTask_id": 0,
+      "task": [
+        {
+          "text": ["text 01", "text02", "etc..."],
+          "state": "idle"
+        },
+        {
+          "shop": {
+            "sell": [
+              { "name": "potion", "value": 0 },
+              { "name": "sword", "value": 0 },
+              { "name": "knife", "value": 0 },
+              { "name": "leather armor", "value": 0 }
+            ],
+            "bought": [{ "name": "sting", "value": 0 }]
+          },
+          "state": "idle"
+        }
+      ]
+    }
+  ],
+  "currentPageEvent_id": 0
+}

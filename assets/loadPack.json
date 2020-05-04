@@ -1,0 +1,26 @@
+{
+  "section": {"files": [
+    {
+      "type": "image",
+      "key": "UI_BARFRAME",
+      "url": "assets/images/loadPack/UI_BARFRAME.png"
+    },
+    {
+      "type": "image",
+      "key": "UI_BARMARKINGS",
+      "url": "assets/images/loadPack/UI_BARMARKINGS.png"
+    },
+    {
+      "type": "image",
+      "key": "UI_COLORBAR (2)",
+      "url": "assets/images/loadPack/UI_COLORBAR (2).png"
+    }
+  ]},
+  "meta": {
+    "generated": "1588149448861",
+    "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
+    "contentType": "Phaser v3 Asset Pack",
+    "url": "https://phasereditor2d.com",
+    "version": "2"
+  }
+}
