@@ -105,7 +105,7 @@ class titleScreen extends Phaser.Scene {
 			this.game.hero.currentHp = 12;
 			this.game.hero.hp = 12;			
 			this.game.gold = 0;
-			this.scene.run(this.game.startMap,{x:1492,y:1628});
+			this.scene.run(this.game.startMap,{x:1532,y:2850});
 			this.scene.run("menu_hud")
 			this.scene.run("windowInventory")
 			this.scene.bringToTop("menu_hud")

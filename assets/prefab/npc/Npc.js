@@ -57,10 +57,12 @@ class Npc extends Phaser.GameObjects.Sprite {
 	
 	getTaskId(){
 		let pageId = this.eventPage.currentEventPage_id
+		
 		return this.eventPage.page[pageId].currentTask_id
 	}
 	
 	getLengthTask(){
+		
 			let pageId = this.eventPage.currentEventPage_id
 			let task_length =  this.eventPage.page[pageId].task.length
 			return task_length;

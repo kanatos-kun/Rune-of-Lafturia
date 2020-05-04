@@ -13,7 +13,7 @@ class Map09 extends Phaser.Scene {
 	
 	_create() {
 	
-		var mapScene = this.add.image(3328.271, 3065.1306, "map09");
+		var mapScene = this.add.image(3328.271, 3061.176, "map09");
 		
 		var obstacle = this.add.obstacle(508.019, 676.7124, "obstacle");
 		obstacle.setOrigin(0.0, 0.0);
@@ -134,12 +134,20 @@ class Map09 extends Phaser.Scene {
 		warp.setData("dir", "left");
 		warp.setScale(1.6189777, 1.5708395);
 		
+		var villager_01 = this.add.npc(1527.6003, 2723.5322, "villager_01");
+		villager_01.setData("tagName", "Clara");
+		villager_01.setData("eventPage", "npc_mapxx_xx");
+		
 		this.fObstacle = this.add.group([ obstacle, obstacle_27, obstacle_26, obstacle_25, obstacle_24, obstacle_23, obstacle_22, obstacle_21, obstacle_20, obstacle_19, obstacle_18, obstacle_17, obstacle_16, obstacle_15, obstacle_14, obstacle_13, obstacle_12, obstacle_11, obstacle_10, obstacle_9, obstacle_8, obstacle_7, obstacle_6, obstacle_5, obstacle_4, obstacle_3, obstacle_2, obstacle_1 ]);
 		this.fWarp = this.add.group([ warp ]);
+		this.fNpc = this.add.group([ villager_01 ]);
 		
 		this.fMapScene = mapScene;
+		this.fVillager_01 = villager_01;
 		
 	}
+	
+	
 	
 	
 	

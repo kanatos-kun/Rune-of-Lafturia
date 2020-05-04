@@ -13,7 +13,7 @@
         "variableName": "mapScene",
         "variableField": true,
         "x": 3328.27099609375,
-        "y": 3065.130615234375,
+        "y": 3061.176025390625,
         "textureKey": "map09",
         "textureFrame": "map09"
       },
@@ -484,6 +484,22 @@
         "scaleY": 1.570839524269104,
         "textureKey": "warp",
         "textureFrame": "warp"
+      },
+      {
+        "-id": "0470503f-66ec-483f-8a4d-673bcebf6a0f",
+        "-type": "Image",
+        "children": [],
+        "variableName": "villager_01",
+        "variableField": true,
+        "data": {
+          "tagName": "\"Clara\"",
+          "eventPage": "\"npc_mapxx_xx\""
+        },
+        "objectFactory": "npc",
+        "x": 1527.600341796875,
+        "y": 2723.5322265625,
+        "textureKey": "villager_01",
+        "textureFrame": "villager_01"
       }
     ]
   },
@@ -530,6 +546,12 @@
         "-id": "4d9938e0-d96b-48ce-bf9a-9e658a7e731f",
         "children": [{"-id": "2c192fbf-7ac1-406f-8f67-434721a5c253"}],
         "variableName": "warp",
+        "variableField": true
+      },
+      {
+        "-id": "8dcefa28-ac74-4f9b-9f62-42b4331464a1",
+        "children": [{"-id": "0470503f-66ec-483f-8a4d-673bcebf6a0f"}],
+        "variableName": "npc",
         "variableField": true
       }
     ]

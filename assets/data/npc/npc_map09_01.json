@@ -1,5 +1,4 @@
 {
-  "currentEventPage_id": 0,
   "page": [
     {
       "globalSwitchId": null,
@@ -20,5 +19,6 @@
         }
       ]
     }
-  ]
+  ],
+  "currentEventPage_id": 0
 }

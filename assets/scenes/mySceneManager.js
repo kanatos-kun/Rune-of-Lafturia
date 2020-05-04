@@ -501,8 +501,8 @@ class mySceneManager extends Phaser.Scene {
 								scene.fHero.body.setVelocity(0,0)
 								var textConfig =  {
 								    state:scene.dialogueState,
-									tagName:"undefined",
-									text: "undefined",
+									tagName:undefined,
+									text: undefined,
 								}	
 								if(a.getTaskId() >= a.getLengthTask() ){
 										scene.dialogueState = false;
@@ -525,8 +525,11 @@ class mySceneManager extends Phaser.Scene {
 									if(task.type=="choice"){
 										task_choice = task[task["choice_id"] ]
 										//task choice 
-										
-										
+										// not integrated yet, future update!
+										//textConfig.tagName=
+										textConfig.tagName="choice"
+										textConfig.text="Functionality 'Choice' is currently\n in progress for a future update!"
+										a.incTaskId();
 										
 										
 										
@@ -545,20 +548,24 @@ class mySceneManager extends Phaser.Scene {
 
 										
 										
-										scene.scene.run("dialogueWindow", textConfig)
+										
 										
 										
 										
 										
 									}else if(task.type=="shop"){
 										//task shop
+										// not integrated yet, future update!
+
 										
-										
+										textConfig.tagName="shop"
+										textConfig.text="Functionality 'Shop' is currently\n in progress for a future update!";
+										a.incTaskId();
 										
 										
 										 
 									}
-									
+									scene.scene.run("dialogueWindow", textConfig)
 									
 								}
 

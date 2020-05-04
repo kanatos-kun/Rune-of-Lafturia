@@ -60,10 +60,12 @@ class windowDialogue extends Phaser.Scene {
 			this.scene.setVisible(true)
      
 			//this.fTag.setVisible(this.myData.tagName.isVisible)
-			
 			if(this.myData.tagName !== undefined){
 				this.fTagNameText.setText(this.myData.tagName)
 				this.fTag.setVisible(true)
+			}else{
+				this.fTag.setVisible(false)
+				this.fTagNameText.setVisible(false)
 			}
 			
 		/*	if(this.fTag.visible){

@@ -1,4 +1,5 @@
 {
+  "currentEventPage_id": 0,
   "page": [
     {
       "globalSwitchId": null,
@@ -7,6 +8,7 @@
       "task": [
         {
           "type": "dialogue",
+		  "tagName":"dialogue",
           "text": "text 01"
         },
         {
@@ -50,6 +52,5 @@
         }
       ]
     }
-  ],
-  "currentPageEvent_id": 0
+  ]
 }
