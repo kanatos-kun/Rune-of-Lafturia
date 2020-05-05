@@ -16,8 +16,9 @@ class Npc extends Phaser.GameObjects.Sprite {
 		}
 
 		this.isDetectedHero = false
-		this.scene.events.on("endSceneManager",function(){
-			this.eventPage = this.scene.cache.json.get( this.getData("eventPage") )
+		this.scene.events.on("endSceneManager",function(sys){
+			//console.log(scene)
+			this.eventPage = sys.cache.json.get( this.getData("eventPage") )
 		},this)
 	}
 	

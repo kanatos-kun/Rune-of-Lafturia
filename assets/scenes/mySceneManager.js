@@ -40,32 +40,35 @@ class mySceneManager extends Phaser.Scene {
 		}
 	 * @param {Phaser.Scene} Scene
 	*/
-	createMap(scene) {
-		scene.events.on("transitionstart",this.transitionstart,scene)
-		scene.events.on("transitioncomplete",this.transitioncomplete,scene)
+	createMap() {
+		this.transitionstart = this.scene.get("mySceneManager").transitionstart.bind(this)
+		this.transitioncomplete = this.scene.get("mySceneManager").transitioncomplete.bind(this)
+		this.changeTransitionMap = this.scene.get("mySceneManager").changeTransitionMap.bind(this)
+		this.events.on("transitionstart",this.transitionstart,this)
+		this.events.on("transitioncomplete",this.transitioncomplete,this)
 
-		if(scene.fHero === undefined){
-			scene.fHero = scene.add.hero(1075.0101, 1528.0022, "hero");
+		if(this.fHero === undefined){
+			this.fHero = this.add.hero(1075.0101, 1528.0022, "hero");
 		}else{
-			scene.fHero = scene.add.hero(scene.dataScene.x,scene.dataScene.y,"hero")
+			this.fHero = this.add.hero(this.dataScene.x,this.dataScene.y,"hero")
 		}
 		
-		if(scene.fMapScene !== undefined){
-			let w = Math.floor(scene.fMapScene.width/3328) 
-			let h = Math.floor(scene.fMapScene.height/3072)
-			scene.widthMap = w
-			scene.heightMap = h
+		if(this.fMapScene !== undefined){
+			let w = Math.floor(this.fMapScene.width/3328) 
+			let h = Math.floor(this.fMapScene.height/3072)
+			this.widthMap = w
+			this.heightMap = h
 		}
 		
-		scene.physics.world.setBounds(-200,-200,3720*scene.widthMap,3380*scene.heightMap)
+		this.physics.world.setBounds(-200,-200,3720*this.widthMap,3380*this.heightMap)
 
-		scene.fHero.setPosition(scene.dataScene.x,scene.dataScene.y)
-		scene.heroAttack = scene.add.group();
-		scene.game.currentMap = scene.scene.key
-		scene.physics.add.collider(scene.fHero,scene.fObstacle)
-		scene.physics.add.collider(scene.fNpc,scene.fObstacle)
-		scene.physics.add.collider(scene.fEnemies,scene.fObstacle)
-		scene.attackEnemyCollision = function(hero,enemy){
+		this.fHero.setPosition(this.dataScene.x,this.dataScene.y)
+		this.heroAttack = this.add.group();
+		this.game.currentMap = this.key
+		this.physics.add.collider(this.fHero,this.fObstacle)
+		this.physics.add.collider(this.fNpc,this.fObstacle)
+		this.physics.add.collider(this.fEnemies,this.fObstacle)
+		this.attackEnemyCollision = function(hero,enemy){
 			if(!enemy.invincible.state){
 				
 				var dirX = hero.x - enemy.x
@@ -84,12 +87,12 @@ class mySceneManager extends Phaser.Scene {
 				}
 			}
 		}
-		scene.recolteGold = function(hero,gold){
+		this.recolteGold = function(hero,gold){
 			this.game.gold += 1;
 			gold.destroy()
 		}
 		
-		scene.recolteItem = function(hero,item){
+		this.recolteItem = function(hero,item){
 			var section = item.section
 			var check = false
 			if(section ==="misc"){
@@ -113,17 +116,51 @@ class mySceneManager extends Phaser.Scene {
 			
 			item.destroy()
 		}
-		scene.isInWindowInteraction = false
+		this.isInWindowInteraction = false
 		
-		scene.changeTransitionMap = this.changeTransitionMap;
+		this.changeTransitionMap = this.changeTransitionMap;
 
-		scene.physics.add.overlap(scene.heroAttack,scene.fEnemies,scene.attackEnemyCollision)
-		scene.physics.add.overlap(scene.fEnemies,scene.fHero,scene.attackEnemyCollision)
-		scene.physics.add.overlap(scene.fHero,scene.fItems,scene.recolteItem,function(){return true},scene)
-		scene.physics.add.overlap(scene.fHero,scene.fGold,scene.recolteGold,function(){return true},scene)
+		this.physics.add.overlap(this.heroAttack,this.fEnemies,this.attackEnemyCollision)
+		this.physics.add.overlap(this.fEnemies,this.fHero,this.attackEnemyCollision)
+		this.physics.add.overlap(this.fHero,this.fItems,this.recolteItem,function(){return true},this)
+		this.physics.add.overlap(this.fHero,this.fGold,this.recolteGold,function(){return true},this)
 		//scene.physics.add.overlap(scene.fHero,scene.fObstacle,function(){console.log("overlaps with obtstaclte")})
-		scene.keys=scene.input.keyboard.addKeys('Z,S,Q,D,M,SPACE')
- 		scene.events.emit("endSceneManager");
+		this.keys=this.input.keyboard.addKeys('Z,S,Q,D,M,SPACE')
+		
+		// check active child in group and disable if not in the display zone
+		//console.log(scene.fEnemies)
+		
+		/*
+		let a_enemies = this.fEnemies.getChildren()
+		let length_enemies = this.fEnemies.getLength()
+		let a_npc = this.fNpc.getChildren()
+		let length_npc = this.fNpc.getLength()
+		let a_warp = this.fWarp.getChildren()
+		let length_warp = this.fWarp.getLength()
+		let hero = this.fHero;
+		let top = -3060
+		let bottom = 3060
+		let right =3300
+		let left  = -3300
+		for(let i =0; i <length_enemies;i++){
+			let item = a_enemies[i]
+
+			if(
+				item.x> hero.x+right ||
+				item.x< hero.x+left ||
+				item.y> hero.y+bottom ||
+				item.y< hero.y+top
+			){
+				//sleep gameobject
+				item.setActive(false)
+			}else{
+				//no sleep
+				item.setActive(true)
+			}
+		}
+		*/
+		
+ 		this.events.emit("endSceneManager",this);
 	}
 	
 	
@@ -135,8 +172,17 @@ class mySceneManager extends Phaser.Scene {
 	 * @param {string} dir - Give the direction needed (right,left,bottom,top)	
 	*/
 	changeTransitionMap(map,posX,posY,dir = "right"){
-			
-			
+			//console.log(this.fEnemies)
+			//console.log(this)
+			/*
+			this.fEnemies.clear()
+			this.fWarp.clear()
+			this.fItems.clear()
+			this.fCoffres.clear()
+			this.fNpc.clear()
+			this.fGold.clear() */
+			//console.log("clear group!")
+
 			if(dir==="right"){
 				this.tweens.add({
 					targets:this.fMapScene,
@@ -172,7 +218,8 @@ class mySceneManager extends Phaser.Scene {
 				target:map,
 				duration:1500,
 				moveAbove:true,
-				data:{x:posX,y:posY,dir:dir}
+				data:{x:posX,y:posY,dir:dir},
+				sleep:true
 			},this)  
 	}
 	
@@ -184,8 +231,9 @@ class mySceneManager extends Phaser.Scene {
 	 * @param {number} duration 
 	*/
 	transitionstart(from,duration){
-		//console.log("fromthatDisable : " + from.scene.key)
-		//console.log("isWillSceneStay : " + this.scene.key)
+		console.log("fromthatDisable : " + from.scene.key)
+		console.log("isWillSceneStay : " + this.scene.key)
+		console.log("start Transition!")
 			if(this.dataScene.dir ==="left"){
 				this.fMapScene.x = -1650 * this.widthMap
 			}else if(this.dataScene.dir ==="right"){
@@ -195,6 +243,10 @@ class mySceneManager extends Phaser.Scene {
 			}else if(this.dataScene.dir ==="bottom"){
 				this.fMapScene.y =4590 * this.heightMap
 			}
+			console.log("npc")
+			console.log(from.fNpc)
+			console.log("enemies")
+			console.log(from.fEnemies)
 			//scene that have implied transition //
 			//-----------------------------------//
 			from.fHero.setActive(false)
@@ -350,38 +402,45 @@ class mySceneManager extends Phaser.Scene {
 	}
 	
 	
-	preCreateMap(scene){
-		scene.dialogueIteration = 0;
-		scene.dialogueState = false;
-		scene.widthMap = 1;
-		scene.heightMap = 1;
-		if(scene.fCoffres === undefined){
-			scene.fCoffres = this.add.group();
+	preCreateMap(){
+		this.dialogueIteration = 0;
+		this.dialogueState = false;
+		this.widthMap = 1;
+		this.heightMap = 1;
+		/*
+		if(this.fCoffres === undefined){
+			this.fCoffres = this.add.group();
 		}
 		
-		if(scene.fEnemies === undefined){
-			scene.fEnemies = this.add.group();
+		if(this.fEnemies === undefined){
+			this.fEnemies = this.add.group();
 		}
 		
-		if(scene.fWarp === undefined){
-			scene.fWarp = this.add.group();
+		if(this.fWarp === undefined){
+			this.fWarp = this.add.group();
 		}
 		
-		if(scene.fNpc === undefined){
-			scene.fNpc = this.add.group();
+		if(this.fNpc === undefined){
+			this.fNpc = this.add.group();
+		}
+		if(this.fObstacle === undefined){
+			this.fObstacle = this.add.group();
 		}
 		
-		if(scene.fObstacle === undefined){
-			scene.fObstacle = this.add.group();
+		if(this.fGold === undefined){
+			this.fGold = this.add.group();
 		}
 		
-		if(scene.fGold === undefined){
-			scene.fGold = this.add.group();
-		}
+		if(this.fItems === undefined){
+			this.fItems = this.add.group();
+		}  */
 		
-		if(scene.fItems === undefined){
-			scene.fItems = this.add.group();
-		}
+		/*
+		this.fNpc = this.add.group();
+		this.fObstacle = this.add.group();
+		this.fGold = this.add.group();
+		this.fItems = this.add.group();
+		*/
 	}
 	
 		/** 
@@ -398,6 +457,30 @@ class mySceneManager extends Phaser.Scene {
 			scene.scene.sleep(scene.currentMap)
 			scene.scene.run("gameOver")
 		}
+		
+		//let a_enemies = scene.fEnemies.getChildren()
+		//let length_enemies = scene.fEnemies.getLength()
+		//console.log(length_enemies)
+		//console.log(scene.fEnemies)
+		/*
+		for(let i =0; i <length_enemies;i++){
+			let item = a_enemies[i]
+			
+			
+			if(
+				i.x> hero.x+right &&
+				i.x< hero.x+left &&
+				i.y> hero.y+bottom &&
+				i.y< hero.y+top
+			){
+				//sleep gameobject
+				i.setActive(false)
+			}else{
+				//no sleep
+				i.setActive(true)
+			}
+		} */
+		
 
 		if(!scene.dialogueState){
 			
