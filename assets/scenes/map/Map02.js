@@ -63,9 +63,12 @@ class Map02 extends Phaser.Scene {
 	}
 
 	create() {
-		this.scene.get("mySceneManager").preCreateMap(this);
-		this._create();
-		this.scene.get("mySceneManager").createMap(this);
+		var preCreateMap = this.scene.get("mySceneManager").preCreateMap.bind(this);
+		this._create()
+
+		preCreateMap()
+		var createMap = this.scene.get("mySceneManager").createMap.bind(this);
+		createMap()
 	}
 	
 

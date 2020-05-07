@@ -45,6 +45,7 @@ class mySceneManager extends Phaser.Scene {
 		this.transitioncomplete = this.scene.get("mySceneManager").transitioncomplete.bind(this)
 		this.changeTransitionMap = this.scene.get("mySceneManager").changeTransitionMap.bind(this)
 		this.events.on("transitionstart",this.transitionstart,this)
+		this.events.on("transitionwake",this.transitionstart,this)
 		this.events.on("transitioncomplete",this.transitioncomplete,this)
 
 		if(this.fHero === undefined){
@@ -87,6 +88,7 @@ class mySceneManager extends Phaser.Scene {
 				}
 			}
 		}
+		
 		this.recolteGold = function(hero,gold){
 			this.game.gold += 1;
 			gold.destroy()
@@ -180,7 +182,8 @@ class mySceneManager extends Phaser.Scene {
 			this.fItems.clear()
 			this.fCoffres.clear()
 			this.fNpc.clear()
-			this.fGold.clear() */
+			this.fGold.clear()  */
+			this.fHero.body.setVelocity(0)
 			//console.log("clear group!")
 
 			if(dir==="right"){
@@ -212,17 +215,23 @@ class mySceneManager extends Phaser.Scene {
 					duration:1500
 				}) 
 			}
- 
-		
+ 			var data = {x:posX,y:posY,dir:dir}
+		    this.dataScene = data
+			//this.scene.wake(map,data);
 			this.scene.transition({
 				target:map,
 				duration:1500,
 				moveAbove:true,
-				data:{x:posX,y:posY,dir:dir},
-				sleep:true
+				sleep:true,
 			},this)  
 	}
 	
+	
+	wakeScene(sys,data){
+		//console.log("thohoho")
+	    //sys.scene.dataScene = data
+		//console.log(data)
+	}
 	
 	/** 
 	 * TransitionStart will start the effect between 2 map.
@@ -234,19 +243,16 @@ class mySceneManager extends Phaser.Scene {
 		console.log("fromthatDisable : " + from.scene.key)
 		console.log("isWillSceneStay : " + this.scene.key)
 		console.log("start Transition!")
-			if(this.dataScene.dir ==="left"){
+			if(from.dataScene.dir ==="left"){
 				this.fMapScene.x = -1650 * this.widthMap
-			}else if(this.dataScene.dir ==="right"){
+			}else if(from.dataScene.dir ==="right"){
 				this.fMapScene.x =4950 * this.widthMap
-			}else if(this.dataScene.dir ==="top"){
+			}else if(from.dataScene.dir ==="top"){
 				this.fMapScene.y =-1530 * this.heightMap
-			}else if(this.dataScene.dir ==="bottom"){
+			}else if(from.dataScene.dir ==="bottom"){
 				this.fMapScene.y =4590 * this.heightMap
 			}
-			console.log("npc")
-			console.log(from.fNpc)
-			console.log("enemies")
-			console.log(from.fEnemies)
+			
 			//scene that have implied transition //
 			//-----------------------------------//
 			from.fHero.setActive(false)
@@ -299,7 +305,8 @@ class mySceneManager extends Phaser.Scene {
 			//scene that transition //
 			//-----------------------------------//
 			this.fHero.setVisible(false)
-			
+			this.fHero.x = from.dataScene.x
+			this.fHero.y = from.dataScene.y
 			if(this.fEnemies !== undefined){
 				Phaser.Actions.Call(this.fEnemies.getChildren(),function(item){
 					item.setVisible(false)
@@ -399,6 +406,7 @@ class mySceneManager extends Phaser.Scene {
 			}
 
 			this.fHero.setVisible(true)
+			this.fHero.setActive(true)
 	}
 	
 	
@@ -407,7 +415,7 @@ class mySceneManager extends Phaser.Scene {
 		this.dialogueState = false;
 		this.widthMap = 1;
 		this.heightMap = 1;
-		/*
+		
 		if(this.fCoffres === undefined){
 			this.fCoffres = this.add.group();
 		}
@@ -433,7 +441,7 @@ class mySceneManager extends Phaser.Scene {
 		
 		if(this.fItems === undefined){
 			this.fItems = this.add.group();
-		}  */
+		}  
 		
 		/*
 		this.fNpc = this.add.group();

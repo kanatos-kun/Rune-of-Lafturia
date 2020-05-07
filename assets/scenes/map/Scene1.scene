@@ -24,8 +24,8 @@
         "variableName": "bee",
         "variableField": false,
         "objectFactory": "enemy_bee",
-        "x": 2169.970947265625,
-        "y": 2285.7607421875,
+        "x": 2384.440185546875,
+        "y": 2286.393310546875,
         "flipX": true,
         "textureKey": "bee",
         "textureFrame": "bee"

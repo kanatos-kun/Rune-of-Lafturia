@@ -159,34 +159,9 @@ class Map09 extends Phaser.Scene {
 	create(){
 
 		var preCreateMap = this.scene.get("mySceneManager").preCreateMap.bind(this);
-		preCreateMap()
 		this._create()
-		this.myTest = this.add.group()
-		var t = this.add.image(0,0,"full_Heart")
-		this.myTest.add(t);
-		if(this.fCoffres === undefined){
-			this.fCoffres = this.add.group();
-		}
-		if(this.fEnemies === undefined){
-			this.fEnemies = this.add.group();
-		}
-		if(this.fWarp === undefined){
-			this.fWarp = this.add.group();
-		}
-		if(this.fNpc === undefined){
-			this.fNpc = this.add.group();
-		}
-		if(this.fObstacle === undefined){
-			this.fObstacle = this.add.group();
-		}
-		
-		if(this.fGold === undefined){
-			this.fGold = this.add.group();
-		}
 
-		if(this.fItems === undefined){
-			this.fItems = this.add.group();
-		} 
+		preCreateMap()
 		var createMap = this.scene.get("mySceneManager").createMap.bind(this);
 		createMap()
 	}

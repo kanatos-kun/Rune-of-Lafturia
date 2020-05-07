@@ -15,7 +15,7 @@ class Scene1 extends Phaser.Scene {
 	
 		var mapScene = this.add.image(1650.0, 1530.0, "map01");
 		
-		var bee = this.add.enemy_bee(2169.971, 2285.7607, "bee");
+		var bee = this.add.enemy_bee(2384.4402, 2286.3933, "bee");
 		bee.flipX = true;
 		
 		var rect815 = this.add.obstacle(-30.005621, -47.35043, "obstacle");
@@ -71,9 +71,12 @@ class Scene1 extends Phaser.Scene {
 		this.dataScene = data
 	}
 	create() {
-		this.scene.get("mySceneManager").preCreateMap(this);
-		this._create();
-		this.scene.get("mySceneManager").createMap(this);
+		var preCreateMap = this.scene.get("mySceneManager").preCreateMap.bind(this);
+		this._create()
+
+		preCreateMap()
+		var createMap = this.scene.get("mySceneManager").createMap.bind(this);
+		createMap()
 	}
 	
 
