@@ -1,0 +1,182 @@
+{
+  "section": {"files": [
+    {
+      "type": "sceneFile",
+      "key": "menu_bag",
+      "url": "assets/scenes/menu_bag.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "menu_hud",
+      "url": "assets/scenes/menu_hud.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "mySceneManager",
+      "url": "assets/scenes/mySceneManager.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "worldMapScreen",
+      "url": "assets/scenes/screen/worldMapScreen.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "windowDialogue",
+      "url": "assets/scenes/window/windowDialogue.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "windowEquip",
+      "url": "assets/scenes/window/windowEquip.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "windowInventory",
+      "url": "assets/scenes/window/windowInventory.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "windowSkills",
+      "url": "assets/scenes/window/windowSkills.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "windowStatut",
+      "url": "assets/scenes/window/windowStatut.js"
+    },
+    {
+      "type": "image",
+      "key": "bubble choice",
+      "url": "assets/images/discussion/bubble choice.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "discussion_bubble",
+      "url": "assets/images/discussion/discussion_bubble.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "orange tag",
+      "url": "assets/images/discussion/orange tag.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "window_inventory",
+      "url": "assets/images/window/window_inventory.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "window_skills",
+      "url": "assets/images/window/window_skills.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "window_statut",
+      "url": "assets/images/window/window_statut.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "window_info",
+      "url": "assets/images/window/window_info.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "window_equipment",
+      "url": "assets/images/window/window_equipment.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "slash_anim_atlas",
+      "url": "assets/atlas/effect/slash/slash_anim_atlas.png",
+      "normalMap": ""
+    },
+    {
+      "type": "sceneFile",
+      "key": "gameMenuScreen",
+      "url": "assets/scenes/screen/gameMenuScreen.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "LoadZoneAssets",
+      "url": "assets/scenes/load/LoadZoneAssets.js"
+    },
+    {
+      "type": "script",
+      "key": "Coin",
+      "url": "assets/prefab/Coin.js"
+    },
+    {
+      "type": "script",
+      "key": "Hero",
+      "url": "assets/prefab/Hero.js"
+    },
+    {
+      "type": "script",
+      "key": "slash",
+      "url": "assets/prefab/slash.js"
+    },
+    {
+      "type": "script",
+      "key": "warp",
+      "url": "assets/prefab/warp.js"
+    },
+    {
+      "type": "image",
+      "key": "gameOver",
+      "url": "assets/images/gameOver/gameOver.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "background_ui_bottom",
+      "url": "assets/images/game_icon/background_ui_bottom.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "hud bottom 02",
+      "url": "assets/images/game_icon/hud bottom 02.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "Idle_000",
+      "url": "assets/images/hero/Idle_000.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "rect815",
+      "url": "assets/images/obstacle/rect815.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "warp1",
+      "url": "assets/images/warp/warp.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "worldmap",
+      "url": "assets/images/worldMap/worldmap.png",
+      "normalMap": ""
+    }
+  ]},
+  "meta": {
+    "generated": "1589450120015",
+    "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
+    "contentType": "Phaser v3 Asset Pack",
+    "url": "https://phasereditor2d.com",
+    "version": "2"
+  }
+}

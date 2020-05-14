@@ -3,21 +3,29 @@
     {
       "type": "image",
       "key": "UI_BARFRAME",
-      "url": "assets/images/loadPack/UI_BARFRAME.png"
+      "url": "assets/images/loadPack/UI_BARFRAME.png",
+      "normalMap": ""
     },
     {
       "type": "image",
       "key": "UI_BARMARKINGS",
-      "url": "assets/images/loadPack/UI_BARMARKINGS.png"
+      "url": "assets/images/loadPack/UI_BARMARKINGS.png",
+      "normalMap": ""
     },
     {
       "type": "image",
       "key": "UI_COLORBAR (2)",
-      "url": "assets/images/loadPack/UI_COLORBAR (2).png"
+      "url": "assets/images/loadPack/UI_COLORBAR (2).png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "spinner",
+      "url": "assets/images/spinner.gif"
     }
   ]},
   "meta": {
-    "generated": "1588149448861",
+    "generated": "1588927235380",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",

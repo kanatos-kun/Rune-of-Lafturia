@@ -1,0 +1,101 @@
+{
+  "section": {"files": [
+    {
+      "type": "sceneFile",
+      "key": "creditScreen",
+      "url": "assets/scenes/screen/creditScreen.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "loadGameScreen",
+      "url": "assets/scenes/screen/loadGameScreen.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "optionScreen",
+      "url": "assets/scenes/screen/optionScreen.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "saveGameScreen",
+      "url": "assets/scenes/screen/saveGameScreen.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "titleScreen",
+      "url": "assets/scenes/screen/titleScreen.js"
+    },
+    {
+      "type": "image",
+      "key": "titleScreen_loadGame_soloSlotSave",
+      "url": "assets/images/titleScreen/titleScreen_loadGame_soloSlotSave.png"
+    },
+    {
+      "type": "image",
+      "key": "titleScreen_loadGame_window",
+      "url": "assets/images/titleScreen/titleScreen_loadGame_window.png"
+    },
+    {
+      "type": "image",
+      "key": "titleScreen_loadGame_soloSlot",
+      "url": "assets/images/titleScreen/titleScreen_loadGame_soloSlot.png"
+    },
+    {
+      "type": "image",
+      "key": "arrowLeft",
+      "url": "assets/images/ui/arrowLeft.png"
+    },
+    {
+      "type": "image",
+      "key": "zoomOut",
+      "url": "assets/images/ui/zoomOut.png"
+    },
+    {
+      "type": "image",
+      "key": "zoomIn",
+      "url": "assets/images/ui/zoomIn.png"
+    },
+    {
+      "type": "image",
+      "key": "save",
+      "url": "assets/images/ui/save.png"
+    },
+    {
+      "type": "image",
+      "key": "gear",
+      "url": "assets/images/ui/gear.png"
+    },
+    {
+      "type": "image",
+      "key": "cross",
+      "url": "assets/images/ui/cross.png"
+    },
+    {
+      "type": "image",
+      "key": "button_empty",
+      "url": "assets/images/ui/button_empty.png"
+    },
+    {
+      "type": "image",
+      "key": "buttonX",
+      "url": "assets/images/ui/buttonX.png"
+    },
+    {
+      "type": "image",
+      "key": "titleScreen1",
+      "url": "assets/images/titleScreen/titleScreen.png"
+    },
+    {
+      "type": "script",
+      "key": "uiButton",
+      "url": "assets/prefab/uiButton.js"
+    }
+  ]},
+  "meta": {
+    "generated": "1589451065470",
+    "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
+    "contentType": "Phaser v3 Asset Pack",
+    "url": "https://phasereditor2d.com",
+    "version": "2"
+  }
+}

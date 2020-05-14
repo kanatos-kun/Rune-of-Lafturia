@@ -1,0 +1,19 @@
+{
+  "-app": "Scene Editor - Phaser Editor v2.1.6",
+  "-version": 1,
+  "compilerLang": "JAVA_SCRIPT_6",
+  "displayList": {
+    "-id": "80185751-79dd-4250-b9cc-b69a7893057c",
+    "-type": "DisplayList",
+    "children": []
+  },
+  "groups": {
+    "-id": "fe95c4a2-6683-4af3-a7a5-100b4934578d",
+    "-type": "Groups",
+    "children": []
+  },
+  "borderHeight": 450,
+  "preloadMethodName": "preload",
+  "methodContextType": "SCENE",
+  "sceneKey": "LoadZoneAssets"
+}
