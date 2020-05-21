@@ -94,12 +94,6 @@
       "normalMap": ""
     },
     {
-      "type": "image",
-      "key": "slash_anim_atlas",
-      "url": "assets/atlas/effect/slash/slash_anim_atlas.png",
-      "normalMap": ""
-    },
-    {
       "type": "sceneFile",
       "key": "gameMenuScreen",
       "url": "assets/scenes/screen/gameMenuScreen.js"
@@ -143,25 +137,25 @@
     },
     {
       "type": "image",
-      "key": "hud bottom 02",
+      "key": "skill_slot",
       "url": "assets/images/game_icon/hud bottom 02.png",
       "normalMap": ""
     },
     {
       "type": "image",
-      "key": "Idle_000",
+      "key": "hero",
       "url": "assets/images/hero/Idle_000.png",
       "normalMap": ""
     },
     {
       "type": "image",
-      "key": "rect815",
+      "key": "obstacle",
       "url": "assets/images/obstacle/rect815.png",
       "normalMap": ""
     },
     {
       "type": "image",
-      "key": "warp1",
+      "key": "warp",
       "url": "assets/images/warp/warp.png",
       "normalMap": ""
     },
@@ -170,10 +164,52 @@
       "key": "worldmap",
       "url": "assets/images/worldMap/worldmap.png",
       "normalMap": ""
+    },
+    {
+      "type": "sceneFile",
+      "key": "gameOver",
+      "url": "assets/scenes/screen/gameOver.js"
+    },
+    {
+      "type": "script",
+      "key": "obstacle",
+      "url": "assets/prefab/obstacle.js"
+    },
+    {
+      "type": "script",
+      "key": "Coffre",
+      "url": "assets/prefab/Coffre.js"
+    },
+    {
+      "type": "script",
+      "key": "DetectionZone",
+      "url": "assets/prefab/DetectionZone.js"
+    },
+    {
+      "type": "script",
+      "key": "Npc",
+      "url": "assets/prefab/npc/Npc.js"
+    },
+    {
+      "type": "script",
+      "key": "window_debug_popup",
+      "url": "assets/prefab/window_debug_popup.js"
+    },
+    {
+      "type": "multiatlas",
+      "key": "slash_anim_atlas",
+      "url": "assets/atlas/effect/slash/slash_anim_atlas.json",
+      "path": "assets/atlas/effect/slash"
+    },
+    {
+      "type": "image",
+      "key": "coin",
+      "url": "assets/images/game_icon/coin (1).png",
+      "normalMap": ""
     }
   ]},
   "meta": {
-    "generated": "1589450120015",
+    "generated": "1590074596266",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",

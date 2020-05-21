@@ -40,7 +40,8 @@ class mySceneManager extends Phaser.Scene {
 		}
 	 * @param {Phaser.Scene} Scene
 	*/
-	createMap() {
+	createMap() {		
+		
 		this.transitionstart = this.scene.get("mySceneManager").transitionstart.bind(this)
 		this.transitioncomplete = this.scene.get("mySceneManager").transitioncomplete.bind(this)
 		this.changeTransitionMap = this.scene.get("mySceneManager").changeTransitionMap.bind(this)
@@ -62,7 +63,8 @@ class mySceneManager extends Phaser.Scene {
 		}
 		
 		this.physics.world.setBounds(-200,-200,3720*this.widthMap,3380*this.heightMap)
-
+		
+		
 		this.fHero.setPosition(this.dataScene.x,this.dataScene.y)
 		this.heroAttack = this.add.group();
 		this.game.currentMap = this.key
@@ -416,6 +418,25 @@ class mySceneManager extends Phaser.Scene {
 		this.widthMap = 1;
 		this.heightMap = 1;
 		
+		
+		
+		
+		this.map = this.add.tilemap("map01");
+		this.tileset = [
+		this.map.addTilesetImage("grass_atlas"),
+		this.map.addTilesetImage("medium_object-0"),
+		this.map.addTilesetImage("tree01"),
+		this.map.addTilesetImage("very_small_object-0"),
+		this.map.addTilesetImage("small_object-0"),
+		this.map.addTilesetImage("medium_object-1")]
+		this.map.createStaticLayer("background",this.tileset)
+		this.map.createStaticLayer("tree",this.tileset)
+		this.map.createStaticLayer("tree2",this.tileset)
+		this.map.createStaticLayer("tree3",this.tileset)
+		this.map.createStaticLayer("herbes",this.tileset)
+		
+		
+		
 		if(this.fCoffres === undefined){
 			this.fCoffres = this.add.group();
 		}
@@ -442,7 +463,7 @@ class mySceneManager extends Phaser.Scene {
 		if(this.fItems === undefined){
 			this.fItems = this.add.group();
 		}  
-		
+
 		/*
 		this.fNpc = this.add.group();
 		this.fObstacle = this.add.group();

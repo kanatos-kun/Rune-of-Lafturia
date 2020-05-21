@@ -37,16 +37,31 @@ class LoadZoneAssets extends Phaser.Scene {
 		this.load.on('filecomplete',function(key,type){
 			texLoad.setText(type+"/"+key);
 		})
-		
 		if(this.dataLoad.packName !== undefined){
-			this.load.pack("basePack", "assets/"+this.dataLoad.packName+".json");
+			this.load.pack(this.dataLoad.packName, "assets/"+this.dataLoad.packName+".json");
 		}
 
 		
 	}
 	
 	create() {
-	
+		this.events.on('wake',function(sys,data){
+			sys.dataLoad = data
+		})
+		
+		this.scene.run(this.game.startMap,{x:1642,y:1542});
+		this.scene.bringToTop("dialogueWindow")
+		this.scene.bringToTop("windowInventory")
+		this.scene.bringToTop("windowSkills")
+		this.scene.bringToTop("windowStatut")
+		this.scene.bringToTop("windowEquip")
+		this.scene.bringToTop("menu_hud")
+		this.scene.sleep("loadGameScreen")
+		this.scene.sleep("optionScreen")
+		this.scene.sleep("creditScreen")
+		this.scene.sleep("saveGameScreen")
+		this.scene.sleep("windowInventory")
+		this.scene.sleep("LoadZoneAssets")
 		
 	}
 	

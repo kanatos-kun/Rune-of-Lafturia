@@ -16,12 +16,6 @@
       "url": "assets/scenes/map/Scene1.js"
     },
     {
-      "type": "multiatlas",
-      "key": "textures",
-      "url": "assets/atlas/textures.json",
-      "path": "assets/atlas"
-    },
-    {
       "type": "image",
       "key": "map01",
       "url": "assets/images/map/map01.png",
@@ -579,41 +573,48 @@
     {
       "type": "image",
       "key": "tileset_grass",
-      "url": "assets/tileset/grass_atlas.png"
+      "url": "assets/tileset/grass_atlas.png",
+      "normalMap": ""
     },
     {
       "type": "image",
       "key": "tileset_town",
-      "url": "assets/tileset/TownColor2@256x256.png"
+      "url": "assets/tileset/TownColor2@256x256.png",
+      "normalMap": ""
     },
     {
       "type": "image",
       "key": "tileset_obj_medium0",
-      "url": "assets/tileset/medium_object-0.png"
+      "url": "assets/tileset/medium_object-0.png",
+      "normalMap": ""
     },
     {
       "type": "image",
       "key": "tileset_obj_medium1",
-      "url": "assets/tileset/medium_object-1.png"
+      "url": "assets/tileset/medium_object-1.png",
+      "normalMap": ""
     },
     {
       "type": "image",
       "key": "tileset_obj_small0",
-      "url": "assets/tileset/small_object-0.png"
+      "url": "assets/tileset/small_object-0.png",
+      "normalMap": ""
     },
     {
       "type": "image",
       "key": "tileset_tree",
-      "url": "assets/tileset/tree01.png"
+      "url": "assets/tileset/tree01.png",
+      "normalMap": ""
     },
     {
       "type": "image",
       "key": "tileset_obj_verySmall0",
-      "url": "assets/tileset/very_small_object-0.png"
+      "url": "assets/tileset/very_small_object-0.png",
+      "normalMap": ""
     }
   ]},
   "meta": {
-    "generated": "1588937796425",
+    "generated": "1590055651915",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",

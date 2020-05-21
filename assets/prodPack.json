@@ -28,71 +28,98 @@
     {
       "type": "image",
       "key": "titleScreen_loadGame_soloSlotSave",
-      "url": "assets/images/titleScreen/titleScreen_loadGame_soloSlotSave.png"
+      "url": "assets/images/titleScreen/titleScreen_loadGame_soloSlotSave.png",
+      "normalMap": ""
     },
     {
       "type": "image",
       "key": "titleScreen_loadGame_window",
-      "url": "assets/images/titleScreen/titleScreen_loadGame_window.png"
+      "url": "assets/images/titleScreen/titleScreen_loadGame_window.png",
+      "normalMap": ""
     },
     {
       "type": "image",
       "key": "titleScreen_loadGame_soloSlot",
-      "url": "assets/images/titleScreen/titleScreen_loadGame_soloSlot.png"
+      "url": "assets/images/titleScreen/titleScreen_loadGame_soloSlot.png",
+      "normalMap": ""
     },
     {
       "type": "image",
       "key": "arrowLeft",
-      "url": "assets/images/ui/arrowLeft.png"
+      "url": "assets/images/ui/arrowLeft.png",
+      "normalMap": ""
     },
     {
       "type": "image",
       "key": "zoomOut",
-      "url": "assets/images/ui/zoomOut.png"
+      "url": "assets/images/ui/zoomOut.png",
+      "normalMap": ""
     },
     {
       "type": "image",
       "key": "zoomIn",
-      "url": "assets/images/ui/zoomIn.png"
+      "url": "assets/images/ui/zoomIn.png",
+      "normalMap": ""
     },
     {
       "type": "image",
       "key": "save",
-      "url": "assets/images/ui/save.png"
+      "url": "assets/images/ui/save.png",
+      "normalMap": ""
     },
     {
       "type": "image",
       "key": "gear",
-      "url": "assets/images/ui/gear.png"
+      "url": "assets/images/ui/gear.png",
+      "normalMap": ""
     },
     {
       "type": "image",
       "key": "cross",
-      "url": "assets/images/ui/cross.png"
+      "url": "assets/images/ui/cross.png",
+      "normalMap": ""
     },
     {
       "type": "image",
       "key": "button_empty",
-      "url": "assets/images/ui/button_empty.png"
+      "url": "assets/images/ui/button_empty.png",
+      "normalMap": ""
     },
     {
       "type": "image",
       "key": "buttonX",
-      "url": "assets/images/ui/buttonX.png"
+      "url": "assets/images/ui/buttonX.png",
+      "normalMap": ""
     },
     {
       "type": "image",
       "key": "titleScreen1",
-      "url": "assets/images/titleScreen/titleScreen.png"
+      "url": "assets/images/titleScreen/titleScreen.png",
+      "normalMap": ""
     },
     {
       "type": "script",
       "key": "uiButton",
       "url": "assets/prefab/uiButton.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "BaseLoadAsset",
+      "url": "assets/scenes/load/BaseLoadAsset.js"
+    },
+    {
+      "type": "image",
+      "key": "gameOver_button_checkpoint",
+      "url": "assets/images/gameOver/gameOver_button_checkpoint.png"
+    },
+    {
+      "type": "image",
+      "key": "gameOver_button_titleScreen",
+      "url": "assets/images/gameOver/gameOver_button_titleScreen.png"
     }
   ]},
   "meta": {
-    "generated": "1589451065470",
+    "generated": "1590055701990",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",

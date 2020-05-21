@@ -28,13 +28,13 @@ class Scene1 extends Phaser.Scene {
 		
 		var rect_2 = this.add.obstacle(3129.9895, 169.98428, "obstacle");
 		rect_2.setOrigin(0.0, 0.0);
-		rect_2.setScale(4.2151246, 57.674435);
+		rect_2.setScale(3.1341012, 57.36266);
 		
 		var rect_3 = this.add.obstacle(-71.663734, 1506.5342, "obstacle");
 		rect_3.setOrigin(0.0, 0.0);
-		rect_3.setScale(4.2151246, 31.387602);
+		rect_3.setScale(4.534289, 30.631662);
 		
-		var rect_4 = this.add.obstacle(2430.4614, 1573.1587, "obstacle");
+		var rect_4 = this.add.obstacle(2441.4739, 1727.3314, "obstacle");
 		rect_4.setOrigin(0.0, 0.0);
 		rect_4.setScale(4.2151246, 4.589697);
 		
@@ -72,11 +72,26 @@ class Scene1 extends Phaser.Scene {
 	}
 	create() {
 		var preCreateMap = this.scene.get("mySceneManager").preCreateMap.bind(this);
+		preCreateMap()
 		this._create()
 
-		preCreateMap()
+		
 		var createMap = this.scene.get("mySceneManager").createMap.bind(this);
 		createMap()
+		
+		
+		/*var map = this.add.tilemap("map01");
+		var tileset = [map.addTilesetImage("grass_atlas"),
+		map.addTilesetImage("medium_object-0"),
+		map.addTilesetImage("tree01"),
+		map.addTilesetImage("very_small_object-0"),
+		map.addTilesetImage("small_object-0"),
+		map.addTilesetImage("medium_object-1")]
+		map.createStaticLayer("background",tileset)
+		map.createStaticLayer("tree",tileset)
+		map.createStaticLayer("tree2",tileset)
+		map.createStaticLayer("tree3",tileset)
+		map.createStaticLayer("herbes",tileset) */
 	}
 	
 

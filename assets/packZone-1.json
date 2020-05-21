@@ -2,11 +2,6 @@
   "section": {"files": [
     {
       "type": "sceneFile",
-      "key": "Bee",
-      "url": "assets/prefab/enemy/Bee.js"
-    },
-    {
-      "type": "sceneFile",
       "key": "Map02",
       "url": "assets/scenes/map/Map02.js"
     },
@@ -48,81 +43,86 @@
     {
       "type": "tilemapTiledJSON",
       "key": "map01",
-      "url": "assets/images/tiledMap/map01.json"
+      "url": "assets/data/map/map01.json"
     },
     {
       "type": "tilemapTiledJSON",
       "key": "map02",
-      "url": "assets/images/tiledMap/map02.json"
+      "url": "assets/data/map/map02.json"
     },
     {
       "type": "image",
       "key": "sting",
-      "url": "assets/images/itemInventory/sting.png"
+      "url": "assets/images/itemInventory/sting.png",
+      "normalMap": ""
     },
     {
       "type": "image",
-      "key": "Idle_000",
-      "url": "assets/images/bee/Idle_000.png"
+      "key": "bee",
+      "url": "assets/images/bee/Idle_000.png",
+      "normalMap": ""
     },
     {
       "type": "image",
       "key": "grass_atlas",
-      "url": "assets/tileset/grass_atlas.png"
+      "url": "assets/tileset/grass_atlas.png",
+      "normalMap": ""
     },
     {
       "type": "image",
       "key": "medium_object-0",
-      "url": "assets/tileset/medium_object-0.png"
+      "url": "assets/tileset/medium_object-0.png",
+      "normalMap": ""
     },
     {
       "type": "image",
       "key": "tree01",
-      "url": "assets/tileset/tree01.png"
+      "url": "assets/tileset/tree01.png",
+      "normalMap": ""
     },
     {
       "type": "image",
       "key": "very_small_object-0",
-      "url": "assets/tileset/very_small_object-0.png"
+      "url": "assets/tileset/very_small_object-0.png",
+      "normalMap": ""
     },
     {
       "type": "image",
       "key": "small_object-0",
-      "url": "assets/tileset/small_object-0.png"
+      "url": "assets/tileset/small_object-0.png",
+      "normalMap": ""
     },
     {
       "type": "image",
       "key": "medium_object-1",
-      "url": "assets/tileset/medium_object-1.png"
+      "url": "assets/tileset/medium_object-1.png",
+      "normalMap": ""
     },
     {
       "type": "image",
-      "key": "Idle_000",
-      "url": "assets/images/npc/01/Idle_000.png"
+      "key": "npc",
+      "url": "assets/images/npc/01/Idle_000.png",
+      "normalMap": ""
     },
     {
       "type": "script",
-      "key": "Coffre",
-      "url": "assets/prefab/Coffre.js"
-    },
-    {
-      "type": "script",
-      "key": "Coin",
-      "url": "assets/prefab/Coin.js"
-    },
-    {
-      "type": "script",
-      "key": "sting1",
+      "key": "sting",
       "url": "assets/prefab/inventory/misc/sting.js"
     },
     {
       "type": "script",
-      "key": "Npc",
-      "url": "assets/prefab/npc/Npc.js"
+      "key": "Bee",
+      "url": "assets/prefab/enemy/Bee.js"
+    },
+    {
+      "type": "image",
+      "key": "map01",
+      "url": "assets/images/map/map01.png",
+      "normalMap": ""
     }
   ]},
   "meta": {
-    "generated": "1589449660027",
+    "generated": "1590072691908",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",
