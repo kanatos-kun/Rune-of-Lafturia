@@ -62,9 +62,26 @@ class Map05 extends Phaser.Scene {
 		this.dataScene = data
 	}
 	create() {
+		
+		this.map = this.add.tilemap("map05");
+		this.tileset = [
+		this.map.addTilesetImage("grass_atlas"),
+		this.map.addTilesetImage("medium_object-0"),
+		this.map.addTilesetImage("tree01"),
+		this.map.addTilesetImage("very_small_object-0"),
+		this.map.addTilesetImage("small_object-0"),
+		this.map.addTilesetImage("medium_object-1")]
+		this.map.createStaticLayer("background",this.tileset)
+		this.map.createStaticLayer("tree",this.tileset)
+		this.map.createStaticLayer("tree2",this.tileset)
+		this.map.createStaticLayer("tree3",this.tileset)
+		this.map.createStaticLayer("herbes",this.tileset)
+		this.map.createStaticLayer("roches",this.tileset)	
+		this.map.createStaticLayer("flower",this.tileset)	
+		
 		var preCreateMap = this.scene.get("mySceneManager").preCreateMap.bind(this);
 		this._create()
-
+		this.fMapScene.destroy()
 		preCreateMap()
 		var createMap = this.scene.get("mySceneManager").createMap.bind(this);
 		createMap()

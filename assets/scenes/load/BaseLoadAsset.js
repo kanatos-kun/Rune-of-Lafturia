@@ -15,7 +15,6 @@ class BaseLoadAsset extends Phaser.Scene {
 		
 	    var progress = this.add.graphics();
 		this.add.image(1650,2800,"UI_BARFRAME").setScale(2);
-		this.add.image(150,150,"spinner")
 		var colorBar = this.add.image(1650,2800,"UI_COLORBAR (2)").setScale(2);
 		var texLoad = this.add.text(550,2900,"file currently loading",{
 			fontSize:"80px",

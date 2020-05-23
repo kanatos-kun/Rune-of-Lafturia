@@ -206,10 +206,15 @@
       "key": "coin",
       "url": "assets/images/game_icon/coin (1).png",
       "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "arrow",
+      "url": "assets/images/menu/arrow.png"
     }
   ]},
   "meta": {
-    "generated": "1590074596266",
+    "generated": "1590220956505",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",

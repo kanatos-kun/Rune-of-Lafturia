@@ -30,8 +30,8 @@
         "objectFactory": "npc",
         "x": 1504.6807861328125,
         "y": 1635.3568115234375,
-        "textureKey": "villager_01",
-        "textureFrame": "villager_01"
+        "textureKey": "npc_01",
+        "textureFrame": "npc_01"
       },
       {
         "-id": "88cae115-b9a4-401b-8870-a80ccf13c89b",

@@ -15,7 +15,7 @@ class Map04 extends Phaser.Scene {
 	
 		var mapScene = this.add.image(1654.7802, 1531.0159, "map04");
 		
-		var villager_01 = this.add.npc(1504.6808, 1635.3568, "villager_01");
+		var villager_01 = this.add.npc(1504.6808, 1635.3568, "npc_01");
 		villager_01.setData("tagName", "Clara");
 		villager_01.setData("eventPage", "npc_map04_01");
 		
@@ -63,9 +63,26 @@ class Map04 extends Phaser.Scene {
 	}
 	
 	create() {
+		
+		
+		this.map = this.add.tilemap("map04");
+		this.tileset = [
+		this.map.addTilesetImage("grass_atlas"),
+		this.map.addTilesetImage("medium_object-0"),
+		this.map.addTilesetImage("tree01"),
+		this.map.addTilesetImage("very_small_object-0"),
+		this.map.addTilesetImage("small_object-0"),
+		this.map.addTilesetImage("medium_object-1")]
+		this.map.createStaticLayer("background",this.tileset)
+		this.map.createStaticLayer("tree",this.tileset)
+		this.map.createStaticLayer("tree2",this.tileset)
+		this.map.createStaticLayer("tree3",this.tileset)
+		this.map.createStaticLayer("roches",this.tileset)	
+		
+		
 		var preCreateMap = this.scene.get("mySceneManager").preCreateMap.bind(this);
 		this._create()
-
+		this.fMapScene.destroy()
 		preCreateMap()
 		var createMap = this.scene.get("mySceneManager").createMap.bind(this);
 		createMap()

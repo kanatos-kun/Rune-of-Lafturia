@@ -100,7 +100,7 @@
     },
     {
       "type": "image",
-      "key": "npc",
+      "key": "npc_01",
       "url": "assets/images/npc/01/Idle_000.png",
       "normalMap": ""
     },
@@ -115,14 +115,53 @@
       "url": "assets/prefab/enemy/Bee.js"
     },
     {
+      "type": "tilemapTiledJSON",
+      "key": "map03",
+      "url": "assets/data/map/map03.json"
+    },
+    {
+      "type": "tilemapTiledJSON",
+      "key": "map04",
+      "url": "assets/data/map/map04.json"
+    },
+    {
+      "type": "tilemapTiledJSON",
+      "key": "map05",
+      "url": "assets/data/map/map05.json"
+    },
+    {
+      "type": "tilemapTiledJSON",
+      "key": "map06",
+      "url": "assets/data/map/map06.json"
+    },
+    {
+      "type": "tilemapTiledJSON",
+      "key": "map07",
+      "url": "assets/data/map/map07.json"
+    },
+    {
+      "type": "tilemapTiledJSON",
+      "key": "map08",
+      "url": "assets/data/map/map08.json"
+    },
+    {
+      "type": "json",
+      "key": "npc_map04_01",
+      "url": "assets/data/npc/npc_map04_01.json"
+    },
+    {
       "type": "image",
-      "key": "map01",
-      "url": "assets/images/map/map01.png",
-      "normalMap": ""
+      "key": "coffre_closed",
+      "url": "assets/images/coffre/dark-wood-closed.png"
+    },
+    {
+      "type": "image",
+      "key": "coffre_open",
+      "url": "assets/images/coffre/dark-wood-open.png"
     }
   ]},
   "meta": {
-    "generated": "1590072691908",
+    "generated": "1590221180527",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",
