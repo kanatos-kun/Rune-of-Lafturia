@@ -139,6 +139,7 @@ class menu_hud extends Phaser.Scene {
 			this.fButtonInventoryState = !this.fButtonInventoryState
 			if(this.fButtonInventoryState){
 				this.scene.run("windowInventory")
+				this.scene.bringToTop("windowInventory")
 			}else{
 				this.scene.sleep("windowInventory")
 			}

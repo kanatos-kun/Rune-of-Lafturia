@@ -55,19 +55,19 @@ class mySceneManager extends Phaser.Scene {
 			this.fHero = this.add.hero(this.dataScene.x,this.dataScene.y,"hero")
 		}
 		
-		if(this.fMapScene !== undefined){
-			//let w = Math.floor(this.fMapScene.width/3328) 
-			//let h = Math.floor(this.fMapScene.height/3072)
-			//this.widthMap = w
-			//this.heightMap = h
+		if(this.map !== undefined){
+			let w = Math.floor(this.map.width/13) 
+			let h = Math.floor(this.map.height/12)
+			this.widthMap = w
+			this.heightMap = h
 		}
-		
+		this.isInWindowInteraction = false;
 		this.physics.world.setBounds(-200,-200,3720*this.widthMap,3380*this.heightMap)
 		
 		
 		this.fHero.setPosition(this.dataScene.x,this.dataScene.y)
 		this.heroAttack = this.add.group();
-		this.game.currentMap = this.key
+		this.game.currentMap = this.scene.key
 		this.physics.add.collider(this.fHero,this.fObstacle)
 		this.physics.add.collider(this.fNpc,this.fObstacle)
 		this.physics.add.collider(this.fEnemies,this.fObstacle)
@@ -165,6 +165,7 @@ class mySceneManager extends Phaser.Scene {
 		*/
 		
  		this.events.emit("endSceneManager",this);
+	console.log(this.cache)
 	}
 	
 	
@@ -185,7 +186,6 @@ class mySceneManager extends Phaser.Scene {
 			this.fCoffres.clear()
 			this.fNpc.clear()
 			this.fGold.clear()  */
-			this.fHero.body.setVelocity(0)
 			//console.log("clear group!")
 			var duration = 100
 			if(dir==="right"){
@@ -242,10 +242,10 @@ class mySceneManager extends Phaser.Scene {
 	 * @param {number} duration 
 	*/
 	transitionstart(from,duration){
-		
+			/*		
 		console.log("fromthatDisable : " + from.scene.key)
 		console.log("isWillSceneStay : " + this.scene.key)
-		console.log("start Transition!")
+		console.log("start Transition!") */
 			if(from.dataScene.dir ==="left"){
 				this.fMapScene.x = -1650 * this.widthMap
 			}else if(from.dataScene.dir ==="right"){
@@ -410,6 +410,12 @@ class mySceneManager extends Phaser.Scene {
 
 			this.fHero.setVisible(true)
 			this.fHero.setActive(true)
+			this.fHero.body.setVelocity(0,0)
+			this.keys.Q.reset()
+			this.keys.D.reset()
+			this.keys.S.reset()
+			this.keys.Z.reset()
+
 	}
 	
 	
@@ -492,9 +498,8 @@ class mySceneManager extends Phaser.Scene {
 			}
 		} */
 		
-
 		if(!scene.dialogueState){
-			
+
 					if(scene.fHero.state!=="get_hit" || scene.dialogueState){
 						if(scene.fHero.body !== undefined){
 							scene.fHero.body.setVelocity(0,0)
@@ -505,15 +510,13 @@ class mySceneManager extends Phaser.Scene {
 						if(scene.keys.S.isDown){
 				                scene.fHero.body.setVelocityY(700)
 						}
-						if(scene.keys.D.isDown){
+						if(scene.keys.D.isDown){		
 				                scene.fHero.body.setVelocityX(700)
 						}
 						if(scene.keys.Q.isDown){
-				                scene.fHero.body.setVelocityX(-700)
+				                scene.fHero.body.setVelocityX(-700)						
 						}
 					}
-
-					
 					if (Phaser.Input.Keyboard.JustDown(scene.keys.M) ){
 								scene.scene.run("worldMapScreen")
 								scene.scene.sleep(scene.game.currentMap)

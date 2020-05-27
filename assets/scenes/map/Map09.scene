@@ -473,9 +473,10 @@
         "variableField": false,
         "data": {
           "zone": "\"Map08\"",
-          "x": "6400",
+          "x": "6000",
           "y": "2158",
-          "dir": "\"left\""
+          "dir": "\"left\"",
+          "loadZone": "1"
         },
         "objectFactory": "warp",
         "x": 9.678328514099121,
@@ -493,7 +494,7 @@
         "variableField": true,
         "data": {
           "tagName": "\"Clara\"",
-          "eventPage": "\"npc_mapxx_xx\""
+          "eventPage": "\"npc_map09_01\""
         },
         "objectFactory": "npc",
         "x": 1527.600341796875,

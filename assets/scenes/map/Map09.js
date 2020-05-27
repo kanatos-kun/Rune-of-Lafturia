@@ -129,14 +129,15 @@ class Map09 extends Phaser.Scene {
 		
 		var warp = this.add.warp(9.6783285, 3206.726, "warp");
 		warp.setData("zone", "Map08");
-		warp.setData("x", 6400);
+		warp.setData("x", 6000);
 		warp.setData("y", 2158);
 		warp.setData("dir", "left");
+		warp.setData("loadZone", 1);
 		warp.setScale(1.6189777, 1.5708395);
 		
 		var villager_01 = this.add.npc(1527.6003, 2723.5322, "villager_01");
 		villager_01.setData("tagName", "Clara");
-		villager_01.setData("eventPage", "npc_mapxx_xx");
+		villager_01.setData("eventPage", "npc_map09_01");
 		
 		this.fObstacle = this.add.group([ obstacle, obstacle_27, obstacle_26, obstacle_25, obstacle_24, obstacle_23, obstacle_22, obstacle_21, obstacle_20, obstacle_19, obstacle_18, obstacle_17, obstacle_16, obstacle_15, obstacle_14, obstacle_13, obstacle_12, obstacle_11, obstacle_10, obstacle_9, obstacle_8, obstacle_7, obstacle_6, obstacle_5, obstacle_4, obstacle_3, obstacle_2, obstacle_1 ]);
 		this.fWarp = this.add.group([ warp ]);
@@ -157,10 +158,29 @@ class Map09 extends Phaser.Scene {
 		this.dataScene = data
 	}
 	create(){
-
+		
+		this.map = this.add.tilemap("map09");
+		this.tileset = [
+		this.map.addTilesetImage("TownColor2@256x256"),
+		this.map.addTilesetImage("grass_atlas"),
+		this.map.addTilesetImage("medium_object-0"),
+		this.map.addTilesetImage("tree01"),
+		this.map.addTilesetImage("very_small_object-0"),
+		this.map.addTilesetImage("small_object-0"),
+		this.map.addTilesetImage("medium_object-1")]
+		this.map.createStaticLayer("background",this.tileset)
+		this.map.createStaticLayer("tree",this.tileset)
+		this.map.createStaticLayer("tree2",this.tileset)
+		this.map.createStaticLayer("tree3",this.tileset)
+		this.map.createStaticLayer("house",this.tileset)
+		this.map.createStaticLayer("props2",this.tileset)
+		this.map.createStaticLayer("props",this.tileset)
+		this.map.createStaticLayer("hutte",this.tileset)
+		this.map.createStaticLayer("shadow",this.tileset)
+		this.map.createStaticLayer("roches",this.tileset)	
 		var preCreateMap = this.scene.get("mySceneManager").preCreateMap.bind(this);
 		this._create()
-
+		this.fMapScene.destroy()
 		preCreateMap()
 		var createMap = this.scene.get("mySceneManager").createMap.bind(this);
 		createMap()

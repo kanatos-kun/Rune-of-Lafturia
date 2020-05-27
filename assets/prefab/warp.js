@@ -23,7 +23,23 @@ class Warp extends Phaser.GameObjects.Image  {
 		if(Phaser.Math.Distance.Between(this.scene.fHero.x,this.scene.fHero.y,this.x,this.y) < 200 ){
 			//this.scene.scene.start(this.data.get("zone"),{x:this.data.get("x"),y:this.data.get("y")})
 			if(this.scene.fHero.active){
-				this.scene.changeTransitionMap(this.data.get("zone"),this.data.get("x"),this.data.get("y"),this.data.get("dir"))
+				if(this.data.get("loadZone") !==undefined && this.scene.game.loading["loadZone_"+this.data.get("loadZone")]===false){
+					this.scene.scene.bringToTop("LoadZoneAssets_" + this.data.get("loadZone"))
+					this.scene.scene.run("LoadZoneAssets_"+this.data.get("loadZone"),{packName :"packZone-"+this.data.get("loadZone"),
+													  xZone : this.data.get("x"),
+											          yZone : this.data.get("y"),
+													  zone :  this.data.get("zone"),
+													  packId: this.data.get("loadZone")
+	
+	
+					})
+					this.scene.scene.sleep()
+					console.log(this.scene.game.loading)
+				}else{
+					console.log("transition")
+					this.scene.changeTransitionMap(this.data.get("zone"),this.data.get("x"),this.data.get("y"),this.data.get("dir"))
+				}
+
 			}
 			
 		}

@@ -110,6 +110,8 @@ class Scene1 extends Phaser.Scene {
 		map.createStaticLayer("tree2",tileset)
 		map.createStaticLayer("tree3",tileset)
 		map.createStaticLayer("herbes",tileset) */
+		this.scene.run("windowInventory")
+		this.scene.bringToTop("windowInventory")
 	}
 	
 

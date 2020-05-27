@@ -3,11 +3,11 @@
 
 /* START OF COMPILED CODE */
 
-class LoadZoneAssets extends Phaser.Scene {
+class LoadZoneAssets_2 extends Phaser.Scene {
 	
 	constructor() {
 	
-		super("LoadZoneAssets");
+		super("LoadZoneAssets_2");
 		
 	}
 	
@@ -19,7 +19,8 @@ class LoadZoneAssets extends Phaser.Scene {
 		
 				//console.log(this.dataLoad.packName)
 		if(this.dataLoad.packName !== undefined){
-			this.load.pack(this.dataLoad.packName, "assets/"+this.dataLoad.packName+".json");
+			//this.load.pack(this.dataLoad.packName, "assets/"+this.dataLoad.packName+".json");
+			this.load.pack("packZone-2","assets/packZone-2.json")
 		}
 		
 	    var progress = this.add.graphics();
@@ -52,24 +53,24 @@ class LoadZoneAssets extends Phaser.Scene {
 			sys.scene.scene.restart(data)
 		})
 		
-
 		if(this.dataLoad.zone === undefined){
 			this.scene.run(this.game.startMap,{x:this.game.startPosition.x,y:this.game.startPosition.y});
 		}
+		
 		this.game.loading["loadZone_"+ this.dataLoad.packId]  = true
+		console.log(this.game.loading["loadZone_"+ this.dataLoad.packName])
 		this.scene.bringToTop("dialogueWindow")
-
+		this.scene.bringToTop("windowInventory")
 		this.scene.bringToTop("windowSkills")
 		this.scene.bringToTop("windowStatut")
 		this.scene.bringToTop("windowEquip")
-				this.scene.bringToTop("windowInventory")
 		this.scene.bringToTop("menu_hud")
 		this.scene.sleep("loadGameScreen")
 		this.scene.sleep("optionScreen")
 		this.scene.sleep("creditScreen")
 		this.scene.sleep("saveGameScreen")
 		this.scene.sleep("windowInventory")
-		this.scene.sleep("LoadZoneAssets")
+		this.scene.sleep("LoadZoneAssets_2")
 		
 	}
 	

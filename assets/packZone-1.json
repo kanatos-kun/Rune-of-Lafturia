@@ -152,16 +152,18 @@
     {
       "type": "image",
       "key": "coffre_closed",
-      "url": "assets/images/coffre/dark-wood-closed.png"
+      "url": "assets/images/coffre/dark-wood-closed.png",
+      "normalMap": ""
     },
     {
       "type": "image",
       "key": "coffre_open",
-      "url": "assets/images/coffre/dark-wood-open.png"
+      "url": "assets/images/coffre/dark-wood-open.png",
+      "normalMap": ""
     }
   ]},
   "meta": {
-    "generated": "1590221180527",
+    "generated": "1590589317685",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",

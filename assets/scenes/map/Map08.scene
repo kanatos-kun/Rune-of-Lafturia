@@ -422,9 +422,10 @@
         "variableField": false,
         "data": {
           "zone": "\"Map09\"",
-          "x": "230",
+          "x": "800",
           "y": "3206",
-          "dir": "\"right\""
+          "dir": "\"right\"",
+          "loadZone": "2"
         },
         "objectFactory": "warp",
         "x": 6635.1650390625,

@@ -13,7 +13,7 @@ class windowInventory extends Phaser.Scene {
 	
 	_create() {
 	
-		var window_inventory = this.add.image(1888.4213, 1052.7661, "window_inventory");
+		var window_inventory = this.add.image(1488.6735, 1599.0881, "window_inventory");
 		
 		this.fWindow_inventory = window_inventory;
 		
@@ -22,7 +22,10 @@ class windowInventory extends Phaser.Scene {
 	
 	/* START-USER-CODE */
 	create(){
+
 		this._create()
+		
+		
 		this.miscGroup = this.add.group()
 		this.miscTextGroup = this.add.group()
 		
@@ -61,16 +64,7 @@ class windowInventory extends Phaser.Scene {
 					//break;
 				}
 			}
-  				  /*
-			if(!check){
-				//add the item display in the window
-				for(let i=0;i <sys.game.hero.inventory.misc.length;i++){
-					console.log("create a new sting!")
-					let a =sys.scene.add.image(0,0,"sting")
-					a.name = "sting"
-					sys.scene.miscGroup.add(a);
-				} 
-			}*/
+  			
 			let x =sys.scene.fWindow_inventory.x - 500
 			let y =sys.scene.fWindow_inventory.y -130
 			Phaser.Actions.GridAlign(sys.scene.miscGroup.getChildren(), {

@@ -1,0 +1,68 @@
+{
+  "section": {"files": [
+    {
+      "type": "tilemapTiledJSON",
+      "key": "map09",
+      "url": "assets/data/map/map09.json"
+    },
+    {
+      "type": "image",
+      "key": "TownColor2@256x256",
+      "url": "assets/tileset/TownColor2@256x256.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "medium_object-0",
+      "url": "assets/tileset/medium_object-0.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "very_small_object-0",
+      "url": "assets/tileset/very_small_object-0.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "medium_object-1",
+      "url": "assets/tileset/medium_object-1.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "small_object-0",
+      "url": "assets/tileset/small_object-0.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "tree01",
+      "url": "assets/tileset/tree01.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "npc_01",
+      "url": "assets/images/npc/01/Idle_000.png",
+      "normalMap": ""
+    },
+    {
+      "type": "sceneFile",
+      "key": "Map09",
+      "url": "assets/scenes/map/Map09.js"
+    },
+    {
+      "type": "json",
+      "key": "npc_map09_01",
+      "url": "assets/data/npc/npc_map09_01.json"
+    }
+  ]},
+  "meta": {
+    "generated": "1590580918936",
+    "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
+    "contentType": "Phaser v3 Asset Pack",
+    "url": "https://phasereditor2d.com",
+    "version": "2"
+  }
+}

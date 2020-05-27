@@ -32,11 +32,6 @@
     },
     {
       "type": "sceneFile",
-      "key": "windowInventory",
-      "url": "assets/scenes/window/windowInventory.js"
-    },
-    {
-      "type": "sceneFile",
       "key": "windowSkills",
       "url": "assets/scenes/window/windowSkills.js"
     },
@@ -210,11 +205,22 @@
     {
       "type": "image",
       "key": "arrow",
-      "url": "assets/images/menu/arrow.png"
+      "url": "assets/images/menu/arrow.png",
+      "normalMap": ""
+    },
+    {
+      "type": "sceneFile",
+      "key": "LoadZoneAssets_2",
+      "url": "assets/scenes/load/LoadZoneAssets_2.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "windowInventory",
+      "url": "assets/scenes/window/windowInventory.js"
     }
   ]},
   "meta": {
-    "generated": "1590220956505",
+    "generated": "1590589333900",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",
