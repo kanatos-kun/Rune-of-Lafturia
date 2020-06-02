@@ -465,7 +465,7 @@ class mySceneManager extends Phaser.Scene {
 	 * @param {Phaser.Scene} Scene
 		*/
 	updateMap(scene) {
-		
+		scene.input.activePointer.updateWorldPoint(scene.cameras.main)
 		if(scene.fHero.currentHp <=0){
 			scene.scene.sleep("menu_hud")
 			scene.scene.sleep("dialogueWindow")
@@ -530,10 +530,13 @@ class mySceneManager extends Phaser.Scene {
 				if(scene.input.activePointer.leftButtonDown( ) && !scene.isInWindowInteraction ){
 					//console.log("click left!")
 					if(  (scene.fHero.timeAttack.state) && scene.input.activePointer.y <=3060 ){
-						
 						// Change angle 
 						let angle = scene.utils.findAngle(scene.fHero.x,scene.fHero.y,scene.input.activePointer.worldX,scene.input.activePointer.worldY)
 						angle -=0.5
+						/*console.log("heroX :" +scene.fHero.x)
+						console.log("heroY :" +scene.fHero.y)
+						console.log("worldX :" +scene.input.activePointer.worldX)
+						console.log("worldY :" +scene.input.activePointer.worldY) */
 						let a =scene.add.slash(scene.fHero,angle)
 						scene.heroAttack.add(a)
 						scene.fHero.timeAttack.state = false

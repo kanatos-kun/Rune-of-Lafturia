@@ -14,6 +14,11 @@
 	findAngle(x1,y1,x2,y2){
 		let a ;
 		a = Phaser.Math.Angle.Between(x1,y1,x2,y2)
+		console.log("heroX :" +x1)
+		console.log("heroY :" +y1)
+		console.log("worldX :" +x2)
+		console.log("worldY :" +y2) 
+		console.log("angle :" +a)
 		return a;
 	}
 	

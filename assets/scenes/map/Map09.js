@@ -79,11 +79,11 @@ class Map09 extends Phaser.Scene {
 		obstacle_15.setOrigin(0.0, 0.0);
 		obstacle_15.setScale(2.7855375, 3.2914648);
 		
-		var obstacle_16 = this.add.obstacle(2870.0098, 3738.0522, "obstacle");
+		var obstacle_16 = this.add.obstacle(2808.723, 3589.9421, "obstacle");
 		obstacle_16.setOrigin(0.0, 0.0);
 		obstacle_16.setScale(3.746376, 1.8218387);
 		
-		var obstacle_17 = this.add.obstacle(2257.7156, 3547.8157, "obstacle");
+		var obstacle_17 = this.add.obstacle(2313.8953, 3573.3518, "obstacle");
 		obstacle_17.setOrigin(0.0, 0.0);
 		obstacle_17.setScale(3.0830698, 1.8434284);
 		
@@ -155,7 +155,7 @@ class Map09 extends Phaser.Scene {
 	
 	/* START-USER-CODE */
 	init(data){
-		this.dataScene = data
+		this.dataScene = data;
 	}
 	create(){
 		
@@ -175,6 +175,7 @@ class Map09 extends Phaser.Scene {
 		this.map.createStaticLayer("house",this.tileset)
 		this.map.createStaticLayer("props2",this.tileset)
 		this.map.createStaticLayer("props",this.tileset)
+		this.map.createStaticLayer("lanterne",this.tileset)
 		this.map.createStaticLayer("hutte",this.tileset)
 		this.map.createStaticLayer("shadow",this.tileset)
 		this.map.createStaticLayer("roches",this.tileset)	

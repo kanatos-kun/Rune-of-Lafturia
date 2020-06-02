@@ -9,7 +9,7 @@ window.addEventListener('load', function() {
     "backgroundColor": "#000000",
     "disableContextMenu":true,
     "parent": "game-container",
-	"version":"v0.3.0-alpha-unstable",
+	"version":"v0.3.1-alpha-unstable",
     physics: {
         default: 'arcade',
         arcade: {

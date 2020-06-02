@@ -55,6 +55,8 @@ class LoadZoneAssets extends Phaser.Scene {
 
 		if(this.dataLoad.zone === undefined){
 			this.scene.run(this.game.startMap,{x:this.game.startPosition.x,y:this.game.startPosition.y});
+		}else{
+			this.scene.run(this.dataLoad.zone,{x:this.dataLoad.xZone,y:this.dataLoad.yZone});
 		}
 		this.game.loading["loadZone_"+ this.dataLoad.packId]  = true
 		this.scene.bringToTop("dialogueWindow")
@@ -62,7 +64,7 @@ class LoadZoneAssets extends Phaser.Scene {
 		this.scene.bringToTop("windowSkills")
 		this.scene.bringToTop("windowStatut")
 		this.scene.bringToTop("windowEquip")
-				this.scene.bringToTop("windowInventory")
+		this.scene.bringToTop("windowInventory")
 		this.scene.bringToTop("menu_hud")
 		this.scene.sleep("loadGameScreen")
 		this.scene.sleep("optionScreen")

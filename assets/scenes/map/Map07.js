@@ -19,19 +19,19 @@ class Map07 extends Phaser.Scene {
 		obstacle.setOrigin(0.0, 0.0);
 		obstacle.setScale(3.533797, 27.604033);
 		
-		var obstacle_1 = this.add.obstacle(177.15245, -8.542091, "obstacle");
+		var obstacle_1 = this.add.obstacle(36.840973, -24.731876, "obstacle");
 		obstacle_1.setOrigin(0.0, 0.0);
-		obstacle_1.setScale(55.679157, 5.862968);
+		obstacle_1.setScale(58.79555, 7.0818954);
 		
-		var obstacle_2 = this.add.obstacle(1169.8595, 1170.714, "obstacle");
+		var obstacle_2 = this.add.obstacle(1040.3412, 1289.4391, "obstacle");
 		obstacle_2.setOrigin(0.0, 0.0);
 		obstacle_2.setScale(2.855342, 3.1979818);
 		
-		var obstacle_3 = this.add.obstacle(2455.715, 1397.2377, "obstacle");
+		var obstacle_3 = this.add.obstacle(2574.4402, 1537.5492, "obstacle");
 		obstacle_3.setOrigin(0.0, 0.0);
-		obstacle_3.setScale(4.283009, 4.6637244);
+		obstacle_3.setScale(2.5917232, 3.250979);
 		
-		var obstacle_4 = this.add.obstacle(343.71408, 2749.7178, "obstacle");
+		var obstacle_4 = this.add.obstacle(511.00854, 2533.854, "obstacle");
 		obstacle_4.setOrigin(0.0, 0.0);
 		obstacle_4.setScale(3.331231, 3.7309785);
 		
