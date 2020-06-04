@@ -14,7 +14,7 @@ window.addEventListener('load', function() {
         default: 'arcade',
         arcade: {
             gravity: { y: 0 },
-            debug: false
+            debug: true
         }
     },
     "scale": {
@@ -141,8 +141,8 @@ class Boot extends Phaser.Scene {
 		/** @global 
 		 *  @property {string} currentMap -the current map displayed
 		*/
-		this.game.currentMap = "Map01"
-		this.game.startMap = "Map01"
+		this.game.currentMap = "Map08"
+		this.game.startMap = "Map08"
 		this.game.loadZone = 1
 		this.game.globalSwitchId=[]
 		for(let i =0;i < 50;i++){

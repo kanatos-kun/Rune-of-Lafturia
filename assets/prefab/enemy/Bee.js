@@ -96,28 +96,33 @@ class Bee extends Phaser.Physics.Arcade.Sprite {
 	
 	preUpdate(time,delta){
 		super.preUpdate(time,delta)
-		this.stateManager(delta)
-			if(this.scene.game.config.physics.arcade.debug){
-					this.popup_debug.setText("hp:" + this.currentHp + "/" + this.hp)
-			}
-
-		if(this.invincible.state){
-
-			if(this.invincible.c > this.invincible.t){
-				this.setTint(0xffffff)
-				this.invincible.state = false
-				this.invincible.c = 0
-			}else{
-			    this.invincible.c += delta/100
-			}
-		}
+			
+			
+				this.stateManager(delta)
+					if(this.scene.game.config.physics.arcade.debug){
+							this.popup_debug.setText("hp:" + this.currentHp + "/" + this.hp)
+					}
 		
+				if(this.invincible.state){
 		
-		if(this.currentHp <= 0){
-			this.scene.add.coin(this.x,this.y)
-			this.scene.add.itemInventory_misc_sting(this.x,this.y)
-			this.destroy()
-		}
+					if(this.invincible.c > this.invincible.t){
+						this.setTint(0xffffff)
+						this.invincible.state = false
+						this.invincible.c = 0
+					}else{
+					    this.invincible.c += delta/100
+					}
+				}
+				
+				
+				if(this.currentHp <= 0){
+					this.scene.add.coin(this.x,this.y)
+					this.scene.add.itemInventory_misc_sting(this.x,this.y)
+					this.destroy()
+				}
+			
+		
+
 	}
 
 }

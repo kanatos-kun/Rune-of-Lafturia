@@ -42,9 +42,10 @@ class mySceneManager extends Phaser.Scene {
 	*/
 	createMap() {		
 		
-		this.transitionstart = this.scene.get("mySceneManager").transitionstart.bind(this)
-		this.transitioncomplete = this.scene.get("mySceneManager").transitioncomplete.bind(this)
-		this.changeTransitionMap = this.scene.get("mySceneManager").changeTransitionMap.bind(this)
+		this.transitionstart = this.scene.get("mySceneManager").transitionstart.bind(this);
+		this.transitioncomplete = this.scene.get("mySceneManager").transitioncomplete.bind(this);
+		this.changeTransitionMap = this.scene.get("mySceneManager").changeTransitionMap.bind(this);
+		this.addDebugMap = this.scene.get("mySceneManager").addDebugMap.bind(this);
 		this.events.on("transitionstart",this.transitionstart,this)
 		this.events.on("transitionwake",this.transitionstart,this)
 		this.events.on("transitioncomplete",this.transitioncomplete,this)
@@ -165,7 +166,9 @@ class mySceneManager extends Phaser.Scene {
 		*/
 		
  		this.events.emit("endSceneManager",this);
-	console.log(this.cache)
+		if(this.game.config.physics.arcade.debug){
+			this.addDebugMap()
+		}
 	}
 	
 	
@@ -234,6 +237,18 @@ class mySceneManager extends Phaser.Scene {
 	    //sys.scene.dataScene = data
 		//console.log(data)
 	}
+	
+	addDebugMap(){
+		this.debugMap = {
+			bg: this.add.rectangle(1000,10,1200,800,0x000000,0.2),
+			text : this.add.text(1000,12,"debug text",{fontSize:'100px'})
+		}
+		this.debugMap.bg.setScrollFactor(this.cameras.main.scrollX,this.cameras.main.scrollY)
+		this.debugMap.bg.setOrigin(0)
+		this.debugMap.text.setScrollFactor(this.cameras.main.scrollX,this.cameras.main.scrollY)
+		this.debugMap.text.setOrigin(0)
+	}
+	
 	
 	/** 
 	 * TransitionStart will start the effect between 2 map.
@@ -475,28 +490,36 @@ class mySceneManager extends Phaser.Scene {
 			scene.scene.run("gameOver")
 		}
 		
-		//let a_enemies = scene.fEnemies.getChildren()
-		//let length_enemies = scene.fEnemies.getLength()
+		let a_enemies = scene.fEnemies.getChildren()
+		let length_enemies = scene.fEnemies.getLength()
 		//console.log(length_enemies)
 		//console.log(scene.fEnemies)
-		/*
+		var right = scene.cameras.main.scrollX + scene.cameras.main.width + 100;
+		var left = scene.cameras.main.scrollX - 100;
+		var bottom = scene.cameras.main.scrollY + scene.cameras.main.height + 100;
+		var top = scene.cameras.main.scrollY - 100;
+		var enemy_inactive= 0;
+		var enemy_active=0;
 		for(let i =0; i <length_enemies;i++){
 			let item = a_enemies[i]
 			
 			
 			if(
-				i.x> hero.x+right &&
-				i.x< hero.x+left &&
-				i.y> hero.y+bottom &&
-				i.y< hero.y+top
+				item.x<right &&
+				item.x> left &&
+				item.y< bottom &&
+				item.y> top
 			){
 				//sleep gameobject
-				i.setActive(false)
+				item.setActive(true)
+				enemy_active++;
 			}else{
 				//no sleep
-				i.setActive(true)
+				item.setActive(false)
+				item.body.setVelocity(0)
+				enemy_inactive++;
 			}
-		} */
+		} 
 		
 		if(!scene.dialogueState){
 
@@ -675,6 +698,15 @@ class mySceneManager extends Phaser.Scene {
 					}
 					
 					
+					
+				}
+
+
+				if(scene.game.config.physics.arcade.debug){
+					var text = "enemy : " + length_enemies + "\n"+ 
+					"enemy active : " + enemy_active + "\n" + 
+					"enemy inactive : " + enemy_inactive
+					scene.debugMap.text.setText(text)
 				}
 
 		
