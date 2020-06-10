@@ -8,7 +8,7 @@ class Obstacle extends Phaser.Physics.Arcade.Image {
 	 * @param {number} y 
 	 */
 	constructor(scene, x, y ) {
-		super(scene, x, y, "obstacle");
+		super(scene, x, y, "info",0);
 		scene.physics.add.existing(this)
 		//this.body.setSize(1500,300)
 		this.body.setImmovable(true)

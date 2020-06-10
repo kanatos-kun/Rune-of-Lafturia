@@ -49,6 +49,8 @@ class mySceneManager extends Phaser.Scene {
 		this.events.on("transitionstart",this.transitionstart,this)
 		this.events.on("transitionwake",this.transitionstart,this)
 		this.events.on("transitioncomplete",this.transitioncomplete,this)
+		
+		
 
 		if(this.fHero === undefined){
 			this.fHero = this.add.hero(1075.0101, 1528.0022, "hero");
@@ -166,6 +168,17 @@ class mySceneManager extends Phaser.Scene {
 		*/
 		
  		this.events.emit("endSceneManager",this);
+		this.scene.bringToTop("windowSkills")
+		this.scene.bringToTop("windowStatut")
+		this.scene.bringToTop("windowEquip")
+		this.scene.bringToTop("windowInventory")
+		this.scene.bringToTop("menu_hud")
+		this.scene.bringToTop("gameMenuScreen")
+		this.scene.sleep("loadGameScreen")
+		this.scene.sleep("optionScreen")
+		this.scene.sleep("creditScreen")
+		this.scene.sleep("saveGameScreen")
+		this.scene.sleep("LoadZoneAssets")
 		if(this.game.config.physics.arcade.debug){
 			this.addDebugMap()
 		}
@@ -439,6 +452,7 @@ class mySceneManager extends Phaser.Scene {
 		this.dialogueState = false;
 		this.widthMap = 1;
 		this.heightMap = 1;
+		this.map = this.add.tilemap(this.scene.key.toLowerCase() );
 		
 		if(this.fCoffres === undefined){
 			this.fCoffres = this.add.group();
@@ -466,7 +480,7 @@ class mySceneManager extends Phaser.Scene {
 		if(this.fItems === undefined){
 			this.fItems = this.add.group();
 		}  
-
+		
 		/*
 		this.fNpc = this.add.group();
 		this.fObstacle = this.add.group();

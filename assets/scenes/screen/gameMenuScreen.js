@@ -13,8 +13,9 @@ class gameMenuScreen extends Phaser.Scene {
 	
 	_create() {
 	
-		var titleScreen_loadGame_blackScreen = this.add.image(1645.4309, 1531.3031, "titleScreen_loadGame_blackScreen");
-		titleScreen_loadGame_blackScreen.setScale(1.0604941, 1.0370245);
+		var titleScreen_loadGame_blackScreen = this.add.image(-104.3843, -55.344383, "titleScreen_loadGame_blackScreen");
+		titleScreen_loadGame_blackScreen.setOrigin(0.0, 0.0);
+		titleScreen_loadGame_blackScreen.setScale(1.0604941, 1.2389686);
 		
 		var buttonSave = this.add.uiButton(1687.8951, 788.1626, "button_empty");
 		buttonSave.setData("text", "Save");

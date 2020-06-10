@@ -217,10 +217,27 @@
       "type": "sceneFile",
       "key": "windowInventory",
       "url": "assets/scenes/window/windowInventory.js"
+    },
+    {
+      "type": "image",
+      "key": "titleScreen_loadGame_blackScreen",
+      "url": "assets/images/titleScreen/titleScreen_loadGame_blackScreen.png",
+      "normalMap": ""
+    },
+    {
+      "type": "spritesheet",
+      "key": "info",
+      "url": "assets/tileset/info.png",
+      "frameConfig": {
+        "frameWidth": 60,
+        "frameHeight": 60,
+        "margin": 0,
+        "spacing": 0
+      }
     }
   ]},
   "meta": {
-    "generated": "1590589333900",
+    "generated": "1591792955363",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",

@@ -52,7 +52,7 @@ class LoadZoneAssets extends Phaser.Scene {
 			sys.scene.scene.restart(data)
 		})
 		
-
+		
 		if(this.dataLoad.zone === undefined){
 			this.scene.run(this.game.startMap,{x:this.game.startPosition.x,y:this.game.startPosition.y});
 		}else{
@@ -65,12 +65,13 @@ class LoadZoneAssets extends Phaser.Scene {
 		this.scene.bringToTop("windowStatut")
 		this.scene.bringToTop("windowEquip")
 		this.scene.bringToTop("windowInventory")
+		this.scene.sleep("windowInventory")
 		this.scene.bringToTop("menu_hud")
+		this.scene.bringToTop("gameMenuScreen")
 		this.scene.sleep("loadGameScreen")
 		this.scene.sleep("optionScreen")
 		this.scene.sleep("creditScreen")
 		this.scene.sleep("saveGameScreen")
-		this.scene.sleep("windowInventory")
 		this.scene.sleep("LoadZoneAssets")
 		
 	}
