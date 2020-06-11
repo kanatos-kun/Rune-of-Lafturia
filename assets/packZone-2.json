@@ -2,8 +2,8 @@
   "section": {"files": [
     {
       "type": "tilemapTiledJSON",
-      "key": "map09",
-      "url": "assets/data/map/map09.json"
+      "key": "map009",
+      "url": "assets/data/map/map009.json"
     },
     {
       "type": "image",
@@ -49,7 +49,7 @@
     },
     {
       "type": "sceneFile",
-      "key": "Map09",
+      "key": "Map009",
       "url": "assets/scenes/map/Map09.js"
     },
     {
@@ -59,7 +59,7 @@
     }
   ]},
   "meta": {
-    "generated": "1590580918936",
+    "generated": "1591861185088",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",

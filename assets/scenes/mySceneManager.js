@@ -58,12 +58,40 @@ class mySceneManager extends Phaser.Scene {
 			this.fHero = this.add.hero(this.dataScene.x,this.dataScene.y,"hero")
 		}
 		
+		// to remove later ...
 		if(this.map !== undefined){
 			let w = Math.floor(this.map.width/13) 
 			let h = Math.floor(this.map.height/12)
 			this.widthMap = w
 			this.heightMap = h
 		}
+		
+		// add object to map
+		//---------------------------------------------------------------------------
+		
+		var obstacle = this.map.createFromObjects("InfoMap",213,{key:"info",frame:0})
+		obstacle.map((o,i)=>{
+			let itemObstacle = this.add.obstacle(o.x,o.y);
+			itemObstacle.setScale(o.scaleX,o.scaleY);
+			this.fObstacle.add(itemObstacle);
+			o.destroy();
+		})
+		var warp = this.map.createFromObjects("InfoMap",214,{key:"info",frame:1})
+		warp.map((o,i)=>{
+			let itemWarp = this.add.warp(o.x,o.y);
+			itemWarp.setData("dir",o.getData(0).value)
+			itemWarp.setData("x",o.getData(1).value)
+			itemWarp.setData("y",o.getData(2).value)
+			itemWarp.setData("zone",o.getData(3).value)
+			this.fWarp.add(itemWarp);
+			o.destroy();
+		})
+
+
+		
+		// /add object to map
+		//---------------------------------------------------------------------------
+		
 		this.isInWindowInteraction = false;
 		this.physics.world.setBounds(-200,-200,3720*this.widthMap,3380*this.heightMap)
 		
@@ -73,7 +101,7 @@ class mySceneManager extends Phaser.Scene {
 		this.game.currentMap = this.scene.key
 		this.physics.add.collider(this.fHero,this.fObstacle)
 		this.physics.add.collider(this.fNpc,this.fObstacle)
-		this.physics.add.collider(this.fEnemies,this.fObstacle)
+	//	this.physics.add.collider(this.fEnemies,this.fObstacle)
 		this.attackEnemyCollision = function(hero,enemy){
 			if(!enemy.invincible.state){
 				
@@ -93,6 +121,22 @@ class mySceneManager extends Phaser.Scene {
 				}
 			}
 		}
+		
+		
+		this.fSPawnMob = []
+		this.map.findObject("InfoMap",(spawner,index,array)=>{
+			if(spawner.name ==="spawn"){
+				var spawner = this.add.spawnMob(spawner)
+
+				this.fSPawnMob.push(spawner)
+				this.physics.add.collider(spawner,this.fObstacle)
+				this.physics.add.overlap(this.heroAttack,spawner,this.attackEnemyCollision)
+				this.physics.add.overlap(spawner,this.fHero,this.attackEnemyCollision)
+			}
+		})
+		console.log(this.fSPawnMob)
+		
+		
 		
 		this.recolteGold = function(hero,gold){
 			this.game.gold += 1;
@@ -127,8 +171,6 @@ class mySceneManager extends Phaser.Scene {
 		
 		this.changeTransitionMap = this.changeTransitionMap;
 
-		this.physics.add.overlap(this.heroAttack,this.fEnemies,this.attackEnemyCollision)
-		this.physics.add.overlap(this.fEnemies,this.fHero,this.attackEnemyCollision)
 		this.physics.add.overlap(this.fHero,this.fItems,this.recolteItem,function(){return true},this)
 		this.physics.add.overlap(this.fHero,this.fGold,this.recolteGold,function(){return true},this)
 		//scene.physics.add.overlap(scene.fHero,scene.fObstacle,function(){console.log("overlaps with obtstaclte")})
@@ -493,7 +535,7 @@ class mySceneManager extends Phaser.Scene {
 	 * @description  update the map scene
 	 * @param {Phaser.Scene} Scene
 		*/
-	updateMap(scene) {
+	updateMap(scene, time, delta) {
 		scene.input.activePointer.updateWorldPoint(scene.cameras.main)
 		if(scene.fHero.currentHp <=0){
 			scene.scene.sleep("menu_hud")
@@ -503,6 +545,16 @@ class mySceneManager extends Phaser.Scene {
 			scene.scene.sleep(scene.currentMap)
 			scene.scene.run("gameOver")
 		}
+		
+		/*
+		if(scene.fSPawnMob !== undefined){
+			for(let i=0;i<scene.fSPawnMob.length;i++){
+				let spawner = scene.fSPawnMob[i];
+				spawner.update();
+			}
+		}else{
+			console.log(scene.fSPawnMob)
+		} */
 		
 		let a_enemies = scene.fEnemies.getChildren()
 		let length_enemies = scene.fEnemies.getLength()

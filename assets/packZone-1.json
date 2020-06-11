@@ -2,53 +2,53 @@
   "section": {"files": [
     {
       "type": "sceneFile",
-      "key": "Map02",
-      "url": "assets/scenes/map/Map02.js"
+      "key": "Map002",
+      "url": "assets/scenes/map/Map002.js"
     },
     {
       "type": "sceneFile",
-      "key": "Map03",
-      "url": "assets/scenes/map/Map03.js"
+      "key": "Map003",
+      "url": "assets/scenes/map/Map003.js"
     },
     {
       "type": "sceneFile",
-      "key": "Map04",
-      "url": "assets/scenes/map/Map04.js"
+      "key": "Map004",
+      "url": "assets/scenes/map/Map004.js"
     },
     {
       "type": "sceneFile",
-      "key": "Map05",
-      "url": "assets/scenes/map/Map05.js"
+      "key": "Map005",
+      "url": "assets/scenes/map/Map005.js"
     },
     {
       "type": "sceneFile",
-      "key": "Map06",
-      "url": "assets/scenes/map/Map06.js"
+      "key": "Map006",
+      "url": "assets/scenes/map/Map006.js"
     },
     {
       "type": "sceneFile",
-      "key": "Map07",
-      "url": "assets/scenes/map/Map07.js"
+      "key": "Map007",
+      "url": "assets/scenes/map/Map007.js"
     },
     {
       "type": "sceneFile",
-      "key": "Map08",
-      "url": "assets/scenes/map/Map08.js"
+      "key": "Map008",
+      "url": "assets/scenes/map/Map008.js"
     },
     {
       "type": "sceneFile",
-      "key": "Scene1",
-      "url": "assets/scenes/map/Scene1.js"
+      "key": "Map001",
+      "url": "assets/scenes/map/Map001.js"
     },
     {
       "type": "tilemapTiledJSON",
-      "key": "map01",
-      "url": "assets/data/map/map01.json"
+      "key": "map001",
+      "url": "assets/data/map/map001.json"
     },
     {
       "type": "tilemapTiledJSON",
-      "key": "map02",
-      "url": "assets/data/map/map02.json"
+      "key": "map002",
+      "url": "assets/data/map/map002.json"
     },
     {
       "type": "image",
@@ -116,33 +116,33 @@
     },
     {
       "type": "tilemapTiledJSON",
-      "key": "map03",
-      "url": "assets/data/map/map03.json"
+      "key": "map003",
+      "url": "assets/data/map/map003.json"
     },
     {
       "type": "tilemapTiledJSON",
-      "key": "map04",
-      "url": "assets/data/map/map04.json"
+      "key": "map004",
+      "url": "assets/data/map/map004.json"
     },
     {
       "type": "tilemapTiledJSON",
-      "key": "map05",
-      "url": "assets/data/map/map05.json"
+      "key": "map005",
+      "url": "assets/data/map/map005.json"
     },
     {
       "type": "tilemapTiledJSON",
-      "key": "map06",
-      "url": "assets/data/map/map06.json"
+      "key": "map006",
+      "url": "assets/data/map/map006.json"
     },
     {
       "type": "tilemapTiledJSON",
-      "key": "map07",
-      "url": "assets/data/map/map07.json"
+      "key": "map007",
+      "url": "assets/data/map/map007.json"
     },
     {
       "type": "tilemapTiledJSON",
-      "key": "map08",
-      "url": "assets/data/map/map08.json"
+      "key": "map008",
+      "url": "assets/data/map/map008.json"
     },
     {
       "type": "json",
@@ -163,7 +163,7 @@
     }
   ]},
   "meta": {
-    "generated": "1590589317685",
+    "generated": "1591861730594",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",

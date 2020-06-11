@@ -141,8 +141,8 @@ class Boot extends Phaser.Scene {
 		/** @global 
 		 *  @property {string} currentMap -the current map displayed
 		*/
-		this.game.currentMap = "Map01"
-		this.game.startMap = "Map01"
+		this.game.currentMap = "Map001"
+		this.game.startMap = "Map001"
 		this.game.loadZone = 1
 		this.game.globalSwitchId=[]
 		for(let i =0;i < 50;i++){

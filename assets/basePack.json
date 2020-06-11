@@ -234,10 +234,15 @@
         "margin": 0,
         "spacing": 0
       }
+    },
+    {
+      "type": "script",
+      "key": "SpawnMob",
+      "url": "assets/data/SpawnMob.js"
     }
   ]},
   "meta": {
-    "generated": "1591792955363",
+    "generated": "1591863028106",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",
