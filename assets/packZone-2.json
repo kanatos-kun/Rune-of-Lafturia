@@ -50,7 +50,7 @@
     {
       "type": "sceneFile",
       "key": "Map009",
-      "url": "assets/scenes/map/Map09.js"
+      "url": "assets/scenes/map/Map009.js"
     },
     {
       "type": "json",
@@ -59,7 +59,7 @@
     }
   ]},
   "meta": {
-    "generated": "1591861185088",
+    "generated": "1592126537193",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",

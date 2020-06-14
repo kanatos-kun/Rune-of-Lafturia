@@ -28,6 +28,7 @@ class Map001 extends Phaser.Scene {
 		
 		var preCreateMap = this.scene.get("mySceneManager").preCreateMap.bind(this);
 		preCreateMap()
+		
 		this.tileset = [
 		this.map.addTilesetImage("grass_atlas"),
 		this.map.addTilesetImage("medium_object-0"),
@@ -43,22 +44,11 @@ class Map001 extends Phaser.Scene {
 		this.map.createStaticLayer("herbes",this.tileset)
 		
 		this._create();
+			console.log(this.map)
 		this.fMapScene.destroy();
 		var createMap = this.scene.get("mySceneManager").createMap.bind(this);
-		createMap()
+		createMap();
 		
-		/*var map = this.add.tilemap("map01");
-		var tileset = [map.addTilesetImage("grass_atlas"),
-		map.addTilesetImage("medium_object-0"),
-		map.addTilesetImage("tree01"),
-		map.addTilesetImage("very_small_object-0"),
-		map.addTilesetImage("small_object-0"),
-		map.addTilesetImage("medium_object-1")]
-		map.createStaticLayer("background",tileset)
-		map.createStaticLayer("tree",tileset)
-		map.createStaticLayer("tree2",tileset)
-		map.createStaticLayer("tree3",tileset)
-		map.createStaticLayer("herbes",tileset) */
 		this.scene.run("windowInventory")
 		this.scene.bringToTop("windowInventory")
 	}

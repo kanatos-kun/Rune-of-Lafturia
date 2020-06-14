@@ -34,9 +34,8 @@ class Warp extends Phaser.GameObjects.Image  {
 	
 					})
 					this.scene.scene.sleep()
-					console.log(this.scene.game.loading)
 				}else{
-					console.log("transition")
+					console.log(this.data.get("zone"))
 					this.scene.changeTransitionMap(this.data.get("zone"),this.data.get("x"),this.data.get("y"),this.data.get("dir"))
 				}
 

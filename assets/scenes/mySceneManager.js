@@ -69,20 +69,21 @@ class mySceneManager extends Phaser.Scene {
 		// add object to map
 		//---------------------------------------------------------------------------
 		
-		var obstacle = this.map.createFromObjects("InfoMap",213,{key:"info",frame:0})
+		var obstacle = this.map.createFromObjects("InfoMap","obstacle",{key:"info",frame:0})
 		obstacle.map((o,i)=>{
 			let itemObstacle = this.add.obstacle(o.x,o.y);
 			itemObstacle.setScale(o.scaleX,o.scaleY);
 			this.fObstacle.add(itemObstacle);
 			o.destroy();
 		})
-		var warp = this.map.createFromObjects("InfoMap",214,{key:"info",frame:1})
+		var warp = this.map.createFromObjects("InfoMap","warp",{key:"info",frame:1})
 		warp.map((o,i)=>{
 			let itemWarp = this.add.warp(o.x,o.y);
 			itemWarp.setData("dir",o.getData(0).value)
-			itemWarp.setData("x",o.getData(1).value)
-			itemWarp.setData("y",o.getData(2).value)
-			itemWarp.setData("zone",o.getData(3).value)
+			itemWarp.setData("loadZone",o.getData(1).value)
+			itemWarp.setData("x",o.getData(2).value)
+			itemWarp.setData("y",o.getData(3).value)
+			itemWarp.setData("zone",o.getData(4).value)
 			this.fWarp.add(itemWarp);
 			o.destroy();
 		})
@@ -134,7 +135,6 @@ class mySceneManager extends Phaser.Scene {
 				this.physics.add.overlap(spawner,this.fHero,this.attackEnemyCollision)
 			}
 		})
-		console.log(this.fSPawnMob)
 		
 		
 		

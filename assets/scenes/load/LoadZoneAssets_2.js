@@ -52,10 +52,11 @@ class LoadZoneAssets_2 extends Phaser.Scene {
 			//this.dataLoad = data
 			sys.scene.scene.restart(data)
 		})
-		
+		console.log(this.dataLoad)
 		if(this.dataLoad.zone === undefined){
 			this.scene.run(this.game.startMap,{x:this.game.startPosition.x,y:this.game.startPosition.y});
 		}else{
+			console.log("run map")
 			this.scene.run(this.dataLoad.zone,{x:this.dataLoad.xZone,y:this.dataLoad.yZone});
 		}
 		
