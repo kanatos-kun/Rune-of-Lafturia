@@ -20,8 +20,8 @@ class SpawnMob extends Phaser.GameObjects.Group {
 				while(this.getChildren().length < this.properties[0].value){
 					let rngMob = Phaser.Math.RND.integerInRange(0,this.properties[1].value.length - 1);
 					let mobName = this.properties[1].value[rngMob];
-					let posX = Phaser.Math.RND.integerInRange(this.x,this.width);
-					let posY = Phaser.Math.RND.integerInRange(this.y,this.height);
+					let posX = Phaser.Math.RND.integerInRange(this.x,this.x + this.width);
+					let posY = Phaser.Math.RND.integerInRange(this.y,this.y + this.height);
 					let mob = scene.add["enemy_"+mobName](posX,posY);
 					this.add(mob)
 				}

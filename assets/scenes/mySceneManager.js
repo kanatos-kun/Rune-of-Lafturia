@@ -556,8 +556,7 @@ class mySceneManager extends Phaser.Scene {
 			console.log(scene.fSPawnMob)
 		} */
 		
-		let a_enemies = scene.fEnemies.getChildren()
-		let length_enemies = scene.fEnemies.getLength()
+
 		//console.log(length_enemies)
 		//console.log(scene.fEnemies)
 		var right = scene.cameras.main.scrollX + scene.cameras.main.width + 100;
@@ -566,26 +565,47 @@ class mySceneManager extends Phaser.Scene {
 		var top = scene.cameras.main.scrollY - 100;
 		var enemy_inactive= 0;
 		var enemy_active=0;
+		let length_enemies=0;
+		/*
 		for(let i =0; i <length_enemies;i++){
-			let item = a_enemies[i]
+
+		} */
+
+		if(scene.fSPawnMob !== undefined){
 			
-			
-			if(
-				item.x<right &&
-				item.x> left &&
-				item.y< bottom &&
-				item.y> top
-			){
-				//sleep gameobject
-				item.setActive(true)
-				enemy_active++;
-			}else{
-				//no sleep
-				item.setActive(false)
-				item.body.setVelocity(0)
-				enemy_inactive++;
+			for(let i =0; i < scene.fSPawnMob.length;i++){
+				let spawnChildrens = scene.fSPawnMob[i].getChildren();
+				let spawnLength = scene.fSPawnMob[i].getLength();
+				length_enemies += spawnLength;
+				for(let y=0; y < spawnLength;y++){
+					
+					
+				let item = spawnChildrens[y]
+				
+				
+				if(
+					item.x<right &&
+					item.x> left &&
+					item.y< bottom &&
+					item.y> top
+				){
+					//sleep gameobject
+					item.setActive(true)
+					enemy_active++;
+				}else{
+					//no sleep
+					item.setActive(false)
+					item.body.setVelocity(0)
+					enemy_inactive++;
+				}
+					
+				}
 			}
-		} 
+			
+		}
+
+		
+		 
 		
 		if(!scene.dialogueState){
 

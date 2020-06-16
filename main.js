@@ -9,12 +9,12 @@ window.addEventListener('load', function() {
     "backgroundColor": "#000000",
     "disableContextMenu":true,
     "parent": "game-container",
-	"version":"v0.3.1-alpha-unstable",
+	"version":"v0.4.0-alpha-unstable",
     physics: {
         default: 'arcade',
         arcade: {
             gravity: { y: 0 },
-            debug: true
+            debug: false
         }
     },
     "scale": {
@@ -142,7 +142,7 @@ class Boot extends Phaser.Scene {
 		 *  @property {string} currentMap -the current map displayed
 		*/
 		this.game.currentMap = "Map001"
-		this.game.startMap = "Map007"
+		this.game.startMap = "Map001"
 		this.game.loadZone = 1
 		this.game.globalSwitchId=[]
 		for(let i =0;i < 50;i++){
