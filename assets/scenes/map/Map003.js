@@ -29,7 +29,6 @@ class Map003 extends Phaser.Scene {
 		var preCreateMap = this.scene.get("mySceneManager").preCreateMap.bind(this);
 		preCreateMap()
 		
-		this.map = this.add.tilemap("map003");
 		this.tileset = [
 		this.map.addTilesetImage("grass_atlas"),
 		this.map.addTilesetImage("medium_object-0"),

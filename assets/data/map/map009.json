@@ -1,4 +1,4 @@
-{ "compressionlevel":-1,
+{ "compressionlevel":0,
  "editorsettings":
     {
      "export":
@@ -768,6 +768,52 @@
                  "width":60,
                  "x":6592,
                  "y":3264
+                }, 
+                {
+                 "gid":488,
+                 "height":60,
+                 "id":181,
+                 "name":"npc",
+                 "properties":[
+                        {
+                         "name":"eventName",
+                         "type":"string",
+                         "value":"npc01"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":60,
+                 "x":1152,
+                 "y":2752
+                }, 
+                {
+                 "gid":487,
+                 "height":60,
+                 "id":183,
+                 "name":"coffre",
+                 "properties":[
+                        {
+                         "name":"globalSwitchId",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
+                         "name":"number",
+                         "type":"int",
+                         "value":100
+                        }, 
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"gold"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":60,
+                 "x":3904,
+                 "y":2432
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -776,7 +822,7 @@
          "y":0
         }],
  "nextlayerid":21,
- "nextobjectid":181,
+ "nextobjectid":184,
  "orientation":"orthogonal",
  "properties":[
         {
@@ -785,7 +831,7 @@
          "value":"\"music.mp3\""
         }],
  "renderorder":"right-down",
- "tiledversion":"1.3.1",
+ "tiledversion":"2020.06.20",
  "tileheight":256,
  "tilesets":[
         {
@@ -1398,6 +1444,6 @@
         }],
  "tilewidth":256,
  "type":"map",
- "version":1.2,
+ "version":1.4,
  "width":26
 }

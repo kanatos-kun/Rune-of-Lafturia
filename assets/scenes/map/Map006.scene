@@ -26,8 +26,7 @@
         "data": {
           "itemName": "\"gold\"",
           "value": "40",
-          "globalSwitchId": "0",
-          "globalSwitchValue": "\"true\""
+          "globalSwitchId": "0"
         },
         "objectFactory": "coffre",
         "x": 1944.3375244140625,

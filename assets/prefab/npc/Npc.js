@@ -17,8 +17,10 @@ class Npc extends Phaser.GameObjects.Sprite {
 
 		this.isDetectedHero = false
 		this.scene.events.on("endSceneManager",function(sys){
-			//console.log(scene)
-			this.eventPage = sys.cache.json.get( this.getData("eventPage") )
+			this.eventPage = {currentEventPage_id : 0};
+			this.eventPage.page = sys.cache.json.get( this.getData("eventName")+"_page_"+scene.scene.key.toLowerCase() ).page;
+			this.eventPage.task = sys.cache.json.get( this.getData("eventName")+"_task_"+scene.scene.key.toLowerCase() ).task;
+			console.log(this.eventPage)
 		},this)
 	}
 	
@@ -36,11 +38,11 @@ class Npc extends Phaser.GameObjects.Sprite {
 				   this.scene.game.globalSwitchId === true){
 	                        this.eventPage.currentPageEvent_id = i
 	            }
-			}
+			}	
 			let pageId = this.eventPage.currentEventPage_id;
-			let page = this.eventPage.page[pageId]
+			let page = this.eventPage.page[pageId];
 			let taskId= this.eventPage.page[pageId].currentTask_id;
-			let task =	this.eventPage.page[pageId].task[taskId];
+			let task =	this.eventPage.task[taskId];
 
 			return [task,page]
 		}
@@ -56,16 +58,36 @@ class Npc extends Phaser.GameObjects.Sprite {
 				this.eventPage.page[pageId].currentTask_id = 0
 	}
 	
-	getTaskId(){
-		let pageId = this.eventPage.currentEventPage_id
+	getCurrentTaskIterator(){
+		let pageId = this.eventPage.currentEventPage_id;
 		
-		return this.eventPage.page[pageId].currentTask_id
+		return this.eventPage.page[pageId].currentTask_id;
+	}
+	
+	getTaskId(){
+		let pageId = this.eventPage.currentEventPage_id;
+		
+		return this.eventPage.page[pageId].task;
+	}
+	
+	isSameTaskId(){
+		let pageId = this.eventPage.currentEventPage_id;
+		let taskId_1 = this.eventPage.page[pageId].task;
+		let CurrentTaskIterator = this.eventPage.page[pageId].currentTask_id;
+		let taskId_2 = this.eventPage.task[CurrentTaskIterator].taskId;
+		console.log(taskId_1);
+		console.log(taskId_2);
+		if(taskId_1 == taskId_2){
+			return true;
+		}else{
+			return false;
+		}
 	}
 	
 	getLengthTask(){
 		
-			let pageId = this.eventPage.currentEventPage_id
-			let task_length =  this.eventPage.page[pageId].task.length
+			let pageId = this.eventPage.currentEventPage_id;
+			let task_length =  this.eventPage.task.length;
 			return task_length;
 	}
 

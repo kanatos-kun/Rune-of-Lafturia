@@ -1,0 +1,18 @@
+{
+  "task": [
+    {
+      "taskId": 1,
+      "type": "dialogue",
+      "text": "oof",
+      "tagName": "Clara",
+      "state": "idle"
+    },
+    {
+      "taskId": 1,
+      "type": "dialogue",
+      "text": "Bonjour jeune hero, pouvez vous\\n\nM'aidez ?",
+      "tagName": "Clara",
+      "state": "idle"
+    }
+  ]
+}

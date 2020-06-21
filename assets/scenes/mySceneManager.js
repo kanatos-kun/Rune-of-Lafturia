@@ -58,7 +58,7 @@ class mySceneManager extends Phaser.Scene {
 			this.fHero = this.add.hero(this.dataScene.x,this.dataScene.y,"hero")
 		}
 		
-		// to remove later ...
+
 		if(this.map !== undefined){
 			let w = Math.floor(this.map.width/13) 
 			let h = Math.floor(this.map.height/12)
@@ -87,7 +87,23 @@ class mySceneManager extends Phaser.Scene {
 			this.fWarp.add(itemWarp);
 			o.destroy();
 		})
-
+		var npc = this.map.createFromObjects("InfoMap","npc",{key:"info",frame:3})
+		npc.map((o,i)=>{
+			let itemNpc = this.add.npc(o.x,o.y);
+			itemNpc.setData("eventName",o.getData(0).value)
+			this.fNpc.add(itemNpc);
+			o.destroy();
+		})
+		
+		var coffre = this.map.createFromObjects("InfoMap","coffre",{key:"info",frame:2})
+		coffre.map((o,i)=>{
+			let itemCoffre = this.add.coffre(o.x,o.y);
+			itemCoffre.setData("globalSwitchId",o.getData(0).value)
+			itemCoffre.setData("number",o.getData(1).value)
+			itemCoffre.setData("type",o.getData(2).value)
+			this.fCoffres.add(itemCoffre);
+			o.destroy();
+		})
 
 		
 		// /add object to map
@@ -713,7 +729,7 @@ class mySceneManager extends Phaser.Scene {
 									tagName:undefined,
 									text: undefined,
 								}	
-								if(a.getTaskId() >= a.getLengthTask() ){
+								if(a.getCurrentTaskIterator() >= a.getLengthTask() || !a.isSameTaskId() ){
 										scene.dialogueState = false;
 										textConfig.state = this.dialogueState;
 										a.resetTaskId();

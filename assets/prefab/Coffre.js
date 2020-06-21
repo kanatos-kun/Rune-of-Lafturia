@@ -32,10 +32,11 @@ class Coffre extends Phaser.GameObjects.Sprite {
 		
 		if(this.state === "close"){
 			if(Phaser.Math.Distance.Between(this.scene.fHero.x,this.scene.fHero.y,this.x,this.y) < 200 ){
-				console.log("vous recevez " + this.getData("value") + " X " + this.getData("itemName") +" !")
-				this.scene.game.globalSwitchId[this.getData("globalSwitchId")] = this.getData("globalSwitchValue")
-				if(this.getData("itemName")=="gold"){
-					this.scene.game.gold += this.getData("value");
+				
+				this.scene.game.globalSwitchId[this.getData("globalSwitchId")] = true
+				if(this.getData("type")=="gold"){
+					console.log("vous recevez " + this.getData("number") + " X " + this.getData("type") +" !")
+					this.scene.game.gold += this.getData("number");
 					this.setTexture("coffre_open")
 				}
 				this.state = "open"

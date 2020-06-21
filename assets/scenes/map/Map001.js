@@ -44,7 +44,6 @@ class Map001 extends Phaser.Scene {
 		this.map.createStaticLayer("herbes",this.tileset)
 		
 		this._create();
-			console.log(this.map)
 		this.fMapScene.destroy();
 		var createMap = this.scene.get("mySceneManager").createMap.bind(this);
 		createMap();

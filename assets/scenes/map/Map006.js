@@ -19,7 +19,6 @@ class Map006 extends Phaser.Scene {
 		coffre_closed.setData("itemName", "gold");
 		coffre_closed.setData("value", 40);
 		coffre_closed.setData("globalSwitchId", 0);
-		coffre_closed.setData("globalSwitchValue", "true");
 		coffre_closed.setScale(0.5621457, 0.5646667);
 		
 		this.fCoffres = this.add.group([ coffre_closed ]);
