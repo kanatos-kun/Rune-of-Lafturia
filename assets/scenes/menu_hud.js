@@ -206,10 +206,10 @@ class menu_hud extends Phaser.Scene {
 		
 
 		this.fHpText.text = "hp : " + this.game.hero.statuts.currentHp + "/" + this.game.hero.statuts.hp;
-
+		this.fMpText.text = "mp : " + this.game.hero.statuts.currentMp + "/" + this.game.hero.statuts.mp;
 
 		
-		this.fGoldText.text = this.game.gold +"G"
+		this.fGoldText.text = this.game.hero.gold +"G"
 		
 	}
 

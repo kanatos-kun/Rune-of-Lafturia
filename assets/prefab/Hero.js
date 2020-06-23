@@ -10,12 +10,13 @@ class Hero extends Phaser.Physics.Arcade.Sprite {
 	constructor(scene, x, y) {
 		super(scene, x, y, "hero");
 		scene.physics.add.existing(this)
-		this.type = "hero"
-		this.state ="idle"
-		this.setCollideWorldBounds(true)
+		this.type = "hero";
+		this.state ="idle";
+		this.setCollideWorldBounds(true);
 		this.timeAttack={
 			c:0,t:5,state:true
 		}
+
 		this.hp = scene.game.hero.statuts.hp;
 		this.currentHp=scene.game.hero.statuts.currentHp;
 		this.invincible = {
@@ -32,6 +33,13 @@ class Hero extends Phaser.Physics.Arcade.Sprite {
 		this.popup_debug = scene.add.window_debug_popup(this,"hp:" + this.currentHp + "/" + this.hp)//new Window_debug_popup(this.scene,this,"hp:" + this.currentHp + "/" + this.hp)
 		//this.scene.add.existing(this.popup_debug)
 		}
+		
+		this.scene.events.on("endSceneManager",function(sys){
+			this.stats = scene.game.hero.statuts;
+			console.log(this)
+		},this)
+		
+		
 	}
 	
 	preUpdate(time,delta){

@@ -106,13 +106,13 @@
     },
     {
       "type": "script",
-      "key": "sting",
-      "url": "assets/prefab/inventory/misc/sting.js"
+      "key": "Inventory_Misc_Sting",
+      "url": "assets/prefab/inventory/misc/Inventory_Misc_Sting.js"
     },
     {
       "type": "script",
-      "key": "Bee",
-      "url": "assets/prefab/enemy/Bee.js"
+      "key": "Enemy_Bee",
+      "url": "assets/prefab/enemy/Enemy_Bee.js"
     },
     {
       "type": "tilemapTiledJSON",
@@ -163,7 +163,7 @@
     }
   ]},
   "meta": {
-    "generated": "1591861730594",
+    "generated": "1592893255843",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",

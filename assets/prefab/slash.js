@@ -14,15 +14,17 @@ class Slash extends Phaser.Physics.Arcade.Sprite {
 		scene.physics.add.existing(this)
 		this.target = target;
 		this.targetAngle = angle;
-		this.body.setSize(180,180)
-		this.body.setAllowRotation(true)
+		this.body.setSize(180,180);
+		this.body.setAllowRotation(true);
 
 		this.rotation = 4+angle;
 		this.counter = {
 			t:3,c:0
 		}
 		this.type = "attack hero";
-		this.attack = 1;
+		this.stats = {
+			atk: target.stats.atk
+		}
 		
 	}
 	

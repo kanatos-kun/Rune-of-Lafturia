@@ -239,10 +239,15 @@
       "type": "script",
       "key": "SpawnMob",
       "url": "assets/data/SpawnMob.js"
+    },
+    {
+      "type": "script",
+      "key": "EnemyManager",
+      "url": "assets/prefab/enemy/EnemyManager.js"
     }
   ]},
   "meta": {
-    "generated": "1591863028106",
+    "generated": "1592897973281",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",

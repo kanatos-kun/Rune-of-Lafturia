@@ -110,16 +110,23 @@
     {
       "type": "image",
       "key": "gameOver_button_checkpoint",
-      "url": "assets/images/gameOver/gameOver_button_checkpoint.png"
+      "url": "assets/images/gameOver/gameOver_button_checkpoint.png",
+      "normalMap": ""
     },
     {
       "type": "image",
       "key": "gameOver_button_titleScreen",
-      "url": "assets/images/gameOver/gameOver_button_titleScreen.png"
+      "url": "assets/images/gameOver/gameOver_button_titleScreen.png",
+      "normalMap": ""
+    },
+    {
+      "type": "json",
+      "key": "heroData",
+      "url": "assets/data/hero.json"
     }
   ]},
   "meta": {
-    "generated": "1590055701990",
+    "generated": "1592898017159",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",

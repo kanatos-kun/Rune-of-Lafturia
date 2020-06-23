@@ -50,8 +50,8 @@ class mySceneManager extends Phaser.Scene {
 		this.events.on("transitionwake",this.transitionstart,this)
 		this.events.on("transitioncomplete",this.transitioncomplete,this)
 		
-		
-
+		this.enemyManager = new EnemyManager(this);
+		console.log(this);
 		if(this.fHero === undefined){
 			this.fHero = this.add.hero(1075.0101, 1528.0022, "hero");
 		}else{
@@ -128,13 +128,14 @@ class mySceneManager extends Phaser.Scene {
 				enemy.stateVar.get_hit.x = -Math.sign(dirX)
 				enemy.stateVar.get_hit.y = -Math.sign(dirY)
 				enemy.state ="get_hit"
-				enemy.setTint(0xff0000)
-				enemy.currentHp = enemy.currentHp - hero.attack
+				enemy.setTint(0xff0000);
+				enemy.stats.currentHp = enemy.stats.currentHp - hero.stats.atk
+				console.log(enemy.stats.currentHp)
 				enemy.invincible.state = true
 				if(enemy.type =="hero"){
 					enemy.setTint(0xff0000)
-					enemy.scene.game.hero.statuts.currentHp = enemy.currentHp
-					enemy.scene.game.hero.statuts.Hp = enemy.Hp
+					enemy.stats.currentHp = enemy.stats.currentHp;
+					enemy.stats.Hp = enemy.stats.Hp;
 				}
 			}
 		}
@@ -155,7 +156,7 @@ class mySceneManager extends Phaser.Scene {
 		
 		
 		this.recolteGold = function(hero,gold){
-			this.game.gold += 1;
+			this.game.hero.gold += 1;
 			gold.destroy()
 		}
 		

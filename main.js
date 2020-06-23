@@ -81,39 +81,44 @@ class Boot extends Phaser.Scene {
 		/** @global 
 		 *  @property {string} gold 
 		*/
-		this.game.gold = 0;
+
 		/** @global 
 		 *  @property {Object} hero
 		 *  @property {number} hero.currentHp 
 		 *  @property {number} hero.hp 
 		*/
+		var heroData = this.sys.cache.json.get("heroData");
 		this.game.hero = {
 			//currentHp : 12,
 			//hp : 12,
 			statuts:{
-				level:1,
-				currentExp:0,
-				exp:0,
-				currentHp : 17,
-				hp: 17,
-				currentMana:12,
-				mana: 12,
-				str: 5,
+				level:heroData.level,
+				currentExp:heroData.experience,
+				exp:heroData.experience,
+				currentHp : heroData.hp,
+				hp: heroData.hp,
+				currentMp:heroData.mp,
+				mp: heroData.mp,
+				str: heroData.str,
 				strTempBonus: 0,
 				strPermBonus: 0,
 				strAttrib:0,
-				vit: 5,
+				vit: heroData.vit,
 				vitTempBonus: 0,
 				vitPermBonus: 0,
 				vitAttrib:0,
-				int: 5,
+				int: heroData.int,
 				intTempBonus: 0,
 				intPermBonus: 0,
 				intAttrib:0,
-				dex: 5,
+				dex: heroData.dex,
 				dexTempBonus: 0,
 				dexPermBonus:0,
-				dexAttrib:0
+				dexAttrib:0,
+				atk: heroData.atk,
+				matk: heroData.matk,
+				def: heroData.def,
+				aspd: heroData.aspd
 			},
 			equipment:{
 				hat:{},
@@ -135,6 +140,7 @@ class Boot extends Phaser.Scene {
 				passif:[],
 				CP:0
 			},
+			gold:heroData.gold,
 			mapVisited:[],
 			dungeonVisited:[]
 		}
