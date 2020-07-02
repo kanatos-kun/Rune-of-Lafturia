@@ -123,10 +123,50 @@
       "type": "json",
       "key": "heroData",
       "url": "assets/data/hero.json"
+    },
+    {
+      "type": "image",
+      "key": "characterScreen_archer",
+      "url": "assets/images/characterScreen/Character_creation_archer.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "characterScreen_mage",
+      "url": "assets/images/characterScreen/Character_creation_mage.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "characterScreen_priest",
+      "url": "assets/images/characterScreen/Character_creation_priest.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "characterScreen_rogue",
+      "url": "assets/images/characterScreen/Character_creation_rogue.png",
+      "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "characterScreen_warrior",
+      "url": "assets/images/characterScreen/Character_creation_warrior.png",
+      "normalMap": ""
+    },
+    {
+      "type": "sceneFile",
+      "key": "screenCharacterChoice",
+      "url": "assets/scenes/screen/screenCharacterChoice.js"
+    },
+    {
+      "type": "image",
+      "key": "titleScreen_loadGame_blackScreen",
+      "url": "assets/images/titleScreen/titleScreen_loadGame_blackScreen.png"
     }
   ]},
   "meta": {
-    "generated": "1592898017159",
+    "generated": "1593680998676",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",

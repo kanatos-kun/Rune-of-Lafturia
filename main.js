@@ -91,8 +91,10 @@ class Boot extends Phaser.Scene {
 		this.game.hero = {
 			//currentHp : 12,
 			//hp : 12,
+			class:"warrior",
 			statuts:{
 				level:heroData.level,
+
 				currentExp:heroData.experience,
 				exp:heroData.experience,
 				currentHp : heroData.hp,

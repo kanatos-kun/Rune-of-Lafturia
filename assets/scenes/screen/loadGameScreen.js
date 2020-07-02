@@ -15,7 +15,7 @@ class loadGameScreen extends Phaser.Scene {
 	
 		var titleScreen_loadGame_blackScreen = this.add.image(-24.822256, -37.21903, "titleScreen_loadGame_blackScreen");
 		titleScreen_loadGame_blackScreen.setOrigin(0.0, 0.0);
-		titleScreen_loadGame_blackScreen.setScale(1.0238528, 1.0316033);
+		titleScreen_loadGame_blackScreen.setScale(1.050443, 1.0695609);
 		
 		this.add.image(1616.853, 1478.8574, "titleScreen_loadGame_window");
 		
@@ -76,6 +76,7 @@ class loadGameScreen extends Phaser.Scene {
 	
 	
 	create(){
+		console.log("te")
 		this._create()
 		this.activeSlot = 0
 		this.events.on("resume",function(sys,data){

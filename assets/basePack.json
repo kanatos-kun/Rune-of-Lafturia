@@ -138,8 +138,8 @@
     },
     {
       "type": "image",
-      "key": "hero",
-      "url": "assets/images/hero/Idle_000.png",
+      "key": "hero_warrior",
+      "url": "assets/images/hero/heroCh_warrior.png",
       "normalMap": ""
     },
     {
@@ -244,10 +244,30 @@
       "type": "script",
       "key": "EnemyManager",
       "url": "assets/prefab/enemy/EnemyManager.js"
+    },
+    {
+      "type": "image",
+      "key": "hero_archer",
+      "url": "assets/images/hero/heroCh_archer.png"
+    },
+    {
+      "type": "image",
+      "key": "hero_mage",
+      "url": "assets/images/hero/heroCh_mage.png"
+    },
+    {
+      "type": "image",
+      "key": "hero_priest",
+      "url": "assets/images/hero/heroCh_priest.png"
+    },
+    {
+      "type": "image",
+      "key": "hero_rogue",
+      "url": "assets/images/hero/heroCh_rogue.png"
     }
   ]},
   "meta": {
-    "generated": "1592897973281",
+    "generated": "1593706093264",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",

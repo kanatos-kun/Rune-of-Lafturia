@@ -37,9 +37,28 @@ class BaseLoadAsset extends Phaser.Scene {
 		this.load.pack("basePack", "assets/basePack.json");
 		
 	}
+  
 	
+	/* START-USER-CODE */
+ init(data){
+		console.log(data)
+		this.data.set("class",data.class)
+		this.myData = data
+	}
 	create() {
 		//this.scene.sleep("BaseLoadAsset")
+		
+		this.events.on("resume",function(sys,data){
+			this.data.set("class",data.class)
+		});
+		this.events.on("wake",function(sys,data){
+			this.data.set("class",data.class)
+		});
+		console.log(this.data.get("class"))
+		if(this.data.get("class")!== undefined){
+			console.log(this.data.get("class"))
+			this.game.hero.class = this.data.get("class");
+		}
 		this.scene.run("menu_hud")
 		//this.scene.run("windowInventory")
 		this.scene.bringToTop("menu_hud")
@@ -51,9 +70,6 @@ class BaseLoadAsset extends Phaser.Scene {
 		this.game.loading.basePack = true;
 		this.scene.stop("BaseLoadAsset");
 	}
-	
-	/* START-USER-CODE */
-
 	// Write your code here.
 
 	/* END-USER-CODE */

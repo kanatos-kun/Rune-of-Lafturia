@@ -8,7 +8,8 @@ class Hero extends Phaser.Physics.Arcade.Sprite {
 	 * @param {number} y 
 	 */
 	constructor(scene, x, y) {
-		super(scene, x, y, "hero");
+		super(scene, x, y, "hero_"+scene.game.hero.class);
+		console.log("hero_"+scene.game.hero.class)
 		scene.physics.add.existing(this)
 		this.type = "hero";
 		this.state ="idle";

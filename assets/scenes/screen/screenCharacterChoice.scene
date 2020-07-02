@@ -1,0 +1,153 @@
+{
+  "-app": "Scene Editor - Phaser Editor v2.1.6",
+  "-version": 1,
+  "compilerLang": "JAVA_SCRIPT_6",
+  "displayList": {
+    "-id": "7cdbef59-19a2-40cf-b0e9-7ef63fa90873",
+    "-type": "DisplayList",
+    "children": [
+      {
+        "-id": "96db43e9-37fb-4f39-a718-e0a50a4d2c9a",
+        "-type": "Image",
+        "children": [],
+        "variableName": "titleScreen_loadGame_blackScreen",
+        "variableField": false,
+        "scaleX": 1.054005742073059,
+        "scaleY": 1.0540460348129272,
+        "originX": 0,
+        "originY": 0,
+        "textureKey": "titleScreen_loadGame_blackScreen",
+        "textureFrame": "titleScreen_loadGame_blackScreen"
+      },
+      {
+        "-id": "7c668d20-33df-44c2-a951-d564d5ffa490",
+        "-type": "Image",
+        "children": [],
+        "variableName": "titleScreen_loadGame_window",
+        "variableField": false,
+        "x": 1586.8978271484375,
+        "y": 1587.7012939453125,
+        "textureKey": "titleScreen_loadGame_window",
+        "textureFrame": "titleScreen_loadGame_window"
+      },
+      {
+        "-id": "fb804211-4175-4101-9c29-4094082d1cc6",
+        "-type": "Text",
+        "children": [],
+        "variableName": "text",
+        "variableField": false,
+        "x": 368.20452880859375,
+        "y": 332.4203186035156,
+        "text": "Create Character",
+        "fontSize": "260px",
+        "color": "#000000",
+        "stroke": "#000000"
+      },
+      {
+        "-id": "9357c006-d227-4895-8f55-f7f30093c4f0",
+        "-type": "Image",
+        "children": [],
+        "variableName": "image",
+        "variableField": false,
+        "x": 1858.153076171875,
+        "y": 1104.5010986328125
+      },
+      {
+        "-id": "c7969331-04d0-4fb5-9c84-bf13c9071653",
+        "-type": "Image",
+        "children": [],
+        "variableName": "buttonArcher",
+        "variableField": true,
+        "objectFactory": "uiButton",
+        "x": 2612.484375,
+        "y": 1108.1845703125,
+        "textureKey": "characterScreen_archer",
+        "textureFrame": "characterScreen_archer"
+      },
+      {
+        "-id": "74991df4-22f0-4ead-94a1-a5b3ae54ba67",
+        "-type": "Image",
+        "children": [],
+        "variableName": "buttonMage",
+        "variableField": true,
+        "objectFactory": "uiButton",
+        "x": 708.9220581054688,
+        "y": 1940.6407470703125,
+        "textureKey": "characterScreen_mage",
+        "textureFrame": "characterScreen_mage"
+      },
+      {
+        "-id": "208d4773-49b5-4b58-81ba-0f726cbd0a33",
+        "-type": "Image",
+        "children": [],
+        "variableName": "buttonPriest",
+        "variableField": true,
+        "objectFactory": "uiButton",
+        "x": 1659.248046875,
+        "y": 1940.6407470703125,
+        "textureKey": "characterScreen_priest",
+        "textureFrame": "characterScreen_priest"
+      },
+      {
+        "-id": "e6579b9a-71c9-4275-9dbc-ef2a8f495c52",
+        "-type": "Image",
+        "children": [],
+        "variableName": "buttonRogue",
+        "variableField": true,
+        "objectFactory": "uiButton",
+        "x": 1659.248046875,
+        "y": 1108.1845703125,
+        "textureKey": "characterScreen_rogue",
+        "textureFrame": "characterScreen_rogue"
+      },
+      {
+        "-id": "d87cacca-fc0e-4bcc-b72f-9f83e60924c5",
+        "-type": "Image",
+        "children": [],
+        "variableName": "buttonWarrior",
+        "variableField": true,
+        "objectFactory": "uiButton",
+        "x": 708.9220581054688,
+        "y": 1108.1845703125,
+        "textureKey": "characterScreen_warrior",
+        "textureFrame": "characterScreen_warrior"
+      },
+      {
+        "-id": "b3a798ce-9e08-46b2-9cd9-4c0d8b80736f",
+        "-type": "Image",
+        "children": [],
+        "variableName": "buttonCreate",
+        "variableField": true,
+        "data": {"text": "\"create\""},
+        "objectFactory": "uiButton",
+        "x": 2630.53955078125,
+        "y": 2805.1240234375,
+        "textureKey": "button_empty",
+        "textureFrame": "button_empty"
+      },
+      {
+        "-id": "1a6c3163-8307-4b87-b261-afc5df651dcb",
+        "-type": "Image",
+        "children": [],
+        "variableName": "buttonPrecedent",
+        "variableField": true,
+        "data": {"text": "\"<=\""},
+        "objectFactory": "uiButton",
+        "x": 613.2347412109375,
+        "y": 2805.1240234375,
+        "textureKey": "button_empty",
+        "textureFrame": "button_empty"
+      }
+    ]
+  },
+  "groups": {
+    "-id": "ca6d7409-3146-4f5f-98fd-4ee95dfb1036",
+    "-type": "Groups",
+    "children": []
+  },
+  "borderWidth": 3300,
+  "borderHeight": 3060,
+  "createMethodName": "_create",
+  "methodContextType": "SCENE",
+  "sceneKey": "screenCharacterChoice"
+}

@@ -96,34 +96,41 @@ class titleScreen extends Phaser.Scene {
 		this.scene.run("optionScreen",{state:true,windowTarget:"titleScreen"})
 		this.scene.run("creditScreen",{state:true,windowTarget:"titleScreen"})
 		this.scene.run("saveGameScreen",{state:true,windowTarget:"gameMenuScreen"})
+		this.scene.run("screenCharacterChoice",{state:true,windowTarget:"titleScreen"});
 		this.scene.sleep("loadGameScreen")
 		this.scene.sleep("optionScreen")
 		this.scene.sleep("creditScreen")
 		this.scene.sleep("saveGameScreen")
+		this.scene.sleep("screenCharacterChoice");
 		
 		this.fButtonNewGame.on("pointerdown",function(pointer){
 			this.game.hero.currentHp = 12;
 			this.game.hero.hp = 12;			
 			this.game.gold = 0;
-			this.scene.sleep("titleScreen");
-			this.scene.run("BaseLoadAsset");
+			this.scene.run("screenCharacterChoice",{state:true,windowTarget:"titleScreen"});
+			this.scene.bringToTop("screenCharacterChoice");
+			this.scene.pause("titleScreen");
+			//this.scene.run("BaseLoadAsset");
 		},this)		
 
 		this.fButtonLoadGame.on("pointerdown",function(pointer){
 			this.scene.run("loadGameScreen",{state:true,windowTarget:"titleScreen"})
-			this.scene.pause("titleScreen")
+			this.scene.bringToTop("loadGameScreen");
+			this.scene.pause("titleScreen");
 			
 		},this)
 		
 
 		this.fButtonOptions.on("pointerdown",function(pointer){
 			this.scene.run("optionScreen",{state:true,windowTarget:"titleScreen"})
-			this.scene.pause("titleScreen")
+			this.scene.bringToTop("optionScreen");
+			this.scene.pause("titleScreen");
 		},this)
 		
 		this.fButtonCredits.on("pointerdown",function(pointer){
 			this.scene.run("creditScreen",{state:true,windowTarget:"titleScreen"})
-			this.scene.pause("titleScreen")
+			this.scene.bringToTop("creditScreen");
+			this.scene.pause("titleScreen");
 		},this)
 		
 	}
