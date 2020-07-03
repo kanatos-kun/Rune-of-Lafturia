@@ -41,7 +41,6 @@ class BaseLoadAsset extends Phaser.Scene {
 	
 	/* START-USER-CODE */
  init(data){
-		console.log(data)
 		this.data.set("class",data.class)
 		this.myData = data
 	}
@@ -54,10 +53,28 @@ class BaseLoadAsset extends Phaser.Scene {
 		this.events.on("wake",function(sys,data){
 			this.data.set("class",data.class)
 		});
-		console.log(this.data.get("class"))
 		if(this.data.get("class")!== undefined){
-			console.log(this.data.get("class"))
-			this.game.hero.class = this.data.get("class");
+			
+			var classHero = this.sys.cache.json.get("hero"+this.data.get("class") );
+			//add class
+			this.game.hero.class = classHero.class[0];
+			
+			//add stats
+			this.game.hero.statuts.exp = classHero.experience[0];
+			this.game.hero.statuts.hp = classHero.hp[0];			
+			this.game.hero.statuts.currentHp = classHero.hp[0];
+			this.game.hero.statuts.mp = classHero.mp[0];			
+			this.game.hero.statuts.currentMp = classHero.mp[0];	
+			this.game.hero.statuts.strPermBonus = classHero.str[0];		
+			this.game.hero.statuts.str = this.game.hero.statuts.str + this.game.hero.statuts.strPermBonus;		
+			this.game.hero.statuts.vitPermBonus = classHero.vit[0];		
+			this.game.hero.statuts.vit = this.game.hero.statuts.vit + this.game.hero.statuts.vitPermBonus;		
+			this.game.hero.statuts.intPermBonus = classHero.int[0];		
+			this.game.hero.statuts.int = this.game.hero.statuts.int + this.game.hero.statuts.intPermBonus;		
+			this.game.hero.statuts.dexPermBonus = classHero.dex[0];		
+			this.game.hero.statuts.dex = this.game.hero.statuts.dex + this.game.hero.statuts.dexPermBonus;		
+			this.game.hero.statuts.agiPermBonus = classHero.agi[0];		
+			this.game.hero.statuts.agi = this.game.hero.statuts.agi + this.game.hero.statuts.agiPermBonus;		
 		}
 		this.scene.run("menu_hud")
 		//this.scene.run("windowInventory")

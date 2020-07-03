@@ -76,7 +76,6 @@ class loadGameScreen extends Phaser.Scene {
 	
 	
 	create(){
-		console.log("te")
 		this._create()
 		this.activeSlot = 0
 		this.events.on("resume",function(sys,data){

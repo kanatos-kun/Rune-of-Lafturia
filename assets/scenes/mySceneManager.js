@@ -51,7 +51,6 @@ class mySceneManager extends Phaser.Scene {
 		this.events.on("transitioncomplete",this.transitioncomplete,this)
 		
 		this.enemyManager = new EnemyManager(this);
-		console.log(this);
 		if(this.fHero === undefined){
 			this.fHero = this.add.hero(1075.0101, 1528.0022, "hero");
 		}else{
@@ -130,7 +129,6 @@ class mySceneManager extends Phaser.Scene {
 				enemy.state ="get_hit"
 				enemy.setTint(0xff0000);
 				enemy.stats.currentHp = enemy.stats.currentHp - hero.stats.atk
-				console.log(enemy.stats.currentHp)
 				enemy.invincible.state = true
 				if(enemy.type =="hero"){
 					enemy.setTint(0xff0000)

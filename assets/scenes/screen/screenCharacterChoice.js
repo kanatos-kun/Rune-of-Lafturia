@@ -71,7 +71,7 @@ class screenCharacterChoice extends Phaser.Scene {
 	
 	create(){
 		this._create();
-		this.chooseClass = "warrior";
+		this.chooseClass = "Warrior";
 		this.events.on("resume",function(sys,data){
 			sys.data.set("windowTarget",data.windowTarget);
 		})
@@ -89,22 +89,25 @@ class screenCharacterChoice extends Phaser.Scene {
 		
 		
 		this.fButtonArcher.on("pointerdown",function(){
-			this.chooseClass = "archer";
+			this.chooseClass = "Archer";
 		},this);
 		this.fButtonMage.on("pointerdown",function(){
-			this.chooseClass = "mage";
+			this.chooseClass = "Mage";
 		},this);
 		this.fButtonPriest.on("pointerdown",function(){
-			this.chooseClass = "priest";
+			this.chooseClass = "Priest";
 		},this);
 		this.fButtonRogue.on("pointerdown",function(){
-			this.chooseClass = "rogue";
+			this.chooseClass = "Rogue";
 		},this);
 		this.fButtonWarrior.on("pointerdown",function(){
-			this.chooseClass = "warrior";
+			this.chooseClass = "Warrior";
 		},this);
 		
 		this.fButtonCreate.on("pointerdown",function(){
+			this.scene.sleep("screenCharacterChoice");
+			this.scene.sleep("titleScreen");
+
 			this.scene.run("BaseLoadAsset",{class:this.chooseClass});
 		},this);
 		
