@@ -132,8 +132,9 @@ class titleScreen extends Phaser.Scene {
 			this.scene.bringToTop("creditScreen");
 			this.scene.pause("titleScreen");
 		},this)
-		
-	}
+
+
+}
 	
 	update(){
 	}

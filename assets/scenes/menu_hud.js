@@ -110,9 +110,10 @@ class menu_hud extends Phaser.Scene {
 	/* START-USER-CODE */
 
 	create(){
-		this._create()
-		this.fBag.setInteractive()
-		this.fGear.setInteractive()
+		this._create();
+		this.fPlayerText.setText(this.game.hero.name);
+		this.fBag.setInteractive();
+		this.fGear.setInteractive();
 		this.fBagState = false
 		this.fGearState = false
 		this.fButtonInventoryState = false

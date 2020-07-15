@@ -184,10 +184,15 @@
       "type": "json",
       "key": "heroWarrior",
       "url": "assets/data/hero/heroWarrior.json"
+    },
+    {
+      "type": "html",
+      "key": "html_createCharacter_inputName",
+      "url": "assets/html/createCharacter_inputName.html"
     }
   ]},
   "meta": {
-    "generated": "1593788397700",
+    "generated": "1594799560237",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",

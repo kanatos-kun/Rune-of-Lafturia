@@ -108,9 +108,16 @@ class screenCharacterChoice extends Phaser.Scene {
 			this.scene.sleep("screenCharacterChoice");
 			this.scene.sleep("titleScreen");
 
-			this.scene.run("BaseLoadAsset",{class:this.chooseClass});
+			this.scene.run("BaseLoadAsset",{class:this.chooseClass,username:this.inputName_value});
 		},this);
-		
+		this.inputName_value = "";
+		var dom_inputName = this.add.dom(1100,2750).createFromCache("html_createCharacter_inputName").setOrigin(0);
+		dom_inputName.addListener('input');
+		dom_inputName.on("input",function(event){
+			var inputNameEl = dom_inputName.getChildByName('username');
+			this.scene.inputName_value = event.target.value;
+			
+		})
 		
 	}
 	// Write your code here.

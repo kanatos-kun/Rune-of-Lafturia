@@ -9,7 +9,10 @@ window.addEventListener('load', function() {
     "backgroundColor": "#000000",
     "disableContextMenu":true,
     "parent": "game-container",
-	"version":"v0.4.0-alpha-unstable",
+	"version":"v0.5.0-alpha-unstable",
+    dom: {
+        createContainer: true
+    },
     physics: {
         default: 'arcade',
         arcade: {
@@ -91,6 +94,7 @@ class Boot extends Phaser.Scene {
 			//currentHp : 12,
 			//hp : 12,
 			class:"warrior",
+			name:"unknown",
 			statuts:{
 				level:1,
 				currentExp:0,

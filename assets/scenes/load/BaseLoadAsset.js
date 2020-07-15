@@ -41,23 +41,33 @@ class BaseLoadAsset extends Phaser.Scene {
 	
 	/* START-USER-CODE */
  init(data){
-		this.data.set("class",data.class)
+		this.data.set("class",data.class);
+		this.data.set("username",data.username);
 		this.myData = data
 	}
 	create() {
 		//this.scene.sleep("BaseLoadAsset")
 		
 		this.events.on("resume",function(sys,data){
-			this.data.set("class",data.class)
+			this.data.set("class",data.class);
+			this.data.set("username",data.username);
 		});
 		this.events.on("wake",function(sys,data){
-			this.data.set("class",data.class)
+			this.data.set("class",data.class);
+			this.data.set("username",data.username);
 		});
 		if(this.data.get("class")!== undefined){
 			
 			var classHero = this.sys.cache.json.get("hero"+this.data.get("class") );
 			//add class
 			this.game.hero.class = classHero.class[0];
+			
+			
+			if(this.data.get("username") === ""){
+				this.game.hero.name = classHero.name[0];
+			}else{
+				this.game.hero.name = this.data.get("username");
+			}
 			
 			//add stats
 			this.game.hero.statuts.exp = classHero.experience[0];
