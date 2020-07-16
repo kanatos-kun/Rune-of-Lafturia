@@ -17,10 +17,20 @@ class Npc extends Phaser.GameObjects.Sprite {
 
 		this.isDetectedHero = false
 		this.scene.events.on("endSceneManager",function(sys){
-			this.eventPage = {currentEventPage_id : 0};
+			var eventPage = sys.cache.json.get( "NPCdial_eventPage" );
+			this.eventPage = {id : 0};
+			this.eventPage.page = eventPage["npc_"+scene.scene.key.toLowerCase()+"_"+this.getData("eventName")];
+			/*
 			this.eventPage.page = sys.cache.json.get( this.getData("eventName")+"_page_"+scene.scene.key.toLowerCase() ).page;
 			this.eventPage.task = sys.cache.json.get( this.getData("eventName")+"_task_"+scene.scene.key.toLowerCase() ).task;
-			console.log(this.eventPage)
+			*/
+			// 1) retrieve the type of the dialogue
+			// 2) retrive the id of the dialogueType
+			// 3) search in the 'sys.cache.json.get('NPCdial_'+dialogueType)' the corresponding id ('dialogueType_id')
+			// 4) retrieve the information of the dialogueType
+			// x) increment the global id
+			console.log(this.eventPage.page[this.eventPage.id].type)
+			console.log(this.eventPage.page)
 		},this)
 	}
 	
@@ -28,6 +38,51 @@ class Npc extends Phaser.GameObjects.Sprite {
 		super.preUpdate(time,delta)
 	}
 	
+	// 1) retrieve the type of the dialogue
+	// 2) retrive the id of the dialogueType
+	// 3) search in the 'sys.cache.json.get('NPCdial_'+dialogueType)' the corresponding id ('dialogueType_id')
+	//		3.1) check what type of dialogue it is
+	//		3.2) if dialogueType === goto => change global ID eventPage 
+	//		3.2) if dialogueType === end => reset global ID eventPage 
+	// 4) retrieve the information of the dialogueType
+	// x) increment the global id
+	getTypeDialogue(){
+		var type = this.eventPage.page[this.eventPage.id].type;
+		var idType = this.eventPage.page[this.eventPage.id].idType -1;
+		
+		if(type == "dialogue"){
+			// do dialogue things ...
+			var typeDialogue = this.scene.sys.cache.json.get('NPCdial_'+type)[idType];
+			console.log(typeDialogue);
+			return typeDialogue;
+		}else if(type =="choice"){
+			// do choice things ...
+		}else if(type =="shop"){
+			// do shop things...
+		}else if(type=="goto"){
+			// do goto things..
+		}else if(type=="end"){
+			//do end things...
+		}else{
+			return;
+		}
+		
+
+	}
+	
+	incEventPageId(){
+		this.eventPage.id++;
+	}
+	
+	resetEventPageId(){
+		this.eventPage.id = 0;
+	}
+	
+	gotoEventPageId(id){
+		this.eventPage.id = id;
+	}
+	
+	/*
 	retrieveTask(){
 		if(this.eventPage !== undefined){
 			//do something
@@ -90,6 +145,7 @@ class Npc extends Phaser.GameObjects.Sprite {
 			let task_length =  this.eventPage.task.length;
 			return task_length;
 	}
+	*/
 
 }
 

@@ -45,7 +45,6 @@ class LoadBoot extends Phaser.Scene{
 class Boot extends Phaser.Scene {
 
 	preload() {
-		
 	    var progress = this.add.graphics();
 		this.add.image(1650,2800,"UI_BARFRAME").setScale(2);
 		var colorBar = this.add.image(1650,2800,"UI_COLORBAR (2)").setScale(2);
@@ -155,9 +154,9 @@ class Boot extends Phaser.Scene {
 		/** @global 
 		 *  @property {string} currentMap -the current map displayed
 		*/
-		this.game.currentMap = "Map008"
-		this.game.startMap = "Map008"
-		this.game.loadZone = 1
+		this.game.currentMap = "Map009"
+		this.game.startMap = "Map009"
+		this.game.loadZone = 2
 		this.game.globalSwitchId=[]
 		for(let i =0;i < 50;i++){
 			this.game.globalSwitchId.push(false)

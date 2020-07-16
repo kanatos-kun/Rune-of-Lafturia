@@ -721,6 +721,18 @@ class mySceneManager extends Phaser.Scene {
 						let a = scene.fNpc.getChildren()[i]
 						if(a.active){
 							if(Phaser.Math.Distance.Between(scene.fHero.x,scene.fHero.y,a.x,a.y) < 350 ){
+								
+								a.getTypeDialogue();
+								
+								
+								
+								/*
+								
+								
+								
+								
+								
+								
 								scene.dialogueState = true;
 								scene.fHero.body.setVelocity(0,0)
 								var textConfig =  {
@@ -793,6 +805,7 @@ class mySceneManager extends Phaser.Scene {
 									
 								}
 
+							*/
 							}
 						}
 

@@ -90,8 +90,16 @@ class BaseLoadAsset extends Phaser.Scene {
 		//this.scene.run("windowInventory")
 		this.scene.bringToTop("menu_hud")
 		if(this.game.loading["loadZone_"+this.game.loadZone]===false){
+			console.log(this.game.loadZone)
+			if(this.game.loadZone==1){
+				console.log("run")
 			this.scene.run("LoadZoneAssets",{packName :"packZone-"+this.game.loadZone,packId: this.game.loadZone})
 			this.scene.bringToTop("LoadZoneAssets");
+			}else{
+			this.scene.run("LoadZoneAssets_"+this.game.loadZone,{packName :"packZone-"+this.game.loadZone,packId: this.game.loadZone})
+			this.scene.bringToTop("LoadZoneAssets"+this.game.loadZone);
+			}
+
 		}
 		
 		this.game.loading.basePack = true;

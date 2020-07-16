@@ -778,7 +778,7 @@
                         {
                          "name":"eventName",
                          "type":"string",
-                         "value":"npc01"
+                         "value":"001"
                         }],
                  "rotation":0,
                  "type":"",
@@ -814,6 +814,24 @@
                  "width":60,
                  "x":3904,
                  "y":2432
+                }, 
+                {
+                 "gid":488,
+                 "height":60,
+                 "id":184,
+                 "name":"npc",
+                 "properties":[
+                        {
+                         "name":"eventName",
+                         "type":"string",
+                         "value":"002"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":60,
+                 "x":2624,
+                 "y":2752
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -822,7 +840,7 @@
          "y":0
         }],
  "nextlayerid":21,
- "nextobjectid":184,
+ "nextobjectid":185,
  "orientation":"orthogonal",
  "properties":[
         {

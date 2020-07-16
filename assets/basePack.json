@@ -268,10 +268,35 @@
       "key": "hero_rogue",
       "url": "assets/images/hero/heroCh_rogue.png",
       "normalMap": ""
+    },
+    {
+      "type": "json",
+      "key": "NPCdial_choice",
+      "url": "assets/data/dialogue/Choice.json"
+    },
+    {
+      "type": "json",
+      "key": "NPCdial_dialogue",
+      "url": "assets/data/dialogue/Dialogue.json"
+    },
+    {
+      "type": "json",
+      "key": "NPCdial_eventPage",
+      "url": "assets/data/dialogue/EventPage.json"
+    },
+    {
+      "type": "json",
+      "key": "NPCdial_shop",
+      "url": "assets/data/dialogue/Shop.json"
+    },
+    {
+      "type": "image",
+      "key": "ui_handChoice",
+      "url": "assets/images/discussion/ui_handChoice.png"
     }
   ]},
   "meta": {
-    "generated": "1593786820605",
+    "generated": "1594883238173",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",
