@@ -11,7 +11,8 @@
         "-type": "Image",
         "children": [],
         "variableName": "discussion_bubble",
-        "variableField": false,
+        "variableField": true,
+        "gameObjectEditorTransparency": 0,
         "x": 1639.07373046875,
         "y": 2630.395263671875,
         "scaleX": 4.189914226531982,
@@ -25,6 +26,7 @@
         "children": [],
         "variableName": "tag",
         "variableField": true,
+        "gameObjectEditorTransparency": 0,
         "x": 488.19384765625,
         "y": 2322.38818359375,
         "scaleX": 3.828718423843384,
@@ -61,20 +63,6 @@
         "text": "Bonjour jeune hero, pouvez vous \r\nm'aidez ?",
         "fontSize": "120px",
         "color": "#400000"
-      },
-      {
-        "-id": "1b5b5a2c-2d0c-4e3c-8d66-60d073ced3f5",
-        "-type": "Image",
-        "children": [],
-        "variableName": "arrow",
-        "variableField": false,
-        "x": 2854.894775390625,
-        "y": 2853.36962890625,
-        "scaleX": 2.8402955532073975,
-        "scaleY": 2.36491322517395,
-        "angle": 91.63676452636719,
-        "textureKey": "arrow",
-        "textureFrame": "arrow"
       }
     ]
   },

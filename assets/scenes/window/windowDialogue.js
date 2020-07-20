@@ -31,10 +31,7 @@ class windowDialogue extends Phaser.Scene {
     "color": "#400000"
 });
 		
-		var arrow = this.add.image(2854.8948, 2853.3696, "arrow");
-		arrow.setScale(2.8402956, 2.3649132);
-		arrow.setAngle(91.636765);
-		
+		this.fDiscussion_bubble = discussion_bubble;
 		this.fTag = tag;
 		this.fTagNameText = tagNameText;
 		this.fTextBubble = textBubble;
@@ -42,7 +39,8 @@ class windowDialogue extends Phaser.Scene {
 	}
 	
 	
-
+	
+	
 	
 	/* START-USER-CODE */
 	
@@ -51,14 +49,13 @@ class windowDialogue extends Phaser.Scene {
 	}
 	
 	create(){
-		this._create()
-
-
-
+		this._create();
+		this.dom_dialogueContainer = this.add.dom(100,1600).createFromCache("html_dialogueContainer").setOrigin(0);
+this.fDiscussion_bubble.setVisible(false);
 		if(this.myData.state){
 			this.scene.setActive(true)
 			this.scene.setVisible(true)
-     
+     		
 			//this.fTag.setVisible(this.myData.tagName.isVisible)
 			if(this.myData.tagName !== undefined){
 				this.fTagNameText.setText(this.myData.tagName)
@@ -73,8 +70,9 @@ class windowDialogue extends Phaser.Scene {
 			}else{
 				this.fTagNameText.setText("")
 			} */
-			this.fTextBubble.setText(this.myData.text) 
-			
+			//this.fTextBubble.setText(this.myData.text) 
+			var textDialogue = this.dom_dialogueContainer.getChildByID("dialogue-text");
+			textDialogue.textContent = this.myData.text;
 			
 		}else{
 			this.scene.setActive(false)

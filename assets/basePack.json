@@ -292,11 +292,17 @@
     {
       "type": "image",
       "key": "ui_handChoice",
-      "url": "assets/images/discussion/ui_handChoice.png"
+      "url": "assets/images/discussion/ui_handChoice.png",
+      "normalMap": ""
+    },
+    {
+      "type": "html",
+      "key": "html_dialogueContainer",
+      "url": "assets/html/dialogue.html"
     }
   ]},
   "meta": {
-    "generated": "1594883238173",
+    "generated": "1595223204215",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",

@@ -722,9 +722,13 @@ class mySceneManager extends Phaser.Scene {
 						if(a.active){
 							if(Phaser.Math.Distance.Between(scene.fHero.x,scene.fHero.y,a.x,a.y) < 350 ){
 								
-								a.getTypeDialogue();
-								
-								
+								var textObj = a.getTypeDialogue();
+								var textConfig =  {
+								    state:true,
+									tagName:undefined,
+									text: textObj.content,
+								}	
+								scene.scene.run("dialogueWindow", textConfig)
 								
 								/*
 								

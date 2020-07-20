@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <style media="screen">
+      .dialogue-container {
+        clip-path: polygon(
+          51% 41%,
+          36% 40%,
+          20% 37%,
+          8% 39%,
+          5% 49%,
+          7% 58%,
+          6% 66%,
+          14% 70%,
+          31% 68%,
+          46% 68%,
+          71% 70%,
+          81% 72%,
+          91% 67%,
+          90% 50%,
+          88% 46%,
+          84% 42%,
+          75% 41%
+        );
+        background: Antiquewhite;
+        height: 1700px;
+      }
+
+      .dialogue-text {
+        padding-left: 390px;
+        padding-right: 530px;
+        font-size: 85px;
+        padding-top: 770px;
+      }
+
+      .dialogue-next-icon {
+        clip-path: polygon(67% 59%, 45% 56%, 70% 38%);
+        float: right;
+        display: inline;
+        z-index: 2;
+        position: absolute;
+        height: 500px;
+        width: 500px;
+        left: 77%;
+        top: 55%;
+        background: #3a0f13;
+        animation-name: blink;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+
+      @keyframes blink {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dialogue-container">
+      <p class="dialogue-text" id="dialogue-text">
+        Aliquam tincidunt felis id libero viverra, eget efficitur erat
+        tincidunt. Vivamus non ex finibus, dignissim eros in, dignissim lacus.
+        Praesent consequat dapibus porttitor. Ut commodo justo id enim lobortis
+        dignissim.
+      </p>
+    </div>
+    <div class="dialogue-next-icon"></div>
+  </body>
+</html>
