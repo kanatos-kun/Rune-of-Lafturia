@@ -13,34 +13,8 @@ class windowDialogue extends Phaser.Scene {
 	
 	_create() {
 	
-		var discussion_bubble = this.add.image(1639.0737, 2630.3953, "discussion_bubble");
-		discussion_bubble.setScale(4.189914, 3.898078);
-		
-		var tag = this.add.image(488.19385, 2322.3882, "orange tag");
-		tag.setScale(3.8287184, 5.6525326);
-		
-		var tagNameText = this.add.text(284.39786, 2263.4048, "Clara", {
-    "fontSize": "150px",
-    "color": "#400000",
-    "stroke": "#400000"
-});
-		tagNameText.setAngle(-6.416661);
-		
-		var textBubble = this.add.text(478.80942, 2466.7122, "Bonjour jeune hero, pouvez vous \r\nm'aidez ?", {
-    "fontSize": "120px",
-    "color": "#400000"
-});
-		
-		this.fDiscussion_bubble = discussion_bubble;
-		this.fTag = tag;
-		this.fTagNameText = tagNameText;
-		this.fTextBubble = textBubble;
 		
 	}
-	
-	
-	
-	
 	
 	/* START-USER-CODE */
 	
@@ -50,35 +24,36 @@ class windowDialogue extends Phaser.Scene {
 	
 	create(){
 		this._create();
-		this.dom_dialogueContainer = this.add.dom(100,1600).createFromCache("html_dialogueContainer").setOrigin(0);
-this.fDiscussion_bubble.setVisible(false);
-		if(this.myData.state){
-			this.scene.setActive(true)
-			this.scene.setVisible(true)
-     		
+		this.html_dialogue = this.add.dom(100,1600).createFromCache("html_dialogue").setOrigin(0);
+		this.scene.run("windowChoice");
+		this.events.on("sleep",function(sys,data){
+			this.html_dialogue.setVisible(false);
+			this.scene.sleep("windowChoice");
+		},this);
+		this.events.on("wake",function(sys,data){
+			this.displayMessage();
+			this.myData = data;
+		},this);
+		
+		this.displayMessage();
+	}
+	
+	
+	displayMessage(){
+		this.html_dialogue.setVisible(true);
 			//this.fTag.setVisible(this.myData.tagName.isVisible)
 			if(this.myData.tagName !== undefined){
-				this.fTagNameText.setText(this.myData.tagName)
-				this.fTag.setVisible(true)
+				//show the tag ui
 			}else{
-				this.fTag.setVisible(false)
-				this.fTagNameText.setVisible(false)
+				//not show the tag ui
 			}
-			
-		/*	if(this.fTag.visible){
-				
-			}else{
-				this.fTagNameText.setText("")
-			} */
 			//this.fTextBubble.setText(this.myData.text) 
-			var textDialogue = this.dom_dialogueContainer.getChildByID("dialogue-text");
+			var textDialogue = this.html_dialogue.getChildByID("dialogue-text");
 			textDialogue.textContent = this.myData.text;
-			
-		}else{
-			this.scene.setActive(false)
-			this.scene.setVisible(false)
-		}
+			console.log("display msg!")
 	}
+	
+
 	// Write your code here.
 
 	/* END-USER-CODE */

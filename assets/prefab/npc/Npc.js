@@ -53,15 +53,28 @@ class Npc extends Phaser.GameObjects.Sprite {
 		if(type == "dialogue"){
 			// do dialogue things ...
 			var typeDialogue = this.scene.sys.cache.json.get('NPCdial_'+type)[idType];
-			console.log(typeDialogue);
-			return typeDialogue;
+			this.eventPage.id ++;
+			typeDialogue.type = type;
+			return typeDialogue ;
 		}else if(type =="choice"){
+			var typeDialogue = this.scene.sys.cache.json.get('NPCdial_'+type)[idType];
+			this.eventPage.id ++;
+			typeDialogue.type = type;
+			return typeDialogue ;
 			// do choice things ...
 		}else if(type =="shop"){
 			// do shop things...
 		}else if(type=="goto"){
+			this.eventPage.id = idType;
+			//var typeDialogue = this.scene.sys.cache.json.get('NPCdial_'+type)[idType];
+			//this.eventPage.id = typeDialogue.idType;
+			return this.getTypeDialogue();
 			// do goto things..
 		}else if(type=="end"){
+
+			var i = this.eventPage.id;
+			this.eventPage.id = 0;
+			return this.eventPage.page[i];
 			//do end things...
 		}else{
 			return;

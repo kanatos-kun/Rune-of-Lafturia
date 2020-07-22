@@ -3,18 +3,18 @@
   "-version": 1,
   "compilerLang": "JAVA_SCRIPT_6",
   "displayList": {
-    "-id": "9173a15e-dbb5-4b6a-bbff-3abac6481eaa",
+    "-id": "05e7c274-cdbf-48de-8fdd-a27fa2452956",
     "-type": "DisplayList",
     "children": []
   },
   "groups": {
-    "-id": "7cc77828-c89c-4f48-bb65-c8976a61c150",
+    "-id": "01c424fb-d61a-4de9-ae53-a14445829118",
     "-type": "Groups",
     "children": []
   },
   "borderWidth": 3300,
-  "borderHeight": 3060,
+  "borderHeight": 3000,
   "createMethodName": "_create",
   "methodContextType": "SCENE",
-  "sceneKey": "dialogueWindow"
+  "sceneKey": "windowChoice"
 }

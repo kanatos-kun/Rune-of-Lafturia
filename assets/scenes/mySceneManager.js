@@ -724,11 +724,18 @@ class mySceneManager extends Phaser.Scene {
 								
 								var textObj = a.getTypeDialogue();
 								var textConfig =  {
-								    state:true,
 									tagName:undefined,
-									text: textObj.content,
+									text: "",
 								}	
-								scene.scene.run("dialogueWindow", textConfig)
+								if(textObj.type =="dialogue"){
+									scene.dialogueState = true;
+									textConfig.text = textObj.content;
+									scene.scene.run("dialogueWindow", textConfig);
+								}else if(textObj.type =="end"){
+									scene.dialogueState = false;
+									scene.scene.sleep("dialogueWindow");
+								}
+
 								
 								/*
 								

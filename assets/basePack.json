@@ -297,12 +297,22 @@
     },
     {
       "type": "html",
-      "key": "html_dialogueContainer",
+      "key": "html_dialogue",
       "url": "assets/html/dialogue.html"
+    },
+    {
+      "type": "html",
+      "key": "html_choice",
+      "url": "assets/html/choice.html"
+    },
+    {
+      "type": "sceneFile",
+      "key": "windowChoice",
+      "url": "assets/scenes/window/windowChoice.js"
     }
   ]},
   "meta": {
-    "generated": "1595223204215",
+    "generated": "1595402078478",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",
