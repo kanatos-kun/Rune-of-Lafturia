@@ -25,10 +25,10 @@ class windowDialogue extends Phaser.Scene {
 	create(){
 		this._create();
 		this.html_dialogue = this.add.dom(100,1600).createFromCache("html_dialogue").setOrigin(0);
-		this.scene.run("windowChoice");
+		//this.scene.run("windowChoice");
 		this.events.on("sleep",function(sys,data){
 			this.html_dialogue.setVisible(false);
-			this.scene.sleep("windowChoice");
+			//this.scene.sleep("windowChoice");
 		},this);
 		this.events.on("wake",function(sys,data){
 			this.displayMessage();
@@ -50,7 +50,6 @@ class windowDialogue extends Phaser.Scene {
 			//this.fTextBubble.setText(this.myData.text) 
 			var textDialogue = this.html_dialogue.getChildByID("dialogue-text");
 			textDialogue.textContent = this.myData.text;
-			console.log("display msg!")
 	}
 	
 

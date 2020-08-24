@@ -86,5 +86,19 @@
          "idCell": 2,
          "switch": ""
       }
+   ],
+   "npc_map009_003": [
+      {
+         "type": "shop",
+         "idType": 1,
+         "idCell": 1,
+         "switch": ""
+      },
+      {
+         "type": "end",
+         "idType": null,
+         "idCell": null,
+         "switch": ""
+      }
    ]
 }

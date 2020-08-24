@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="assets/html/shop.css" />
+    <!-- <link rel="stylesheet" href="shop.css" /> -->
+  </head>
+  <body>
+    <div class="container">
+      <h1>shop</h1>
+      <p class="infoGold" id="infoGold">Gold : 1000 G</p>
+      <label class="radioInput isChecked acheter" id="acheterOnglet"
+        >Acheter
+        <input type="radio" checked="checked" name="radio" id="acheterInput" />
+        <span class="checkmark"></span>
+      </label>
+      <label class="radioInput vendre" id="vendreOnglet"
+        >Vendre
+        <input type="radio" name="radio" id="vendreInput" />
+        <span class="checkmark"></span>
+      </label>
+
+      <!-- content -->
+      <div class="itemDescription1">
+        <label class="containerItem radioInput active" id="1" cost="15">
+          <input type="radio" />
+          <div class="logoItem">
+            <img src="assets/icons/sting.png" />
+          </div>
+          <div class="nameItem">Sting</div>
+          <div class="priceItem">15G</div>
+          <input class="numberItem" type="Number" min="0" max="99" value="0" />
+        </label>
+        <label class="containerItem radioInput" id="2" cost="155">
+          <input type="radio" />
+          <div class="logoItem"><img src="assets/icons/sting.png" /></div>
+          <div class="nameItem">knife</div>
+          <div class="priceItem">155G</div>
+          <input class="numberItem" type="Number" min="0" max="99" value="0" />
+        </label>
+        <label class="containerItem radioInput" id="3" cost="250">
+          <input type="radio" />
+          <div class="logoItem"><img src="assets/icons/sting.png" /></div>
+          <div class="nameItem">wood armor</div>
+          <div class="priceItem">250G</div>
+          <input class="numberItem" type="Number" min="0" max="99" value="0" />
+        </label>
+        <label class="containerItem radioInput" id="4" cost="50">
+          <input type="radio" />
+          <div class="logoItem"><img src="assets/icons/sting.png" /></div>
+          <div class="nameItem">small healing potion</div>
+          <div class="priceItem">50G</div>
+          <input class="numberItem" type="Number" min="0" max="99" value="0" />
+        </label>
+        <label class="containerItem radioInput" id="5" cost="120">
+          <input type="radio" />
+          <div class="logoItem"><img src="assets/icons/sting.png" /></div>
+          <div class="nameItem">leather glove</div>
+          <div class="priceItem">120G</div>
+          <input class="numberItem" type="Number" min="0" max="99" value="0" />
+        </label>
+        <label class="containerItem radioInput" id="6" cost="250">
+          <input type="radio" />
+          <div class="logoItem"><img src="assets/icons/sting.png" /></div>
+          <div class="nameItem">Small mana potion</div>
+          <div class="priceItem">250G</div>
+          <input class="numberItem" type="Number" min="0" max="99" value="0" />
+        </label>
+        <label class="containerItem radioInput" id="7" cost="270">
+          <input type="radio" />
+          <div class="logoItem"><img src="assets/icons/sting.png" /></div>
+          <div class="nameItem">sword</div>
+          <div class="priceItem">270G</div>
+          <input class="numberItem" type="Number" min="0" max="99" value="0" />
+        </label>
+        <label class="containerItem radioInput" id="8" cost="40">
+          <input type="radio" />
+          <div class="logoItem"><img src="assets/icons/sting.png" /></div>
+          <div class="nameItem">hat</div>
+          <div class="priceItem">40G</div>
+          <input class="numberItem" type="Number" min="0" max="99" value="0" />
+        </label>
+        <label class="containerItem radioInput" id="9" cost="70">
+          <input type="radio" />
+          <div class="logoItem"><img src="assets/icons/sting.png" /></div>
+          <div class="nameItem">silk robe</div>
+          <div class="priceItem">70G</div>
+          <input class="numberItem" type="Number" min="0" max="99" value="0" />
+        </label>
+      </div>
+      <div class="itemDescription2" id="itemDescription2">
+        <div class="classRequirment" id="classRequirment">
+          ("class Requirment")
+        </div>
+        <div class="statsBonus" id="statsBonus">
+          ("stats Bonus")
+        </div>
+        <div class="statsPrimary" id="statsPrimary">
+          ("stats Primary")
+        </div>
+        <div class="levelRequirment" id="levelRequirment">
+          ("level requirment")
+        </div>
+        <div class="descriptionItem" id="descriptionItem">
+          ("Description Item")
+        </div>
+      </div>
+      <button class="acheterSpace" id="acheterButton">Acheter</button>
+    </div>
+  </body>
+  <script>
+    var currentId = 1;
+    var gold = 1000;
+    var goldMinusBought = 0;
+    var acheterOnglet = document.getElementById("acheterOnglet");
+    var acheterInput = document.getElementById("acheterInput");
+    var vendreOnglet = document.getElementById("vendreOnglet");
+    var vendreInput = document.getElementById("vendreInput");
+    var acheterButton = document.getElementById("acheterButton");
+    var infoGold = document.getElementById("infoGold");
+    var classRequirment = document.getElementById("classRequirment");
+    var statsBonus = document.getElementById("statsBonus");
+    var statsPrimary = document.getElementById("statsPrimary");
+    var levelRequirment = document.getElementById("levelRequirment");
+    var descriptionItem = document.getElementById("descriptionItem");
+
+    var el_one = document.getElementById("1");
+    var el_two = document.getElementById("2");
+    var el_three = document.getElementById("3");
+    var el_four = document.getElementById("4");
+    var el_five = document.getElementById("5");
+    var el_six = document.getElementById("6");
+    var el_seven = document.getElementById("7");
+    var el_eight = document.getElementById("8");
+    var el_nine = document.getElementById("9");
+
+    function checkNumbersItem() {
+      var cost = el_one.getAttribute("cost");
+      var nmbItem = el_one.getElementsByClassName("numberItem")[0].value;
+      var ncost1 = nmbItem * cost;
+
+      cost = el_two.getAttribute("cost");
+      nmbItem = el_two.getElementsByClassName("numberItem")[0].value;
+      var ncost2 = nmbItem * cost;
+
+      cost = el_three.getAttribute("cost");
+      nmbItem = el_three.getElementsByClassName("numberItem")[0].value;
+      var ncost3 = nmbItem * cost;
+
+      cost = el_four.getAttribute("cost");
+      nmbItem = el_four.getElementsByClassName("numberItem")[0].value;
+      var ncost4 = nmbItem * cost;
+
+      cost = el_five.getAttribute("cost");
+      nmbItem = el_five.getElementsByClassName("numberItem")[0].value;
+      var ncost5 = nmbItem * cost;
+
+      cost = el_six.getAttribute("cost");
+      nmbItem = el_six.getElementsByClassName("numberItem")[0].value;
+      var ncost6 = nmbItem * cost;
+
+      cost = el_seven.getAttribute("cost");
+      nmbItem = el_seven.getElementsByClassName("numberItem")[0].value;
+      var ncost7 = nmbItem * cost;
+
+      cost = el_eight.getAttribute("cost");
+      nmbItem = el_eight.getElementsByClassName("numberItem")[0].value;
+      var ncost8 = nmbItem * cost;
+
+      cost = el_nine.getAttribute("cost");
+      nmbItem = el_nine.getElementsByClassName("numberItem")[0].value;
+      var ncost9 = nmbItem * cost;
+
+      goldMinusBought =
+        ncost1 +
+        ncost2 +
+        ncost3 +
+        ncost4 +
+        ncost5 +
+        ncost6 +
+        ncost7 +
+        ncost8 +
+        ncost9;
+    }
+
+    el_one.addEventListener("click", event => {
+      event.preventDefault();
+
+      document.getElementById(currentId).classList.remove("active");
+      currentId = 1;
+      document.getElementById(currentId).classList.add("active");
+      //-----------------------------------------------------------------------
+      // remplissage 2 onglet
+      classRequirment.classList.add("hide");
+      statsBonus.classList.add("hide");
+      statsPrimary.classList.add("hide");
+      levelRequirment.classList.add("hide");
+      descriptionItem.innerHTML =
+        "<h3>Description :</h3>" +
+        "<p>a regular sting from regular stingy monster...</p>";
+      //-----------------------------------------------------------------------
+      var cost = el_one.getAttribute("cost");
+      var nmbItem = el_one.getElementsByClassName("numberItem")[0].value;
+      checkNumbersItem();
+      infoGold.innerHTML = "Gold : " + gold + "G(-" + goldMinusBought + "G)";
+    });
+    el_two.addEventListener("click", event => {
+      event.preventDefault();
+      document.getElementById(currentId).classList.remove("active");
+      currentId = 2;
+      document.getElementById(currentId).classList.add("active");
+      //-----------------------------------------------------------------------
+      // remplissage 2 onglet
+      classRequirment.classList.remove("hide");
+      statsBonus.classList.remove("hide");
+      statsPrimary.classList.remove("hide");
+      classRequirment.innerHTML =
+        "<h3>Class requirment :</h3>" +
+        "<p>Warrior, Thief, Mage, Priestess,archer</p>";
+      levelRequirment.innerHTML = "<h3>Level requirment :</h3>" + "<p>1</p>";
+      statsBonus.innerHTML =
+        "<h3>Stats :</h3>" + "<p>str+0,agi+0,int+0,dex+0,vit+0</p> ";
+      statsPrimary.innerHTML = "<h3>Primary Stats :</h3>" + "<p>atk:19</p> ";
+      descriptionItem.innerHTML = "<h3>Description :</h3>" + "...";
+      //-----------------------------------------------------------------------
+      var cost = el_two.getAttribute("cost");
+      var nmbItem = el_two.getElementsByClassName("numberItem")[0].value;
+      checkNumbersItem();
+      infoGold.innerHTML = "Gold : " + gold + "G(-" + goldMinusBought + "G)";
+    });
+    el_three.addEventListener("click", event => {
+      event.preventDefault();
+      document.getElementById(currentId).classList.remove("active");
+      currentId = 3;
+      document.getElementById(currentId).classList.add("active");
+      //-----------------------------------------------------------------------
+      // remplissage 2 onglet
+      classRequirment.classList.remove("hide");
+      levelRequirment.classList.remove("hide");
+      statsBonus.classList.remove("hide");
+      statsPrimary.classList.remove("hide");
+      classRequirment.innerHTML =
+        "<h3>Class requirment :</h3>" + "<p>Warrior, Thief, Mage, archer</p>";
+      levelRequirment.innerHTML = "<h3>Level requirment :</h3>" + "<p>1</p>";
+      statsBonus.innerHTML =
+        "<h3>Stats :</h3>" + "<p>str+0,agi+0,int+0,dex+0,vit+0</p> ";
+      statsPrimary.innerHTML = "<h3>Primary Stats :</h3>" + "<p>def:25</p> ";
+      descriptionItem.innerHTML = "<h3>Description :</h3>" + "...";
+      //-----------------------------------------------------------------------
+      var cost = el_three.getAttribute("cost");
+      var nmbItem = el_three.getElementsByClassName("numberItem")[0].value;
+      checkNumbersItem();
+      infoGold.innerHTML = "Gold : " + gold + "G(-" + goldMinusBought + "G)";
+    });
+    el_four.addEventListener("click", event => {
+      event.preventDefault();
+      document.getElementById(currentId).classList.remove("active");
+      currentId = 4;
+      document.getElementById(currentId).classList.add("active");
+
+      //-----------------------------------------------------------------------
+      // remplissage 2 onglet
+      classRequirment.classList.add("hide");
+      levelRequirment.classList.add("hide");
+      statsBonus.classList.add("hide");
+      statsPrimary.classList.add("hide");
+      descriptionItem.innerHTML = "<h3>Description :</h3>" + "Heal 50 HP";
+      //-----------------------------------------------------------------------
+      var cost = el_four.getAttribute("cost");
+      var nmbItem = el_four.getElementsByClassName("numberItem")[0].value;
+      checkNumbersItem();
+      infoGold.innerHTML = "Gold : " + gold + "G(-" + goldMinusBought + "G)";
+    });
+    el_five.addEventListener("click", event => {
+      event.preventDefault();
+      document.getElementById(currentId).classList.remove("active");
+      currentId = 5;
+      document.getElementById(currentId).classList.add("active");
+
+      //-----------------------------------------------------------------------
+      // remplissage 2 onglet
+      classRequirment.classList.remove("hide");
+      levelRequirment.classList.remove("hide");
+      statsBonus.classList.remove("hide");
+      statsPrimary.classList.remove("hide");
+      classRequirment.innerHTML =
+        "<h3>Class requirment :</h3>" + "<p>Warrior, Thief, Mage, archer</p>";
+      levelRequirment.innerHTML = "<h3>Level requirment :</h3>" + "<p>1</p>";
+      statsBonus.innerHTML =
+        "<h3>Stats :</h3>" + "<p>str+0,agi+0,int+0,dex+0,vit+0</p> ";
+      statsPrimary.innerHTML = "<h3>Primary Stats :</h3>" + "<p>def:13</p> ";
+      descriptionItem.innerHTML = "<h3>Description :</h3>" + "...";
+      //-----------------------------------------------------------------------
+      var cost = el_five.getAttribute("cost");
+      var nmbItem = el_five.getElementsByClassName("numberItem")[0].value;
+      checkNumbersItem();
+      infoGold.innerHTML = "Gold : " + gold + "G(-" + goldMinusBought + "G)";
+    });
+    el_six.addEventListener("click", event => {
+      event.preventDefault();
+      document.getElementById(currentId).classList.remove("active");
+      currentId = 6;
+      document.getElementById(currentId).classList.add("active");
+      //-----------------------------------------------------------------------
+      // remplissage 2 onglet
+      classRequirment.classList.add("hide");
+      levelRequirment.classList.add("hide");
+      statsBonus.classList.add("hide");
+      statsPrimary.classList.add("hide");
+      descriptionItem.innerHTML = "<h3>Description :</h3>" + "Heal 50 MP";
+      //-----------------------------------------------------------------------
+      var cost = el_six.getAttribute("cost");
+      var nmbItem = el_six.getElementsByClassName("numberItem")[0].value;
+      checkNumbersItem();
+      infoGold.innerHTML = "Gold : " + gold + "G(-" + goldMinusBought + "G)";
+    });
+    el_seven.addEventListener("click", event => {
+      event.preventDefault();
+      document.getElementById(currentId).classList.remove("active");
+      currentId = 7;
+      document.getElementById(currentId).classList.add("active");
+      //-----------------------------------------------------------------------
+      // remplissage 2 onglet
+      classRequirment.classList.remove("hide");
+      levelRequirment.classList.remove("hide");
+      statsBonus.classList.remove("hide");
+      statsPrimary.classList.remove("hide");
+      classRequirment.innerHTML =
+        "<h3>Class requirment :</h3>" + "<p>Warrior, Thief, Mage, archer</p>";
+      levelRequirment.innerHTML = "<h3>Level requirment :</h3>" + "<p>1</p>";
+      statsBonus.innerHTML =
+        "<h3>Stats :</h3>" + "<p>str+0,agi+0,int+0,dex+0,vit+0</p> ";
+      statsPrimary.innerHTML = "<h3>Primary Stats :</h3>" + "<p>atk:38</p> ";
+      descriptionItem.innerHTML = "<h3>Description :</h3>" + "...";
+      //-----------------------------------------------------------------------
+      var cost = el_seven.getAttribute("cost");
+      var nmbItem = el_seven.getElementsByClassName("numberItem")[0].value;
+      checkNumbersItem();
+      infoGold.innerHTML = "Gold : " + gold + "G(-" + goldMinusBought + "G)";
+    });
+    el_eight.addEventListener("click", event => {
+      event.preventDefault();
+      document.getElementById(currentId).classList.remove("active");
+      currentId = 8;
+      document.getElementById(currentId).classList.add("active");
+      //-----------------------------------------------------------------------
+      // remplissage 2 onglet
+      classRequirment.classList.remove("hide");
+      levelRequirment.classList.remove("hide");
+      statsBonus.classList.remove("hide");
+      statsPrimary.classList.remove("hide");
+      classRequirment.innerHTML =
+        "<h3>Class requirment :</h3>" +
+        "<p>Warrior, Thief, Mage, archer,Priestess</p>";
+      levelRequirment.innerHTML = "<h3>Level requirment :</h3>" + "<p>1</p>";
+      statsBonus.innerHTML =
+        "<h3>Stats :</h3>" + "<p>str+0,agi+0,int+0,dex+0,vit+0</p> ";
+      statsPrimary.innerHTML = "<h3>Primary Stats :</h3>" + "<p>def:6</p> ";
+      descriptionItem.innerHTML = "<h3>Description :</h3>" + "...";
+      //-----------------------------------------------------------------------
+      var cost = el_eight.getAttribute("cost");
+      var nmbItem = el_eight.getElementsByClassName("numberItem")[0].value;
+      checkNumbersItem();
+      infoGold.innerHTML = "Gold : " + gold + "G(-" + goldMinusBought + "G)";
+    });
+    el_nine.addEventListener("click", event => {
+      event.preventDefault();
+      document.getElementById(currentId).classList.remove("active");
+      currentId = 9;
+      document.getElementById(currentId).classList.add("active");
+      //-----------------------------------------------------------------------
+      // remplissage 2 onglet
+      classRequirment.classList.remove("hide");
+      levelRequirment.classList.remove("hide");
+      statsBonus.classList.remove("hide");
+      statsPrimary.classList.remove("hide");
+      classRequirment.innerHTML =
+        "<h3>Class requirment :</h3>" + "<p>Mage,Priestess</p>";
+      levelRequirment.innerHTML = "<h3>Level requirment :</h3>" + "<p>1</p>";
+      statsBonus.innerHTML =
+        "<h3>Stats :</h3>" + "<p>str+0,agi+0,int+0,dex+0,vit+0</p> ";
+      statsPrimary.innerHTML =
+        "<h3>Primary Stats :</h3>" + "<p>def:8,mdef:1</p> ";
+      descriptionItem.innerHTML = "<h3>Description :</h3>" + "...";
+      //-----------------------------------------------------------------------
+      var cost = el_nine.getAttribute("cost");
+      var nmbItem = el_nine.getElementsByClassName("numberItem")[0].value;
+      checkNumbersItem();
+      infoGold.innerHTML = "Gold : " + gold + "G(-" + goldMinusBought + "G)";
+    });
+
+    acheterInput.oninput = e => {
+      //var acheterOnglet = document.getElementById("acheterOnglet");
+      //var vendreOnglet = document.getElementById("vendreOnglet");
+      if (e.target.checked) {
+        acheterOnglet.classList.add("isChecked");
+        vendreOnglet.classList.remove("isChecked");
+        acheterButton.innerHTML = "Acheter";
+      } else {
+        acheterOnglet.classList.remove("isChecked");
+        vendreOnglet.classList.add("isChecked");
+      }
+    };
+
+    vendreInput.oninput = e => {
+      //var acheterOnglet = document.getElementById("acheterOnglet");
+      //var vendreOnglet = document.getElementById("vendreOnglet");
+
+      if (e.target.checked) {
+        vendreOnglet.classList.add("isChecked");
+        acheterOnglet.classList.remove("isChecked");
+        acheterButton.innerHTML = "Vendre";
+      } else {
+        vendreOnglet.classList.remove("isChecked");
+        acheterOnglet.classList.add("isChecked");
+      }
+    };
+  </script>
+</html>

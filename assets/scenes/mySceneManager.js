@@ -41,7 +41,7 @@ class mySceneManager extends Phaser.Scene {
 	 * @param {Phaser.Scene} Scene
 	*/
 	createMap() {		
-		
+
 		this.transitionstart = this.scene.get("mySceneManager").transitionstart.bind(this);
 		this.transitioncomplete = this.scene.get("mySceneManager").transitioncomplete.bind(this);
 		this.changeTransitionMap = this.scene.get("mySceneManager").changeTransitionMap.bind(this);
@@ -223,7 +223,6 @@ class mySceneManager extends Phaser.Scene {
 			}
 		}
 		*/
-		
  		this.events.emit("endSceneManager",this);
 		this.scene.bringToTop("windowSkills")
 		this.scene.bringToTop("windowStatut")
@@ -727,13 +726,31 @@ class mySceneManager extends Phaser.Scene {
 									tagName:undefined,
 									text: "",
 								}	
+								console.log(textObj.type)
 								if(textObj.type =="dialogue"){
 									scene.dialogueState = true;
 									textConfig.text = textObj.content;
 									scene.scene.run("dialogueWindow", textConfig);
-								}else if(textObj.type =="end"){
+									scene.scene.bringToTop("dialogueWindow");
+								}
+								else if(textObj.type =="choice"){
+									scene.dialogueState = true;
+									scene.scene.run("windowChoice");
+									scene.scene.bringToTop("windowChoice");
+								}
+								else if(textObj.type =="shop"){
+									scene.dialogueState = true;
+									scene.scene.run("windowShop");
+									scene.scene.bringToTop("windowShop");	
+									console.log(scene.scene.isVisible("windowShop"))				
+								}
+							    else if(textObj.type =="end"){
 									scene.dialogueState = false;
-									scene.scene.sleep("dialogueWindow");
+									//scene.scene.sleep("dialogueWindow");
+									a.eventPage.dialogue?scene.scene.sleep("dialogueWindow"):"";
+									a.eventPage.shop?scene.scene.sleep("windowShop"):"";
+									a.eventPage.choice?scene.scene.sleep("windowChoice"):"";
+									scene.scene.sleep("windowShop");
 								}
 
 								

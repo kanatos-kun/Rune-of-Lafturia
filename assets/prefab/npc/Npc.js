@@ -18,7 +18,12 @@ class Npc extends Phaser.GameObjects.Sprite {
 		this.isDetectedHero = false
 		this.scene.events.on("endSceneManager",function(sys){
 			var eventPage = sys.cache.json.get( "NPCdial_eventPage" );
-			this.eventPage = {id : 0};
+			this.eventPage = {id : 0,
+							  dialogue: false,
+							  shop: false,
+							  choice: false
+			
+			};
 			this.eventPage.page = eventPage["npc_"+scene.scene.key.toLowerCase()+"_"+this.getData("eventName")];
 			/*
 			this.eventPage.page = sys.cache.json.get( this.getData("eventName")+"_page_"+scene.scene.key.toLowerCase() ).page;
@@ -29,7 +34,7 @@ class Npc extends Phaser.GameObjects.Sprite {
 			// 3) search in the 'sys.cache.json.get('NPCdial_'+dialogueType)' the corresponding id ('dialogueType_id')
 			// 4) retrieve the information of the dialogueType
 			// x) increment the global id
-			console.log(this.eventPage.page[this.eventPage.id].type)
+			//console.log(this.eventPage.page[this.eventPage.id].type)
 			console.log(this.eventPage.page)
 		},this)
 	}
@@ -54,16 +59,24 @@ class Npc extends Phaser.GameObjects.Sprite {
 			// do dialogue things ...
 			var typeDialogue = this.scene.sys.cache.json.get('NPCdial_'+type)[idType];
 			this.eventPage.id ++;
+			this.eventPage.dialogue = true;
 			typeDialogue.type = type;
 			return typeDialogue ;
 		}else if(type =="choice"){
 			var typeDialogue = this.scene.sys.cache.json.get('NPCdial_'+type)[idType];
 			this.eventPage.id ++;
+			this.eventPage.choice = true;
 			typeDialogue.type = type;
 			return typeDialogue ;
 			// do choice things ...
 		}else if(type =="shop"){
+			var typeDialogue = this.scene.sys.cache.json.get('NPCdial_'+type)[idType];
+			this.eventPage.id ++;
+			this.eventPage.shop = true;
+			typeDialogue.type = type;
+			return typeDialogue ;
 			// do shop things...
+			
 		}else if(type=="goto"){
 			this.eventPage.id = idType;
 			//var typeDialogue = this.scene.sys.cache.json.get('NPCdial_'+type)[idType];

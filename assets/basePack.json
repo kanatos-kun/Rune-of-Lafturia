@@ -309,10 +309,20 @@
       "type": "sceneFile",
       "key": "windowChoice",
       "url": "assets/scenes/window/windowChoice.js"
+    },
+    {
+      "type": "sceneFile",
+      "key": "windowShop",
+      "url": "assets/scenes/window/windowShop.js"
+    },
+    {
+      "type": "html",
+      "key": "html_shop",
+      "url": "assets/html/shop.html"
     }
   ]},
   "meta": {
-    "generated": "1595402078478",
+    "generated": "1597163987354",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",

@@ -101,8 +101,13 @@ class BaseLoadAsset extends Phaser.Scene {
 			}
 
 		}
-		
 		this.game.loading.basePack = true;
+		this.scene.run("windowShop");
+		this.scene.sleep("windowShop");
+		this.scene.run("dialogueWindow");
+		this.scene.sleep("dialogueWindow");
+		this.scene.run("windowChoice");
+		this.scene.sleep("windowChoice");
 		this.scene.stop("BaseLoadAsset");
 	}
 	// Write your code here.
