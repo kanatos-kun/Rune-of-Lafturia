@@ -95,7 +95,7 @@ h1 {
     "d e"
     "f null";
   grid-template-columns: 50% 50%;
-  width: 3300px;
+  width: 2500px;
   height: 2500px;
   background: white;
 }
@@ -157,9 +157,46 @@ Image Icons
 
 input[type="number"] {
   height: 200px;
-  width: 100%;
-  font-size: 100px;
+  width: 90%;
+  font-size: 83px;
 }
+/*
+-------------------------------------------------------------------------------
+Change arrow icons
+-------------------------------------------------------------------------------
+*/
+.numberItemHide {
+  position: absolute;
+  left: 1069px;
+  top: 10px;
+  width: 135px;
+  height: 150px;
+  background: white;
+}
+
+.numberItemSpinner {
+  background: white;
+  border-radius: 25%;
+  border: #cecece solid 3px;
+  width: 100px;
+
+  text-align: center;
+}
+
+.numberItemPlus,
+.numberItemMinus {
+  border: none;
+  background: #cecece;
+  border-radius: 50%;
+  width: 65%;
+  height: 30%;
+}
+
+.numberItemPlus:hover,
+.numberItemMinus:hover {
+  background: #4fb2ff;
+}
+
 /*
 -------------------------------------------------------------------------------
 Resize IG

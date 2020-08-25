@@ -21,7 +21,7 @@ class windowShop extends Phaser.Scene {
 	}
 	/* START-USER-CODE */
 	create(){
-		this.html_shop = this.add.dom(0,700).createFromCache("html_shop").setOrigin(0);
+		this.html_shop = this.add.dom(400,700).createFromCache("html_shop").setOrigin(0);
 				console.log("create shop window!");
 					this.events.on("sleep",function(sys,data){
 						this.html_shop.setVisible(false);
