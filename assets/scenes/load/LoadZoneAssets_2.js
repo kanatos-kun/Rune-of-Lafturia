@@ -41,6 +41,7 @@ class LoadZoneAssets_2 extends Phaser.Scene {
 
 		this.load.on('filecomplete',function(key,type){
 			texLoad.setText(type+"/"+key);
+			console.log(key)
 		})
 
 
@@ -55,12 +56,14 @@ class LoadZoneAssets_2 extends Phaser.Scene {
 		console.log(this.dataLoad)
 		if(this.dataLoad.zone === undefined){
 			this.scene.run(this.game.startMap,{x:this.game.startPosition.x,y:this.game.startPosition.y});
+			this.scene.bringToTop(this.game.startMap)
 		}else{
-			console.log("run map")
 			this.scene.run(this.dataLoad.zone,{x:this.dataLoad.xZone,y:this.dataLoad.yZone});
+			this.scene.bringToTop(this.dataLoad.zone)
 		}
 		
 		this.game.loading["loadZone_"+ this.dataLoad.packId]  = true
+
 		this.scene.bringToTop("dialogueWindow")
 		this.scene.bringToTop("windowInventory")
 		this.scene.bringToTop("windowSkills")

@@ -35,7 +35,7 @@ class Npc extends Phaser.GameObjects.Sprite {
 			// 4) retrieve the information of the dialogueType
 			// x) increment the global id
 			//console.log(this.eventPage.page[this.eventPage.id].type)
-			console.log(this.eventPage.page)
+			//console.log(this.eventPage.page)
 		},this)
 	}
 	

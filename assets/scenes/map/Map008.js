@@ -43,7 +43,7 @@ class Map008 extends Phaser.Scene {
 		this.map.createStaticLayer("flowers",this.tileset)	
 		this.map.createStaticLayer("roches",this.tileset)	
 		
-		
+		console.log("create map");
 
 		this._create()
 		this.fMapScene.destroy()
@@ -54,7 +54,6 @@ class Map008 extends Phaser.Scene {
 	// Write your code here.
 
 	update(time, delta) {
-		
 		if(!this.sys.isTransitioning()){//
 				this.scene.get("mySceneManager").updateMap(this, time, delta);
 		}

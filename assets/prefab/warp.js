@@ -24,18 +24,28 @@ class Warp extends Phaser.GameObjects.Image  {
 			//this.scene.scene.start(this.data.get("zone"),{x:this.data.get("x"),y:this.data.get("y")})
 			if(this.scene.fHero.active){
 				if(this.data.get("loadZone") !==undefined && this.scene.game.loading["loadZone_"+this.data.get("loadZone")]===false){
-					this.scene.scene.bringToTop("LoadZoneAssets_" + this.data.get("loadZone"))
-					this.scene.scene.run("LoadZoneAssets_"+this.data.get("loadZone"),{packName :"packZone-"+this.data.get("loadZone"),
+							if(this.data.get("loadZone")==1){
+							this.scene.scene.run("LoadZoneAssets_1",{packName :"packZone-1",
 													  xZone : this.data.get("x"),
 											          yZone : this.data.get("y"),
 													  zone :  this.data.get("zone"),
 													  packId: this.data.get("loadZone")
-	
-	
-					})
-					this.scene.scene.sleep()
+											})
+							this.scene.scene.bringToTop("LoadZoneAssets_1");
+							this.scene.scene.sleep();
+							}else{
+								console.log("LoadZoneAssets_"+this.data.get("loadZone"))
+								this.scene.scene.run("LoadZoneAssets_"+this.data.get("loadZone"),{packName :"packZone-"+this.data.get("loadZone"),
+																  xZone : this.data.get("x"),
+														          yZone : this.data.get("y"),
+																  zone :  this.data.get("zone"),
+																  packId: this.data.get("loadZone")
+								})
+								this.scene.scene.bringToTop("LoadZoneAssets_"+this.data.get("loadZone"));
+								this.scene.scene.sleep();
+							}
+
 				}else{
-					console.log(this.data.get("zone"))
 					this.scene.changeTransitionMap(this.data.get("zone"),this.data.get("x"),this.data.get("y"),this.data.get("dir"))
 				}
 

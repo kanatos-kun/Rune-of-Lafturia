@@ -3,13 +3,14 @@
 
 /* START OF COMPILED CODE */
 
-class LoadZoneAssets extends Phaser.Scene {
+class LoadZoneAssets_1 extends Phaser.Scene {
 	
 	constructor() {
 	
-		super("LoadZoneAssets");
+		super("LoadZoneAssets_1");
 		
 	}
+	
 	
 	init(data){
 		this.dataLoad = data
@@ -18,7 +19,6 @@ class LoadZoneAssets extends Phaser.Scene {
 	preload() {
 		if(this.dataLoad.packName !== undefined){
 			this.load.pack("packZone-1", "assets/packZone-1.json");
-			console.log("start loading stuff")
 		}
 	    var progress = this.add.graphics();
 		this.add.image(1650,2800,"UI_BARFRAME").setScale(2);
@@ -35,7 +35,6 @@ class LoadZoneAssets extends Phaser.Scene {
 	    this.load.on('complete', function () {
 	        progress.destroy();
 	    });
-
 		this.load.on('filecomplete',function(key,type){
 			texLoad.setText(type+"/"+key);
 			console.log(key)
@@ -56,7 +55,6 @@ class LoadZoneAssets extends Phaser.Scene {
 			this.scene.bringToTop(this.game.startMap)
 		}else{
 			this.scene.run(this.dataLoad.zone,{x:this.dataLoad.xZone,y:this.dataLoad.yZone});
-			console.log("the map is loaded : "+this.dataLoad.zone)
 			this.scene.bringToTop(this.dataLoad.zone)
 		}
 		this.game.loading["loadZone_"+ this.dataLoad.packId]  = true
@@ -87,3 +85,4 @@ class LoadZoneAssets extends Phaser.Scene {
 /* END OF COMPILED CODE */
 
 // You can write more code here
+

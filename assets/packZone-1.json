@@ -99,12 +99,6 @@
       "normalMap": ""
     },
     {
-      "type": "image",
-      "key": "npc_01",
-      "url": "assets/images/npc/01/Idle_000.png",
-      "normalMap": ""
-    },
-    {
       "type": "script",
       "key": "Inventory_Misc_Sting",
       "url": "assets/prefab/inventory/misc/Inventory_Misc_Sting.js"
@@ -160,10 +154,16 @@
       "key": "coffre_open",
       "url": "assets/images/coffre/dark-wood-open.png",
       "normalMap": ""
+    },
+    {
+      "type": "image",
+      "key": "npc_01",
+      "url": "assets/images/npc/01/Idle_000.png",
+      "normalMap": ""
     }
   ]},
   "meta": {
-    "generated": "1592893255843",
+    "generated": "1599124491375",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",

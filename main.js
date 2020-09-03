@@ -17,7 +17,7 @@ window.addEventListener('load', function() {
         default: 'arcade',
         arcade: {
             gravity: { y: 0 },
-            debug: true
+            debug: false
         }
     },
     "scale": {
@@ -168,8 +168,8 @@ class Boot extends Phaser.Scene {
 				loadZone_2: false
 		}
 		this.game.startPosition = {
-			x : 1642,
-			y : 1542
+			x : 600,
+			y : 3000
 		}
 
 		/*
