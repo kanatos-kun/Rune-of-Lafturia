@@ -41,15 +41,16 @@ class mySceneManager extends Phaser.Scene {
 	 * @param {Phaser.Scene} Scene
 	*/
 	createMap() {		
-
+		this.endSceneManager = this.scene.get("mySceneManager").endSceneManager.bind(this);
 		this.transitionstart = this.scene.get("mySceneManager").transitionstart.bind(this);
 		this.transitioncomplete = this.scene.get("mySceneManager").transitioncomplete.bind(this);
 		this.changeTransitionMap = this.scene.get("mySceneManager").changeTransitionMap.bind(this);
 		this.addDebugMap = this.scene.get("mySceneManager").addDebugMap.bind(this);
-		this.events.on("transitionstart",this.transitionstart,this)
-		this.events.on("transitionwake",this.transitionstart,this)
-		this.events.on("transitioncomplete",this.transitioncomplete,this)
-		
+		this.events.on("endSceneManager",this.endSceneManager,this);
+		this.events.on("transitionstart",this.transitionstart,this);
+		this.events.on("transitionwake",this.transitionstart,this);
+		this.events.on("transitioncomplete",this.transitioncomplete,this);
+
 		this.enemyManager = new EnemyManager(this);
 		if(this.fHero === undefined){
 			this.fHero = this.add.hero(1075.0101, 1528.0022, "hero");
@@ -319,6 +320,40 @@ class mySceneManager extends Phaser.Scene {
 	}
 	
 	
+	endSceneManager(){
+			this.keys.Q.reset()
+			this.keys.D.reset()
+			this.keys.S.reset()
+			this.keys.Z.reset()
+			this.fHero.setVisible(true)
+			this.fHero.setActive(true)
+			console.log(this.cameras.main)
+			
+			//reposition cameras
+			if(this.fHero.x >= (this.widthMap * 3328)-1650){
+				this.cameras.main.scrollX =(this.widthMap * 3328)  - 3328;
+				//this.cameras.main.setPosition(100)
+				console.log("ss")
+			}
+			
+			if(this.fHero.x >= (this.heightMap * 3072)-1530){
+				this.cameras.main.scrollY = (this.heightMap * 3072)-3072;
+			}
+			
+			/*
+					if((scene.fHero.x >= 1680  && scene.fHero.x <= (3328*scene.widthMap) - 1650))
+					{
+					scene.cameras.main.centerOnX(scene.fHero.x)
+					}
+					
+					if((scene.fHero.y >= 1730 && scene.fHero.y <= (3072*scene.heightMap) - 1530))
+					{
+					scene.cameras.main.centerOnY(scene.fHero.y)
+					}
+					 */
+	}
+	
+	
 	/** 
 	 * TransitionStart will start the effect between 2 map.
      * /!\Do not use this function in your map, only modify in the mySceneManager.js/!\
@@ -573,6 +608,8 @@ class mySceneManager extends Phaser.Scene {
 
 		//console.log(length_enemies)
 		//console.log(scene.fEnemies)
+		
+		
 		var right = scene.cameras.main.scrollX + scene.cameras.main.width + 100;
 		var left = scene.cameras.main.scrollX - 100;
 		var bottom = scene.cameras.main.scrollY + scene.cameras.main.height + 100;
@@ -673,7 +710,6 @@ class mySceneManager extends Phaser.Scene {
 				//console.log("posX hero: "+scene.fHero.x)
 				
 				if(scene.cameras.main !==undefined){
-				
 					if((scene.fHero.x >= 1680  && scene.fHero.x <= (3328*scene.widthMap) - 1650))
 					{
 					scene.cameras.main.centerOnX(scene.fHero.x)

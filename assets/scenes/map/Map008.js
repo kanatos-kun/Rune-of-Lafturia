@@ -43,7 +43,6 @@ class Map008 extends Phaser.Scene {
 		this.map.createStaticLayer("flowers",this.tileset)	
 		this.map.createStaticLayer("roches",this.tileset)	
 		
-		console.log("create map");
 
 		this._create()
 		this.fMapScene.destroy()

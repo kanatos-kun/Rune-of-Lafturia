@@ -37,7 +37,6 @@ class LoadZoneAssets_1 extends Phaser.Scene {
 	    });
 		this.load.on('filecomplete',function(key,type){
 			texLoad.setText(type+"/"+key);
-			console.log(key)
 		})
 
 
@@ -52,7 +51,7 @@ class LoadZoneAssets_1 extends Phaser.Scene {
 
 		if(this.dataLoad.zone === undefined){
 			this.scene.run(this.game.startMap,{x:this.game.startPosition.x,y:this.game.startPosition.y});
-			this.scene.bringToTop(this.game.startMap)
+			this.scene.bringToTop(this.game.startMap);
 		}else{
 			this.scene.run(this.dataLoad.zone,{x:this.dataLoad.xZone,y:this.dataLoad.yZone});
 			this.scene.bringToTop(this.dataLoad.zone)
@@ -71,7 +70,7 @@ class LoadZoneAssets_1 extends Phaser.Scene {
 		this.scene.sleep("creditScreen")
 		this.scene.sleep("saveGameScreen")
 		this.scene.sleep("windowInventory")
-		this.scene.sleep("LoadZoneAssets")
+		this.scene.sleep("LoadZoneAssets_1")
 		
 	}
 	

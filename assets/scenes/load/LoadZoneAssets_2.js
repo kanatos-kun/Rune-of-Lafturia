@@ -41,7 +41,6 @@ class LoadZoneAssets_2 extends Phaser.Scene {
 
 		this.load.on('filecomplete',function(key,type){
 			texLoad.setText(type+"/"+key);
-			console.log(key)
 		})
 
 
