@@ -25,7 +25,7 @@
         <label class="containerItem radioInput active" id="1" cost="15">
           <input type="radio" />
           <div class="logoItem">
-            <img src="assets/icons/sting.png" />
+            <img src="assets/html/assets/icons/sting.png" />
           </div>
           <div class="nameItem">Sting</div>
           <div class="priceItem">15G</div>
@@ -39,7 +39,9 @@
         </label>
         <label class="containerItem radioInput" id="2" cost="155">
           <input type="radio" />
-          <div class="logoItem"><img src="assets/icons/sting.png" /></div>
+          <div class="logoItem">
+            <img src="assets/html/assets/icons/sting.png" />
+          </div>
           <div class="nameItem">knife</div>
           <div class="priceItem">155G</div>
           <input class="numberItem" type="Number" min="0" max="99" value="0" />
@@ -52,7 +54,9 @@
         </label>
         <label class="containerItem radioInput" id="3" cost="250">
           <input type="radio" />
-          <div class="logoItem"><img src="assets/icons/sting.png" /></div>
+          <div class="logoItem">
+            <img src="assets/html/assets/icons/sting.png" />
+          </div>
           <div class="nameItem">wood armor</div>
           <div class="priceItem">250G</div>
           <input class="numberItem" type="Number" min="0" max="99" value="0" />
@@ -65,7 +69,9 @@
         </label>
         <label class="containerItem radioInput" id="4" cost="50">
           <input type="radio" />
-          <div class="logoItem"><img src="assets/icons/sting.png" /></div>
+          <div class="logoItem">
+            <img src="assets/html/assets/icons/sting.png" />
+          </div>
           <div class="nameItem">small healing potion</div>
           <div class="priceItem">50G</div>
           <input class="numberItem" type="Number" min="0" max="99" value="0" />
@@ -78,7 +84,9 @@
         </label>
         <label class="containerItem radioInput" id="5" cost="120">
           <input type="radio" />
-          <div class="logoItem"><img src="assets/icons/sting.png" /></div>
+          <div class="logoItem">
+            <img src="assets/html/assets/icons/sting.png" />
+          </div>
           <div class="nameItem">leather glove</div>
           <div class="priceItem">120G</div>
           <input class="numberItem" type="Number" min="0" max="99" value="0" />
@@ -91,7 +99,9 @@
         </label>
         <label class="containerItem radioInput" id="6" cost="250">
           <input type="radio" />
-          <div class="logoItem"><img src="assets/icons/sting.png" /></div>
+          <div class="logoItem">
+            <img src="assets/html/assets/icons/sting.png" />
+          </div>
           <div class="nameItem">Small mana potion</div>
           <div class="priceItem">250G</div>
           <input class="numberItem" type="Number" min="0" max="99" value="0" />
@@ -104,7 +114,9 @@
         </label>
         <label class="containerItem radioInput" id="7" cost="270">
           <input type="radio" />
-          <div class="logoItem"><img src="assets/icons/sting.png" /></div>
+          <div class="logoItem">
+            <img src="assets/html/assets/icons/sting.png" />
+          </div>
           <div class="nameItem">sword</div>
           <div class="priceItem">270G</div>
           <input class="numberItem" type="Number" min="0" max="99" value="0" />
@@ -117,7 +129,9 @@
         </label>
         <label class="containerItem radioInput" id="8" cost="40">
           <input type="radio" />
-          <div class="logoItem"><img src="assets/icons/sting.png" /></div>
+          <div class="logoItem">
+            <img src="assets/html/assets/icons/sting.png" />
+          </div>
           <div class="nameItem">hat</div>
           <div class="priceItem">40G</div>
           <input class="numberItem" type="Number" min="0" max="99" value="0" />
@@ -130,7 +144,9 @@
         </label>
         <label class="containerItem radioInput" id="9" cost="70">
           <input type="radio" />
-          <div class="logoItem"><img src="assets/icons/sting.png" /></div>
+          <div class="logoItem">
+            <img src="assets/html/assets/icons/sting.png" />
+          </div>
           <div class="nameItem">silk robe</div>
           <div class="priceItem">70G</div>
           <input class="numberItem" type="Number" min="0" max="99" value="0" />
@@ -187,6 +203,33 @@
     var el_seven = document.getElementById("7");
     var el_eight = document.getElementById("8");
     var el_nine = document.getElementById("9");
+
+    var el_one_plus = el_one.getElementsByClassName("numberItemPlus");
+    var el_one_minus = el_one.getElementsByClassName("numberItemMinus");
+    var el_one_numItem = el_one.getElementsByClassName("numberItem");
+    el_one_plus[0].addEventListener("click", e => {
+      event.preventDefault();
+      el_one_numItem[0].setAttribute(
+        "value",
+        parseInt(el_one_numItem[0].getAttribute("value"), 10) + 1
+      );
+      console.log(el_one_numItem[0].getAttribute("value"));
+      if (parseInt(el_one_numItem[0].getAttribute("value"), 10) > 99) {
+        el_one_numItem[0].setAttribute("value", 99);
+      }
+    });
+
+    el_one_minus[0].addEventListener("click", e => {
+      event.preventDefault();
+      el_one_numItem[0].setAttribute(
+        "value",
+        parseInt(el_one_numItem[0].getAttribute("value"), 10) - 1
+      );
+
+      if (parseInt(el_one_numItem[0].getAttribute("value"), 10) < 0) {
+        el_one_numItem[0].setAttribute("value", 0);
+      }
+    });
 
     function checkNumbersItem() {
       var cost = el_one.getAttribute("cost");

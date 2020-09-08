@@ -103,10 +103,8 @@ class titleScreen extends Phaser.Scene {
 		this.scene.sleep("saveGameScreen")
 		this.scene.sleep("screenCharacterChoice");
 		
+
 		this.fButtonNewGame.on("pointerdown",function(pointer){
-			this.game.hero.currentHp = 12;
-			this.game.hero.hp = 12;			
-			this.game.gold = 0;
 			this.scene.run("screenCharacterChoice",{state:true,windowTarget:"titleScreen"});
 			this.scene.bringToTop("screenCharacterChoice");
 			this.scene.pause("titleScreen");

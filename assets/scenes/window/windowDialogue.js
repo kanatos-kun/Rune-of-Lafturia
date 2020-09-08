@@ -31,8 +31,8 @@ class windowDialogue extends Phaser.Scene {
 			//this.scene.sleep("windowChoice");
 		},this);
 		this.events.on("wake",function(sys,data){
-			this.displayMessage();
 			this.myData = data;
+			this.displayMessage();
 		},this);
 		
 		this.displayMessage();

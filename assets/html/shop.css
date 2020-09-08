@@ -148,7 +148,7 @@ Image Icons
   height: 64px;
 }
 .containerItem.active {
-  border: solid black 2px;
+  border: solid black 10px;
 }
 
 .hide {

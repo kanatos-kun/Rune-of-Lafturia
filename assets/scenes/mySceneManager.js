@@ -771,12 +771,23 @@ class mySceneManager extends Phaser.Scene {
 								}
 								else if(textObj.type =="choice"){
 									scene.dialogueState = true;
-									scene.scene.run("windowChoice");
+									textConfig.ch1 = textObj.ch1;
+									textConfig.ch2 = textObj.ch2;
+									textConfig.ch3 = textObj.ch3;
+									textConfig.ch4 = textObj.ch4;
+									scene.scene.run("windowChoice",textConfig);
 									scene.scene.bringToTop("windowChoice");
 								}
 								else if(textObj.type =="shop"){
 									scene.dialogueState = true;
-									scene.scene.run("windowShop");
+
+									textConfig.consumable = textObj.Consumable;
+									textConfig.weapon = textObj.Weapon;
+									textConfig.armor = textObj.Armor;
+									textConfig.accesory = textObj.Accesory;
+									textConfig.misc = textObj.Misc;
+									console.log(textConfig);
+									scene.scene.run("windowShop",textConfig);
 									scene.scene.bringToTop("windowShop");	
 									console.log(scene.scene.isVisible("windowShop"))				
 								}

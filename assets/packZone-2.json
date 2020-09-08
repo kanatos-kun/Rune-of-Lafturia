@@ -66,10 +66,15 @@
       "type": "json",
       "key": "npc01_task_map009",
       "url": "assets/data/npc/npc01_task_map009.json"
+    },
+    {
+      "type": "image",
+      "key": "sting",
+      "url": "assets/html/assets/icons/sting.png"
     }
   ]},
   "meta": {
-    "generated": "1592734009523",
+    "generated": "1599544345414",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",
