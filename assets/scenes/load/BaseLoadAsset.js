@@ -33,9 +33,21 @@ class BaseLoadAsset extends Phaser.Scene {
 			texLoad.setText(type+"/"+key);
 		})
 		
-		
+
 		this.load.pack("basePack", "assets/basePack.json");
-		
+        this.load.dragonbone(
+            "anims_char_hero_assassin",
+            "assets/animation/char/hero/assassin/anims_char_hero_assassin_tex.png",
+            "assets/animation/char/hero/assassin/anims_char_hero_assassin_tex.json",
+            "assets/animation/char/hero/assassin/anims_char_hero_assassin_ske.json"
+        );
+        this.load.dragonbone(
+            "bullet_01",
+            "assets/animation/bullet_01/bullet_01_tex.png",
+            "assets/animation/bullet_01/bullet_01_tex.json",
+            "assets/animation/bullet_01/bullet_01_ske.json",
+        );
+
 	}
   
 	

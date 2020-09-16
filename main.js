@@ -1,6 +1,6 @@
 
 window.addEventListener('load', function() {
-
+//TODO :load animation
 	var game = new Phaser.Game({
     "title": "rune-of-lafturia",
     "width": 3316,
@@ -23,7 +23,17 @@ window.addEventListener('load', function() {
     "scale": {
         "mode": Phaser.Scale.FIT,
         "autoCenter": Phaser.Scale.CENTER_BOTH
-    }
+    },
+    pack: {
+        files: [
+            { type: 'scenePlugin', key: 'SpinePlugin', url: 'assets/plugins/phaser-spine.js', sceneKey: 'spine' }
+        ]
+    },       
+    plugins: {
+            scene: [
+                { key: "DragonBones", plugin: dragonBones.phaser.plugin.DragonBonesScenePlugin, mapping: "dragonbone" }    // setup DB scene plugin
+            ]
+        }
 	});
 	game.MODE = "prod"
 	game.scene.add("Boot", Boot, false);
@@ -72,11 +82,13 @@ class Boot extends Phaser.Scene {
 			this.load.pack("prodPack","assets/prodPack.json")
 		}
 		//this.load.pack("devPack", "assets/pack/devPack.json");
+
 	    this.load.scenePlugin({
 	        key: 'UtilsPlugin',
 	        url: 'assets/plugins/UtilsPlugin.js',
 	        sceneKey: 'utils'
 	    });
+
 	}
 
 	create() {
@@ -89,6 +101,7 @@ class Boot extends Phaser.Scene {
 		 *  @property {number} hero.currentHp 
 		 *  @property {number} hero.hp 
 		*/
+
 		this.game.hero = {
 			//currentHp : 12,
 			//hp : 12,

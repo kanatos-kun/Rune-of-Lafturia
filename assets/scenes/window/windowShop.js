@@ -58,6 +58,33 @@ class windowShop extends Phaser.Scene {
 	    var el_eight = this.html_shop.getChildByID("8");
 	    var el_nine = this.html_shop.getChildByID("9");
 
+	    var el_one_plus = el_one.getElementsByClassName("numberItemPlus");
+	    var el_one_minus = el_one.getElementsByClassName("numberItemMinus");
+	    var el_one_numItem = el_one.getElementsByClassName("numberItem");
+
+    el_one_plus[0].addEventListener("click", e => {
+      event.preventDefault();
+      el_one_numItem[0].setAttribute(
+        "value",
+        parseInt(el_one_numItem[0].getAttribute("value"), 10) + 1
+      );
+      if (parseInt(el_one_numItem[0].getAttribute("value"), 10) > 99) {
+        el_one_numItem[0].setAttribute("value", 99);
+      }
+    });
+
+    el_one_minus[0].addEventListener("click", e => {
+      event.preventDefault();
+      el_one_numItem[0].setAttribute(
+        "value",
+        parseInt(el_one_numItem[0].getAttribute("value"), 10) - 1
+      );
+
+      if (parseInt(el_one_numItem[0].getAttribute("value"), 10) < 0) {
+        el_one_numItem[0].setAttribute("value", 0);
+      }
+    });
+
 		var html_shop = this.html_shop;
 		infoGold.textContent = "Gold : " + this.scene.scene.game.hero.gold + " G";
 

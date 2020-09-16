@@ -54,6 +54,25 @@ class Map009 extends Phaser.Scene {
 
 		var createMap = this.scene.get("mySceneManager").createMap.bind(this);
 		createMap()
+		
+		
+		//test dragon bones
+		//-----------------------------------------------------------------------------
+		var test_dragonbone = this.add.text(650,0,'TEST DRAGONBONES',{backgroundColor:"rgba(0,255,0,0.8)",fontSize:'150px',color:"#000000"})
+		test_dragonbone.setScrollFactor(0);
+		var armatureDisplay = this.add.armature("bullet_01", "bullet_01");
+	     armatureDisplay.x = 950;
+		 armatureDisplay.y = 2800;
+	     this.add.text(armatureDisplay.x,armatureDisplay.y,"X",{backgroundColor:"#000000",fontSize:'70px',color:"#ffffff"})
+
+		var armatureDisplay_two = this.add.armature("anims_char_hero_assassin", "anims_char_hero_assassin");
+	     armatureDisplay_two.x = 1400;
+		 armatureDisplay_two.y = 2800;
+		 armatureDisplay_two.animation.play("idle",-1);
+	     
+		//armatureDisplay.animation.play('iddle')
+		//-----------------------------------------------------------------------------
+		
 	}
 	// Write your code here.
 

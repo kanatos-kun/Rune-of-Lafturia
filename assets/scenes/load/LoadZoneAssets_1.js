@@ -19,6 +19,7 @@ class LoadZoneAssets_1 extends Phaser.Scene {
 	preload() {
 		if(this.dataLoad.packName !== undefined){
 			this.load.pack("packZone-1", "assets/packZone-1.json");
+
 		}
 	    var progress = this.add.graphics();
 		this.add.image(1650,2800,"UI_BARFRAME").setScale(2);
@@ -73,6 +74,7 @@ class LoadZoneAssets_1 extends Phaser.Scene {
 		this.scene.sleep("LoadZoneAssets_1")
 		
 	}
+
 	
 	/* START-USER-CODE */
 
