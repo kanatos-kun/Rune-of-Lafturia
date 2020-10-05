@@ -95,7 +95,7 @@ h1 {
     "d d d e"
     "f f null null";
   grid-template-columns: 25% 25% 25% 25%;
-  width: 700px;
+  width: 100%;
   height: 100%;
   background: white;
 }
@@ -110,8 +110,6 @@ h1 {
 }
 .itemDescription1 {
   grid-area: d;
-  height: 500px;
-  width: 500px;
   overflow: auto;
 }
 
@@ -129,17 +127,7 @@ h1 {
 
 .itemDescription2 {
   grid-area: e;
-  /* margin-left: 2px; */
-  width: 200px;
-}
-
-.kindItem::after,
-.classRequirment,
-.statsBonus,
-.statsPrimary,
-.levelRequirment,
-.descriptionItem {
-  word-wrap: break-word;
+  margin-left: 15px;
 }
 
 .acheterSpace {
@@ -160,7 +148,7 @@ Image Icons
   height: 100%;
 }
 .containerItem.active {
-  border: solid black 3px;
+  border: solid black 10px;
 }
 
 .hide {
@@ -179,7 +167,7 @@ Change arrow icons
 */
 .numberItemHide {
   position: absolute;
-  left: 90%;
+  left: 90.25%;
   top: 5px;
   width: 10px;
   height: 10px;
@@ -190,7 +178,7 @@ Change arrow icons
   background: white;
   border-radius: 25%;
   border: #cecece solid 3px;
-  width: 30px;
+  width: 100px;
 
   text-align: center;
 }

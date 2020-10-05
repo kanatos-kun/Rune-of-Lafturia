@@ -160,7 +160,7 @@ class Boot extends Phaser.Scene {
 				passif:[],
 				CP:0
 			},
-			gold:0,
+			gold:1000,
 			mapVisited:[],
 			dungeonVisited:[]
 		}

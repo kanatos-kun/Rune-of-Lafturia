@@ -48,6 +48,12 @@
 		localStorage.setItem("saveSlot-"+saveNumber,undefined)
 	}
 	
+	convertNullToZero(num){
+		let a = (num!=null?(num!=NaN?0:num):0);
+		console.log(a)
+		return a;
+	}
+	
 	splitTextDialogue(text){
 		let regexp =/\[.{0,}?]/g;
 		let array = [...text.matchAll(regexp)]

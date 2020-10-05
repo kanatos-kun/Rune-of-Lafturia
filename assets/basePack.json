@@ -311,11 +311,6 @@
       "url": "assets/scenes/window/windowShop.js"
     },
     {
-      "type": "html",
-      "key": "html_shop",
-      "url": "assets/html/shop.html"
-    },
-    {
       "type": "sceneFile",
       "key": "LoadZoneAssets_2",
       "url": "assets/scenes/load/LoadZoneAssets_2.js"
@@ -324,10 +319,40 @@
       "type": "sceneFile",
       "key": "LoadZoneAssets_1",
       "url": "assets/scenes/load/LoadZoneAssets_1.js"
+    },
+    {
+      "type": "html",
+      "key": "html_shop",
+      "url": "assets/html/shop.html"
+    },
+    {
+      "type": "json",
+      "key": "DATAitem_armor",
+      "url": "assets/data/item/item_armor.json"
+    },
+    {
+      "type": "json",
+      "key": "DATAitem_misc",
+      "url": "assets/data/item/item_misc.json"
+    },
+    {
+      "type": "json",
+      "key": "DATAitem_weapon",
+      "url": "assets/data/item/item_weapon.json"
+    },
+    {
+      "type": "json",
+      "key": "DATAitem_consumable",
+      "url": "assets/data/item/item_consumable.json"
+    },
+    {
+      "type": "json",
+      "key": "DATAitem_accesory",
+      "url": "assets/data/item/item_accesory.json"
     }
   ]},
   "meta": {
-    "generated": "1599124480139",
+    "generated": "1601888122716",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",

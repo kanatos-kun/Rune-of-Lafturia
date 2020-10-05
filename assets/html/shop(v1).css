@@ -89,14 +89,14 @@ h1 {
 .container {
   display: grid;
   grid:
-    "a a a a"
-    "g g g g"
-    "b b c c "
-    "d d d e"
-    "f f null null";
-  grid-template-columns: 25% 25% 25% 25%;
-  width: 700px;
-  height: 100%;
+    "a a"
+    "g g"
+    "b c"
+    "d e"
+    "f null";
+  grid-template-columns: 50% 50%;
+  width: 2500px;
+  height: 2500px;
   background: white;
 }
 .acheter {
@@ -111,10 +111,11 @@ h1 {
 .itemDescription1 {
   grid-area: d;
   height: 500px;
-  width: 500px;
-  overflow: auto;
+  overflow: scroll;
 }
 
+.itemDescription1::after {
+}
 .containerItem {
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
@@ -129,16 +130,8 @@ h1 {
 
 .itemDescription2 {
   grid-area: e;
-  /* margin-left: 2px; */
+  margin-left: 15px;
   width: 200px;
-}
-
-.kindItem::after,
-.classRequirment,
-.statsBonus,
-.statsPrimary,
-.levelRequirment,
-.descriptionItem {
   word-wrap: break-word;
 }
 
@@ -156,11 +149,11 @@ Image Icons
 */
 
 .logoItem > img {
-  width: 10%;
-  height: 100%;
+  width: 64px;
+  height: 64px;
 }
 .containerItem.active {
-  border: solid black 3px;
+  border: solid black 10px;
 }
 
 .hide {
@@ -168,9 +161,9 @@ Image Icons
 }
 
 input[type="number"] {
-  height: 45px;
+  height: 200px;
   width: 90%;
-  font-size: 20px;
+  font-size: 83px;
 }
 /*
 -------------------------------------------------------------------------------
@@ -179,10 +172,10 @@ Change arrow icons
 */
 .numberItemHide {
   position: absolute;
-  left: 90%;
-  top: 5px;
-  width: 10px;
-  height: 10px;
+  left: 1069px;
+  top: 10px;
+  width: 135px;
+  height: 150px;
   background: white;
 }
 
@@ -190,7 +183,7 @@ Change arrow icons
   background: white;
   border-radius: 25%;
   border: #cecece solid 3px;
-  width: 30px;
+  width: 100px;
 
   text-align: center;
 }
@@ -215,11 +208,11 @@ Resize IG
 -------------------------------------------------------------------------------
 */
 * {
-  font-size: 14px;
+  font-size: 70px;
 }
 
 .acheter,
 .vendre {
-  height: 55px;
-  font-size: 24px;
+  height: 200px;
+  font-size: 100px;
 }

@@ -781,11 +781,12 @@ class mySceneManager extends Phaser.Scene {
 								else if(textObj.type =="shop"){
 									scene.dialogueState = true;
 
-									textConfig.consumable = textObj.Consumable;
-									textConfig.weapon = textObj.Weapon;
-									textConfig.armor = textObj.Armor;
-									textConfig.accesory = textObj.Accesory;
-									textConfig.misc = textObj.Misc;
+									textConfig.consumable = textObj.Consumable.split(",");
+									textConfig.weapon = textObj.Weapon.split(",");
+									textConfig.armor = textObj.Armor.split(",");
+									textConfig.accesory = textObj.Accesory.split(",");
+									textConfig.misc = textObj.Misc.split(",");
+									textConfig.itemList = [];
 									console.log(textConfig);
 									scene.scene.run("windowShop",textConfig);
 									scene.scene.bringToTop("windowShop");	
