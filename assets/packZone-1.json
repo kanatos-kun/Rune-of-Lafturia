@@ -160,10 +160,20 @@
       "key": "npc_01",
       "url": "assets/images/npc/01/Idle_000.png",
       "normalMap": ""
+    },
+    {
+      "type": "sceneFile",
+      "key": "mapVeryBig",
+      "url": "assets/scenes/map/mapVeryBig.js"
+    },
+    {
+      "type": "tilemapTiledJSON",
+      "key": "mapVeryBig",
+      "url": "assets/data/map/mapVeryBig.json"
     }
   ]},
   "meta": {
-    "generated": "1599124491375",
+    "generated": "1605631352453",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",

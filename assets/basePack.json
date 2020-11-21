@@ -349,10 +349,15 @@
       "type": "json",
       "key": "DATAitem_accesory",
       "url": "assets/data/item/item_accesory.json"
+    },
+    {
+      "type": "image",
+      "key": "pathfinding",
+      "url": "assets/tileset/pathfinding.png"
     }
   ]},
   "meta": {
-    "generated": "1601888122716",
+    "generated": "1603485105269",
     "app": "Phaser Editor 2D - Asset Pack Editor - 2.1.6",
     "contentType": "Phaser v3 Asset Pack",
     "url": "https://phasereditor2d.com",

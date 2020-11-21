@@ -135,7 +135,7 @@ class windowShop extends Phaser.Scene {
       var plus = html.getElementsByClassName("numberItemPlus");
       var minus = html.getElementsByClassName("numberItemMinus");
       var numItem = html.getElementsByClassName("numberItem");
-		
+
 		html.addEventListener("click", event => {
         event.preventDefault();
         document.getElementById(this.currentId).classList.remove("active");
@@ -148,7 +148,7 @@ class windowShop extends Phaser.Scene {
           classRequirment.classList.remove("hide");
           statsBonus.classList.remove("hide");
           statsPrimary.classList.remove("hide");
-		  let {kind,position,level_requirment,class_requirment,atk,matk,str,int,agi,dex,vit,aspd,normal,fire,poison,thunder,
+		  let {kind,position,level_requirment,class_requirment,atk,matk,str,int,agi,dex,vit,aspd,normal,fire,poison,thunder,water,
 earth,holy,dark,stun,sleep,mute,stone,freeze,slow,immobilize} = item;
 		atk = this.utils.convertNullToZero(atk);
 		matk= this.utils.convertNullToZero(matk);
@@ -162,6 +162,7 @@ earth,holy,dark,stun,sleep,mute,stone,freeze,slow,immobilize} = item;
 		fire= this.utils.convertNullToZero(fire);
 		poison= this.utils.convertNullToZero(poison);
 		thunder= this.utils.convertNullToZero(thunder);
+		water = this.utils.convertNullToZero(water);
 		earth= this.utils.convertNullToZero(earth);
 		holy= this.utils.convertNullToZero(holy);
 		dark= this.utils.convertNullToZero(dark);
@@ -258,7 +259,32 @@ earth,holy,dark,stun,sleep,mute,stone,freeze,slow,immobilize} = item;
           statsPrimary.classList.remove("hide");
 
 		  let {position,level_requirment,class_requirment,def,mdef,str,int,agi,dex,vit,Resist_normal,Resist_fire,Resist_poison,Resist_water,Resist_thunder,
-Resist_earth,Resist_holy,Resist_dark,Resist_stun,Resist_sleep,Resist_mute,Resist_stone,Resist_freeze} = item;
+Resist_earth,Resist_holy,Resist_dark,Resist_stun,Resist_sleep,Resist_mute,Resist_stone,Resist_freeze,Resist_slow,Resist_immobilize} = item;
+		def = this.utils.convertNullToZero(def);
+		mdef= this.utils.convertNullToZero(mdef);
+		str= this.utils.convertNullToZero(str);
+		int= this.utils.convertNullToZero(int);
+		agi= this.utils.convertNullToZero(agi);
+		dex= this.utils.convertNullToZero(dex);
+		vit= this.utils.convertNullToZero(vit);
+		Resist_normal= this.utils.convertNullToZero(Resist_normal);
+		Resist_fire= this.utils.convertNullToZero(Resist_fire);
+		Resist_poison= this.utils.convertNullToZero(Resist_poison);
+		Resist_thunder= this.utils.convertNullToZero(Resist_thunder);
+		Resist_water= this.utils.convertNullToZero(Resist_water);
+		Resist_earth= this.utils.convertNullToZero(Resist_earth);
+		Resist_holy= this.utils.convertNullToZero(Resist_holy);
+		Resist_dark= this.utils.convertNullToZero(Resist_dark);
+		Resist_stun= this.utils.convertNullToZero(Resist_stun);
+		Resist_sleep= this.utils.convertNullToZero(Resist_sleep);
+		Resist_mute= this.utils.convertNullToZero(Resist_mute);
+		Resist_stone= this.utils.convertNullToZero(Resist_stone);
+		Resist_freeze= this.utils.convertNullToZero(Resist_freeze);
+		Resist_slow= this.utils.convertNullToZero(Resist_slow);
+		Resist_immobilize= this.utils.convertNullToZero(Resist_immobilize);
+
+
+
           class_requirment = class_requirment.split(",");
           let warrior = (class_requirment[0]==1 ? "warrior" : "");
           let thief = (class_requirment[1]==1 ? "thief" : "");
@@ -314,8 +340,50 @@ Resist_earth,Resist_holy,Resist_dark,Resist_stun,Resist_sleep,Resist_mute,Resist
           classRequirment.classList.remove("hide");
           statsBonus.classList.remove("hide");
           statsPrimary.classList.remove("hide");
-		  let {position,level_requirment,class_requirment,atk,matk,def,mdef,str,int,agi,dex,vit,Resist_normal,Resist_fire,Resist_poison,Resist_water,Resist_thunder,
-		 Resist_earth,Resist_holy,Resist_dark,Resist_stun,Resist_sleep,Resist_mute,Resist_stone,Resist_freeze} = item;
+		  let {position,level_requirment,class_requirment,atk,matk,def,mdef,str,int,agi,dex,vit,Resist_normal,Resist_fire,Resist_poison,D,Resist_thunder,Resist_water,
+		 Resist_earth,Resist_holy,Resist_dark,Resist_stun,Resist_sleep,Resist_mute,Resist_stone,Resist_freeze,Resist_slow,Resist_immobilize,
+	normal,fire,poison,thunder,water,earth,holy,dark,stun,sleep,mute,stone,freeze,slow,immobilize } = item;
+		def = this.utils.convertNullToZero(def);
+		mdef= this.utils.convertNullToZero(mdef);
+		atk = this.utils.convertNullToZero(atk);
+		matk= this.utils.convertNullToZero(matk);
+		str= this.utils.convertNullToZero(str);
+		int= this.utils.convertNullToZero(int);
+		agi= this.utils.convertNullToZero(agi);
+		dex= this.utils.convertNullToZero(dex);
+		vit= this.utils.convertNullToZero(vit);
+		Resist_normal= this.utils.convertNullToZero(Resist_normal);
+		Resist_fire= this.utils.convertNullToZero(Resist_fire);
+		Resist_poison= this.utils.convertNullToZero(Resist_poison);
+		Resist_water= this.utils.convertNullToZero(Resist_water);
+		Resist_thunder= this.utils.convertNullToZero(Resist_thunder);
+		Resist_earth= this.utils.convertNullToZero(Resist_earth);
+		Resist_holy= this.utils.convertNullToZero(Resist_holy);
+		Resist_dark= this.utils.convertNullToZero(Resist_dark);
+		Resist_stun= this.utils.convertNullToZero(Resist_stun);
+		Resist_sleep= this.utils.convertNullToZero(Resist_sleep);
+		Resist_mute= this.utils.convertNullToZero(Resist_mute);
+		Resist_stone= this.utils.convertNullToZero(Resist_stone);
+		Resist_freeze= this.utils.convertNullToZero(Resist_freeze);
+		Resist_slow= this.utils.convertNullToZero(Resist_slow);
+		Resist_immobilize =this.utils.convertNullToZero(Resist_immobilize);
+		normal= this.utils.convertNullToZero(normal);
+		fire= this.utils.convertNullToZero(fire);
+		poison= this.utils.convertNullToZero(poison);
+		thunder= this.utils.convertNullToZero(thunder);
+		water = this.utils.convertNullToZero(water);
+		earth= this.utils.convertNullToZero(earth);
+		holy= this.utils.convertNullToZero(holy);
+		dark= this.utils.convertNullToZero(dark);
+		stun= this.utils.convertNullToZero(stun);
+		sleep= this.utils.convertNullToZero(sleep);
+		mute= this.utils.convertNullToZero(mute);
+		stone= this.utils.convertNullToZero(stone);
+		freeze= this.utils.convertNullToZero(freeze);
+		slow= this.utils.convertNullToZero(slow);
+		immobilize= this.utils.convertNullToZero(immobilize);
+	
+	
           class_requirment = class_requirment.split(",");
           let warrior = (class_requirment[0]==1 ? "warrior" : "");
           let thief = (class_requirment[1]==1 ? "thief" : "");
@@ -345,7 +413,8 @@ Resist_earth,Resist_holy,Resist_dark,Resist_stun,Resist_sleep,Resist_mute,Resist
             `<p>str+${str},agi+${agi},int+${int},dex+${dex},vit+${vit}</p>`;
           statsPrimary.innerHTML =
             "<h3>Primary Stats :</h3>" +
-            `<p>atk:${atk} matk:${matk}</p>`;
+            `<p>atk:${atk} matk:${matk}</p>`+
+			`<p>def:${def} mdef:${mdef}</p>`;
           descriptionItem.innerHTML =
             "<h3>Description :</h3>" + `${description}`;
         } else if (type == "consumable") {
@@ -373,6 +442,24 @@ Resist_earth,Resist_holy,Resist_dark,Resist_stun,Resist_sleep,Resist_mute,Resist
 		var gold = this.scene.scene.game.hero.gold;
 		var infoGold = this.html_shop.getChildByID("infoGold");
         infoGold.innerHTML = "Gold : " + gold + "G(-" + this.goldMinusBought + "G)";
+      });
+
+
+       plus[0].addEventListener("click", e => {
+        event.preventDefault();
+        numItem[0].value++;
+        if (numItem[0].value > 99) {
+          numItem[0].value = 99;
+        }
+      });
+
+      minus[0].addEventListener("click", e => {
+        event.preventDefault();
+        numItem[0].value--;
+
+        if (numItem[0].value < 0) {
+          numItem[0].value = 0;
+        }
       });
 		
 		

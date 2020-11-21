@@ -1,0 +1,181 @@
+/*
+-------------------------------------------------------------------------------
+Change radio button
+-------------------------------------------------------------------------------
+*/
+
+.radioInput {
+  display: block;
+  position: relative;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radioInput input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: none;
+}
+
+/* On mouse-over, add a grey background color */
+.radioInput:hover input[type="radio"] ~ .checkmark,
+.radioInput:hover {
+  filter: brightness(110%);
+}
+
+/* When the radio button is checked, add a blue background */
+.radioInput input[type="radio"]:checked ~ .checkmark {
+  background-color: none;
+}
+
+.isChecked {
+  filter: brightness(50%);
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radioInput input[type="radio"]:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radioInput .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  background: none;
+}
+
+/*
+-------------------------------------------------------------------------------
+Grid alignment
+-------------------------------------------------------------------------------
+*/
+
+#close-window {
+  text-align: right;
+  background: orange;
+  color: white;
+  grid-area: h;
+}
+
+#close-window-icon:hover {
+  color: black;
+}
+
+h1 {
+  text-align: center;
+  background: orange;
+  color: white;
+  margin: 0;
+  grid-area: a;
+}
+
+#close-window-icon {
+  color: white;
+  text-align: right;
+  padding-right: 12px;
+}
+
+.container {
+  display: grid;
+  grid:
+    "a a a h h h"
+    "b c d e f null"
+    "g g g g g g";
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-row-gap: 0px;
+  width: 800px;
+  height: 100%;
+  background: white;
+}
+
+.misc-item {
+  grid-area: b;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+  margin-bottom: 0px;
+  text-align: left;
+  background-color: #cecece;
+}
+.consumable-item {
+  grid-area: c;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+  margin-bottom: 0px;
+  text-align: left;
+  background-color: #cecece;
+}
+.weapon-item {
+  grid-area: d;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+  text-align: left;
+  margin-bottom: 0px;
+  background-color: #cecece;
+}
+.armor-item {
+  grid-area: e;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+  text-align: left;
+  margin-bottom: 0px;
+  background-color: #cecece;
+}
+.important-item {
+  grid-area: f;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+  text-align: left;
+  margin-bottom: 0px;
+  background-color: #cecece;
+}
+
+.item-container {
+  grid-area: g;
+  background: #cccccc;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  height: 450px;
+  overflow: auto;
+}
+
+.item-slot {
+  background: #999999;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  margin: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}

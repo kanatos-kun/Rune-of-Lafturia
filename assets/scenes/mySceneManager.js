@@ -46,11 +46,14 @@ class mySceneManager extends Phaser.Scene {
 		this.transitioncomplete = this.scene.get("mySceneManager").transitioncomplete.bind(this);
 		this.changeTransitionMap = this.scene.get("mySceneManager").changeTransitionMap.bind(this);
 		this.addDebugMap = this.scene.get("mySceneManager").addDebugMap.bind(this);
+		this.debug = {pathfinding : [],
+		};
+		
 		this.events.on("endSceneManager",this.endSceneManager,this);
 		this.events.on("transitionstart",this.transitionstart,this);
 		this.events.on("transitionwake",this.transitionstart,this);
 		this.events.on("transitioncomplete",this.transitioncomplete,this);
-
+		this.map.obstacle.alpha = (this.game.debug.obstacle?0.5:0);
 		this.enemyManager = new EnemyManager(this);
 		if(this.fHero === undefined){
 			this.fHero = this.add.hero(1075.0101, 1528.0022, "hero");
@@ -110,6 +113,7 @@ class mySceneManager extends Phaser.Scene {
 		//---------------------------------------------------------------------------
 		
 		this.isInWindowInteraction = false;
+		this.leftMouseKeyPress = false;
 		this.physics.world.setBounds(-200,-200,3720*this.widthMap,3380*this.heightMap)
 		
 		
@@ -310,13 +314,15 @@ class mySceneManager extends Phaser.Scene {
 	
 	addDebugMap(){
 		this.debugMap = {
-			bg: this.add.rectangle(1000,10,1200,800,0x000000,0.2),
-			text : this.add.text(1000,12,"debug text",{fontSize:'100px'})
+			bg: this.add.rectangle(1000,50,1200,800,0x000000,0.2),
+			text : this.add.text(1000,12,"debug mode",{fontSize:'100px'})
 		}
 		this.debugMap.bg.setScrollFactor(this.cameras.main.scrollX,this.cameras.main.scrollY)
-		this.debugMap.bg.setOrigin(0)
+		this.debugMap.bg.setOrigin(0);
+		this.debugMap.bg.setDepth(2000);
 		this.debugMap.text.setScrollFactor(this.cameras.main.scrollX,this.cameras.main.scrollY)
-		this.debugMap.text.setOrigin(0)
+		this.debugMap.text.setOrigin(0);
+		this.debugMap.text.setDepth(2000);
 	}
 	
 	
@@ -327,13 +333,11 @@ class mySceneManager extends Phaser.Scene {
 			this.keys.Z.reset()
 			this.fHero.setVisible(true)
 			this.fHero.setActive(true)
-			console.log(this.cameras.main)
 			
 			//reposition cameras
 			if(this.fHero.x >= (this.widthMap * 3328)-1650){
 				this.cameras.main.scrollX =(this.widthMap * 3328)  - 3328;
 				//this.cameras.main.setPosition(100)
-				console.log("ss")
 			}
 			
 			if(this.fHero.x >= (this.heightMap * 3072)-1530){
@@ -541,10 +545,13 @@ class mySceneManager extends Phaser.Scene {
 	preCreateMap(){
 		this.dialogueIteration = 0;
 		this.dialogueState = false;
+		this.sceneGfx = this.add.graphics();
+		this.sceneGfx.setDepth(11000);
 		this.widthMap = 1;
 		this.heightMap = 1;
+
 		this.map = this.add.tilemap(this.scene.key.toLowerCase() );
-		
+		this.pathfindingMap= this.map.getLayer("pathfinding").data;
 		if(this.fCoffres === undefined){
 			this.fCoffres = this.add.group();
 		}
@@ -594,6 +601,8 @@ class mySceneManager extends Phaser.Scene {
 			scene.scene.sleep(scene.currentMap)
 			scene.scene.run("gameOver")
 		}
+		
+		scene.fHero.drawPathFinding();
 		
 		/*
 		if(scene.fSPawnMob !== undefined){
@@ -656,8 +665,6 @@ class mySceneManager extends Phaser.Scene {
 		}
 
 		
-		 
-		
 		if(!scene.dialogueState){
 
 					if(scene.fHero.state!=="get_hit" || scene.dialogueState){
@@ -686,9 +693,367 @@ class mySceneManager extends Phaser.Scene {
 					
 				}
 				
-				
-				if(scene.input.activePointer.leftButtonDown( ) && !scene.isInWindowInteraction ){
+				if(scene.input.activePointer.leftButtonDown( ) && !scene.isInWindowInteraction && !scene.leftMouseKeyPress){
+					//TODO: Add the pathfinding debug into the game debug variable
+					scene.leftMouseKeyPress = true;
 					//console.log("click left!")
+					//-- setting ray localization mouse in map
+					var xMap = Phaser.Math.FloorTo(scene.input.activePointer.worldX/256);
+					var yMap = Phaser.Math.FloorTo(scene.input.activePointer.worldY/256);
+					scene.fHero.pathfinding.goal.x = xMap;
+					scene.fHero.pathfinding.goal.y = yMap;
+					scene.fHero.pathfinding.openList = [];
+					scene.fHero.pathfinding.openList.push(
+						scene.utils.aStar_openList(
+							{x:scene.fHero.x,y:scene.fHero.y},
+							{x:scene.fHero.pathfinding.goal.x,y:scene.fHero.pathfinding.goal.y}
+							) 
+						);
+					var safetyLoop = 0;
+					var currentIndex = 0;
+					var safetyLoop_max= 30;
+					//console.log(scene.pathfindingMap[yMap][xMap].index);//489 == obstacle
+					while(safetyLoop<safetyLoop_max){
+						
+						if(scene.debug.pathfinding.length> 0 && safetyLoop ==0){
+							for (let i =0; i < scene.debug.pathfinding.length; i++ ){
+								let rect = scene.debug.pathfinding[i];
+
+								rect.textHelp.destroy();
+								rect.destroy();
+								
+							}
+							scene.fHero.pathfinding.closedList= [];
+						}
+						
+						//if the currentIndex is out of the list
+						//if(currentIndex > scene.fHero.pathfinding.openList.length) break;
+						var myNode = scene.fHero.pathfinding.openList[currentIndex];
+						xMap = myNode.x;
+						yMap = myNode.y;
+						
+						if(safetyLoop ==safetyLoop_max-1){
+							if(scene.game.debug.pathfinding){
+
+								for(let i=0;i < scene.fHero.pathfinding.openList.length;i++){
+									let temp = scene.fHero.pathfinding.openList[i];
+									let color = (i!==0?0xff0000:0x00ff00);
+									let alpha = (i!==0?0.5:1);
+									let rect = scene.add.rectangle(temp.x*256,temp.y*256,256,256,color,alpha).setStrokeStyle(2,0x000000,0.5).setOrigin(0);
+									rect.textHelp = scene.add.text(temp.x*256,temp.y*256,"f:"+temp.f+"\nstep:"+temp.step,{color:'#000000',fontSize:'70px'})
+									scene.debug.pathfinding.push(rect);
+								}
+								
+							}
+
+							console.log("out of memory, break while loop...");
+
+							break;
+						}
+						
+						
+						if(xMap == scene.fHero.pathfinding.goal.x && yMap == scene.fHero.pathfinding.goal.y){
+							//1) reverse flow closed list
+							//2) add the rect help 
+							//3) break
+							if(scene.game.debug.pathfinding){
+								for(let i=0;i < scene.fHero.pathfinding.openList.length;i++){
+									let temp = scene.fHero.pathfinding.openList[i];
+									let color = (i!==0?0xff0000:0x00ff00);
+									let alpha = (i!==0?0.5:1);
+									let rect = scene.add.rectangle(temp.x*256,temp.y*256,256,256,color,alpha).setStrokeStyle(2,0x000000,0.5).setOrigin(0);
+									rect.textHelp = scene.add.text(temp.x*256,temp.y*256,"f:"+temp.f+"\nstep:"+temp.step,{color:'#000000',fontSize:'70px'})
+									scene.debug.pathfinding.push(rect);
+								}
+							}
+							scene.fHero.pathfinding.closedList.push(myNode);
+							scene.fHero.pathfinding.closedList.reverse();
+							scene.fHero.initPathFinding();
+							console.log("goal achieve !");
+							
+							
+							break;
+						}
+
+						safetyLoop++;
+						// 1) take the last node
+						// 	1-1) if MyNode == goal then quit loop
+						// 2) check the 8 direction probable square grid
+						//  2-1)check the cell value.
+						// 	2-2) If non walkable then skip step for finding direction cell
+						// 3) add the node in the closed list
+						
+								//  1) top
+								//  2) top-right
+								//  3) right
+								//  4) bottom-right
+								//  5) bottom
+								//  6) bottom-left
+								//  7) left
+								//  8) top-left
+						
+						var indexCell = [-1,-1,-1,-1,-1,-1,-1,-1];
+						//  1) top
+						if(scene.pathfindingMap[yMap-1] !==undefined){
+							if(scene.pathfindingMap[yMap-1][xMap] !==undefined){
+							  indexCell[0] = scene.pathfindingMap[yMap-1][xMap].index;
+							}
+							
+						//	console.log(indexCell[0])
+						}else{
+							indexCell[0] = null;
+						}
+						//  2) top-right
+						if(scene.pathfindingMap[yMap-1] !==undefined){
+							if(scene.pathfindingMap[yMap-1][xMap+1] !==undefined){
+								indexCell[1] = scene.pathfindingMap[yMap-1][xMap+1].index;
+								
+							}
+							
+						}else{
+							indexCell[1] = null;
+						}
+						//  3) right
+						if(scene.pathfindingMap[yMap] !==undefined){
+							if(scene.pathfindingMap[yMap][xMap+1] !==undefined){
+								indexCell[2] = scene.pathfindingMap[yMap][xMap+1].index;
+								
+							}
+
+						}else{
+							indexCell[2] = null;
+						}
+						//  4) bottom-right
+						if(scene.pathfindingMap[yMap+1] !==undefined){
+							if(scene.pathfindingMap[yMap+1][xMap+1] !==undefined){
+								indexCell[3] = scene.pathfindingMap[yMap+1][xMap+1].index;
+								
+							}
+							
+						}else{
+							indexCell[3] = null;
+						}
+						//  5) bottom
+						if(scene.pathfindingMap[yMap+1] !==undefined){
+							if(scene.pathfindingMap[yMap+1][xMap] !==undefined){
+								indexCell[4] = scene.pathfindingMap[yMap+1][xMap].index;
+							}
+							
+						}else{
+							indexCell[4] = null;
+						}
+						//  6) bottom-left
+						if(scene.pathfindingMap[yMap+1]!==undefined){
+							if(scene.pathfindingMap[yMap+1][xMap-1] !==undefined){
+								indexCell[5] = scene.pathfindingMap[yMap+1][xMap-1].index;
+							}
+
+						}else{
+							indexCell[5] = null;
+						}
+						//  7) left
+						if(scene.pathfindingMap[yMap] !==undefined){
+							if(scene.pathfindingMap[yMap][xMap-1] !==undefined){
+								indexCell[6] = scene.pathfindingMap[yMap][xMap-1].index;
+							}
+
+						}else{
+							indexCell[6] = null;
+						}
+						//  8) top-left
+						if(scene.pathfindingMap[yMap-1] !==undefined){
+							if(scene.pathfindingMap[yMap-1][xMap-1] !==undefined){
+								indexCell[7] = scene.pathfindingMap[yMap-1][xMap-1].index;
+							}
+						}else{
+							indexCell[7] = null;
+						}
+
+						
+						
+						
+						
+						var t_node = null;
+						var tr_node = null;
+						var r_node = null;
+						var br_node = null;
+						var b_node = null;
+						var bl_node = null;
+						var l_node = null;
+						var tl_node = null;
+						
+						/*
+						if(indexCell[0] !== null && indexCell[0] !==489){
+							t_node = scene.utils.aStar_addNode(myNode,
+							{x:scene.fHero.pathfinding.goal.x,y:scene.fHero.pathfinding.goal.y},1);
+							
+							
+						} */
+						
+						var c ={};// var that will get the state of the cell (state,index)
+						
+						
+								if(indexCell[0]!== null && indexCell[0] !== 489){
+								t_node = scene.utils.aStar_addNode(myNode,
+								{x:scene.fHero.pathfinding.goal.x,y:scene.fHero.pathfinding.goal.y},1);
+								}
+								if(indexCell[1]!== null && indexCell[1] !== 489){
+								tr_node = scene.utils.aStar_addNode(myNode,
+								{x:scene.fHero.pathfinding.goal.x,y:scene.fHero.pathfinding.goal.y},2);
+								}
+								if(indexCell[2]!== null && indexCell[2] !== 489){
+								r_node = scene.utils.aStar_addNode(myNode,
+								{x:scene.fHero.pathfinding.goal.x,y:scene.fHero.pathfinding.goal.y},3);
+								}
+								if(indexCell[3]!== null && indexCell[3] !== 489){
+								br_node = scene.utils.aStar_addNode(myNode,
+								{x:scene.fHero.pathfinding.goal.x,y:scene.fHero.pathfinding.goal.y},4);
+								}
+								if(indexCell[4]!== null && indexCell[4] !== 489){
+								b_node = scene.utils.aStar_addNode(myNode,
+								{x:scene.fHero.pathfinding.goal.x,y:scene.fHero.pathfinding.goal.y},5);
+								}
+								if(indexCell[5]!== null && indexCell[5] !== 489){
+								bl_node = scene.utils.aStar_addNode(myNode,
+								{x:scene.fHero.pathfinding.goal.x,y:scene.fHero.pathfinding.goal.y},6);
+								}
+								if(indexCell[6]!== null && indexCell[6] !== 489){
+								l_node = scene.utils.aStar_addNode(myNode,
+								{x:scene.fHero.pathfinding.goal.x,y:scene.fHero.pathfinding.goal.y},7);
+								}
+								if(indexCell[7]!== null && indexCell[7] !== 489){
+								tl_node = scene.utils.aStar_addNode(myNode,
+								{x:scene.fHero.pathfinding.goal.x,y:scene.fHero.pathfinding.goal.y},8);
+								}
+
+
+
+								for(let i =0;i < scene.fHero.pathfinding.openList.length;i++){
+									let obj=scene.fHero.pathfinding.openList[i];
+									//1) top
+									//----------------------------------------------------------
+									if(t_node!==null){
+										if(obj.x == t_node.x && obj.y == t_node.y){
+											if(t_node.f <obj.f){
+												obj = t_node;
+											}
+											t_node =null;
+										}
+									}
+									//2) top-right
+									//----------------------------------------------------------
+									if(tr_node!==null){
+										if(obj.x == tr_node.x && obj.y == tr_node.y){
+											if(tr_node.f <obj.f){
+												obj = tr_node;
+											}
+											tr_node =null;
+										}
+									}
+									//3) right
+									//----------------------------------------------------------
+									if(r_node!==null){
+										if(obj.x == r_node.x && obj.y == r_node.y){
+											if(r_node.f <obj.f){
+												obj = r_node;
+											}
+											r_node =null;
+										}
+									}
+									//4) bottom-right
+									//----------------------------------------------------------
+									if(br_node!==null){
+										if(obj.x == br_node.x && obj.y == br_node.y){
+											if(br_node.f <obj.f){
+												obj = br_node;
+											}
+											br_node =null;
+										}
+									}
+									//5) bottom
+									//----------------------------------------------------------
+									if(b_node!==null){
+										if(obj.x == b_node.x && obj.y == b_node.y){
+											if(b_node.f <obj.f){
+												obj = b_node;
+											}
+											b_node =null;
+										}
+									}
+									//6) bottom-left
+									//----------------------------------------------------------
+									if(bl_node!==null){
+										if(obj.x == bl_node.x && obj.y == bl_node.y){
+											if(bl_node.f <obj.f){
+												obj = bl_node;
+											}
+											bl_node =null;
+										}
+									}
+									//7)left
+									//----------------------------------------------------------
+									if(l_node!==null){
+										if(obj.x == l_node.x && obj.y == l_node.y){
+											if(l_node.f <obj.f){
+												obj = l_node;
+											}
+											l_node =null;
+										}
+									}
+									//4) top-left
+									//----------------------------------------------------------
+									if(tl_node!==null){
+										if(obj.x == tl_node.x && obj.y == tl_node.y){
+											if(tl_node.f <obj.f){
+												obj = tl_node;
+											}
+											tl_node =null;
+										}
+									}
+									
+									
+									
+
+									
+
+								}
+								
+								
+								
+								if(t_node !== null){scene.fHero.pathfinding.openList.push(t_node);}
+								if(tr_node !== null){scene.fHero.pathfinding.openList.push(tr_node);}
+								if(r_node !== null){scene.fHero.pathfinding.openList.push(r_node);}
+								if(br_node !== null){scene.fHero.pathfinding.openList.push(br_node);}
+								if(b_node !== null){scene.fHero.pathfinding.openList.push(b_node);}
+								if(bl_node !== null){scene.fHero.pathfinding.openList.push(bl_node);}
+								if(l_node !== null){scene.fHero.pathfinding.openList.push(l_node);}
+								if(tl_node !== null){scene.fHero.pathfinding.openList.push(tl_node);}
+								
+								
+								
+								scene.fHero.pathfinding.closedList.push(myNode);
+								myNode.inCloseList = true;
+								var min_f = 999999;
+								for(let i =0;i< scene.fHero.pathfinding.openList.length;i++){
+									let obj = scene.fHero.pathfinding.openList[i];
+									//check if F is the lowest and if then
+									//change the next id node;
+									if(!obj.inCloseList){
+										if(obj.f < min_f){
+											min_f = obj.f;
+											currentIndex = i;
+										}
+									}
+		
+								}
+
+								
+			
+					}
+					
+					//console.log("(x:"+xMap+";y:"+yMap+")");
+					//console.log(scene.fHero.pathfinding);
+					
 					if(  (scene.fHero.timeAttack.state) && scene.input.activePointer.y <=3060 ){
 						// Change angle 
 						let angle = scene.utils.findAngle(scene.fHero.x,scene.fHero.y,scene.input.activePointer.worldX,scene.input.activePointer.worldY)
@@ -704,12 +1069,19 @@ class mySceneManager extends Phaser.Scene {
 		
 				}
 				
+				
+				//restart the'state' of the left button (keypress)
+				if(scene.input.activePointer.leftButtonReleased( ) && scene.leftMouseKeyPress){
+					scene.leftMouseKeyPress = false;
+				}
+				
 				if(this.input.activePointer.rightButtonDown( ) ){
 					//console.log("click right!")
 				}
 				//console.log("posX hero: "+scene.fHero.x)
 				
 				if(scene.cameras.main !==undefined){
+					
 					if((scene.fHero.x >= 1680  && scene.fHero.x <= (3328*scene.widthMap) - 1650))
 					{
 					scene.cameras.main.centerOnX(scene.fHero.x)
@@ -718,8 +1090,7 @@ class mySceneManager extends Phaser.Scene {
 					if((scene.fHero.y >= 1730 && scene.fHero.y <= (3072*scene.heightMap) - 1530))
 					{
 					scene.cameras.main.centerOnY(scene.fHero.y)
-					}
-					
+					} 
 					
 				}
 				

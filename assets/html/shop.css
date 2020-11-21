@@ -80,22 +80,40 @@ Change radio button
 Grid alignment
 -------------------------------------------------------------------------------
 */
+#close-window {
+  text-align: right;
+  background: orange;
+  color: white;
+  grid-area: h;
+}
+
+#close-window-icon:hover {
+  color: black;
+}
+
 h1 {
   text-align: center;
   background: orange;
   color: white;
   grid-area: a;
 }
+
+#close-window-icon {
+  color: white;
+  text-align: right;
+}
+
 .container {
   display: grid;
   grid:
-    "a a a a"
+    "a a h h"
     "g g g g"
     "b b c c "
     "d d d e"
     "f f null null";
   grid-template-columns: 25% 25% 25% 25%;
-  width: 700px;
+  grid-row-gap: 0px;
+  width: 800px;
   height: 100%;
   background: white;
 }
@@ -143,6 +161,10 @@ h1 {
 }
 
 .acheterSpace {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  padding: 5px;
   grid-area: f;
 }
 .infoGold {
@@ -156,7 +178,7 @@ Image Icons
 */
 
 .logoItem > img {
-  width: 10%;
+  width: 20%;
   height: 100%;
 }
 .containerItem.active {
@@ -179,10 +201,10 @@ Change arrow icons
 */
 .numberItemHide {
   position: absolute;
-  left: 90%;
+  left: 91%;
   top: 5px;
-  width: 10px;
-  height: 10px;
+  width: 14px;
+  height: 11px;
   background: white;
 }
 

@@ -10,7 +10,7 @@ class Npc extends Phaser.GameObjects.Sprite {
 	constructor(scene, x, y) {
 		super(scene, x, y,"npc_01");
 		
-		if(this.scene.game.config.physics.arcade.debug){
+		if(this.scene.game.debug.npcDetection){
 		this.detectionZone_debug =scene.add.detectionZone(this,700) //new DetectionZone(this.scene,this,700)
 		//this.scene.add.existing(this.detectionZone_debug)
 		}

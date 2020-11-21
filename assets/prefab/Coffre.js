@@ -13,7 +13,7 @@ class Coffre extends Phaser.GameObjects.Sprite {
 		super(scene, x, y,"coffre_closed");
 		this.state = "close";
 		this.type="coffre";
-		if(this.scene.game.config.physics.arcade.debug){
+		if(this.scene.game.debug.npcDectection){
 			this.detectionZone_debug = scene.add.detectionZone(this,1000)
 		}
 		/*

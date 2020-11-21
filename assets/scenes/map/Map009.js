@@ -12,7 +12,7 @@ class Map009 extends Phaser.Scene {
 	}
 	
 	_create() {
-	
+			//to remove
 		var mapScene = this.add.image(3328.271, 3061.176, "map09");
 		
 		this.fMapScene = mapScene;
@@ -36,18 +36,20 @@ class Map009 extends Phaser.Scene {
 		this.map.addTilesetImage("very_small_object-0"),
 		this.map.addTilesetImage("small_object-0"),
 		this.map.addTilesetImage("medium_object-1"),
+		this.map.addTilesetImage("pathfinding"),
 		this.map.addTilesetImage("info")]
-		this.map.createStaticLayer("background",this.tileset)
-		this.map.createStaticLayer("tree",this.tileset)
-		this.map.createStaticLayer("tree2",this.tileset)
-		this.map.createStaticLayer("tree3",this.tileset)
-		this.map.createStaticLayer("house",this.tileset)
-		this.map.createStaticLayer("props2",this.tileset)
-		this.map.createStaticLayer("props",this.tileset)
-		this.map.createStaticLayer("lanterne",this.tileset)
-		this.map.createStaticLayer("hutte",this.tileset)
-		this.map.createStaticLayer("shadow",this.tileset)
-		this.map.createStaticLayer("roches",this.tileset)	
+		this.map.createStaticLayer("background",this.tileset);
+		this.map.createStaticLayer("tree",this.tileset);
+		this.map.createStaticLayer("tree2",this.tileset);
+		this.map.createStaticLayer("tree3",this.tileset);
+		this.map.createStaticLayer("house",this.tileset);
+		this.map.createStaticLayer("props2",this.tileset);
+		this.map.createStaticLayer("props",this.tileset);
+		this.map.createStaticLayer("lanterne",this.tileset);
+		this.map.createStaticLayer("hutte",this.tileset);
+		this.map.createStaticLayer("shadow",this.tileset);
+		this.map.createStaticLayer("roches",this.tileset);
+		this.map.obstacle = this.map.createStaticLayer("pathfinding",this.tileset);
 
 		this._create()
 		this.fMapScene.destroy()
@@ -58,8 +60,8 @@ class Map009 extends Phaser.Scene {
 		
 		//test dragon bones
 		//-----------------------------------------------------------------------------
-		var test_dragonbone = this.add.text(650,0,'TEST DRAGONBONES',{backgroundColor:"rgba(0,255,0,0.8)",fontSize:'150px',color:"#000000"})
-		test_dragonbone.setScrollFactor(0);
+		//var test_dragonbone = this.add.text(650,0,'TEST DRAGONBONES',{backgroundColor:"rgba(0,255,0,0.8)",fontSize:'150px',color:"#000000"})
+		//test_dragonbone.setScrollFactor(0);
 		var armatureDisplay = this.add.armature("bullet_01", "bullet_01");
 	     armatureDisplay.x = 950;
 		 armatureDisplay.y = 2800;
@@ -67,9 +69,18 @@ class Map009 extends Phaser.Scene {
 
 		var armatureDisplay_two = this.add.armature("anims_char_hero_assassin", "anims_char_hero_assassin");
 	     armatureDisplay_two.x = 1400;
-		 armatureDisplay_two.y = 2800;
-		 armatureDisplay_two.animation.play("idle",-1);
-	     
+		 armatureDisplay_two.y = 3000;
+		 armatureDisplay_two.animation.play("idle");
+	     armatureDisplay_two.setDepth( Phaser.Math.FloorTo(armatureDisplay_two.y/256));
+
+		var armatureDisplay_three = this.add.armature("anims_char_hero02","anims_char_hero02");
+	     armatureDisplay_three.x = 1700;
+		 armatureDisplay_three.y = 2800;
+	//armaturDisplay_three._armature._clock
+
+		 armatureDisplay_three.animation.play("technique_load");
+		armatureDisplay_three.animation.timeScale=0.5;
+	    armatureDisplay_two.setDepth( Phaser.Math.FloorTo(armatureDisplay_three.y/256));
 		//armatureDisplay.animation.play('iddle')
 		//-----------------------------------------------------------------------------
 		

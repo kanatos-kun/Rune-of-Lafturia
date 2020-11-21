@@ -9,7 +9,7 @@ window.addEventListener('load', function() {
     "backgroundColor": "#000000",
     "disableContextMenu":true,
     "parent": "game-container",
-	"version":"v0.5.1-alpha-unstable",
+	"version":"v0.6.0-alpha-unstable",
     dom: {
         createContainer: true
     },
@@ -35,7 +35,15 @@ window.addEventListener('load', function() {
             ]
         }
 	});
-	game.MODE = "prod"
+	game.MODE = "prod";
+	game.debug = {
+		pathfinding:false,
+		physics:false,
+		npcDetection:false,
+		animation:false,
+		information:false,
+		obstacle:false
+	}
 	game.scene.add("Boot", Boot, false);
 	game.scene.add("LoadBoot", LoadBoot, true);
 	

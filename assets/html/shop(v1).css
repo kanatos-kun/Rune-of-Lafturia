@@ -80,21 +80,39 @@ Change radio button
 Grid alignment
 -------------------------------------------------------------------------------
 */
+
+#close-window {
+  text-align: right;
+  background: orange;
+  color: white;
+  grid-area: h;
+}
+
+#close-window-icon:hover {
+  color: black;
+}
+
 h1 {
   text-align: center;
   background: orange;
   color: white;
   grid-area: a;
 }
+#close-window-icon {
+  color: white;
+  text-align: right;
+}
+
 .container {
   display: grid;
   grid:
-    "a a"
+    "a h"
     "g g"
     "b c"
     "d e"
     "f null";
   grid-template-columns: 50% 50%;
+  grid-row-gap: 0;
   width: 2500px;
   height: 2500px;
   background: white;

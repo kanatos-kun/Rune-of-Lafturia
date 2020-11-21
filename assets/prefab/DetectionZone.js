@@ -9,7 +9,7 @@ class DetectionZone extends Phaser.GameObjects.Ellipse  {
 	 * @param {number} rayon
 	 */
 	constructor(scene, target, rayon) {
-		super(scene, target.x, target.y, rayon,rayon,0xff00ff,0.3);
+		super(scene, target.x, target.y, rayon,rayon,0x1da9e0,0.3);
 		this.target = target
 				this.setDepth(998)
 	}

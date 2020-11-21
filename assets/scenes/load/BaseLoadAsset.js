@@ -47,6 +47,36 @@ class BaseLoadAsset extends Phaser.Scene {
             "assets/animation/bullet_01/bullet_01_tex.json",
             "assets/animation/bullet_01/bullet_01_ske.json",
         );
+        this.load.dragonbone(
+            "anims_char_hero01",
+            "assets/animation/char/hero/anims_char_hero_tex.png",
+            "assets/animation/char/hero/anims_char_hero_tex.json",
+            "assets/animation/char/hero/anims_char_hero_ske.json"
+        );
+        this.load.dragonbone(
+            "anims_char_hero02",
+            "assets/animation/char/hero/anims_char_hero_tex.png",
+            "assets/animation/char/hero/anims_char_hero_tex.json",
+            "assets/animation/char/hero/anims_char_hero_ske.json"
+        );
+        this.load.dragonbone(
+            "anims_char_hero03",
+            "assets/animation/char/hero/anims_char_hero_tex.png",
+            "assets/animation/char/hero/anims_char_hero_tex.json",
+            "assets/animation/char/hero/anims_char_hero_ske.json"
+        );
+        this.load.dragonbone(
+            "anims_char_hero04",
+            "assets/animation/char/hero/anims_char_hero_tex.png",
+            "assets/animation/char/hero/anims_char_hero_tex.json",
+            "assets/animation/char/hero/anims_char_hero_ske.json"
+        );
+        this.load.dragonbone(
+            "anims_char_hero05",
+            "assets/animation/char/hero/anims_char_hero_tex.png",
+            "assets/animation/char/hero/anims_char_hero_tex.json",
+            "assets/animation/char/hero/anims_char_hero_ske.json"
+        );
 
 	}
   

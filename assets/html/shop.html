@@ -2,12 +2,23 @@
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="assets/html/libs/fontawesome/css/all.min.css"
+    />
     <link rel="stylesheet" href="assets/html/shop.css" />
-    <!-- <link rel="stylesheet" href="shopTest.css" /> -->
+
+    <!-- <link rel="stylesheet" href="libs/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="shop.css" /> -->
   </head>
   <body>
     <div class="container">
-      <h1>shop</h1>
+      <h1>
+        shop
+      </h1>
+      <h1 id="close-window">
+        <i class="fas fa-times" id="close-window-icon"></i>
+      </h1>
       <p class="infoGold" id="infoGold">Gold : 1000 G</p>
       <label class="radioInput isChecked acheter" id="acheterOnglet"
         >Acheter
@@ -555,8 +566,8 @@
         vendreOnglet.classList.remove("isChecked");
         acheterButton.innerHTML = "Acheter";
       } else {
-        acheterOnglet.classList.remove("isChecked");
-        vendreOnglet.classList.add("isChecked");
+        // acheterOnglet.classList.remove("isChecked");
+        //  vendreOnglet.classList.add("isChecked");
       }
     };
 
@@ -569,8 +580,8 @@
         acheterOnglet.classList.remove("isChecked");
         acheterButton.innerHTML = "Vendre";
       } else {
-        vendreOnglet.classList.remove("isChecked");
-        acheterOnglet.classList.add("isChecked");
+        //  vendreOnglet.classList.remove("isChecked");
+        //acheterOnglet.classList.add("isChecked");
       }
     };
   </script>
