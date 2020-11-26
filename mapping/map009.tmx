@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.4" tiledversion="2020.10.30" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="26" height="24" tilewidth="256" tileheight="256" infinite="0" nextlayerid="22" nextobjectid="186">
+ <editorsettings>
+  <export target="map/json/map009.json" format="json"/>
+ </editorsettings>
+ <properties>
+  <property name="music" value="&quot;music.mp3&quot;"/>
+ </properties>
+ <tileset firstgid="1" name="grass_atlas" tilewidth="256" tileheight="256" tilecount="48" columns="8">
+  <image source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Sprites/Grass/grass_atlas.png" width="2048" height="1536"/>
+ </tileset>
+ <tileset firstgid="49" name="image" tilewidth="689" tileheight="921" tilecount="77" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="0">
+   <image width="311" height="111" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/board_object_01.png"/>
+  </tile>
+  <tile id="1">
+   <image width="140" height="140" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/bones_object_01.png"/>
+  </tile>
+  <tile id="2">
+   <image width="155" height="137" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/bones_object_02.png"/>
+  </tile>
+  <tile id="3">
+   <image width="372" height="440" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/bones_object_03.png"/>
+  </tile>
+  <tile id="4">
+   <image width="163" height="132" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/bones_object_04.png"/>
+  </tile>
+  <tile id="5">
+   <image width="476" height="407" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/bones_object_05.png"/>
+  </tile>
+  <tile id="6">
+   <image width="151" height="89" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/bones_object_06.png"/>
+  </tile>
+  <tile id="7">
+   <image width="75" height="43" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/bones_object_07.png"/>
+  </tile>
+  <tile id="8">
+   <image width="530" height="410" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/bush_object_01.png"/>
+  </tile>
+  <tile id="9">
+   <image width="645" height="414" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/bush_object_02.png"/>
+  </tile>
+  <tile id="10">
+   <image width="477" height="327" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/bush_object_03.png"/>
+  </tile>
+  <tile id="11">
+   <image width="348" height="239" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/bush_object_04.png"/>
+  </tile>
+  <tile id="12">
+   <image width="443" height="236" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/bush_object_05.png"/>
+  </tile>
+  <tile id="13">
+   <image width="481" height="381" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/bush_object_06.png"/>
+  </tile>
+  <tile id="14">
+   <image width="96" height="62" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/coin_object_01.png"/>
+  </tile>
+  <tile id="15">
+   <image width="154" height="61" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/flovers_blue_object_10.png"/>
+  </tile>
+  <tile id="16">
+   <image width="111" height="47" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/flovers_blue_object_11.png"/>
+  </tile>
+  <tile id="17">
+   <image width="187" height="105" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/flovers_blue_object_12.png"/>
+  </tile>
+  <tile id="18">
+   <image width="154" height="61" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/flovers_green_object_01.png"/>
+  </tile>
+  <tile id="19">
+   <image width="111" height="47" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/flovers_green_object_02.png"/>
+  </tile>
+  <tile id="20">
+   <image width="187" height="105" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/flovers_green_object_03.png"/>
+  </tile>
+  <tile id="21">
+   <image width="154" height="61" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/flovers_pink_object_04.png"/>
+  </tile>
+  <tile id="22">
+   <image width="111" height="47" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/flovers_pink_object_05.png"/>
+  </tile>
+  <tile id="23">
+   <image width="187" height="105" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/flovers_pink_object_06.png"/>
+  </tile>
+  <tile id="24">
+   <image width="154" height="61" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/flovers_yellow_object_07.png"/>
+  </tile>
+  <tile id="25">
+   <image width="111" height="47" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/flovers_yellow_object_08.png"/>
+  </tile>
+  <tile id="26">
+   <image width="187" height="105" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/flovers_yellow_object_09.png"/>
+  </tile>
+  <tile id="27">
+   <image width="111" height="714" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/pole_object_01.png"/>
+  </tile>
+  <tile id="28">
+   <image width="111" height="714" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/pole_object_02.png"/>
+  </tile>
+  <tile id="29">
+   <image width="112" height="714" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/pole_object_03.png"/>
+  </tile>
+  <tile id="30">
+   <image width="153" height="423" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/pole_object_04.png"/>
+  </tile>
+  <tile id="31">
+   <image width="153" height="422" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/pole_object_05.png"/>
+  </tile>
+  <tile id="32">
+   <image width="153" height="422" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/pole_object_06.png"/>
+  </tile>
+  <tile id="33">
+   <image width="153" height="232" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/pole_object_07.png"/>
+  </tile>
+  <tile id="34">
+   <image width="139" height="142" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/rope_object_01.png"/>
+  </tile>
+  <tile id="35">
+   <image width="139" height="194" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/rope_object_02.png"/>
+  </tile>
+  <tile id="36">
+   <image width="124" height="76" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/rope_object_03.png"/>
+  </tile>
+  <tile id="37">
+   <image width="124" height="47" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/rope_object_04.png"/>
+  </tile>
+  <tile id="38">
+   <image width="139" height="183" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/rope_object_05.png"/>
+  </tile>
+  <tile id="39">
+   <image width="393" height="248" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/shadow_01.png"/>
+  </tile>
+  <tile id="40">
+   <image width="397" height="358" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/snow_overlay_01.png"/>
+  </tile>
+  <tile id="41">
+   <image width="227" height="220" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/stone_object_02.png"/>
+  </tile>
+  <tile id="42">
+   <image width="435" height="588" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/snow_overlay_03.png"/>
+  </tile>
+  <tile id="43">
+   <image width="151" height="167" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/stone_object_01.png"/>
+  </tile>
+  <tile id="44">
+   <image width="227" height="220" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/stone_object_02.png"/>
+  </tile>
+  <tile id="45">
+   <image width="202" height="236" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/stone_object_03.png"/>
+  </tile>
+  <tile id="46">
+   <image width="264" height="291" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/stone_object_04.png"/>
+  </tile>
+  <tile id="47">
+   <image width="312" height="320" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/stone_object_05.png"/>
+  </tile>
+  <tile id="48">
+   <image width="431" height="441" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/stone_object_06.png"/>
+  </tile>
+  <tile id="49">
+   <image width="362" height="408" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/stone_object_07.png"/>
+  </tile>
+  <tile id="50">
+   <image width="382" height="358" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/stone_object_08.png"/>
+  </tile>
+  <tile id="51">
+   <image width="205" height="182" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/stone_object_09.png"/>
+  </tile>
+  <tile id="52">
+   <image width="206" height="109" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/stone_object_10.png"/>
+  </tile>
+  <tile id="53">
+   <image width="382" height="335" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/stump_object_0.png"/>
+  </tile>
+  <tile id="54">
+   <image width="266" height="307" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/stump_object_02.png"/>
+  </tile>
+  <tile id="55">
+   <image width="337" height="255" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/stump_object_03.png"/>
+  </tile>
+  <tile id="56">
+   <image width="354" height="486" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/stump_object_04.png"/>
+  </tile>
+  <tile id="57">
+   <image width="199" height="335" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/sword_object_01.png"/>
+  </tile>
+  <tile id="58">
+   <image width="195" height="211" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/tomb_object_01.png"/>
+  </tile>
+  <tile id="59">
+   <image width="184" height="213" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/tomb_object_02.png"/>
+  </tile>
+  <tile id="60">
+   <image width="160" height="285" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/tomb_object_03.png"/>
+  </tile>
+  <tile id="61">
+   <image width="562" height="670" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/tree_object_01.png"/>
+  </tile>
+  <tile id="62">
+   <image width="340" height="646" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/tree_object_02.png"/>
+  </tile>
+  <tile id="63">
+   <image width="468" height="470" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/tree_object_03.png"/>
+  </tile>
+  <tile id="64">
+   <image width="447" height="588" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/tree_object_04.png"/>
+  </tile>
+  <tile id="65">
+   <image width="574" height="613" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/tree_object_05.png"/>
+  </tile>
+  <tile id="66">
+   <image width="449" height="553" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/tree_object_06.png"/>
+  </tile>
+  <tile id="67">
+   <image width="362" height="408" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/stone_object_07.png"/>
+  </tile>
+  <tile id="68">
+   <image width="689" height="921" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/tree_object_08.png"/>
+  </tile>
+  <tile id="69">
+   <image width="645" height="414" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/tree_object_09.png"/>
+  </tile>
+  <tile id="70">
+   <image width="621" height="425" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/tree_object_10.png"/>
+  </tile>
+  <tile id="71">
+   <image width="688" height="443" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/tree_object_11.png"/>
+  </tile>
+  <tile id="72">
+   <image width="198" height="581" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/trunk_object_01.png"/>
+  </tile>
+  <tile id="73">
+   <image width="206" height="429" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/trunk_object_02.png"/>
+  </tile>
+  <tile id="74">
+   <image width="93" height="652" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/trunk_object_03.png"/>
+  </tile>
+  <tile id="75">
+   <image width="266" height="387" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/trunk_object_04.png"/>
+  </tile>
+  <tile id="76">
+   <image width="213" height="408" source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/trunk_object_05.png"/>
+  </tile>
+ </tileset>
+ <tileset firstgid="126" name="tree01" tilewidth="256" tileheight="256" tilecount="6" columns="2">
+  <image source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Objects/spritesheet/tree01.png" width="513" height="768"/>
+ </tileset>
+ <tileset firstgid="132" name="TownColor2@256x256" tilewidth="256" tileheight="256" tilecount="256" columns="16">
+  <image source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dhandpainted_towntileset_windows/2dhandpainted_towntileset/Assets/256x256/Town@256x256.png" width="4096" height="4096"/>
+ </tileset>
+ <tileset firstgid="388" name="Shadows@256x256" tilewidth="256" tileheight="256" tilecount="16" columns="4">
+  <image source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dhandpainted_towntileset_windows/2dhandpainted_towntileset/Assets/256x256/Shadows@256x256.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="404" source="tileset/tiled/medium_object-0.tsx"/>
+ <tileset firstgid="424" source="tileset/tiled/medium_object-1.tsx"/>
+ <tileset firstgid="430" source="tileset/tiled/small_object-0.tsx"/>
+ <tileset firstgid="450" source="tileset/tiled/very_small_object-0.tsx"/>
+ <tileset firstgid="485" source="tileset/tiled/info.tsx"/>
+ <tileset firstgid="489" name="pathfinding" tilewidth="256" tileheight="256" tilecount="1" columns="1">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <image source="tileset/pathfinding.png" width="256" height="256"/>
+ </tileset>
+ <layer id="1" name="background" width="26" height="24">
+  <data encoding="csv">
+227,226,226,226,226,226,226,226,226,226,226,226,226,226,226,227,226,226,227,226,226,226,226,226,226,226,
+226,227,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,227,
+226,226,226,226,226,226,226,226,226,226,227,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,
+226,226,226,226,226,226,226,226,226,227,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,
+226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,227,226,226,226,226,226,226,
+226,226,226,226,226,226,226,226,226,211,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,
+226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,
+226,226,226,226,226,226,226,226,226,226,226,226,226,226,227,226,226,226,226,226,226,226,226,226,226,226,
+226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,
+226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,227,227,226,226,226,226,226,226,
+226,226,226,227,226,226,226,226,227,226,226,226,226,226,226,226,226,227,226,226,226,226,227,226,226,226,
+285,285,285,285,285,285,285,285,285,285,285,285,285,285,285,285,285,285,285,285,285,285,285,285,285,285,
+301,301,301,301,301,301,301,301,301,301,301,301,301,301,301,301,301,301,301,301,301,301,301,301,301,301,
+317,317,317,317,317,317,317,317,317,317,317,317,317,317,317,317,317,317,317,319,301,321,317,317,317,317,
+226,226,226,226,226,226,226,226,226,226,226,226,226,226,227,226,226,226,226,300,301,302,226,226,226,226,
+226,226,227,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,300,301,302,226,226,226,226,
+226,226,226,226,227,226,226,226,226,226,226,226,226,226,226,226,226,226,226,300,301,302,226,226,226,226,
+226,226,226,226,226,226,226,226,226,227,226,226,226,226,226,226,226,226,226,300,301,302,226,226,211,226,
+226,226,226,226,226,226,226,226,226,226,227,226,226,226,226,226,226,226,226,300,301,302,226,226,226,226,
+226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,300,301,302,226,226,226,226,
+226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,300,301,302,226,226,227,227,
+226,226,226,211,226,226,226,226,226,226,226,226,226,226,226,226,226,226,226,300,301,302,226,226,226,226,
+227,226,226,226,226,226,226,227,226,226,226,226,226,226,226,226,226,226,226,300,301,302,226,226,226,226,
+226,227,226,226,226,226,226,226,226,226,227,227,226,226,226,226,226,226,226,300,301,302,226,227,226,227
+</data>
+ </layer>
+ <layer id="15" name="shadow" width="26" height="24">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,390,395,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,390,
+0,0,0,0,0,0,390,389,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,390,
+0,0,0,0,0,0,390,389,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,390,
+0,0,0,0,0,0,397,398,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,397,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,390,395,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,390,389,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,390,389,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,397,398,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="12" name="hutte" width="26" height="24">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,313,314,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,329,330,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,345,346,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,361,362,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="13" name="props" width="26" height="24">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,298,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,298,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,297,0,0,0,0,0,
+0,298,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,297,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="14" name="props2" width="26" height="24">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,282,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,282,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,281,0,0,0,0,0,
+0,282,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,281,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="11" name="house" width="26" height="24">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,133,134,135,136,137,0,0,0,0,0,0,0,0,0,0,0,0,0,0,133,134,135,136,137,
+0,0,149,150,167,152,153,0,0,0,0,0,0,0,0,0,0,0,0,0,0,149,150,167,152,153,
+0,164,165,166,167,168,169,170,0,0,0,0,0,0,0,0,0,0,0,0,164,165,166,167,168,169,
+0,180,181,182,183,184,185,186,0,0,0,0,0,0,0,0,0,0,0,0,180,181,182,183,184,185,
+0,180,181,198,199,200,185,186,0,0,0,0,0,0,0,0,0,0,0,0,180,181,198,199,200,185,
+0,180,213,214,215,216,217,186,0,0,0,0,0,0,0,0,0,0,0,0,180,213,214,215,216,217,
+0,228,229,230,231,232,233,234,0,0,0,0,0,0,0,0,0,0,0,0,228,229,230,231,232,233,
+0,0,245,246,247,248,249,0,0,0,0,0,0,0,0,0,0,0,0,0,0,245,246,247,248,249,
+0,0,261,262,263,264,265,0,0,0,0,0,0,0,0,0,0,0,0,0,0,261,262,263,264,265,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,139,140,140,140,140,144,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,155,156,156,156,156,160,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,171,172,172,172,172,176,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,187,188,188,188,188,192,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,203,204,205,206,207,208,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,220,221,222,223,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="16" name="lanterne" width="26" height="24">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,250,251,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,250,251,
+0,0,0,0,0,266,267,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,266,267,
+0,0,0,0,0,0,283,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,283,
+0,0,0,0,0,0,299,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,299,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,250,251,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,266,267,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,283,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,299,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="6" name="tree" width="26" height="24">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,126,127,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,126,127,0,128,129,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,128,129,0,130,131,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,130,131,0,0,0,126,127,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,128,129,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,130,131,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,126,127,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,126,127,
+0,0,0,0,0,128,129,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,128,129,
+0,0,0,0,0,130,131,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,130,131,
+0,0,126,127,0,0,0,126,127,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,128,129,0,0,0,128,129,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,130,131,0,0,0,130,131,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,126,127,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,128,129,
+126,127,0,0,0,0,0,0,0,0,0,0,126,127,0,0,0,0,0,0,0,0,0,0,130,131,
+128,129,0,0,0,0,0,0,0,0,0,0,128,129,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="17" name="tree2" width="26" height="24">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,126,127,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,128,129,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,130,131,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,126,127,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,128,129,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,130,131,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,126,127,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,128,129,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,130,131,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="18" name="tree3" width="26" height="24">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="19" name="roches" width="26" height="24">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,480,480,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,480,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,480,0,480,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,479,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="21" name="pathfinding" width="26" height="24" opacity="0.4">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,489,489,489,0,0,0,0,0,0,0,0,0,0,0,0,489,489,0,0,489,489,489,0,
+0,0,489,489,489,489,489,0,0,0,0,0,0,0,0,489,489,0,0,0,0,489,489,489,489,489,
+0,0,489,489,489,489,489,0,0,0,0,0,489,489,489,489,0,0,0,0,0,489,489,489,489,489,
+0,0,489,489,489,489,489,0,0,0,0,0,0,0,0,0,0,0,0,0,0,489,489,489,489,489,
+0,0,489,489,489,489,489,0,0,0,0,0,0,0,0,0,0,489,489,0,0,489,489,489,489,489,
+0,489,489,489,489,489,489,489,489,0,0,0,0,0,0,0,0,0,0,0,0,489,489,489,489,489,
+0,489,489,489,0,489,489,489,489,0,0,0,0,489,0,0,0,0,0,0,489,489,489,0,489,489,
+0,489,489,489,0,489,489,489,489,0,0,0,0,0,0,0,0,0,0,0,489,489,489,0,489,489,
+0,0,0,0,0,0,489,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,489,0,489,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,489,489,489,489,0,0,0,0,0,0,0,0,
+0,0,0,0,0,489,489,0,0,0,0,0,0,0,489,489,489,489,0,0,0,0,0,0,489,489,
+0,0,0,0,489,489,0,0,0,0,0,0,0,0,489,489,489,489,0,0,0,0,489,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,489,489,489,489,0,0,0,0,0,0,0,0,
+0,0,489,489,0,0,0,489,489,0,0,0,0,0,489,489,489,489,0,0,0,0,0,0,0,0,
+0,0,0,489,489,0,0,0,0,0,0,0,0,0,489,489,489,489,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,489,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,489,489,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="20" name="InfoMap">
+  <object id="172" template="modele/warp.tx" x="0" y="3264"/>
+  <object id="173" name="warp" gid="486" x="5248" y="6144" width="60" height="60">
+   <properties>
+    <property name="dir" value="left"/>
+    <property name="loadZone" type="int" value="2"/>
+    <property name="x" type="int" value="1664"/>
+    <property name="y" type="int" value="432"/>
+    <property name="zone" value="Map002"/>
+   </properties>
+  </object>
+  <object id="178" name="warp" gid="486" x="6016" y="2368" width="60" height="60">
+   <properties>
+    <property name="dir" value="left"/>
+    <property name="loadZone" type="int" value="2"/>
+    <property name="x" type="int" value="1664"/>
+    <property name="y" type="int" value="432"/>
+    <property name="zone" value="Map002"/>
+   </properties>
+  </object>
+  <object id="179" name="warp" gid="486" x="1152" y="2368" width="60" height="60">
+   <properties>
+    <property name="dir" value="left"/>
+    <property name="loadZone" type="int" value="2"/>
+    <property name="x" type="int" value="1664"/>
+    <property name="y" type="int" value="432"/>
+    <property name="zone" value="Map002"/>
+   </properties>
+  </object>
+  <object id="180" name="warp" gid="486" x="6592" y="3264" width="60" height="60">
+   <properties>
+    <property name="dir" value="left"/>
+    <property name="loadZone" type="int" value="2"/>
+    <property name="x" type="int" value="1664"/>
+    <property name="y" type="int" value="432"/>
+    <property name="zone" value="Map002"/>
+   </properties>
+  </object>
+  <object id="181" name="npc" gid="488" x="1152" y="2752" width="60" height="60">
+   <properties>
+    <property name="eventName" value="001"/>
+   </properties>
+  </object>
+  <object id="183" template="modele/coffre.tx" x="3904" y="2432"/>
+  <object id="184" name="npc" gid="488" x="2624" y="2752" width="60" height="60">
+   <properties>
+    <property name="eventName" value="002"/>
+   </properties>
+  </object>
+  <object id="185" template="modele/npc.tx" x="1920" y="3520"/>
+ </objectgroup>
+</map>

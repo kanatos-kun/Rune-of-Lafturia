@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.4" tiledversion="2020.10.30" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="13" height="12" tilewidth="256" tileheight="256" infinite="0" nextlayerid="13" nextobjectid="120">
+ <tileset firstgid="1" name="grass_atlas" tilewidth="256" tileheight="256" tilecount="48" columns="8">
+  <image source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Sprites/Grass/grass_atlas.png" width="2048" height="1536"/>
+ </tileset>
+ <tileset firstgid="49" name="tree01" tilewidth="256" tileheight="256" tilecount="6" columns="2">
+  <image source="tileset/tree01.png" width="513" height="768"/>
+ </tileset>
+ <tileset firstgid="55" source="tileset/tiled/small_object-0.tsx"/>
+ <tileset firstgid="75" source="tileset/tiled/info.tsx"/>
+ <tileset firstgid="79" source="tileset/tiled/very_small_object-0.tsx"/>
+ <tileset firstgid="114" name="pathfinding" tilewidth="256" tileheight="256" tilecount="1" columns="1">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <image source="tileset/pathfinding.png" width="256" height="256"/>
+ </tileset>
+ <layer id="1" name="background" width="13" height="12">
+  <data encoding="csv">
+11,11,11,11,11,11,16,11,11,11,9,11,11,
+11,11,11,11,11,11,16,42,11,11,11,11,9,
+9,11,11,11,11,11,16,11,11,11,11,11,9,
+9,11,11,11,11,11,16,11,11,11,11,11,11,
+11,11,11,11,11,11,16,11,11,9,11,9,11,
+11,11,11,11,11,9,16,11,11,11,11,10,11,
+11,11,11,11,11,11,16,45,11,11,11,11,11,
+11,11,11,10,11,11,16,11,11,11,11,11,11,
+11,11,11,11,11,11,16,11,11,11,11,11,11,
+11,11,11,11,11,11,16,11,11,11,11,11,11,
+11,11,11,11,11,11,16,11,11,11,11,11,9,
+11,11,11,11,9,11,16,11,11,11,11,11,9
+</data>
+ </layer>
+ <layer id="6" name="tree" width="13" height="12">
+  <data encoding="csv">
+52,0,0,0,0,0,0,0,0,0,0,0,51,
+52,0,0,0,0,0,0,0,0,0,0,0,51,
+52,0,0,0,0,0,0,0,0,0,0,0,51,
+52,0,0,0,0,0,0,0,0,0,0,0,51,
+52,0,0,0,0,0,0,0,0,0,0,0,51,
+52,0,0,0,0,0,0,0,0,0,0,0,51,
+52,0,0,0,0,0,0,0,0,0,0,0,51,
+52,0,0,0,0,0,0,0,0,0,0,0,51,
+52,0,0,0,0,0,0,0,0,0,0,0,51,
+52,0,0,0,0,0,0,0,0,0,0,0,51,
+52,0,0,0,0,0,0,0,0,0,0,0,51,
+52,0,0,0,0,0,0,0,0,0,0,0,51
+</data>
+ </layer>
+ <layer id="8" name="tree2" width="13" height="12">
+  <data encoding="csv">
+50,0,0,0,0,0,0,0,0,0,0,0,49,
+50,0,0,0,0,0,0,0,0,0,0,0,49,
+50,0,0,0,0,0,0,0,0,0,0,0,49,
+50,0,0,0,0,0,0,0,0,0,0,0,49,
+50,0,0,0,0,0,0,0,0,0,0,0,49,
+50,0,0,0,0,0,0,0,0,0,0,0,49,
+50,0,0,0,0,0,0,0,0,0,0,0,49,
+50,0,0,0,0,0,0,0,0,0,0,0,49,
+50,0,0,0,0,0,0,0,0,0,0,0,49,
+50,0,0,0,0,0,0,0,0,0,0,0,49,
+50,0,0,0,0,0,0,0,0,0,0,0,49,
+50,0,0,0,0,0,0,0,0,0,0,0,49
+</data>
+ </layer>
+ <layer id="9" name="herbes" width="13" height="12">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,57,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,57,57,57,0,0,0,0,0,0,0,0,
+0,0,57,57,57,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,57,57,0,0,0,
+0,0,0,0,0,0,0,0,57,57,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="10" name="roches" width="13" height="12">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,67,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="12" name="pathfinding" width="13" height="12" opacity="0.5">
+  <data encoding="csv">
+114,0,0,0,0,0,0,0,0,0,0,0,114,
+114,0,0,0,0,0,0,0,0,0,0,0,114,
+114,0,0,0,0,0,0,0,0,0,0,0,114,
+114,0,0,0,0,0,0,0,0,0,0,0,114,
+114,0,0,0,0,0,0,0,0,0,114,0,114,
+114,0,0,0,0,0,0,0,0,0,114,0,114,
+114,0,0,0,0,0,0,0,0,0,0,0,114,
+114,0,0,0,0,0,0,0,0,0,0,0,114,
+114,0,0,0,0,0,0,0,0,0,0,0,114,
+114,0,0,0,0,0,0,0,0,0,0,0,114,
+114,0,0,0,0,0,0,0,0,0,0,0,114,
+114,0,0,0,0,0,0,0,0,0,0,0,114
+</data>
+ </layer>
+ <objectgroup id="11" name="InfoMap">
+  <properties>
+   <property name="music" value="&quot;music.mp3&quot;"/>
+  </properties>
+  <object id="118" name="warp" gid="76" x="1600" y="3072" width="60" height="60">
+   <properties>
+    <property name="dir" value="bottom"/>
+    <property name="loadZone" type="int" value="1"/>
+    <property name="x" type="int" value="1428"/>
+    <property name="y" type="int" value="250"/>
+    <property name="zone" value="Map003"/>
+   </properties>
+  </object>
+  <object id="119" name="warp" gid="76" x="1600" y="64" width="60" height="60">
+   <properties>
+    <property name="dir" value="top"/>
+    <property name="loadZone" type="int" value="1"/>
+    <property name="x" type="int" value="1668"/>
+    <property name="y" type="int" value="2807"/>
+    <property name="zone" value="Map001"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

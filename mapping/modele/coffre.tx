@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+ <tileset firstgid="1" source="../tileset/tiled/info.tsx"/>
+ <object name="coffre" gid="3" width="60" height="60">
+  <properties>
+   <property name="globalSwitchId" type="int" value="1"/>
+   <property name="number" type="int" value="100"/>
+   <property name="type" value="gold"/>
+  </properties>
+ </object>
+</template>

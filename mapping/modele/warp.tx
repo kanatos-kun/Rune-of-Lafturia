@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+ <tileset firstgid="1" source="../tileset/tiled/info.tsx"/>
+ <object name="warp" gid="2" width="60" height="60">
+  <properties>
+   <property name="dir" value="left"/>
+   <property name="loadZone" type="int" value="1"/>
+   <property name="x" type="int" value="6000"/>
+   <property name="y" type="int" value="2158"/>
+   <property name="zone" value="Map008"/>
+  </properties>
+ </object>
+</template>

@@ -1,0 +1,76 @@
+{
+    "maps": [
+        {
+            "fileName": "map001.tmx",
+            "height": 0,
+            "width": 0,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "fileName": "map002.tmx",
+            "height": 0,
+            "width": 0,
+            "x": 0,
+            "y": 3072
+        },
+        {
+            "fileName": "map003.tmx",
+            "height": 0,
+            "width": 0,
+            "x": 0,
+            "y": 6144
+        },
+        {
+            "fileName": "map004.tmx",
+            "height": 3072,
+            "width": 3328,
+            "x": 0,
+            "y": 9216
+        },
+        {
+            "fileName": "map005.tmx",
+            "height": 3072,
+            "width": 3328,
+            "x": -3328,
+            "y": 0
+        },
+        {
+            "fileName": "map006.tmx",
+            "height": 3072,
+            "width": 3328,
+            "x": -3328,
+            "y": 6144
+        },
+        {
+            "fileName": "map007.tmx",
+            "height": 3072,
+            "width": 3328,
+            "x": 3328,
+            "y": 6144
+        },
+        {
+            "fileName": "map008.tmx",
+            "height": 6144,
+            "width": 6656,
+            "x": 6656,
+            "y": 6144
+        },
+        {
+            "fileName": "map009.tmx",
+            "height": 6144,
+            "width": 6656,
+            "x": 13312,
+            "y": 5120
+        },
+        {
+            "fileName": "mapVeryBig.tmx",
+            "height": 49152,
+            "width": 53248,
+            "x": -56576,
+            "y": 0
+        }
+    ],
+    "onlyShowAdjacentMaps": false,
+    "type": "world"
+}

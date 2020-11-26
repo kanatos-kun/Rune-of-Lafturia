@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.4" tiledversion="2020.10.30" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="13" height="12" tilewidth="256" tileheight="256" infinite="0" nextlayerid="15" nextobjectid="117">
+ <tileset firstgid="1" name="grass_atlas" tilewidth="256" tileheight="256" tilecount="48" columns="8">
+  <image source="../../../../Game_Asset/Pack/Humble Bundle RPG pack/2dtop_downtileset_windows/2dtop_downtileset/Assets/Sprites/Grass/grass_atlas.png" width="2048" height="1536"/>
+ </tileset>
+ <tileset firstgid="49" name="tree01" tilewidth="256" tileheight="256" tilecount="6" columns="2">
+  <image source="tileset/tree01.png" width="513" height="768"/>
+ </tileset>
+ <tileset firstgid="55" source="tileset/tiled/medium_object-0.tsx"/>
+ <tileset firstgid="75" source="tileset/tiled/medium_object-1.tsx"/>
+ <tileset firstgid="81" source="tileset/tiled/small_object-0.tsx"/>
+ <tileset firstgid="101" source="tileset/tiled/info.tsx"/>
+ <tileset firstgid="105" source="tileset/tiled/very_small_object-0.tsx"/>
+ <tileset firstgid="140" name="pathfinding" tilewidth="256" tileheight="256" tilecount="1" columns="1">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <image source="tileset/pathfinding.png" width="256" height="256"/>
+ </tileset>
+ <layer id="1" name="background" width="13" height="12">
+  <data encoding="csv">
+11,11,11,11,11,11,16,11,11,11,9,11,11,
+11,11,11,11,11,11,16,42,11,11,11,11,9,
+9,11,11,11,11,11,16,11,11,11,11,11,9,
+9,11,11,11,11,11,16,11,11,11,11,11,11,
+11,11,11,11,11,11,16,11,11,9,11,9,11,
+11,11,11,11,11,9,16,11,11,11,11,10,11,
+11,11,11,11,11,11,16,2,11,11,11,11,11,
+11,11,11,10,11,11,16,11,11,11,11,11,11,
+18,18,18,18,18,18,19,18,18,18,18,18,18,
+11,11,11,11,11,11,16,11,11,11,11,11,11,
+11,11,11,11,11,11,16,11,11,11,2,11,9,
+11,11,11,11,9,11,16,11,11,11,11,11,9
+</data>
+ </layer>
+ <layer id="6" name="tree" width="13" height="12">
+  <data encoding="csv">
+52,0,0,0,0,0,0,0,0,0,0,0,51,
+52,0,0,0,0,0,0,0,0,0,0,0,51,
+52,0,0,0,0,0,0,0,0,0,0,0,51,
+52,0,0,0,0,0,0,0,0,0,0,0,51,
+52,0,0,0,0,0,0,0,0,0,0,0,51,
+54,0,0,0,0,0,0,0,0,0,0,0,53,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="8" name="tree2" width="13" height="12">
+  <data encoding="csv">
+50,0,0,0,0,0,0,0,0,0,0,0,49,
+50,0,0,0,0,0,0,0,0,0,0,0,49,
+50,0,0,0,0,0,0,0,0,0,0,0,49,
+50,0,0,0,0,0,0,0,0,0,0,0,49,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="9" name="herbes" width="13" height="12">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,83,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,83,83,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,83,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="10" name="autre" width="13" height="12">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,88,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="11" name="autre2" width="13" height="12">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="12" name="flower" width="13" height="12">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,118,0,0,
+0,0,0,0,0,0,0,0,0,122,118,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,124,0,0,0,0,0,0,0,0,0,
+0,0,124,0,118,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,118,0,0,0,0,0,0,0,0,0,118,0,
+0,124,118,0,0,0,0,0,118,0,0,0,0,
+0,0,0,0,0,0,0,0,122,0,0,0,0
+</data>
+ </layer>
+ <layer id="14" name="pathfinding" width="13" height="12" opacity="0.5">
+  <data encoding="csv">
+140,0,0,0,0,0,0,0,0,0,0,0,140,
+140,0,0,0,0,0,0,0,0,0,0,0,140,
+140,0,0,0,0,0,0,0,0,0,0,0,140,
+140,0,0,0,0,0,0,0,0,0,0,0,140,
+140,0,0,0,0,0,0,0,0,0,0,0,140,
+140,0,0,0,0,0,0,0,0,0,0,0,140,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="13" name="InfoMap">
+  <properties>
+   <property name="music" value="&quot;music.mp3&quot;"/>
+  </properties>
+  <object id="109" name="warp" gid="102" x="3264" y="2176" width="60" height="60">
+   <properties>
+    <property name="dir" value="right"/>
+    <property name="loadZone" type="int" value="1"/>
+    <property name="x" type="int" value="288"/>
+    <property name="y" type="int" value="2080"/>
+    <property name="zone" value="Map007"/>
+   </properties>
+  </object>
+  <object id="110" name="warp" gid="102" x="1600" y="3072" width="60" height="60">
+   <properties>
+    <property name="dir" value="bottom"/>
+    <property name="loadZone" type="int" value="1"/>
+    <property name="x" type="int" value="1428"/>
+    <property name="y" type="int" value="432"/>
+    <property name="zone" value="Map004"/>
+   </properties>
+  </object>
+  <object id="111" name="warp" gid="102" x="0" y="2176" width="60" height="60">
+   <properties>
+    <property name="dir" value="left"/>
+    <property name="loadZone" type="int" value="1"/>
+    <property name="x" type="int" value="3044"/>
+    <property name="y" type="int" value="2080"/>
+    <property name="zone" value="Map006"/>
+   </properties>
+  </object>
+  <object id="112" name="warp" gid="102" x="1664" y="64" width="60" height="60">
+   <properties>
+    <property name="dir" value="top"/>
+    <property name="loadZone" type="int" value="1"/>
+    <property name="x" type="int" value="1668"/>
+    <property name="y" type="int" value="2807"/>
+    <property name="zone" value="Map002"/>
+   </properties>
+  </object>
+  <object id="115" name="spawn" x="1920" y="192" width="1152" height="1408">
+   <properties>
+    <property name="limit" type="int" value="2"/>
+    <property name="monster" value="[ bee ]"/>
+    <property name="time" type="int" value="10"/>
+   </properties>
+  </object>
+  <object id="116" name="spawn" x="448" y="896" width="1024" height="1088">
+   <properties>
+    <property name="limit" type="int" value="1"/>
+    <property name="monster" value="[ bee ]"/>
+    <property name="time" type="int" value="10"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

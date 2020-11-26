@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+ <tileset firstgid="1" source="../tileset/tiled/info.tsx"/>
+ <object name="npc" gid="4" width="60" height="60">
+  <properties>
+   <property name="eventName" value="003"/>
+  </properties>
+ </object>
+</template>
