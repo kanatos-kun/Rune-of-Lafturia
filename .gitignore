@@ -1,4 +1,4 @@
-assets\animation
-assets\atlas
-assets\images
-assets\tileset
+assets/animation/*
+assets/atlas/*
+assets/images/*
+assets/tileset/*
