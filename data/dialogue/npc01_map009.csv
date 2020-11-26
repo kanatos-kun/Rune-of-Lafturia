@@ -1,0 +1,4 @@
+taskId,type,text,tagName,state
+1,dialogue,oof,Clara,idle
+1,dialogue,"Bonjour jeune hero, pouvez vous\n
+M'aidez ?",Clara,idle
